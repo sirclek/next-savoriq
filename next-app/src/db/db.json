@@ -163,22 +163,23 @@
   ],
   "categories": [
     {
-      "title": "Women's Clothing",
-      "value": "womens-clothing",
-      "image": "/images/categories/women-fashion.jpg",
-      "color": "hsl(150 50% 50%)"
+      "title": "Learn-More",
+      "value": "Learn-More",
+      "image": "/images/categories/learnmore.png",
+      "color": "hsl(230 50% 50%)"
+
     },
     {
-      "title": "Men's Clothing",
-      "value": "mens-clothing",
-      "image": "/images/categories/men-fashion.jpg",
-      "color": "hsl(340 50% 50%)"
+      "title": "Explore",
+      "value": "Explore",
+      "image": "/images/categories/Explore.png",
+      "color": "hsl(230 50% 50%)"
     },
     {
-      "title": "Electronics",
-      "value": "electronics",
-      "image": "/images/categories/electronics.jpg",
-      "color": "hsl(310 50% 50%)"
+      "title": "Chemical",
+      "value": "Chemical",
+      "image": "/images/categories/chemical.png",
+      "color": "hsl(230 50% 50%)"
     },
     {
       "title": "Jewelery",
