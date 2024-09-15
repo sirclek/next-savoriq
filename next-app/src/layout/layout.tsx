@@ -8,6 +8,7 @@ import { ThemeToggle } from '@/styles/theme-toggle';
 import type { LucideIcon } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
+
 type LayoutProps = React.PropsWithChildren;
 
 export function Layout({ children }: LayoutProps) {
@@ -72,6 +73,7 @@ export function getMobileNavButtonBaseProps({
 const mobileNavLinks = [
   { href: '/', title: 'Home', icon: HomeIcon },
   { href: '/search', title: 'Search', icon: SearchIcon },
+  { href: '/learn-more', title: 'Learn More', icon: SearchIcon}, // Add Learn More link here
 ];
 
 type LayoutFooterProps = React.PropsWithChildren;
