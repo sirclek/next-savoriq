@@ -31,10 +31,16 @@ export function Hero() {
           </ButtonLink>
         </div>
         <Divider />
-        <ButtonLink variant="primary" href={routes.search()}>
-          Browse Store
-        </ButtonLink>
+        <div className="flex gap-4"> {/* 버튼들을 가로로 정렬하는 div */}
+          <ButtonLink variant="primary" href={routes.search()}>
+            Learn More
+          </ButtonLink>
+          <ButtonLink variant="primary" href={routes.search()}>
+            Explore
+          </ButtonLink>
+        </div>
       </div>
     </div>
   );
 }
+
