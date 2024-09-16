@@ -8,7 +8,6 @@ import { ThemeToggle } from '@/styles/theme-toggle';
 import type { LucideIcon } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
-
 type LayoutProps = React.PropsWithChildren;
 
 export function Layout({ children }: LayoutProps) {
@@ -70,10 +69,11 @@ export function getMobileNavButtonBaseProps({
   };
 }
 
+// Navigation Links with Learn More added
 const mobileNavLinks = [
   { href: '/', title: 'Home', icon: HomeIcon },
   { href: '/search', title: 'Search', icon: SearchIcon },
-  { href: '/learn-more', title: 'Learn More', icon: SearchIcon}, // Add Learn More link here
+  { href: '/learn-more', title: 'Learn More', icon: SearchIcon }, // Keep Learn More
 ];
 
 type LayoutFooterProps = React.PropsWithChildren;
@@ -90,7 +90,6 @@ export function LayoutFooter({ children }: LayoutFooterProps) {
         </p>
         <ButtonLink
           aria-label="Check the Source Code on GitHub"
-          // TODO: GitHub icon is deprecated.
           // eslint-disable-next-line deprecation/deprecation
           icon={<GithubIcon />}
           href={APP_REPOSITORY_URL}
