@@ -6,7 +6,6 @@ import { Divider } from '@/common/divider';
 import { getMetadata } from '@/seo/seo-utils';
 import Image from 'next/image';
 import mainpicture from '@/app/mainpic.png';
-
 export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
 export default function LandingPage() {
