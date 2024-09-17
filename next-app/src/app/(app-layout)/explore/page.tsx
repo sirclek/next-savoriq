@@ -5,14 +5,14 @@ import { ButtonLink } from '@/common/button-link';
 import { Divider } from '@/common/divider';
 import { getMetadata } from '@/seo/seo-utils';
 import Image from 'next/image';
-import mainpicture from '@/app/mainpic.png';
 import logo from '@/app/(app-layout)/explore/logo.png';
+import { Main } from 'next/document';
 
 export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
 export default function LandingPage() {
   return (
-    <main>
+    <Main>
       <Container maxWidth="xl" className="flex flex-col lg:flex-row items-end justify-end p-4">
         <Image 
           src={logo} 
@@ -21,7 +21,7 @@ export default function LandingPage() {
           height={300} 
         />
       </Container>
-    </main>
+    </Main>
   );
 }
 
