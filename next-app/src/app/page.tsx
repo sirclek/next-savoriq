@@ -27,10 +27,10 @@ export default function LandingPage() {
             {APP_DESCRIPTION}
           </p>
           <div className="flex gap-4">
-            <ButtonLink variant="primary" href={routes.search()}>
+            <ButtonLink variant="primary" href={routes.checkout()}>
               Learn More
             </ButtonLink>
-            <ButtonLink variant="primary" href={routes.search()}>
+            <ButtonLink variant="primary" href= {routes.explore()}>
               Explore
             </ButtonLink>
           </div>
