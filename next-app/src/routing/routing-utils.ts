@@ -65,6 +65,8 @@ export const routes = {
   product: createRoute<{ params: { productId: Id } }>(
     (params) => `/products/${params.productId}`,
   ),
+  // routing-utils.ts
+  explore: createRoute(() => '/explore'), 
   checkout: createRoute(() => '/checkout'),
 };
 
