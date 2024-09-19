@@ -68,6 +68,7 @@ export const routes = {
   // routing-utils.ts
   explore: createRoute(() => '/explore'), 
   checkout: createRoute(() => '/checkout'),
+  learnmore: createRoute (() => '/learnmore'),
 };
 
 // TODO: Will check the use cases for this.
