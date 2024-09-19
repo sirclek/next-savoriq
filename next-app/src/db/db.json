@@ -2,12 +2,75 @@
   "whiskeys": [
     {
       "id": 1,
-      "name": "",
+      "name": "BlackLabel",
       "description": "",
-      "image": "/images/whiskeys/jackdaniels.png"
+      "image": "/images/whiskeys/BlackLabel.png"
     },
     {
-      "id": 2
+      "id": 2,
+      "name": "Chivas",
+      "description": "",
+      "image": "/images/whiskeys/Chivas.png"
+    },
+    {
+      "id": 3,
+      "name": "Dimple",
+      "description": "",
+      "image": "/images/whiskeys/Dimple.png"
+    },
+    {
+      "id": 4,
+      "name": "Glenfiddich",
+      "description": "",
+      "image": "/images/whiskeys/Glenfiddich.png"
+    },
+    {
+      "id": 5,
+      "name": "Glenlivet",
+      "description": "",
+      "image": "/images/whiskeys/Glenlivet.png"
+    },
+    {
+      "id": 6,
+      "name": "Jager",
+      "description": "",
+      "image": "/images/whiskeys/Jager.png"
+    },
+    {
+      "id": 7,
+      "name": "jamson",
+      "description": "",
+      "image": "/images/whiskeys/jamson.png"
+    },
+    {
+      "id": 8,
+      "name": "JimBeam",
+      "description": "",
+      "image": "/images/whiskeys/JimBeam.png"
+    },
+    {
+      "id": 9,
+      "name": "Macallan",
+      "description": "",
+      "image": "/images/whiskeys/Macallan.png"
+    },
+    {
+      "id": 10,
+      "name": "MakerMark",
+      "description": "",
+      "image": "/images/whiskeys/MakerMark.png"
+    },
+    {
+      "id": 11,
+      "name": "WildTurkey",
+      "description": "",
+      "image": "/images/whiskeys/WildTurkey.png"
+    },
+    {
+      "id": 12,
+      "name": "jackdaniels",
+      "description": "",
+      "image": "/images/whiskeys/jackdaniels.png"
     }
   ],
   
