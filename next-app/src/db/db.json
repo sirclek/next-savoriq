@@ -1,4 +1,16 @@
 {
+  "whiskeys": [
+    {
+      "id": 1,
+      "name": "",
+      "description": "",
+      "image": "/images/whiskeys/jackdaniels.png"
+    },
+    {
+      "id": 2
+    }
+  ],
+  
   "products": [
     {
       "id": 1,
