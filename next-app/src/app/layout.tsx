@@ -40,9 +40,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <TooltipProvider>
             <Layout>
               <LayoutHeader>
-                <div className="hidden md:block">
-                  <CartDrawer />
-                </div>
               </LayoutHeader>
               <div className="mt-app-header">{children}</div>
               <LayoutFooter>
