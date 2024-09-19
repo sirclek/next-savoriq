@@ -19,6 +19,7 @@ export default {
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
         primary: {
           DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
+          light: 'hsl(var(--primary-light) / <alpha-value>)',
           hover: 'hsl(var(--primary-hover) / <alpha-value>)',
           active: 'hsl(var(--primary-active) / <alpha-value>)',
           foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
