@@ -1,3 +1,5 @@
+// app/page.tsx
+import LearnMore from './(app-layout)/learn-more/page';
 import React from 'react';
 import { Container } from '@/common/container';
 import {APP_DESCRIPTION,APP_TITLE,} from '@/common/common-utils';
@@ -14,6 +16,7 @@ export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 export default function LandingPage() {
   return (
     <main>
+      <LearnMore />
       <Container maxWidth="xl" className="flex flex-col lg:flex-row items-end justify-end p-1">
         <Image 
           src={logo} 
