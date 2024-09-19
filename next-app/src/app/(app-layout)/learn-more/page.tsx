@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import logo from '/public/images/categories/logo.png';
 import bottleTop from '/public/images/categories/oracle-bottle-top.png';
@@ -7,35 +8,52 @@ const LearnMore = () => {
   return (
     <div className="flex flex-col items-center justify-center text-center gap-8 min-h-screen bg-background">
       {/* Logo */}
-      <Image src={logo} alt="Savoriq Logo" className="mb-4" width={150} height={150} />
+      <div className="absolute top-16 right-4">
+        <Image src={logo} alt="Savoriq Logo" className="mb-4" width={190} height={50} />
+      </div>
 
       {/* Main content section */}
       <div className="max-w-2xl mx-auto text-foreground">
         <h1 className="text-4xl font-bold text-primary mb-4">Learn More</h1>
         <p className="text-lg mb-8">
-          Welcome to the Learn More page. Here you can find additional information about our services, products, and much more.
+        Discover a new dimension of whisky exploration with The Oracle — your gateway to an unparalleled understanding of whisky flavors. Our revolutionary platform goes beyond traditional tasting notes by offering a deep dive into the chemical compositions that define each whisky's unique profile.
         </p>
+
+        {/* Home and Explore Buttons */}
+        <div className="flex justify-center gap-4 mt-6 mb-8">
+          <Link href="/" className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-hover">
+            Home
+          </Link>
+          <Link href="/explore" className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-hover">
+            Explore
+          </Link>
+        </div>
+
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Why Choose Us?</h2>
           <p>
-            Our services offer unparalleled quality and support. We ensure that you get the best experience with our products.
+          Through our interactive circular bar plots, you can visualize and compare detailed flavor compounds, gaining insight into the specific elements that contribute to each whisky’s distinct character. Whether you’re a connoisseur seeking precise flavor profiles or a newcomer eager to explore, The Oracle provides a user-friendly interface that makes complex data accessible and engaging.
           </p>
         </div>
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Our Vision</h2>
           <p>
-            We aim to revolutionize the industry by focusing on innovation and customer satisfaction.
+          Dive into a world where science meets sensory experience and elevate your whisky journey with The Oracle’s advanced search features and personalized recommendations. We aim to revolutionize how whisky is experienced, offering personalized insights for a more enriching journey.
           </p>
         </div>
       </div>
 
       {/* Bottle images */}
-      <div className="relative w-full max-w-lg">
-        <Image src={bottle} alt="Oracle Bottle" className="relative z-10 w-full h-auto" />
+      <div className="relative w-full" style={{ marginTop: '-50px' }}>
+        <Image 
+          src={bottle} 
+          alt="Oracle Bottle" 
+          className="absolute top-[-20px] translate-x-[437px] relative z-10 w-[1120px] h-auto" 
+        />
         <Image
           src={bottleTop}
           alt="Oracle Bottle Top"
-          className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/4 h-auto"
+          className="absolute top-[-340px] left-1/2 transform -translate-x-1/2 w-[300px] h-auto"
         />
       </div>
     </div>
