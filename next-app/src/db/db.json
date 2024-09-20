@@ -2,12 +2,75 @@
   "whiskeys": [
     {
       "id": 1,
-      "name": "",
-      "description": "",
-      "image": "/images/whiskeys/jackdaniels.png"
+      "name": "BlackLabel",
+      "description": "Include 56 herbs, fruits, roots, and spices, including citrus peel, licorice, anise, poppy seeds, saffron, ginger, juniper berries, and ginseng.",
+      "image": "/images/whiskeys/BlackLabel.png"
     },
     {
-      "id": 2
+      "id": 2,
+      "name": "Chivas",
+      "description": "A 12-year-old blended whisky from Chivas Regal that is made with malt and grain whiskies from across Scotland and matured in a combination of casks.",
+      "image": "/images/whiskeys/Chivas.png"
+    },
+    {
+      "id": 3,
+      "name": "Dimple",
+      "description": "The nose is floral and toffee and caramel sweet, underscored by a dry woody note. ",
+      "image": "/images/whiskeys/Dimple.png"
+    },
+    {
+      "id": 4,
+      "name": "Glenfiddich",
+      "description": "The bottles are also triangular (triangular) in shape because Single Malt is made from three core ingredients (water, yeast and grain) and because the bottles feel like you are shaking hands with a good friend.",
+      "image": "/images/whiskeys/Glenfiddich.png"
+    },
+    {
+      "id": 5,
+      "name": "Glenlivet",
+      "description": "It contains a complex chemical composition that includes a variety of esters, aldehydes, and phenols. These compounds contribute to its signature fruity, floral, and woody flavors. Key chemicals include:",
+      "image": "/images/whiskeys/Glenlivet.png"
+    },
+    {
+      "id": 6,
+      "name": "Jager",
+      "description": "liqueur made from 56 different herbs, roots, fruits, and spices. Some of its key ingredients include citrus peel, ginger, star anise, cardamom, and licorice, which give it its distinctive bitter-sweet taste. It's aged in oak barrels, allowing the flavors to blend, but unlike whisky, it doesn't rely on grain fermentation ",
+      "image": "/images/whiskeys/Jager.png"
+    },
+    {
+      "id": 7,
+      "name": "jamson",
+      "description": "Jamson whisky is typically described as having a rich, well-rounded flavor profile with a balance of sweet, smoky, and spicy notes. Chemically, its distinct taste can be attributed to compounds like esters (which provide fruity and floral aromas), phenols (responsible for the smoky flavor), and aldehydes (contributing to sweetness and complexity). ",
+      "image": "/images/whiskeys/jamson.png"
+    },
+    {
+      "id": 8,
+      "name": "JimBeam",
+      "description": "Jim Beam whiskey, specifically its flagship bourbon, is composed of a blend of grains, primarily corn (at least 51%), along with rye and malted barley. During the distillation process, the fermentation of these grains produces ethanol and other congeners, including esters, aldehydes, and higher alcohols, contributing to its aroma and flavor profile.",
+      "image": "/images/whiskeys/JimBeam.png"
+    },
+    {
+      "id": 9,
+      "name": "Macallan",
+      "description": "Macallan whisky is known for its rich flavor profile, which is influenced by its chemical composition. The distillation process and oak cask aging contribute to the presence of esters, aldehydes, and phenols, which create fruity, floral, and spicy notes. ",
+      "image": "/images/whiskeys/Macallan.png"
+    },
+    {
+      "id": 10,
+      "name": "MakerMark",
+      "description": "Key elements include esters (which impart fruity and floral notes), phenolic compounds (giving smoky or spicy characteristics), and higher alcohols (adding depth and complexity). It also contains lactones from the oak barrels, providing vanilla and coconut flavors.",
+      "image": "/images/whiskeys/MakerMark.png"
+    },
+    {
+      "id": 11,
+      "name": "WildTurkey",
+      "description": "Wild Turkey whisky is known for its rich, bold flavor profile, which comes from its high rye content and longer barrel aging. Chemically, it contains higher levels of vanillin (giving it a sweet, vanilla-like aroma), lignin-derived compounds (responsible for its smoky and spicy notes), and esters (which contribute to its fruity undertones). The charred oak barrels impart tannins and lactones, adding complexity with hints of caramel, toffee, and woody flavors.",
+      "image": "/images/whiskeys/WildTurkey.png"
+    },
+    {
+      "id": 12,
+      "name": "jackdaniels",
+      "description": "Jack Daniel's whiskey is characterized by its smooth, rich flavor profile, which stems from its unique chemical composition. The whiskey contains compounds such as esters (like ethyl acetate) that contribute fruity and floral notes, while aldehydes and ketones provide caramel and vanilla aromas.",
+      "image": "/images/whiskeys/jackdaniels.png"
     }
   ],
   
