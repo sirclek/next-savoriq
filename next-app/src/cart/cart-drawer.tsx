@@ -8,7 +8,6 @@ import {
 } from '@/common/drawer';
 import { CartIcon } from '@/common/icons';
 import { Price } from '@/common/price';
-import { getMobileNavButtonBaseProps } from '@/layout/layout';
 import { CheckoutLink } from '../checkout/checkout-linkt';
 import { getCart } from './cart-fetchers';
 import { CartItemList } from './cart-item-list';
@@ -26,7 +25,6 @@ export async function CartDrawer() {
         <Badge value={cart?.totalCount}>
           <DrawerTrigger asChild>
             <Button
-              {...getMobileNavButtonBaseProps({ icon: CartIcon })}
               aria-label="Open Cart Info"
             >
               <Price
