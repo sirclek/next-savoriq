@@ -1,4 +1,3 @@
-import { CartDrawer } from '@/cart/cart-drawer';
 import { TooltipProvider } from '@/common/tooltip';
 import { Layout, LayoutFooter, LayoutHeader } from '@/layout/layout';
 import '@/styles/global.css';
@@ -6,6 +5,7 @@ import type { Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
+
 
 const inter = Inter({
   variable: '--font-inter',
@@ -42,9 +42,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <LayoutHeader>
               </LayoutHeader>
               <div className="mt-app-header">{children}</div>
-              <LayoutFooter>
-                <CartDrawer />
-              </LayoutFooter>
             </Layout>
           </TooltipProvider>
         </ThemeProvider>
