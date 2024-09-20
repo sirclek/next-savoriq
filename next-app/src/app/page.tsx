@@ -1,5 +1,4 @@
 // app/page.tsx
-import LearnMore from './(app-layout)/learn-more/page';
 import React from 'react';
 import { Container } from '@/common/container';
 import {APP_DESCRIPTION,APP_TITLE,} from '@/common/common-utils';
@@ -9,22 +8,11 @@ import { Divider } from '@/common/divider';
 import { getMetadata } from '@/seo/seo-utils';
 import Image from 'next/image';
 import mainpicture from '@/app/mainpic.png';
-import underpicture from '@/app/underpicture.png';
-import logo from '@/app/logo.png';
 export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
 export default function LandingPage() {
   return (
     <main>
-      <LearnMore />
-      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-end justify-end p-1">
-        <Image 
-          src={logo} 
-          alt='SavorIQ Logo'
-          width={150}
-          height={150} 
-        />
-      </Container>
       <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center p-4">
         <Image 
           src={mainpicture} 
@@ -51,14 +39,6 @@ export default function LandingPage() {
           </div>
         </div>
       </Container>
-      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center p-4">
-      <Image
-          src={underpicture}
-          alt='Whiskey Custome pic'
-          width={2000}
-          height={400}
-          />
-          </Container>
     </main>
   );
 }
