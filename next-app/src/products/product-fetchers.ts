@@ -32,3 +32,19 @@ export const getRelatedProducts = cache(async (productId: Id) => {
 
   return relatedProducts;
 });
+
+// export const getRelatedByChemical = cache(async (productId: Id) => {
+//   const product = await getOneProductById(productId);
+
+//   if (!product) return [];
+
+//   const { products } = await filterProducts({
+//     chemical: product.chemicals,
+//   });
+
+//   const relatedProducts = products.filter(
+//     (relatedProduct) => relatedProduct.id !== product.id,
+//   );
+
+//   return relatedProducts;
+// });
