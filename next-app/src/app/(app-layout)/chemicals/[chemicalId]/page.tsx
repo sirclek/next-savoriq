@@ -26,7 +26,7 @@ export async function generateMetadata({
   return getMetadata({
     title: product.title,
     description: product.description,
-    pathname: `/products/${params.productId}`,
+    pathname: `/whiskeys/${params.productId}`,
     images: [{ url: product.image, alt: product.title }],
   });
 }
@@ -46,7 +46,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </Paper>
       </main>
       <Section as="aside">
-        <SectionTitle as="h2">Related Products</SectionTitle>
+        <SectionTitle as="h2">Related by Flavour</SectionTitle>
+        <Paper>
+          <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
+            <RelatedProducts productId={productId} />
+          </Suspense>
+        </Paper>
+      </Section>
+      <Section as="aside">
+        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
           <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
             <RelatedProducts productId={productId} />

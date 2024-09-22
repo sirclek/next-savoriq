@@ -43,7 +43,7 @@ export default function LandingPage() {
             <ButtonLink variant="primary" href={routes.learnmore()}>
               Learn More
             </ButtonLink>
-            <ButtonLink variant="primary" href={routes.explore()}>
+            <ButtonLink variant="primary" href={routes.search()}>
               Explore
             </ButtonLink>
           </div>

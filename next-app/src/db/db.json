@@ -269,11 +269,19 @@
       "value": "default"
     },
     {
-      "title": "Price low to high",
+      "title": "Alcohol Percentage Low to High",
       "value": "price-asc"
     },
     {
-      "title": "Price high to low",
+      "title": "Alcohol Percentage High to Low",
+      "value": "price-asc"
+    },
+    {
+      "title": "Age Low to High",
+      "value": "price-asc"
+    },
+    {
+      "title": "Age High to Low",
       "value": "price-desc"
     }
   ],

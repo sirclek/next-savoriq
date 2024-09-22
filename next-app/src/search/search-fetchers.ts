@@ -73,6 +73,7 @@ async function getManyProducts(args: ProductFilterArgs) {
         response.sort((a, b) => b.price - a.price);
         break;
       }
+      
     }
   }
 

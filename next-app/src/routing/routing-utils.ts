@@ -63,7 +63,7 @@ export const routes = {
   home: createRoute(() => '/'),
   search: createRoute<{ query?: ProductFilterArgs }>(() => '/search'),
   product: createRoute<{ params: { productId: Id } }>(
-    (params) => `/products/${params.productId}`,
+    (params) => `/whiskeys/${params.productId}`,
   ),
   // routing-utils.ts
   explore: createRoute(() => '/explore'),
