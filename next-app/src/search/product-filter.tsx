@@ -78,26 +78,6 @@ export function ProductFilter({ data }: ProductFilterProps) {
         let filterInput = null;
 
         switch (filter.filterKey) {
-          case ProductFilterKey.CATEGORIES:
-          case ProductFilterKey.PRICE_RANGES: {
-            filterInput = (
-              <CheckboxGroup
-                value={values[filter.filterKey]}
-                onChange={(newValue) => {
-                  handleChange(filter.filterKey, newValue);
-                }}
-              >
-                {filter.options.map((option) => {
-                  return (
-                    <Checkbox key={option.value} value={option.value}>
-                      {option.title}
-                    </Checkbox>
-                  );
-                })}
-              </CheckboxGroup>
-            );
-            break;
-          }
           case ProductFilterKey.SORTING: {
             filterInput = (
               <RadioGroup
@@ -114,6 +94,25 @@ export function ProductFilter({ data }: ProductFilterProps) {
                   );
                 })}
               </RadioGroup>
+            );
+            break;
+          }
+          default: {
+            filterInput = (
+              <CheckboxGroup
+                value={values[filter.filterKey]}
+                onChange={(newValue) => {
+                  handleChange(filter.filterKey, newValue);
+                }}
+              >
+                {filter.options.map((option) => {
+                  return (
+                    <Checkbox key={option.value} value={option.value}>
+                      {option.title}
+                    </Checkbox>
+                  );
+                })}
+              </CheckboxGroup>
             );
           }
         }

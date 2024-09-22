@@ -23,7 +23,7 @@ export type ProductFilterData = {
 };
 
 export type ProductFilterOptions = Record<
-  'categories' | 'sortings' | 'priceRanges',
+  'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'cask_types' | 'special_notes', 
   ProductFilterData
 >;
 

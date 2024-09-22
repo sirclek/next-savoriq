@@ -10,7 +10,7 @@ import { ProductFilterKey, ProductSorting } from '@/search/search-utils';
 import { cache } from 'react';
 
 async function getProductFilterOptions() {
-  const { sortings, categories, priceRanges } = await getDb();
+  const { sortings, brands, ages, regions, types, abvs, cask_types, special_notes} = await getDb();
 
   const filterOptions: ProductFilterOptions = {
     sortings: {
@@ -18,16 +18,42 @@ async function getProductFilterOptions() {
       options: sortings.map((option, i) => ({ ...option, order: `0_${i}` })),
       filterKey: ProductFilterKey.SORTING,
     },
-    categories: {
-      title: 'Categories',
-      options: categories.map((option, i) => ({ ...option, order: `1_${i}` })),
+    brand: {
+      title: 'Brand',
+      options: brands.map((option, i) => ({ ...option, order: `1_${i}` })),
       filterKey: ProductFilterKey.CATEGORIES,
     },
-    priceRanges: {
-      title: 'Price',
-      options: priceRanges.map((option, i) => ({ ...option, order: `2_${i}` })),
-      filterKey: ProductFilterKey.PRICE_RANGES,
+    age: {
+      title: 'Age',
+      options: ages.map((option, i) => ({ ...option, order: `2_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
     },
+    region: {
+      title: 'Region',
+      options: regions.map((option, i) => ({ ...option, order: `3_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
+    },
+    type: {
+      title: 'Type',
+      options: types.map((option, i) => ({ ...option, order: `4_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
+    },
+    abv: {
+      title: 'ABV',
+      options: abvs.map((option, i) => ({ ...option, order: `5_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
+    },
+    cask_type: {
+      title: 'Cask Type',
+      options: cask_types.map((option, i) => ({ ...option, order: `6_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
+    },
+    special_notes: {
+      title: 'Special Notes',
+      options: special_notes.map((option, i) => ({ ...option, order: `7_${i}` })),
+      filterKey: ProductFilterKey.CATEGORIES,
+    },
+
   };
 
   return filterOptions;
@@ -87,7 +113,7 @@ function getProductFilterSelectedOptions({
   filterOptions: ProductFilterOptions;
   args: ProductFilterArgs;
 }) {
-  const { sortings, categories, priceRanges } = filterOptions;
+  const { sortings, brands, ages, regions, types, abvs, cask_types, special_notes} = filterOptions;
   const selectedOptions: ProductFilterSelectedOption[] = [];
 
   let selectedSorting = sortings.options.find(
@@ -108,26 +134,25 @@ function getProductFilterSelectedOptions({
       filterKey: ProductFilterKey.SORTING,
     });
   }
+  // for (const brand of brands.options) {
+  //   if (args.brand?.includes(brand.value)) {
+  //     selectedOptions.push({
+  //       ...brand,
+  //       isVisible: true,
+  //       filterKey: ProductFilterKey.CATEGORIES,
+  //     });
+  //   }
+  // }
 
-  for (const category of categories.options) {
-    if (args.categories?.includes(category.value)) {
-      selectedOptions.push({
-        ...category,
-        isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
-      });
-    }
-  }
-
-  for (const priceRange of priceRanges.options) {
-    if (args.priceRanges?.includes(priceRange.value)) {
-      selectedOptions.push({
-        ...priceRange,
-        isVisible: true,
-        filterKey: ProductFilterKey.PRICE_RANGES,
-      });
-    }
-  }
+  // for (const priceRange of priceRanges.options) {
+  //   if (args.priceRanges?.includes(priceRange.value)) {
+  //     selectedOptions.push({
+  //       ...priceRange,
+  //       isVisible: true,
+  //       filterKey: ProductFilterKey.PRICE_RANGES,
+  //     });
+  //   }
+  // }
 
   return selectedOptions;
 }

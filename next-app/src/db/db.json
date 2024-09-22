@@ -1045,5 +1045,163 @@
         }
       ]
     }
+  ],
+  "brands": [
+    {
+      "title": "Maker's Mark",
+      "value": "Maker's Mark"
+    },
+    {
+      "title": "Macallan",
+      "value": "Macallan"
+    },
+    {
+      "title": "Talisker",
+      "value": "Talisker"
+    },
+    {
+      "title": "Glenfiddich",
+      "value": "Glenfiddich"
+    },
+    {
+      "title": "Ardbeg",
+      "value": "Ardbeg"
+    },
+    {
+      "title": "Highland Park",
+      "value": "Highland Park"
+    }
+  ],
+  "ages": [
+    {
+      "title": "15 years",
+      "value": "15 years"
+    },
+    {
+      "title": "NAS",
+      "value": "NAS"
+    },
+    {
+      "title": "12 years",
+      "value": "12 years"
+    },
+    {
+      "title": "8 years",
+      "value": "8 years"
+    },
+    {
+      "title": "18 years",
+      "value": "18 years"
+    }
+  ],
+  "regions": [
+    {
+      "title": "Canada",
+      "value": "Canada"
+    },
+    {
+      "title": "USA",
+      "value": "USA"
+    },
+    {
+      "title": "Japan",
+      "value": "Japan"
+    },
+    {
+      "title": "Ireland",
+      "value": "Ireland"
+    },
+    {
+      "title": "Scotland",
+      "value": "Scotland"
+    }
+  ],
+  "types": [
+    {
+      "title": "Rye",
+      "value": "Rye"
+    },
+    {
+      "title": "Single Malt",
+      "value": "Single Malt"
+    },
+    {
+      "title": "Blended",
+      "value": "Blended"
+    },
+    {
+      "title": "Scotch",
+      "value": "Scotch"
+    },
+    {
+      "title": "Bourbon",
+      "value": "Bourbon"
+    }
+  ],
+  "abvs": [
+    {
+      "title": "45%",
+      "value": "45%"
+    },
+    {
+      "title": "43%",
+      "value": "43%"
+    },
+    {
+      "title": "55%",
+      "value": "55%"
+    },
+    {
+      "title": "50%",
+      "value": "50%"
+    },
+    {
+      "title": "40%",
+      "value": "40%"
+    }
+  ],
+  "cask_types": [
+    {
+      "title": "Sherry Oak",
+      "value": "Sherry Oak"
+    },
+    {
+      "title": "French Oak",
+      "value": "French Oak"
+    },
+    {
+      "title": "Ex-Sherry",
+      "value": "Ex-Sherry"
+    },
+    {
+      "title": "American Oak",
+      "value": "American Oak"
+    },
+    {
+      "title": "Ex-Bourbon",
+      "value": "Ex-Bourbon"
+    }
+  ],
+  "special_notes": [
+    {
+      "title": "Popular Release",
+      "value": "Popular Release"
+    },
+    {
+      "title": "Award-winning",
+      "value": "Award-winning"
+    },
+    {
+      "title": "Small Batch",
+      "value": "Small Batch"
+    },
+    {
+      "title": "Cask Strength",
+      "value": "Cask Strength"
+    },
+    {
+      "title": "Limited Edition",
+      "value": "Limited Edition"
+    }
   ]
 }

@@ -1,7 +1,6 @@
 import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
 import { ProductFilter } from '@/search/product-filter';
-import { ProductFilterDrawer } from '@/search/product-filter-drawer';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
 import { SelectedFilters } from '@/search/selected-filters';
@@ -47,7 +46,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <SectionTitle as="h2" srOnly>
               Filter
             </SectionTitle>
-            <ProductFilter data={data} />
+            {/* filter pane */}
+            <ProductFilter data={data} /> 
           </Section>
           <Section>
             <SectionTitle as="h2" srOnly>
@@ -55,9 +55,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </SectionTitle>
             <div className="flex flex-col gap-2">
               <SelectedFilters />
-              <ProductFilterDrawer>
-                <ProductFilter data={data} />
-              </ProductFilterDrawer>
               <SearchResults data={data} />
             </div>
           </Section>
