@@ -3,8 +3,11 @@ import type { ProductFilterKey } from './search-utils';
 
 export type ProductFilterArgs = {
   sorting?: string;
-  categories?: string[];
-  priceRanges?: string[];
+  brand?: string[];
+  age?: string[];
+  region?: string[];
+  type?: string[];
+  abv?: string[];
 };
 
 type ProductFilterOptionItem = {

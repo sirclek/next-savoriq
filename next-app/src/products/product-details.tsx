@@ -10,6 +10,10 @@ type ProductDetailsProps = {
   product: Product;
 };
 
+
+// handles the display of a product's details, including its image, title, price, description, and category. Activated when a user clicks on a product card.
+
+
 export function ProductDetails({ product }: ProductDetailsProps) {
   return (
     <div className="grid gap-6 md:grid-cols-2">

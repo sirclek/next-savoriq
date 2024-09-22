@@ -17,6 +17,23 @@ export const getManyProductsByIds = cache(async (productIds: Id[]) => {
   return products;
 });
 
+export const getWhiskeyById = cache(async (whiskeyId: Id) => {
+  const db = await getDb();
+  const whiskey = db.whiskeys.find((whiskey) => whiskey.id === whiskeyId);
+  return whiskey;
+});
+
+export const getManyWhiskeysByIds = cache(async (whiskeyIds: Id[]) => {
+  const db = await getDb();
+  const whiskeys = db.whiskeys.filter((whiskey) =>
+    whiskeyIds.includes(whiskey.id),
+  );
+  return whiskeys;
+});
+
+
+
+
 export const getRelatedProducts = cache(async (productId: Id) => {
   const product = await getOneProductById(productId);
 
@@ -33,18 +50,3 @@ export const getRelatedProducts = cache(async (productId: Id) => {
   return relatedProducts;
 });
 
-// export const getRelatedByChemical = cache(async (productId: Id) => {
-//   const product = await getOneProductById(productId);
-
-//   if (!product) return [];
-
-//   const { products } = await filterProducts({
-//     chemical: product.chemicals,
-//   });
-
-//   const relatedProducts = products.filter(
-//     (relatedProduct) => relatedProduct.id !== product.id,
-//   );
-
-//   return relatedProducts;
-// });
