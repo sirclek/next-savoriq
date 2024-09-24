@@ -7,6 +7,8 @@ import { NextLink } from '@/routing/next-link';
 import { ThemeToggle } from '@/styles/theme-toggle';
 import type { LucideIcon } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
+import Image from 'next/image';
+import logo from '@/app/logo.png';
 
 type LayoutProps = React.PropsWithChildren;
 

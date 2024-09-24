@@ -238,15 +238,15 @@
   ],
   "categories": [
     {
-      "title": "Learn-More",
-      "value": "Learn-More",
+      "title": "Country",
+      "value": "Country",
       "image": "/images/categories/learnmore.png",
       "color": "hsl(230 50% 50%)"
 
     },
     {
-      "title": "Explore",
-      "value": "Explore",
+      "title": "Brand",
+      "value": "Brand",
       "image": "/images/categories/Explore.png",
       "color": "hsl(230 50% 50%)"
     },
@@ -257,8 +257,8 @@
       "color": "hsl(230 50% 50%)"
     },
     {
-      "title": "Jewelery",
-      "value": "jewelery",
+      "title": "Profile",
+      "value": "Profile",
       "image": "/images/categories/jewelery.jpg",
       "color": "hsl(230 50% 50%)"
     }

@@ -23,14 +23,13 @@ export default function LandingPage() {
           height={150}
         />
       </Container>
-      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center p-4">
+      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center py-4">
         <Image
           src={mainpicture}
           alt='Whiskey collection'
           width={1000}
           height={300}
         />
-
         <div className="flex flex-col items-center gap-4 px-4 py-12 text-center md:order-2">
           <h1 className="text-m5xl font-black text-primary sm:text-7xl lg:text-8xl">
             {APP_TITLE}
