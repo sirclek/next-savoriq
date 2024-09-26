@@ -1,5 +1,6 @@
 # next-shopper
 cd next-app
+cd src
 npm install
 npm run dev
 
