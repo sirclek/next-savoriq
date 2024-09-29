@@ -10,6 +10,7 @@ import { z } from 'zod';
 import logo from '@/app/logo.png';
 import { Container } from '@/common/container';
 import Image from 'next/image';
+import { ProductFilterDrawer } from '@/search/product-filter-drawer';
 
 
 export const metadata = getMetadata({
@@ -43,13 +44,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   return (
     <main className="group/page">
-<<<<<<< HEAD
       <PageTitle title="Search Products" srOnly />
       <SelectedOptionsProvider data={data}> 
-=======
-      <PageTitle title="Search Whiskeys" srOnly />
-      <SelectedOptionsProvider data={data}>
->>>>>>> origin/database-int-matt
         <div className="grid gap-2 md:grid-cols-[theme(spacing.72)_1fr]">
           <Section className="sticky top-24 hidden max-h-[80vh] overflow-auto px-2 md:block">
             <SectionTitle as="h2" srOnly>
@@ -64,16 +60,12 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </SectionTitle>
             <div className="flex flex-col gap-2">
               <SelectedFilters />
-<<<<<<< HEAD
               <ProductFilterDrawer>
                 <ProductFilter data={data} />
               </ProductFilterDrawer>
               <div className="flex items-start gap-2">
                 <SearchResults data={data} />
               </div>
-=======
-              <SearchResults data={data} />
->>>>>>> origin/database-int-matt
             </div>
           </Section>
         </div>
