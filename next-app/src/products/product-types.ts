@@ -13,7 +13,7 @@ export type Product = {
 };
 
 export type Whiskey = {
-  id: Id;
+  id: number;
   name: string;
   brand: string;
   age: number;

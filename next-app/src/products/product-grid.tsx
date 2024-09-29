@@ -1,6 +1,6 @@
 import { createMockArray } from '@/common/common-utils';
-import { ProductCard, ProductCardSkeleton } from './product-card';
-import type { Product } from './product-types';
+import { ProductCardSkeleton, WhiskeyCard } from './product-card';
+import type { Whiskey } from './product-types';
 
 type ProductGridShellProps = React.PropsWithChildren;
 
@@ -10,17 +10,17 @@ function ProductGridShell({ children }: ProductGridShellProps) {
   );
 }
 
-type ProductGridProps = {
-  products: Product[];
+type WhiskeyGridProps = {
+  whiskeys: Whiskey[];
 };
 
-export function ProductGrid({ products }: ProductGridProps) {
+export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
   return (
     <ProductGridShell>
-      {products.map((product) => {
+      {whiskeys.map((whiskey) => {
         return (
-          <li key={product.id}>
-            <ProductCard product={product} />
+          <li key={whiskey.id}>
+            <WhiskeyCard whiskey={whiskey} />
           </li>
         );
       })}

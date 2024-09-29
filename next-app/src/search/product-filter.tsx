@@ -4,8 +4,8 @@ import { Paper, PaperTitle } from '@/common/paper';
 import { Checkbox, CheckboxGroup } from '@/forms/checkbox-group';
 import { RadioGroup, RadioGroupItem } from '@/forms/radio-group';
 import type {
-  ProductFilterData,
-  ProductFilterResponse,
+  WhiskeyFilterData,
+  WhiskeyFilterResponse,
 } from '@/search/search-types';
 import {
   ProductFilterKey,
@@ -17,7 +17,7 @@ import { useTransition } from 'react';
 import { useSelectedOptionsContext } from './selected-options-context';
 
 type ProductFilterProps = {
-  data: ProductFilterResponse;
+  data: WhiskeyFilterResponse;
 };
 
 export function ProductFilter({ data }: ProductFilterProps) {
@@ -29,7 +29,7 @@ export function ProductFilter({ data }: ProductFilterProps) {
   const values = getValuesOfSelectedOptions(optimisticSelectedOptions);
 
   const handleChange = (
-    filterKey: ProductFilterData['filterKey'],
+    filterKey: WhiskeyFilterData['filterKey'],
     newValues: string[],
   ) => {
     const newOptimisticSelectedOptions = optimisticSelectedOptions.filter(

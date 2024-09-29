@@ -4,50 +4,16 @@ import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Product } from './product-types';
 import type { Whiskey } from './product-types';
 
-type ProductCardProps = {
-  product: Product;
+type WhiskeyCardProps = {
+  whiskey: Whiskey;
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
   return (
     <NextLink
-      href={routes.product({ params: { productId: product.id } })}
-      // To show outline when the link is `focus-visible`.
-      className="block"
-    >
-      <article className="group flex flex-col gap-2 rounded-md border-2 p-2 md:p-4">
-        <div className="p-2">
-          <div className="relative aspect-[12/10] bg-transparent transition duration-500 ease-out group-hover:scale-110">
-            <Image
-              className="rounded bg-white object-contain"
-              src={product.image}
-              alt={product.title}
-              fill
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-2 text-center">
-          <Tooltip content={product.title}>
-            <h3 className="text-sm font-bold fixed-leading-5 fixed-line-clamp-3">
-              {product.title}
-            </h3>
-          </Tooltip>
-          <div>
-            <Price className="text-primary" value={product.price} />
-          </div>
-        </div>
-      </article>
-    </NextLink>
-  );
-}
-
-export function WhiskeyCard(whiskey : Whiskey) {
-  return (
-    <NextLink
-      href={routes.product({ params: { productId: whiskey.id } })}
+      href={routes.product({ params: { whiskeyId: whiskey.id } })}
       // To show outline when the link is `focus-visible`.
       className="block"
     >
@@ -57,7 +23,7 @@ export function WhiskeyCard(whiskey : Whiskey) {
             <Image
               className="rounded bg-white object-contain"
               src={`/images/whiskeys/${whiskey.id}.png`}
-              alt={`${whiskey.brand} ${whiskey.age} ${whiskey.name}`}
+              alt={whiskey.name}
               fill
             />
           </div>
@@ -65,13 +31,11 @@ export function WhiskeyCard(whiskey : Whiskey) {
         <div className="flex flex-col gap-2 text-center">
           <Tooltip content={whiskey.name}>
             <h3 className="text-sm font-bold fixed-leading-5 fixed-line-clamp-3">
-              {`${whiskey.brand} ${whiskey.name}`}
+              {whiskey.name}
             </h3>
           </Tooltip>
           <div>
-            <span className="text-primary font-bold">
-              {`${whiskey.age} | ${whiskey.abv}`}
-            </span>
+            <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
       </article>
