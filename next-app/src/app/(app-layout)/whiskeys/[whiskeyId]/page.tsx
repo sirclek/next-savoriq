@@ -48,6 +48,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
           <WhiskeyDetails whiskey={whiskey} />
         </Paper>
       </main>
+
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
@@ -59,6 +60,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
           </Suspense>
         </Paper>
       </Section>
+      
       <Section as="aside">
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>

@@ -30,7 +30,13 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
-        <p className="text-sm">{whiskey.name}</p>
+        <div className="text-sm">{whiskey.description}</div>   
+          
+        {whiskey.aroma.map((aroma, index) => (          // aroma
+          <p key={index} className='text-sm'>
+            {aroma.flavour} - Intensity: {aroma.intensity}
+          </p>
+        ))}
       </div>
     </div>
   );
