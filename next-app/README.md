@@ -1,8 +1,9 @@
 # next-shopper
 cd next-app
+cd src
 npm install
 npm run dev
-
+this is testing for sam
 
 This is a simple e-commerce web application built with [Next.js](https://nextjs.org/), using React Server Components and Server Actions. The data is from the [Fake Store API](https://fakestoreapi.com/). It is a really cool API to build e-commerce demo projects. Due to requirement to add some extra fields, its data is copied and changed a little.
 
