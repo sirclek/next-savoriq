@@ -3,13 +3,13 @@ import { getDb } from '@/db/db-utils';
 import { filterProducts } from '@/search/search-fetchers';
 import { cache } from 'react';
 
-export const getOneWhiskeyById = cache(async (whiskeyId: Id) => {
+export const getOneWhiskeyById = cache(async (whiskeyId: number) => {
   const db = await getDb();
   const whiskey = db.whiskeys.find((whiskey) => whiskey.id === whiskeyId);
   return whiskey;
 });
 
-export const getManyWhiskeysByIds = cache(async (whiskeyIds: Id[]) => {
+export const getManyWhiskeysByIds = cache(async (whiskeyIds: number[]) => {
   const db = await getDb();
   const whiskeys = db.whiskeys.filter((whiskey) =>
     whiskeyIds.includes(whiskey.id),
@@ -17,7 +17,7 @@ export const getManyWhiskeysByIds = cache(async (whiskeyIds: Id[]) => {
   return whiskeys;
 });
 
-export const getRelatedWhiskeys = cache(async (whiskeyId: Id) => {
+export const getRelatedWhiskeys = cache(async (whiskeyId: number) => {
   const whiskey = await getOneWhiskeyById(whiskeyId);
 
   if (!whiskey) return [];
@@ -26,10 +26,10 @@ export const getRelatedWhiskeys = cache(async (whiskeyId: Id) => {
     brand: [whiskey.brand],
     age: [whiskey.age.toString()],
     region: [whiskey.region],
-    type: [whiskey.type], 
+    type: [whiskey.type],
     abv: [whiskey.abv.toString()],
     cask_type: [whiskey.cask_type],
-    special_note: [whiskey.special_notes]
+    special_note: [whiskey.special_notes],
   });
 
   const relatedWhiskeys = whiskeys.filter(

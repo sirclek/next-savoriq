@@ -1,7 +1,7 @@
 import type { Whiskey } from '@/products/product-types';
 import type { ProductFilterKey } from './search-utils';
 
-export type ProductFilterArgs = {
+export type WhiskeyFilterArgs = {
   sorting?: string;
   brand?: string[];
   age?: string[];

@@ -1,3 +1,4 @@
+import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
@@ -12,7 +13,7 @@ import { Suspense } from 'react';
 
 export type WhiskeyPageProps = {
   params: {
-    whiskeyId: string;
+    whiskeyId: Id;
   };
 };
 
@@ -33,6 +34,8 @@ export async function generateMetadata({
 
 export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
   const whiskeyId = Number(params.whiskeyId);
+  console.log(params);
+  console.log(whiskeyId);
   const whiskey = await getOneWhiskeyById(whiskeyId);
 
   if (!whiskey) notFound();
@@ -41,9 +44,9 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
     <div className="flex flex-col gap-4">
       <main>
         <PageTitle title={whiskey.name} />
-        <Paper>
+        {/* <Paper>
           <WhiskeyDetails whiskey={whiskey} />
-        </Paper>
+        </Paper> */}
       </main>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>

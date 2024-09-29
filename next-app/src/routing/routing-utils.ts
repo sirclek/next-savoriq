@@ -1,6 +1,6 @@
 import type { Id, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
-import type { ProductFilterArgs } from '@/search/search-types';
+import type { WhiskeyFilterArgs } from '@/search/search-types';
 
 function parseToSearchParams(
   params: Maybe<Record<string, Maybe<string | string[]>>>,
@@ -61,7 +61,7 @@ function createRoute<RouteArgs extends CreateRouteArgs>(
 
 export const routes = {
   home: createRoute(() => '/'),
-  search: createRoute<{ query?: ProductFilterArgs }>(() => '/search'),
+  search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
   product: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),

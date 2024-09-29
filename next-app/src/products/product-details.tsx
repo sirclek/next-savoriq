@@ -1,4 +1,3 @@
-import { AddProductToCartButton } from '@/cart/add-to-cart-button';
 import { Chip, ChipContent } from '@/common/chip';
 import { Price } from '@/common/price';
 import { NextLink } from '@/routing/next-link';
@@ -31,17 +30,7 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
-        <AddProductToCartButton whiskey={whiskey} />
         <p className="text-sm">{whiskey.name}</p>
-        {/* <NextLink
-          href={routes.search({
-            query: { categories: [whiskey.category.value] },
-          })}
-        > */}
-          {/* <Chip>
-            <ChipContent>{whiskey.category.title}</ChipContent>
-          </Chip>
-        </NextLink> */}
       </div>
     </div>
   );

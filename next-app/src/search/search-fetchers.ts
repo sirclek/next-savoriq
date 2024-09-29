@@ -1,7 +1,7 @@
 import { getDb } from '@/db/db-utils';
 import type { Whiskey } from '@/products/product-types';
 import type {
-  ProductFilterArgs,
+  WhiskeyFilterArgs,
   WhiskeyFilterOptions,
   WhiskeyFilterResponse,
   WhiskeyFilterSelectedOption,
@@ -70,7 +70,7 @@ async function getProductFilterOptions() {
   return filterOptions;
 }
 
-async function getManyWhiskeys(args: ProductFilterArgs) {
+async function getManyWhiskeys(args: WhiskeyFilterArgs) {
   const db = await getDb();
   let response: Whiskey[] = db.whiskeys.map((whiskey) => ({
     ...whiskey,
@@ -140,7 +140,7 @@ function getProductFilterSelectedOptions({
   args,
 }: {
   filterOptions: WhiskeyFilterOptions;
-  args: ProductFilterArgs;
+  args: WhiskeyFilterArgs;
 }) {
   const {
     sortings,
@@ -241,7 +241,7 @@ function getProductFilterSelectedOptions({
 }
 
 export const filterProducts = cache(
-  async (args: ProductFilterArgs): Promise<WhiskeyFilterResponse> => {
+  async (args: WhiskeyFilterArgs): Promise<WhiskeyFilterResponse> => {
     const [filterOptions, whiskeys] = await Promise.all([
       getProductFilterOptions(),
       getManyWhiskeys(args),
