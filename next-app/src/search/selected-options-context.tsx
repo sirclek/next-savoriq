@@ -4,15 +4,15 @@ import { createSafeContext } from '@/common/safe-context';
 import { produce } from 'immer';
 import { useOptimistic } from 'react';
 import type {
-  ProductFilterResponse,
-  ProductFilterSelectedOption,
+  WhiskeyFilterResponse,
+  WhiskeyFilterSelectedOption,
 } from './search-types';
 import { ProductFilterKey, ProductSorting } from './search-utils';
 
 type SelectedOptionsContextValue = {
-  optimisticSelectedOptions: ProductFilterSelectedOption[];
+  optimisticSelectedOptions: WhiskeyFilterSelectedOption[];
   setOptimisticSelectedOptions: (
-    selectedOptions: ProductFilterSelectedOption[],
+    selectedOptions: WhiskeyFilterSelectedOption[],
   ) => void;
 };
 
@@ -24,7 +24,7 @@ const [SelectedOptionsContext, useSelectedOptionsContext] =
 export { useSelectedOptionsContext };
 
 type SelectedOptionsProviderProps = React.PropsWithChildren<{
-  data: ProductFilterResponse;
+  data: WhiskeyFilterResponse;
 }>;
 
 export function SelectedOptionsProvider({
@@ -33,7 +33,7 @@ export function SelectedOptionsProvider({
 }: SelectedOptionsProviderProps) {
   const [optimisticData, setOptimisticSelectedOptions] = useOptimistic(
     data,
-    (state, newSelectedOptions: ProductFilterSelectedOption[]) => {
+    (state, newSelectedOptions: WhiskeyFilterSelectedOption[]) => {
       return produce(state, (draft) => {
         draft.selectedOptions = newSelectedOptions;
 

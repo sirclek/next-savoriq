@@ -1,36 +1,48 @@
-import type { Product } from '@/products/product-types';
+import type { Whiskey } from '@/products/product-types';
 import type { ProductFilterKey } from './search-utils';
 
-export type ProductFilterArgs = {
+export type WhiskeyFilterArgs = {
   sorting?: string;
-  categories?: string[];
-  priceRanges?: string[];
+  brand?: string[];
+  age?: string[];
+  region?: string[];
+  type?: string[];
+  abv?: string[];
+  cask_type?: string[];
+  special_note?: string[];
 };
 
-type ProductFilterOptionItem = {
+type WhiskeyFilterOptionItem = {
   title: string;
   value: string;
   order: `${number}_${number}`;
 };
 
-export type ProductFilterData = {
+export type WhiskeyFilterData = {
   title: string;
-  options: ProductFilterOptionItem[];
+  options: WhiskeyFilterOptionItem[];
   filterKey: ProductFilterKey;
 };
 
-export type ProductFilterOptions = Record<
-  'categories' | 'sortings' | 'priceRanges',
-  ProductFilterData
+export type WhiskeyFilterOptions = Record<
+  | 'sortings'
+  | 'brands'
+  | 'ages'
+  | 'regions'
+  | 'types'
+  | 'abvs'
+  | 'cask_types'
+  | 'special_notes',
+  WhiskeyFilterData
 >;
 
-export type ProductFilterSelectedOption = ProductFilterOptionItem & {
+export type WhiskeyFilterSelectedOption = WhiskeyFilterOptionItem & {
   isVisible: boolean;
   filterKey: ProductFilterKey;
 };
 
-export type ProductFilterResponse = {
-  filterOptions: ProductFilterOptions;
-  selectedOptions: ProductFilterSelectedOption[];
-  products: Product[];
+export type WhiskeyFilterResponse = {
+  filterOptions: WhiskeyFilterOptions;
+  selectedOptions: WhiskeyFilterSelectedOption[];
+  whiskeys: Whiskey[];
 };

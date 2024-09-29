@@ -1,5 +1,5 @@
 import type { Maybe } from '@/common/common-types';
-import type { ProductFilterSelectedOption } from '@/search/search-types';
+import type { WhiskeyFilterSelectedOption } from '@/search/search-types';
 
 export enum ProductFilterKey {
   SORTING = 'sorting',
@@ -15,7 +15,7 @@ export enum ProductSorting {
 
 function getOneSelectedOptionValue(
   filterKey: ProductFilterKey,
-  selectedOptions: Maybe<ProductFilterSelectedOption[]>,
+  selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   return selectedOptions?.find((option) => option.filterKey === filterKey)
     ?.value;
@@ -23,7 +23,7 @@ function getOneSelectedOptionValue(
 
 function getManySelectedOptionValues(
   filterKey: ProductFilterKey,
-  selectedOptions: Maybe<ProductFilterSelectedOption[]>,
+  selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   const values: string[] = [];
 
@@ -37,7 +37,7 @@ function getManySelectedOptionValues(
 }
 
 export function getValuesOfSelectedOptions(
-  selectedOptions: Maybe<ProductFilterSelectedOption[]>,
+  selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   const values = {
     [ProductFilterKey.SORTING]: getOneSelectedOptionValue(

@@ -1,40 +1,41 @@
 import { createMockArray } from '@/common/common-utils';
-import { ProductCard, ProductCardSkeleton } from './product-card';
-import type { Product } from './product-types';
+import { ProductCardSkeleton, WhiskeyCard } from './product-card';
+import type { Whiskey } from './product-types';
 
 type ProductGridShellProps = React.PropsWithChildren;
 
-function ProductGridShell({ children }: ProductGridShellProps) {
+function WhiskeyGridShell({ children }: ProductGridShellProps) {
   return (
     <ul className="grid gap-2 grid-cols-autofill-44 md:gap-4">{children}</ul>
   );
 }
 
-type ProductGridProps = {
-  products: Product[];
+type WhiskeyGridProps = {
+  whiskeys: Whiskey[];
 };
 
-export function ProductGrid({ products }: ProductGridProps) {
+export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
+  console.log(whiskeys);
   return (
-    <ProductGridShell>
-      {products.map((product) => {
+    <WhiskeyGridShell>
+      {whiskeys.map((whiskey) => {
         return (
-          <li key={product.id}>
-            <ProductCard product={product} />
+          <li key={whiskey.id}>
+            <WhiskeyCard whiskey={whiskey} />
           </li>
         );
       })}
-    </ProductGridShell>
+    </WhiskeyGridShell>
   );
 }
 
-type ProductGridSkeletonProps = {
+type WhiskeyGridSkeletonProps = {
   itemCount: number;
 };
 
-export function ProductGridSkeleton({ itemCount }: ProductGridSkeletonProps) {
+export function WhiskeyGridSkeleton({ itemCount }: WhiskeyGridSkeletonProps) {
   return (
-    <ProductGridShell>
+    <WhiskeyGridShell>
       {createMockArray(itemCount).map((i) => {
         return (
           <li key={i}>
@@ -42,6 +43,6 @@ export function ProductGridSkeleton({ itemCount }: ProductGridSkeletonProps) {
           </li>
         );
       })}
-    </ProductGridShell>
+    </WhiskeyGridShell>
   );
 }
