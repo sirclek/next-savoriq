@@ -4,7 +4,7 @@ import type { Whiskey } from './product-types';
 
 type ProductGridShellProps = React.PropsWithChildren;
 
-function ProductGridShell({ children }: ProductGridShellProps) {
+function WhiskeyGridShell({ children }: ProductGridShellProps) {
   return (
     <ul className="grid gap-2 grid-cols-autofill-44 md:gap-4">{children}</ul>
   );
@@ -16,7 +16,7 @@ type WhiskeyGridProps = {
 
 export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
   return (
-    <ProductGridShell>
+    <WhiskeyGridShell>
       {whiskeys.map((whiskey) => {
         return (
           <li key={whiskey.id}>
@@ -24,7 +24,7 @@ export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
           </li>
         );
       })}
-    </ProductGridShell>
+    </WhiskeyGridShell>
   );
 }
 
@@ -34,7 +34,7 @@ type ProductGridSkeletonProps = {
 
 export function ProductGridSkeleton({ itemCount }: ProductGridSkeletonProps) {
   return (
-    <ProductGridShell>
+    <WhiskeyGridShell>
       {createMockArray(itemCount).map((i) => {
         return (
           <li key={i}>
@@ -42,6 +42,6 @@ export function ProductGridSkeleton({ itemCount }: ProductGridSkeletonProps) {
           </li>
         );
       })}
-    </ProductGridShell>
+    </WhiskeyGridShell>
   );
 }

@@ -16,11 +16,11 @@ import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useSelectedOptionsContext } from './selected-options-context';
 
-type ProductFilterProps = {
+type WhiskeyFilterProps = {
   data: WhiskeyFilterResponse;
 };
 
-export function ProductFilter({ data }: ProductFilterProps) {
+export function ProductFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const { optimisticSelectedOptions, setOptimisticSelectedOptions } =

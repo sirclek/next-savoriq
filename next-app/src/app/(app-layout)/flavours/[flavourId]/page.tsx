@@ -1,8 +1,8 @@
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { ProductDetails } from '@/products/product-details';
-import { getOneProductById } from '@/products/product-fetchers';
+import { WhiskeyDetails } from '@/products/product-details';
+import { getOneWhiskeyById } from '@/products/product-fetchers';
 import { ProductGridSkeleton } from '@/products/product-grid';
 import { RelatedProducts } from '@/products/related-products';
 import { getMetadata } from '@/seo/seo-utils';
@@ -19,7 +19,7 @@ export type ProductPageProps = {
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const product = await getOneProductById(Number(params.productId));
+  const product = await getOneWhiskeyById(Number(params.productId));
 
   if (!product) notFound();
 
@@ -33,7 +33,7 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const productId = Number(params.productId);
-  const product = await getOneProductById(productId);
+  const product = await getOneWhiskeyById(productId);
 
   if (!product) notFound();
 
@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <main>
         <PageTitle title={product.title} />
         <Paper>
-          <ProductDetails product={product} />
+          <WhiskeyDetails product={product} />
         </Paper>
       </main>
       <Section as="aside">

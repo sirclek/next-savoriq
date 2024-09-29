@@ -1,5 +1,5 @@
 import type { Maybe } from '@/common/common-types';
-import { getManyProductsByIds } from '@/products/product-fetchers';
+import { getManyWhiskeysByIds } from '@/products/product-fetchers';
 import { cookies } from 'next/headers';
 import { cache } from 'react';
 import type { CartDetails, CartItem } from './cart-types';
@@ -18,7 +18,7 @@ export const getCart = cache(async (): Promise<Maybe<CartDetails>> => {
 
   const productIds = cart.data.map((item) => item.productId);
 
-  const cartProducts = await getManyProductsByIds(productIds);
+  const cartProducts = await getManyWhiskeysByIds(productIds);
 
   const cartItems: CartItem[] = [];
 

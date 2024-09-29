@@ -1,8 +1,8 @@
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { ProductDetails } from '@/products/product-details';
-import { getOneProductById } from '@/products/product-fetchers';
+import { WhiskeyDetails } from '@/products/product-details';
+import { getOneWhiskeyById } from '@/products/product-fetchers';
 import { ProductGridSkeleton } from '@/products/product-grid';
 import { RelatedProducts } from '@/products/related-products';
 import { getMetadata } from '@/seo/seo-utils';
@@ -10,46 +10,46 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 
-export type ProductPageProps = {
+export type WhiskeyPageProps = {
   params: {
-    productId: string;
+    whiskeyId: string;
   };
 };
 
 export async function generateMetadata({
   params,
-}: ProductPageProps): Promise<Metadata> {
-  const product = await getOneProductById(Number(params.productId));
+}: WhiskeyPageProps): Promise<Metadata> {
+  const whiskey = await getOneWhiskeyById(Number(params.whiskeyId));
 
-  if (!product) notFound();
+  if (!whiskey) notFound();
 
   return getMetadata({
-    title: product.title,
-    description: product.description,
-    pathname: `/whiskeys/${params.productId}`,
-    images: [{ url: product.image, alt: product.title }],
+    title: whiskey.name,
+    description: whiskey.name,
+    pathname: `/whiskeys/${params.whiskeyId}`,
+    images: [{ url: `/images/whiskeys/${whiskey.id}.png`, alt: whiskey.name }],
   });
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.productId);
-  const product = await getOneProductById(productId);
+export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
+  const whiskeyId = Number(params.whiskeyId);
+  const whiskey = await getOneWhiskeyById(whiskeyId);
 
-  if (!product) notFound();
+  if (!whiskey) notFound();
 
   return (
     <div className="flex flex-col gap-4">
       <main>
-        <PageTitle title={product.title} />
+        <PageTitle title={whiskey.name} />
         <Paper>
-          <ProductDetails product={product} />
+          <WhiskeyDetails whiskey={whiskey} />
         </Paper>
       </main>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
           <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
-            <RelatedProducts productId={productId} />
+            <RelatedProducts productId={whiskeyId} />
           </Suspense>
         </Paper>
       </Section>
@@ -57,7 +57,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
           <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
-            <RelatedProducts productId={productId} />
+            <RelatedProducts productId={whiskeyId} />
           </Suspense>
         </Paper>
       </Section>

@@ -1,5 +1,5 @@
 import type { Id } from '@/common/common-types';
-import { getRelatedProducts } from './product-fetchers';
+import { getRelatedWhiskeys } from './product-fetchers';
 import { WhiskeyGrid } from './product-grid';
 
 type RelatedProductsProps = {
@@ -7,7 +7,7 @@ type RelatedProductsProps = {
 };
 
 export async function RelatedProducts({ productId }: RelatedProductsProps) {
-  const relatedProducts = await getRelatedProducts(productId);
+  const relatedProducts = await getRelatedWhiskeys(productId);
 
   return <WhiskeyGrid products={relatedProducts} />;
 }
