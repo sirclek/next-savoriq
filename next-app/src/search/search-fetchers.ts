@@ -70,7 +70,7 @@ async function getProductFilterOptions() {
   return filterOptions;
 }
 
-async function getManyWhiskeys(args: WhiskeyFilterArgs) {
+export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
   const db = await getDb();
   let response: Whiskey[] = db.whiskeys.map((whiskey) => ({
     ...whiskey,

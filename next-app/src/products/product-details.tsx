@@ -1,7 +1,7 @@
-import { Chip, ChipContent } from '@/common/chip';
+// import { Chip, ChipContent } from '@/common/chip';
 import { Price } from '@/common/price';
-import { NextLink } from '@/routing/next-link';
-import { routes } from '@/routing/routing-utils';
+// import { NextLink } from '@/routing/next-link';
+// import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
 import type { Whiskey } from './product-types';
 

@@ -15,6 +15,7 @@ type WhiskeyGridProps = {
 };
 
 export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
+  console.log(whiskeys);
   return (
     <WhiskeyGridShell>
       {whiskeys.map((whiskey) => {
@@ -28,11 +29,11 @@ export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
   );
 }
 
-type ProductGridSkeletonProps = {
+type WhiskeyGridSkeletonProps = {
   itemCount: number;
 };
 
-export function ProductGridSkeleton({ itemCount }: ProductGridSkeletonProps) {
+export function WhiskeyGridSkeleton({ itemCount }: WhiskeyGridSkeletonProps) {
   return (
     <WhiskeyGridShell>
       {createMockArray(itemCount).map((i) => {

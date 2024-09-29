@@ -4,8 +4,8 @@ import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { WhiskeyDetails } from '@/products/product-details';
 import { getOneWhiskeyById } from '@/products/product-fetchers';
-import { ProductGridSkeleton } from '@/products/product-grid';
-import { RelatedProducts } from '@/products/related-products';
+import { WhiskeyGridSkeleton } from '@/products/product-grid';
+import { RelatedProducts, RelatedProductType } from '@/products/related-products';
 import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -44,23 +44,29 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
     <div className="flex flex-col gap-4">
       <main>
         <PageTitle title={whiskey.name} />
-        {/* <Paper>
+        <Paper>
           <WhiskeyDetails whiskey={whiskey} />
-        </Paper> */}
+        </Paper>
       </main>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
-          <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
-            <RelatedProducts productId={whiskeyId} />
+          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
+            <RelatedProducts
+              whiskeyId={whiskeyId}
+              type={RelatedProductType.FLAVOUR}
+            />
           </Suspense>
         </Paper>
       </Section>
       <Section as="aside">
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
-          <Suspense fallback={<ProductGridSkeleton itemCount={6} />}>
-            <RelatedProducts productId={whiskeyId} />
+          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
+            <RelatedProducts 
+            whiskeyId={whiskeyId} 
+            type={RelatedProductType.CHEMICAL}
+            />
           </Suspense>
         </Paper>
       </Section>
