@@ -1,50 +1,58 @@
-import type { Id } from '@/common/common-types';
-import { getDb } from '@/db/db-utils';
-import { filterProducts } from '@/search/search-fetchers';
+import { filterProducts, getManyWhiskeys } from '@/search/search-fetchers';
 import { cache } from 'react';
 
-export const getOneProductById = cache(async (productId: Id) => {
-  const db = await getDb();
-  const product = db.products.find((product) => product.id === productId);
-  return product;
+export const getOneWhiskeyById = cache(async (whiskeyId: number) => {
+  const whiskeys = getManyWhiskeys({});
+  for (const whiskey of await whiskeys) {
+    if (whiskey.id === whiskeyId) return whiskey;
+  }
 });
 
-export const getManyProductsByIds = cache(async (productIds: Id[]) => {
-  const db = await getDb();
-  const products = db.products.filter((product) =>
-    productIds.includes(product.id),
-  );
-  return products;
+export const getManyWhiskeysByIds = cache(async (whiskeyIds: number[]) => {
+  const whiskeys = await getManyWhiskeys({});
+  return whiskeys.filter((whiskey) => whiskeyIds.includes(whiskey.id));
 });
 
-export const getRelatedProducts = cache(async (productId: Id) => {
-  const product = await getOneProductById(productId);
+export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
+  const whiskey = await getOneWhiskeyById(whiskeyId);
 
-  if (!product) return [];
+  if (!whiskey) return [];
 
-  const { products } = await filterProducts({
-    categories: [product.category.value],
+  const { whiskeys } = await filterProducts({
+    brand: [whiskey.brand],
+    age: [whiskey.age.toString()],
+    region: [whiskey.region],
+    type: [whiskey.type],
+    abv: [whiskey.abv.toString()],
+    cask_type: [whiskey.caskType],
+    special_note: [whiskey.specialNote],
   });
 
-  const relatedProducts = products.filter(
-    (relatedProduct) => relatedProduct.id !== product.id,
+  const relatedWhiskeys = whiskeys.filter(
+    (relatedWhiskey) => relatedWhiskey.id !== whiskey.id,
   );
 
-  return relatedProducts;
+  return relatedWhiskeys;
 });
 
-// export const getRelatedByChemical = cache(async (productId: Id) => {
-//   const product = await getOneProductById(productId);
+export const getRelatedWhiskeysChemicals = cache(async (whiskeyId: number) => {
+  const whiskey = await getOneWhiskeyById(whiskeyId);
 
-//   if (!product) return [];
+  if (!whiskey) return [];
 
-//   const { products } = await filterProducts({
-//     chemical: product.chemicals,
-//   });
+  const { whiskeys } = await filterProducts({
+    brand: [whiskey.brand],
+    age: [whiskey.age.toString()],
+    region: [whiskey.region],
+    type: [whiskey.type],
+    abv: [whiskey.abv.toString()],
+    cask_type: [whiskey.caskType],
+    special_note: [whiskey.specialNote],
+  });
 
-//   const relatedProducts = products.filter(
-//     (relatedProduct) => relatedProduct.id !== product.id,
-//   );
+  const relatedWhiskeys = whiskeys.filter(
+    (relatedWhiskey) => relatedWhiskey.id !== whiskey.id,
+  );
 
-//   return relatedProducts;
-// });
+  return relatedWhiskeys;
+});

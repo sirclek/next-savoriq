@@ -4,16 +4,16 @@ import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Product } from './product-types';
+import type { Whiskey } from './product-types';
 
-type ProductCardProps = {
-  product: Product;
+type WhiskeyCardProps = {
+  whiskey: Whiskey;
 };
 
-export function ProductCard({ product }: ProductCardProps) {
+export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
   return (
     <NextLink
-      href={routes.product({ params: { productId: product.id } })}
+      href={routes.product({ params: { whiskeyId: whiskey.id } })}
       // To show outline when the link is `focus-visible`.
       className="block"
     >
@@ -22,20 +22,20 @@ export function ProductCard({ product }: ProductCardProps) {
           <div className="relative aspect-[12/10] bg-transparent transition duration-500 ease-out group-hover:scale-110">
             <Image
               className="rounded bg-white object-contain"
-              src={product.image}
-              alt={product.title}
+              src={`/images/whiskeys/${whiskey.id}.png`}
+              alt={whiskey.name}
               fill
             />
           </div>
         </div>
         <div className="flex flex-col gap-2 text-center">
-          <Tooltip content={product.title}>
+          <Tooltip content={whiskey.name}>
             <h3 className="text-sm font-bold fixed-leading-5 fixed-line-clamp-3">
-              {product.title}
+              {whiskey.name}
             </h3>
           </Tooltip>
           <div>
-            <Price className="text-primary" value={product.price} />
+            <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
       </article>

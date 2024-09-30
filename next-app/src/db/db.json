@@ -2,75 +2,762 @@
   "whiskeys": [
     {
       "id": 1,
-      "name": "BlackLabel",
-      "description": "Include 56 herbs, fruits, roots, and spices, including citrus peel, licorice, anise, poppy seeds, saffron, ginger, juniper berries, and ginseng.",
-      "image": "/images/whiskeys/BlackLabel.png"
+      "name": "Whisky 1",
+      "brand": "Maker's Mark",
+      "age": "15 years",
+      "region": "Canada",
+      "type": "Rye",
+      "abv": 45,
+      "aroma": {
+        "vanilla": 1,
+        "peat": 5,
+        "caramel": 9,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 3,
+        "smoky": 3,
+        "spicy": 1,
+        "fruity": 2
+      },
+      "finish": {
+        "length": 6,
+        "warming": 4,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "isoamyl_acetate": 54,
+        "hexanoic_acid": 6,
+        "2_phenylethanol": 87,
+        "furfural": 52,
+        "eugenol": 99
+      },
+      "price": 108,
+      "bottling_date": "2018-04-18",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Popular Release"
     },
     {
       "id": 2,
-      "name": "Chivas",
-      "description": "A 12-year-old blended whisky from Chivas Regal that is made with malt and grain whiskies from across Scotland and matured in a combination of casks.",
-      "image": "/images/whiskeys/Chivas.png"
+      "name": "Whisky 2",
+      "brand": "Macallan",
+      "age": "NAS",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 43,
+      "aroma": {
+        "vanilla": 2,
+        "peat": 5,
+        "caramel": 10,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 4,
+        "smoky": 7,
+        "spicy": 6,
+        "fruity": 1
+      },
+      "finish": {
+        "length": 4,
+        "warming": 3,
+        "dry": 5,
+        "peaty": 8
+      },
+      "compounds": {
+        "vanillin": 42,
+        "limonene": 72,
+        "2_phenylethanol": 96,
+        "ethyl_acetate": 28,
+        "acetaldehyde": 77
+      },
+      "price": 44,
+      "bottling_date": "2021-08-06",
+      "cask_type": "French Oak",
+      "special_notes": "Award-winning"
     },
     {
       "id": 3,
-      "name": "Dimple",
-      "description": "The nose is floral and toffee and caramel sweet, underscored by a dry woody note. ",
-      "image": "/images/whiskeys/Dimple.png"
+      "name": "Whisky 3",
+      "brand": "Talisker",
+      "age": "NAS",
+      "region": "Japan",
+      "type": "Single Malt",
+      "abv": 55,
+      "aroma": {
+        "vanilla": 8,
+        "peat": 8,
+        "caramel": 3,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 1,
+        "smoky": 7,
+        "spicy": 1,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 10,
+        "warming": 8,
+        "dry": 8,
+        "peaty": 10
+      },
+      "compounds": {
+        "hexanoic_acid": 11,
+        "benzaldehyde": 9,
+        "linalool": 73,
+        "2_phenylethanol": 19,
+        "phenol": 46
+      },
+      "price": 46,
+      "bottling_date": "2019-06-27",
+      "cask_type": "Ex-Sherry",
+      "special_notes": "Small Batch"
     },
     {
       "id": 4,
-      "name": "Glenfiddich",
-      "description": "The bottles are also triangular (triangular) in shape because Single Malt is made from three core ingredients (water, yeast and grain) and because the bottles feel like you are shaking hands with a good friend.",
-      "image": "/images/whiskeys/Glenfiddich.png"
+      "name": "Whisky 4",
+      "brand": "Glenfiddich",
+      "age": "12 years",
+      "region": "Ireland",
+      "type": "Blended",
+      "abv": 55,
+      "aroma": {
+        "vanilla": 7,
+        "peat": 7,
+        "caramel": 1,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 2,
+        "smoky": 3,
+        "spicy": 9,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 4,
+        "peaty": 10
+      },
+      "compounds": {
+        "hexanoic_acid": 94,
+        "methoxyphenols": 70,
+        "syringol": 66,
+        "octanoic_acid": 27,
+        "benzaldehyde": 27
+      },
+      "price": 72,
+      "bottling_date": "2022-03-09",
+      "cask_type": "American Oak",
+      "special_notes": "Cask Strength"
     },
     {
       "id": 5,
-      "name": "Glenlivet",
-      "description": "It contains a complex chemical composition that includes a variety of esters, aldehydes, and phenols. These compounds contribute to its signature fruity, floral, and woody flavors. Key chemicals include:",
-      "image": "/images/whiskeys/Glenlivet.png"
+      "name": "Whisky 5",
+      "brand": "Ardbeg",
+      "age": "15 years",
+      "region": "Ireland",
+      "type": "Scotch",
+      "abv": 50,
+      "aroma": {
+        "vanilla": 2,
+        "peat": 2,
+        "caramel": 1,
+        "oak": 2
+      },
+      "taste": {
+        "sweet": 8,
+        "smoky": 9,
+        "spicy": 9,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 3,
+        "warming": 4,
+        "dry": 7,
+        "peaty": 10
+      },
+      "compounds": {
+        "diacetyl": 27,
+        "2_phenylethanol": 72,
+        "limonene": 90,
+        "isoamyl_acetate": 42,
+        "lactones": 88
+      },
+      "price": 143,
+      "bottling_date": "2019-10-13",
+      "cask_type": "American Oak",
+      "special_notes": "Award-winning"
     },
     {
       "id": 6,
-      "name": "Jager",
-      "description": "liqueur made from 56 different herbs, roots, fruits, and spices. Some of its key ingredients include citrus peel, ginger, star anise, cardamom, and licorice, which give it its distinctive bitter-sweet taste. It's aged in oak barrels, allowing the flavors to blend, but unlike whisky, it doesn't rely on grain fermentation ",
-      "image": "/images/whiskeys/Jager.png"
+      "name": "Whisky 6",
+      "brand": "Glenfiddich",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Bourbon",
+      "abv": 40,
+      "aroma": {
+        "vanilla": 5,
+        "peat": 1,
+        "caramel": 3,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 2,
+        "spicy": 4,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 10,
+        "warming": 7,
+        "dry": 2,
+        "peaty": 2
+      },
+      "compounds": {
+        "phenol": 37,
+        "isoamyl_acetate": 46,
+        "vanillin": 43,
+        "methional": 62,
+        "4_methylguaiacol": 17
+      },
+      "price": 35,
+      "bottling_date": "2021-08-14",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Small Batch"
     },
     {
       "id": 7,
-      "name": "jamson",
-      "description": "Jamson whisky is typically described as having a rich, well-rounded flavor profile with a balance of sweet, smoky, and spicy notes. Chemically, its distinct taste can be attributed to compounds like esters (which provide fruity and floral aromas), phenols (responsible for the smoky flavor), and aldehydes (contributing to sweetness and complexity). ",
-      "image": "/images/whiskeys/jamson.png"
+      "name": "Whisky 7",
+      "brand": "Glenfiddich",
+      "age": "8 years",
+      "region": "USA",
+      "type": "Blended",
+      "abv": 45,
+      "aroma": {
+        "vanilla": 2,
+        "peat": 2,
+        "caramel": 9,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 6,
+        "spicy": 5,
+        "fruity": 10
+      },
+      "finish": {
+        "length": 1,
+        "warming": 7,
+        "dry": 4,
+        "peaty": 7
+      },
+      "compounds": {
+        "acetaldehyde": 19,
+        "furfural": 34,
+        "2_phenylethanol": 64,
+        "hexanoic_acid": 26,
+        "isoamyl_acetate": 50
+      },
+      "price": 58,
+      "bottling_date": "2022-11-27",
+      "cask_type": "American Oak",
+      "special_notes": "Limited Edition"
     },
     {
       "id": 8,
-      "name": "JimBeam",
-      "description": "Jim Beam whiskey, specifically its flagship bourbon, is composed of a blend of grains, primarily corn (at least 51%), along with rye and malted barley. During the distillation process, the fermentation of these grains produces ethanol and other congeners, including esters, aldehydes, and higher alcohols, contributing to its aroma and flavor profile.",
-      "image": "/images/whiskeys/JimBeam.png"
+      "name": "Whisky 8",
+      "brand": "Highland Park",
+      "age": "18 years",
+      "region": "Japan",
+      "type": "Scotch",
+      "abv": 55,
+      "aroma": {
+        "vanilla": 5,
+        "peat": 5,
+        "caramel": 6,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 10,
+        "smoky": 4,
+        "spicy": 5,
+        "fruity": 8
+      },
+      "finish": {
+        "length": 4,
+        "warming": 9,
+        "dry": 5,
+        "peaty": 3
+      },
+      "compounds": {
+        "eugenol": 73,
+        "linalool": 96,
+        "furfural": 92,
+        "isoamyl_acetate": 49,
+        "acetaldehyde": 90
+      },
+      "price": 141,
+      "bottling_date": "2023-12-07",
+      "cask_type": "American Oak",
+      "special_notes": "Popular Release"
     },
     {
       "id": 9,
-      "name": "Macallan",
-      "description": "Macallan whisky is known for its rich flavor profile, which is influenced by its chemical composition. The distillation process and oak cask aging contribute to the presence of esters, aldehydes, and phenols, which create fruity, floral, and spicy notes. ",
-      "image": "/images/whiskeys/Macallan.png"
+      "name": "Whisky 9",
+      "brand": "Maker's Mark",
+      "age": "18 years",
+      "region": "Scotland",
+      "type": "Scotch",
+      "abv": 40,
+      "aroma": {
+        "vanilla": 10,
+        "peat": 5,
+        "caramel": 4,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 10,
+        "spicy": 3,
+        "fruity": 9
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 6,
+        "peaty": 2
+      },
+      "compounds": {
+        "furfural": 29,
+        "phenol": 27,
+        "linalool": 79,
+        "octanoic_acid": 76,
+        "lactones": 83
+      },
+      "price": 78,
+      "bottling_date": "2021-06-10",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Cask Strength"
     },
     {
       "id": 10,
-      "name": "MakerMark",
-      "description": "Key elements include esters (which impart fruity and floral notes), phenolic compounds (giving smoky or spicy characteristics), and higher alcohols (adding depth and complexity). It also contains lactones from the oak barrels, providing vanilla and coconut flavors.",
-      "image": "/images/whiskeys/MakerMark.png"
+      "name": "Whisky 10",
+      "brand": "Ardbeg",
+      "age": "NAS",
+      "region": "Japan",
+      "type": "Bourbon",
+      "abv": 50,
+      "aroma": {
+        "vanilla": 3,
+        "peat": 7,
+        "caramel": 8,
+        "oak": 5
+      },
+      "taste": {
+        "sweet": 2,
+        "smoky": 7,
+        "spicy": 9,
+        "fruity": 6
+      },
+      "finish": {
+        "length": 2,
+        "warming": 4,
+        "dry": 4,
+        "peaty": 1
+      },
+      "compounds": {
+        "guaiacol": 72,
+        "syringol": 62,
+        "lactones": 31,
+        "isoamyl_acetate": 49,
+        "ethyl_acetate": 9
+      },
+      "price": 49,
+      "bottling_date": "2021-04-15",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Popular Release"
     },
     {
       "id": 11,
-      "name": "WildTurkey",
-      "description": "Wild Turkey whisky is known for its rich, bold flavor profile, which comes from its high rye content and longer barrel aging. Chemically, it contains higher levels of vanillin (giving it a sweet, vanilla-like aroma), lignin-derived compounds (responsible for its smoky and spicy notes), and esters (which contribute to its fruity undertones). The charred oak barrels impart tannins and lactones, adding complexity with hints of caramel, toffee, and woody flavors.",
-      "image": "/images/whiskeys/WildTurkey.png"
+      "name": "Whisky 11",
+      "brand": "Laphroaig",
+      "age": "8 years",
+      "region": "Ireland",
+      "type": "Single Malt",
+      "abv": 40,
+      "aroma": {
+        "vanilla": 4,
+        "peat": 8,
+        "caramel": 3,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 7,
+        "smoky": 10,
+        "spicy": 4,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 2,
+        "peaty": 4
+      },
+      "compounds": {
+        "2_phenylethanol": 33,
+        "hexanoic_acid": 31,
+        "syringol": 26,
+        "ethyl_acetate": 19,
+        "lactones": 32
+      },
+      "price": 85,
+      "bottling_date": "2019-06-13",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Award-winning"
     },
     {
       "id": 12,
-      "name": "jackdaniels",
-      "description": "Jack Daniel's whiskey is characterized by its smooth, rich flavor profile, which stems from its unique chemical composition. The whiskey contains compounds such as esters (like ethyl acetate) that contribute fruity and floral notes, while aldehydes and ketones provide caramel and vanilla aromas.",
-      "image": "/images/whiskeys/jackdaniels.png"
+      "name": "Whisky 12",
+      "brand": "Macallan",
+      "age": "12 years",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 45,
+      "aroma": {
+        "vanilla": 7,
+        "peat": 1,
+        "caramel": 10,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 4,
+        "smoky": 9,
+        "spicy": 8,
+        "fruity": 8
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 5,
+        "peaty": 8
+      },
+      "compounds": {
+        "vanillin": 62,
+        "guaiacol": 31,
+        "isoamyl_acetate": 77,
+        "linalool": 47,
+        "hexanoic_acid": 27
+      },
+      "price": 106,
+      "bottling_date": "2020-05-25",
+      "cask_type": "American Oak",
+      "special_notes": "Cask Strength"
+    },{
+      "id": 13,
+      "name": "Whisky 13",
+      "brand": "Laphroaig",
+      "age": "NAS",
+      "region": "Ireland",
+      "type": "Rye",
+      "abv": 50,
+      "aroma": {
+        "vanilla": 8,
+        "peat": 6,
+        "caramel": 3,
+        "oak": 7
+      },
+      "taste": {
+        "sweet": 7,
+        "smoky": 1,
+        "spicy": 5,
+        "fruity": 4
+      },
+      "finish": {
+        "length": 4,
+        "warming": 6,
+        "dry": 2,
+        "peaty": 9
+      },
+      "compounds": {
+        "methoxyphenols": 32,
+        "acetaldehyde": 98,
+        "2_phenylethanol": 92,
+        "isoamyl_acetate": 10,
+        "phenol": 95
+      },
+      "price": 117,
+      "bottling_date": "2020-04-18",
+      "cask_type": "French Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 14,
+      "name": "Whisky 14",
+      "brand": "Lagavulin",
+      "age": "12 years",
+      "region": "Ireland",
+      "type": "Bourbon",
+      "abv": 55,
+      "aroma": {
+        "vanilla": 4,
+        "peat": 4,
+        "caramel": 2,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 6,
+        "spicy": 1,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 5,
+        "warming": 6,
+        "dry": 10,
+        "peaty": 4
+      },
+      "compounds": {
+        "octanoic_acid": 17,
+        "acetaldehyde": 36,
+        "linalool": 73,
+        "diacetyl": 90,
+        "4_methylguaiacol": 16
+      },
+      "price": 50,
+      "bottling_date": "2020-02-01",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 15,
+      "name": "Whisky 15",
+      "brand": "Maker's Mark",
+      "age": "15 years",
+      "region": "Ireland",
+      "type": "Scotch",
+      "abv": 50,
+      "aroma": {
+        "vanilla": 1,
+        "peat": 3,
+        "caramel": 3,
+        "oak": 5
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 5,
+        "spicy": 5,
+        "fruity": 9
+      },
+      "finish": {
+        "length": 5,
+        "warming": 5,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "syringol": 89,
+        "benzaldehyde": 54,
+        "2_phenylethanol": 25,
+        "ethyl_acetate": 47,
+        "4_methylguaiacol": 28
+      },
+      "price": 133,
+      "bottling_date": "2020-04-20",
+      "cask_type": "French Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 16,
+      "name": "Whisky 16",
+      "brand": "Laphroaig",
+      "age": "10 years",
+      "region": "Canada",
+      "type": "Bourbon",
+      "abv": 43,
+      "aroma": {
+        "vanilla": 3,
+        "peat": 6,
+        "caramel": 8,
+        "oak": 2
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 9,
+        "spicy": 3,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 2,
+        "warming": 6,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "limonene": 70,
+        "methoxyphenols": 91,
+        "guaiacol": 33,
+        "benzaldehyde": 55,
+        "ethyl_acetate": 70
+      },
+      "price": 133,
+      "bottling_date": "2020-08-09",
+      "cask_type": "American Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 17,
+      "name": "Whisky 17",
+      "brand": "Macallan",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Single Malt",
+      "abv": 43,
+      "aroma": {
+        "vanilla": 8,
+        "peat": 4,
+        "caramel": 6,
+        "oak": 7
+      },
+      "taste": {
+        "sweet": 6,
+        "smoky": 7,
+        "spicy": 6,
+        "fruity": 4
+      },
+      "finish": {
+        "length": 5,
+        "warming": 2,
+        "dry": 7,
+        "peaty": 9
+      },
+      "compounds": {
+        "phenol": 40,
+        "syringol": 97,
+        "methoxyphenols": 94,
+        "linalool": 76,
+        "2_phenylethanol": 88
+      },
+      "price": 110,
+      "bottling_date": "2020-07-23",
+      "cask_type": "American Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 18,
+      "name": "Whisky 18",
+      "brand": "Macallan",
+      "age": "15 years",
+      "region": "Japan",
+      "type": "Blended",
+      "abv": 40,
+      "aroma": {
+        "vanilla": 1,
+        "peat": 7,
+        "caramel": 9,
+        "oak": 8
+      },
+      "taste": {
+        "sweet": 6,
+        "smoky": 6,
+        "spicy": 2,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 1,
+        "warming": 9,
+        "dry": 9,
+        "peaty": 4
+      },
+      "compounds": {
+        "ethyl_acetate": 91,
+        "linalool": 66,
+        "2_phenylethanol": 7,
+        "hexanoic_acid": 32,
+        "vanillin": 21
+      },
+      "price": 69,
+      "bottling_date": "2018-02-08",
+      "cask_type": "French Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 19,
+      "name": "Whisky 19",
+      "brand": "Talisker",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Rye",
+      "abv": 50,
+      "aroma": {
+        "vanilla": 5,
+        "peat": 1,
+        "caramel": 9,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 1,
+        "spicy": 10,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 10,
+        "peaty": 6
+      },
+      "compounds": {
+        "isoamyl_acetate": 7,
+        "phenol": 99,
+        "methoxyphenols": 81,
+        "acetaldehyde": 55,
+        "vanillin": 87
+      },
+      "price": 143,
+      "bottling_date": "2021-08-11",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Popular Release"
+    },
+    {
+      "id": 20,
+      "name": "Whisky 20",
+      "brand": "Ardbeg",
+      "age": "18 years",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 45,
+      "aroma": {
+        "vanilla": 6,
+        "peat": 3,
+        "caramel": 4,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 3,
+        "spicy": 10,
+        "fruity": 10
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 1,
+        "peaty": 1
+      },
+      "compounds": {
+        "diacetyl": 60,
+        "methional": 82,
+        "methoxyphenols": 96,
+        "hexanoic_acid": 69,
+        "linalool": 22
+      },
+      "price": 36,
+      "bottling_date": "2018-07-26",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Limited Edition"
     }
   ],
   
@@ -357,6 +1044,164 @@
           ]
         }
       ]
+    }
+  ],
+  "brands": [
+    {
+      "title": "Maker's Mark",
+      "value": "Maker's Mark"
+    },
+    {
+      "title": "Macallan",
+      "value": "Macallan"
+    },
+    {
+      "title": "Talisker",
+      "value": "Talisker"
+    },
+    {
+      "title": "Glenfiddich",
+      "value": "Glenfiddich"
+    },
+    {
+      "title": "Ardbeg",
+      "value": "Ardbeg"
+    },
+    {
+      "title": "Highland Park",
+      "value": "Highland Park"
+    }
+  ],
+  "ages": [
+    {
+      "title": "15 years",
+      "value": "15 years"
+    },
+    {
+      "title": "NAS",
+      "value": "NAS"
+    },
+    {
+      "title": "12 years",
+      "value": "12 years"
+    },
+    {
+      "title": "8 years",
+      "value": "8 years"
+    },
+    {
+      "title": "18 years",
+      "value": "18 years"
+    }
+  ],
+  "regions": [
+    {
+      "title": "Canada",
+      "value": "Canada"
+    },
+    {
+      "title": "USA",
+      "value": "USA"
+    },
+    {
+      "title": "Japan",
+      "value": "Japan"
+    },
+    {
+      "title": "Ireland",
+      "value": "Ireland"
+    },
+    {
+      "title": "Scotland",
+      "value": "Scotland"
+    }
+  ],
+  "types": [
+    {
+      "title": "Rye",
+      "value": "Rye"
+    },
+    {
+      "title": "Single Malt",
+      "value": "Single Malt"
+    },
+    {
+      "title": "Blended",
+      "value": "Blended"
+    },
+    {
+      "title": "Scotch",
+      "value": "Scotch"
+    },
+    {
+      "title": "Bourbon",
+      "value": "Bourbon"
+    }
+  ],
+  "abvs": [
+    {
+      "title": "45%",
+      "value": "45%"
+    },
+    {
+      "title": "43%",
+      "value": "43%"
+    },
+    {
+      "title": "55%",
+      "value": "55%"
+    },
+    {
+      "title": "50%",
+      "value": "50%"
+    },
+    {
+      "title": "40%",
+      "value": "40%"
+    }
+  ],
+  "cask_types": [
+    {
+      "title": "Sherry Oak",
+      "value": "Sherry Oak"
+    },
+    {
+      "title": "French Oak",
+      "value": "French Oak"
+    },
+    {
+      "title": "Ex-Sherry",
+      "value": "Ex-Sherry"
+    },
+    {
+      "title": "American Oak",
+      "value": "American Oak"
+    },
+    {
+      "title": "Ex-Bourbon",
+      "value": "Ex-Bourbon"
+    }
+  ],
+  "special_notes": [
+    {
+      "title": "Popular Release",
+      "value": "Popular Release"
+    },
+    {
+      "title": "Award-winning",
+      "value": "Award-winning"
+    },
+    {
+      "title": "Small Batch",
+      "value": "Small Batch"
+    },
+    {
+      "title": "Cask Strength",
+      "value": "Cask Strength"
+    },
+    {
+      "title": "Limited Edition",
+      "value": "Limited Edition"
     }
   ]
 }

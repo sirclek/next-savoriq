@@ -50,17 +50,19 @@ const LearnMore = () => {
       </div>
 
       {/* Bottle images */}
-      <div className="relative w-full" style={{ marginTop: '-50px' }}>
-        <Image
-          src={bottle}
-          alt="Oracle Bottle"
-          className="absolute top-[-20px] translate-x-[437px] relative z-10 w-[1120px] h-auto"
-        />
-        <Image
-          src={bottleTop}
-          alt="Oracle Bottle Top"
-          className="absolute top-[-340px] left-1/2 transform -translate-x-1/2 w-[300px] h-auto"
-        />
+      <div className="relative w-full flex justify-center" style={{ marginTop: '-50px' }}>
+        <div className="relative w-full flex justify-centre">
+          <Image
+        src={bottle}
+        alt="Oracle Bottle"
+        className="absolute top-[-20px] h-auto"
+          />
+          <Image
+        src={bottleTop}
+        alt="Oracle Bottle Top"
+        className="absolute top-[-340px] left-1/2 transform -translate-x-1/2 w-[300px] h-auto"
+          />
+        </div>
       </div>
     </div>
   );
