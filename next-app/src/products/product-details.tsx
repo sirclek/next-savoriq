@@ -4,6 +4,8 @@ import { Price } from '@/common/price';
 // import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
 import type { Whiskey } from './product-types';
+import { routes } from '@/routing/routing-utils';
+import { ButtonLink } from '@/common/button-link';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
@@ -37,6 +39,14 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             {aroma.flavour} - Intensity: {aroma.intensity}
           </p>
         ))}
+        <div className='flex gap-4'>
+        <ButtonLink variant="primary" href={routes.explore()}>
+          Chemical Profile
+        </ButtonLink>
+        <ButtonLink variant="primary" href={routes.explore()}>
+          Flavour Profile
+        </ButtonLink>
+        </div>
       </div>
     </div>
   );
