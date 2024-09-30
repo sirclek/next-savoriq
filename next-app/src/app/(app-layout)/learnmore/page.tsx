@@ -30,7 +30,7 @@ const LearnMore = () => {
           <Link href="/" className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-hover">
             Home
           </Link>
-          <Link href="/explore" className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-hover">
+          <Link href="/search" className="px-4 py-2 bg-primary text-white rounded hover:bg-primary-hover">
             Explore
           </Link>
         </div>
@@ -55,7 +55,7 @@ const LearnMore = () => {
           <Image
         src={bottle}
         alt="Oracle Bottle"
-        className="absolute top-[-20px] h-auto"
+        className="absolute top-[-25px] h-auto"
           />
           <Image
         src={bottleTop}
