@@ -4,8 +4,8 @@ import { Paper, PaperTitle } from '@/common/paper';
 import { Checkbox, CheckboxGroup } from '@/forms/checkbox-group';
 import { RadioGroup, RadioGroupItem } from '@/forms/radio-group';
 import type {
-  ProductFilterData,
-  ProductFilterResponse,
+  WhiskeyFilterData,
+  WhiskeyFilterResponse,
 } from '@/search/search-types';
 import {
   ProductFilterKey,
@@ -16,11 +16,11 @@ import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useSelectedOptionsContext } from './selected-options-context';
 
-type ProductFilterProps = {
-  data: ProductFilterResponse;
+type WhiskeyFilterProps = {
+  data: WhiskeyFilterResponse;
 };
 
-export function ProductFilter({ data }: ProductFilterProps) {
+export function ProductFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const { optimisticSelectedOptions, setOptimisticSelectedOptions } =
@@ -29,7 +29,7 @@ export function ProductFilter({ data }: ProductFilterProps) {
   const values = getValuesOfSelectedOptions(optimisticSelectedOptions);
 
   const handleChange = (
-    filterKey: ProductFilterData['filterKey'],
+    filterKey: WhiskeyFilterData['filterKey'],
     newValues: string[],
   ) => {
     const newOptimisticSelectedOptions = optimisticSelectedOptions.filter(
@@ -78,26 +78,6 @@ export function ProductFilter({ data }: ProductFilterProps) {
         let filterInput = null;
 
         switch (filter.filterKey) {
-          case ProductFilterKey.CATEGORIES:
-          case ProductFilterKey.PRICE_RANGES: {
-            filterInput = (
-              <CheckboxGroup
-                value={values[filter.filterKey]}
-                onChange={(newValue) => {
-                  handleChange(filter.filterKey, newValue);
-                }}
-              >
-                {filter.options.map((option) => {
-                  return (
-                    <Checkbox key={option.value} value={option.value}>
-                      {option.title}
-                    </Checkbox>
-                  );
-                })}
-              </CheckboxGroup>
-            );
-            break;
-          }
           case ProductFilterKey.SORTING: {
             filterInput = (
               <RadioGroup
@@ -114,6 +94,25 @@ export function ProductFilter({ data }: ProductFilterProps) {
                   );
                 })}
               </RadioGroup>
+            );
+            break;
+          }
+          default: {
+            filterInput = (
+              <CheckboxGroup
+                value={values[filter.filterKey]}
+                onChange={(newValue) => {
+                  handleChange(filter.filterKey, newValue);
+                }}
+              >
+                {filter.options.map((option) => {
+                  return (
+                    <Checkbox key={option.value} value={option.value}>
+                      {option.title}
+                    </Checkbox>
+                  );
+                })}
+              </CheckboxGroup>
             );
           }
         }

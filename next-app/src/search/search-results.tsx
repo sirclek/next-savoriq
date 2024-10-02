@@ -1,19 +1,19 @@
 import { Paper } from '@/common/paper';
-import { ProductGrid, ProductGridSkeleton } from '@/products/product-grid';
-import type { ProductFilterResponse } from './search-types';
+import { WhiskeyGrid, WhiskeyGridSkeleton } from '@/products/product-grid';
+import type { WhiskeyFilterResponse } from './search-types';
 
 type SearchResultsProps = {
-  data: ProductFilterResponse;
+  data: WhiskeyFilterResponse;
 };
 
 export function SearchResults({ data }: SearchResultsProps) {
   return (
     <Paper>
       <div className="hidden group-has-[[data-pending]]/page:block">
-        <ProductGridSkeleton itemCount={8} />
+        <WhiskeyGridSkeleton itemCount={8} />
       </div>
       <div className="group-has-[[data-pending]]/page:hidden">
-        <ProductGrid products={data.products} />
+        <WhiskeyGrid whiskeys={data.whiskeys} />
       </div>
     </Paper>
   );
