@@ -22,7 +22,7 @@ const LearnMore = () => {
       <div className="max-w-2xl mx-auto text-foreground">
         <h1 className="text-4xl font-bold text-primary mb-4">Learn More</h1>
         <p className="text-lg mb-8">
-          Discover a new dimension of whisky exploration with The Oracle — your gateway to an unparalleled understanding of whisky flavors. Our revolutionary platform goes beyond traditional tasting notes by offering a deep dive into the chemical compositions that define each whisky's unique profile.
+          Discover a new dimension of whisky exploration with SavorIQ — your gateway to an unparalleled understanding of whisky flavors. Our revolutionary platform goes beyond traditional tasting notes by offering a deep dive into the chemical compositions that define each whisky's unique profile.
         </p>
 
         {/* Home and Explore Buttons */}
@@ -38,19 +38,19 @@ const LearnMore = () => {
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Why Choose Us?</h2>
           <p>
-            Through our interactive circular bar plots, you can visualize and compare detailed flavor compounds, gaining insight into the specific elements that contribute to each whisky’s distinct character. Whether you’re a connoisseur seeking precise flavor profiles or a newcomer eager to explore, The Oracle provides a user-friendly interface that makes complex data accessible and engaging.
+            Through our interactive radar chart, you can visualize and compare detailed flavor compounds, gaining insight into the specific elements that contribute to each whisky’s distinct character. Whether you’re a connoisseur seeking precise flavor profiles or a newcomer eager to explore, SavorIQ provides a user-friendly interface that makes complex data accessible and engaging.
           </p>
         </div>
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Our Vision</h2>
           <p>
-            Dive into a world where science meets sensory experience and elevate your whisky journey with The Oracle’s advanced search features and personalized recommendations. We aim to revolutionize how whisky is experienced, offering personalized insights for a more enriching journey.
+            Dive into a world where science meets sensory experience and elevate your whisky journey with SavorIQ’s advanced search features and personalized recommendations. We aim to revolutionize how whisky is experienced, offering personalized insights for a more enriching journey.
           </p>
         </div>
       </div>
 
       {/* Bottle images */}
-      <div className="relative w-full" style={{ marginTop: '-50px' }}>
+      <div className="relative w-full" style={{ marginTop: '-40px' }}>
         <Image
           src={bottle}
           alt="Oracle Bottle"
