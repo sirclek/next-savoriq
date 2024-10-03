@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '/public/images/categories/logo.png';
+import logo from '/public/images/logo/SavourIQ Logo.png';
 import bottleTop from '/public/images/categories/oracle-bottle-top.png';
 import bottle from '/public/images/categories/oracle-bottle.png';
 import { getMetadata } from '@/seo/seo-utils';
@@ -12,17 +12,26 @@ export const metadata = getMetadata({
 
 const LearnMore = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-center gap-8 min-h-screen bg-background">
+    <div className="flex flex-col items-center justify-center text-center gap-60 min-h-screen bg-background">
       {/* Logo */}
       <div className="absolute top-16 right-4">
-        <Image src={logo} alt="Savoriq Logo" className="mb-4" width={190} height={50} />
+        <Image 
+          src={logo} 
+          alt="Savoriq Logo" 
+          className="mb-4" 
+          width={190} 
+          height={50} 
+          style={{
+            backgroundColor: 'transparent', // Adjusts logo for dark mode
+          }}
+        />
       </div>
 
       {/* Main content section */}
       <div className="max-w-2xl mx-auto text-foreground">
         <h1 className="text-4xl font-bold text-primary mb-4">Learn More</h1>
         <p className="text-lg mb-8">
-          Discover a new dimension of whisky exploration with The Oracle — your gateway to an unparalleled understanding of whisky flavors. Our revolutionary platform goes beyond traditional tasting notes by offering a deep dive into the chemical compositions that define each whisky's unique profile.
+          Discover a new dimension of whisky exploration with SavorIQ — your gateway to an unparalleled understanding of whisky flavors. Our revolutionary platform goes beyond traditional tasting notes by offering a deep dive into the chemical compositions that define each whisky's unique profile.
         </p>
 
         {/* Home and Explore Buttons */}
@@ -38,13 +47,13 @@ const LearnMore = () => {
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Why Choose Us?</h2>
           <p>
-            Through our interactive circular bar plots, you can visualize and compare detailed flavor compounds, gaining insight into the specific elements that contribute to each whisky’s distinct character. Whether you’re a connoisseur seeking precise flavor profiles or a newcomer eager to explore, The Oracle provides a user-friendly interface that makes complex data accessible and engaging.
+            Through our interactive radar chart, you can visualize and compare detailed flavor compounds, gaining insight into the specific elements that contribute to each whisky’s distinct character. Whether you’re a connoisseur seeking precise flavor profiles or a newcomer eager to explore, SavorIQ provides a user-friendly interface that makes complex data accessible and engaging.
           </p>
         </div>
         <div className="mb-8">
           <h2 className="text-3xl font-semibold text-primary mb-2">Our Vision</h2>
           <p>
-            Dive into a world where science meets sensory experience and elevate your whisky journey with The Oracle’s advanced search features and personalized recommendations. We aim to revolutionize how whisky is experienced, offering personalized insights for a more enriching journey.
+            Dive into a world where science meets sensory experience and elevate your whisky journey with The SavorIQ’s advanced search features and personalized recommendations. We aim to revolutionize how whisky is experienced, offering personalized insights for a more enriching journey.
           </p>
         </div>
       </div>
@@ -55,12 +64,12 @@ const LearnMore = () => {
           <Image
         src={bottle}
         alt="Oracle Bottle"
-        className="absolute top-[-20px] h-auto"
+        className="absolute top-[-200px] h-auto"
           />
           <Image
         src={bottleTop}
         alt="Oracle Bottle Top"
-        className="absolute top-[-340px] left-1/2 transform -translate-x-1/2 w-[300px] h-auto"
+        className="absolute top-[-560px] left-[49.3%] transform -translate-x-1/2 w-[327px] h-auto"
           />
         </div>
       </div>
