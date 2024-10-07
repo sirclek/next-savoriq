@@ -1,6 +1,6 @@
 import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
-import { ProductFilter } from '@/search/product-filter';
+import { WhiskeyFilter } from '@/search/product-filter';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
 import { SelectedFilters } from '@/search/selected-filters';
@@ -35,6 +35,7 @@ type SearchPageProps = {
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
+  console.log(searchParams);
   const data = await filterProducts(searchParamsSchema.parse(searchParams));
 
   return (
@@ -47,7 +48,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               Filter
             </SectionTitle>
             {/* filter pane */}
-            <ProductFilter data={data} /> 
+            <WhiskeyFilter data={data} />
           </Section>
           <Section>
             <SectionTitle as="h2" srOnly>

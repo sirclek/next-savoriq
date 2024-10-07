@@ -15,7 +15,7 @@ type WhiskeyGridProps = {
 };
 
 export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
-  console.log(whiskeys);
+
   return (
     <WhiskeyGridShell>
       {whiskeys.map((whiskey) => {

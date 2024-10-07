@@ -6,7 +6,7 @@ import type {
   WhiskeyFilterResponse,
   WhiskeyFilterSelectedOption,
 } from '@/search/search-types';
-import { ProductFilterKey, ProductSorting } from '@/search/search-utils';
+import { WhiskeyFilterKey, WhiskeySorting } from '@/search/search-utils';
 import { cache } from 'react';
 
 async function getProductFilterOptions() {
@@ -25,37 +25,44 @@ async function getProductFilterOptions() {
     sortings: {
       title: 'Sorting',
       options: sortings.map((option, i) => ({ ...option, order: `0_${i}` })),
-      filterKey: ProductFilterKey.SORTING,
+      filterKey: WhiskeyFilterKey.SORTING,
+      dbKey: 'sortings',
     },
     brands: {
       title: 'Brand',
       options: brands.map((option, i) => ({ ...option, order: `1_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'brands',
     },
     ages: {
       title: 'Age',
       options: ages.map((option, i) => ({ ...option, order: `2_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'ages',
     },
     regions: {
       title: 'Region',
       options: regions.map((option, i) => ({ ...option, order: `3_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'regions',
     },
     types: {
       title: 'Type',
       options: types.map((option, i) => ({ ...option, order: `4_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'types',
     },
     abvs: {
       title: 'ABV',
       options: abvs.map((option, i) => ({ ...option, order: `5_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'abvs',
     },
     cask_types: {
       title: 'Cask Type',
       options: cask_types.map((option, i) => ({ ...option, order: `6_${i}` })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'cask_types',
     },
     special_notes: {
       title: 'Special Notes',
@@ -63,7 +70,8 @@ async function getProductFilterOptions() {
         ...option,
         order: `7_${i}`,
       })),
-      filterKey: ProductFilterKey.CATEGORIES,
+      filterKey: WhiskeyFilterKey.CATEGORIES,
+      dbKey: 'special_notes',
     },
   };
 
@@ -120,12 +128,12 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
   }
 
   if (args.sorting) {
-    switch (args.sorting as ProductSorting) {
-      case ProductSorting.PRICE_ASC: {
+    switch (args.sorting as WhiskeySorting) {
+      case WhiskeySorting.PRICE_ASC: {
         response.sort((a, b) => a.price - b.price);
         break;
       }
-      case ProductSorting.PRICE_DESC: {
+      case WhiskeySorting.PRICE_DESC: {
         response.sort((a, b) => b.price - a.price);
         break;
       }
@@ -160,7 +168,7 @@ function getProductFilterSelectedOptions({
 
   if (!selectedSorting) {
     selectedSorting = sortings.options.find(
-      (sorting) => (sorting.value as ProductSorting) === ProductSorting.DEFAULT,
+      (sorting) => (sorting.value as WhiskeySorting) === WhiskeySorting.DEFAULT,
     );
   }
 
@@ -168,8 +176,8 @@ function getProductFilterSelectedOptions({
     selectedOptions.push({
       ...selectedSorting,
       isVisible:
-        (selectedSorting.value as ProductSorting) !== ProductSorting.DEFAULT,
-      filterKey: ProductFilterKey.SORTING,
+        (selectedSorting.value as WhiskeySorting) !== WhiskeySorting.DEFAULT,
+      filterKey: WhiskeyFilterKey.SORTING,
     });
   }
 
@@ -178,7 +186,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...brand,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -187,7 +195,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...age,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -196,7 +204,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...region,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -205,7 +213,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...type,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -214,7 +222,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...abv,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -223,7 +231,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...cask_type,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }
@@ -232,7 +240,7 @@ function getProductFilterSelectedOptions({
       selectedOptions.push({
         ...special_note,
         isVisible: true,
-        filterKey: ProductFilterKey.CATEGORIES,
+        filterKey: WhiskeyFilterKey.CATEGORIES,
       });
     }
   }

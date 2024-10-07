@@ -1,5 +1,5 @@
 import type { Whiskey } from '@/products/product-types';
-import type { ProductFilterKey } from './search-utils';
+import type { WhiskeyFilterKey } from './search-utils';
 
 export type WhiskeyFilterArgs = {
   sorting?: string;
@@ -21,7 +21,8 @@ type WhiskeyFilterOptionItem = {
 export type WhiskeyFilterData = {
   title: string;
   options: WhiskeyFilterOptionItem[];
-  filterKey: ProductFilterKey;
+  filterKey: WhiskeyFilterKey;
+  dbKey: string;
 };
 
 export type WhiskeyFilterOptions = Record<
@@ -38,7 +39,7 @@ export type WhiskeyFilterOptions = Record<
 
 export type WhiskeyFilterSelectedOption = WhiskeyFilterOptionItem & {
   isVisible: boolean;
-  filterKey: ProductFilterKey;
+  filterKey: WhiskeyFilterKey;
 };
 
 export type WhiskeyFilterResponse = {
