@@ -25,9 +25,14 @@ const multipleValuesSchema = z
   .optional();
 
 const searchParamsSchema = z.object({
-  categories: multipleValuesSchema,
-  priceRanges: multipleValuesSchema,
-  sorting: singleValueSchema,
+  sortings: singleValueSchema,
+  brands: multipleValuesSchema,
+  ages: multipleValuesSchema,
+  regions: multipleValuesSchema,
+  types: multipleValuesSchema,
+  abvs: multipleValuesSchema,
+  cask_types: multipleValuesSchema,
+  special_notes: multipleValuesSchema
 });
 
 type SearchPageProps = {
@@ -35,9 +40,9 @@ type SearchPageProps = {
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  console.log(searchParams);
+  console.log("Main", searchParams);
   const data = await filterProducts(searchParamsSchema.parse(searchParams));
-
+  console.log("Selected", data.selectedOptions);
   return (
     <main className="group/page">
       <PageTitle title="Search Whiskeys" srOnly />

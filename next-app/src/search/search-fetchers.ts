@@ -105,30 +105,30 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
   }));
 
   for (const arg in args) {
-    if (arg !== 'sorting') {
+    if (arg !== 'sortings') {
       response = response.filter((whiskey) => {
-        if (arg === 'brand') {
-          return args.brand?.includes(whiskey.brand);
+        if (arg === 'brands') {
+          return args.brands?.includes(whiskey.brand);
         }
-        if (arg === 'age') {
-          return args.age?.includes(whiskey.age.toString());
+        if (arg === 'ages') {
+          return args.ages?.includes(whiskey.age.toString());
         }
-        if (arg === 'region') {
-          return args.region?.includes(whiskey.region);
+        if (arg === 'regions') {
+          return args.regions?.includes(whiskey.region);
         }
-        if (arg === 'type') {
-          return args.type?.includes(whiskey.type);
+        if (arg === 'types') {
+          return args.types?.includes(whiskey.type);
         }
-        if (arg === 'abv') {
-          return args.abv?.includes(whiskey.abv.toString());
+        if (arg === 'abvs') {
+          return args.abvs?.includes(whiskey.abv.toString());
         }
         return true; // Default case if no matching arg is found
       });
     }
   }
 
-  if (args.sorting) {
-    switch (args.sorting as WhiskeySorting) {
+  if (args.sortings) {
+    switch (args.sortings as WhiskeySorting) {
       case WhiskeySorting.PRICE_ASC: {
         response.sort((a, b) => a.price - b.price);
         break;
@@ -163,7 +163,7 @@ function getProductFilterSelectedOptions({
   const selectedOptions: WhiskeyFilterSelectedOption[] = [];
 
   let selectedSorting = sortings.options.find(
-    (sorting) => sorting.value === args.sorting,
+    (sorting) => sorting.value === args.sortings,
   );
 
   if (!selectedSorting) {
@@ -178,69 +178,77 @@ function getProductFilterSelectedOptions({
       isVisible:
         (selectedSorting.value as WhiskeySorting) !== WhiskeySorting.DEFAULT,
       filterKey: WhiskeyFilterKey.SORTING,
+      dbKey: 'sortings',
     });
   }
 
   for (const brand of brands.options) {
-    if (args.brand?.includes(brand.value)) {
+    if (args.brands?.includes(brand.value)) {
       selectedOptions.push({
         ...brand,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'brands',
       });
     }
   }
   for (const age of ages.options) {
-    if (args.age?.includes(age.value)) {
+    if (args.ages?.includes(age.value)) {
       selectedOptions.push({
         ...age,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'ages',
       });
     }
   }
   for (const region of regions.options) {
-    if (args.region?.includes(region.value)) {
+    if (args.regions?.includes(region.value)) {
       selectedOptions.push({
         ...region,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'regions',
       });
     }
   }
   for (const type of types.options) {
-    if (args.type?.includes(type.value)) {
+    if (args.types?.includes(type.value)) {
       selectedOptions.push({
         ...type,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'types',
       });
     }
   }
   for (const abv of abvs.options) {
-    if (args.abv?.includes(abv.value)) {
+    if (args.abvs?.includes(abv.value)) {
       selectedOptions.push({
         ...abv,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'abvs',
       });
     }
   }
   for (const cask_type of cask_types.options) {
-    if (args.cask_type?.includes(cask_type.value)) {
+    if (args.cask_types?.includes(cask_type.value)) {
       selectedOptions.push({
         ...cask_type,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'cask_types',
       });
     }
   }
   for (const special_note of special_notes.options) {
-    if (args.special_note?.includes(special_note.value)) {
+    if (args.special_notes?.includes(special_note.value)) {
       selectedOptions.push({
         ...special_note,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
+        dbKey: 'special_notes',
       });
     }
   }
