@@ -13,7 +13,7 @@ type WhiskeyCardProps = {
 export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
   return (
     <NextLink
-      href={routes.product({ params: { whiskeyId: whiskey.id } })}
+      href={routes.whiskey({ params: { whiskeyId: whiskey.id } })}
       // To show outline when the link is `focus-visible`.
       className="block"
     >

@@ -21,17 +21,13 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
 
   const decodeState = (
     selectedOptions: WhiskeyFilterResponse['selectedOptions'],
-  ): Record<string, string | string[]> => {
-    const result: Record<string, string | string[]> = {};
+  ): Record<string, string[]> => {
+    const result: Record<string, string[]> = {};
     for (const selectedOption of selectedOptions) {
       if (result[selectedOption.dbKey] === undefined) {
-        result[selectedOption.dbKey] = selectedOption.value;
+        result[selectedOption.dbKey] = [selectedOption.value];
       } else {
-        if (Array.isArray(result[selectedOption.dbKey])) {
-          (result[selectedOption.dbKey] as string[]).push(selectedOption.value);
-        } else {
-          result[selectedOption.dbKey] = [result[selectedOption.dbKey] as string, selectedOption.value];
-        }
+        result[selectedOption.dbKey].push(selectedOption.value);
       }
     }
     return result;
@@ -41,7 +37,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   console.log(values);
   const handleChange = (
     dbKey: WhiskeyFilterData['dbKey'],
-    newValues: string[] | string,
+    newValues: string[],
   ) => {
 
     if (newValues.length === 0) {
@@ -52,7 +48,9 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
 
     let urlString = '?';
     for (const [key, value] of Object.entries(values)) {
-      urlString += `${key}=${value}&`;
+      for (const item of values[key]) {
+        urlString += `${key}=${item}&`;
+      }
     }
     urlString = urlString.slice(0, -1);
 
@@ -68,7 +66,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
           case WhiskeyFilterKey.SORTING: {
             filterInput = (
               <RadioGroup
-                value={values[filter.dbKey] as string}
+                value={values[filter.dbKey].at(0) as string}
                 onChange={(newValue) => {
                   handleChange(filter.dbKey, [newValue]);
                 }}
@@ -87,7 +85,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
           default: {
             filterInput = (
               <CheckboxGroup
-                value={values[filter.dbKey] as string[] ?? []}
+                value={values[filter.dbKey] ?? []}
                 
                 onChange={(newValue) => {
                   handleChange(filter.dbKey, newValue);

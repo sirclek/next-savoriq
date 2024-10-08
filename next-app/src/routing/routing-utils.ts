@@ -62,7 +62,7 @@ function createRoute<RouteArgs extends CreateRouteArgs>(
 export const routes = {
   home: createRoute(() => '/'),
   search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
-  product: createRoute<{ params: { whiskeyId: Id } }>(
+  whiskey: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),
   // routing-utils.ts
