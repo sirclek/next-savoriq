@@ -34,7 +34,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   };
 
   const values = decodeState(data.selectedOptions);
-  console.log(values);
+  // console.log(values);
   const handleChange = (
     dbKey: WhiskeyFilterData['dbKey'],
     newValues: string[],
@@ -58,7 +58,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   };
 
   return (
-    <div data-pending={true} className="flex flex-col gap-4 pb-6">
+    <div data-pending={false} className="flex flex-col gap-4 pb-6">
       {Object.values(data.filterOptions).map((filter) => {
         let filterInput = null;
 

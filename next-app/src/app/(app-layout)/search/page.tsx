@@ -42,7 +42,7 @@ type SearchPageProps = {
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   // console.log("Main", searchParams);
   const data = await filterProducts(searchParamsSchema.parse(searchParams));
-  // console.log("Selected", data.selectedOptions);
+  // console.log("Selected", data.whiskeys);
   return (
     <main className="group/page">
       <PageTitle title="Search Whiskeys" srOnly />
