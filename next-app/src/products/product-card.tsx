@@ -11,9 +11,10 @@ type WhiskeyCardProps = {
 };
 
 export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
+  // console.log('Whiskey', whiskey);
   return (
     <NextLink
-      href={routes.product({ params: { whiskeyId: whiskey.id } })}
+      href={routes.whiskey({ params: { whiskeyId: whiskey.id } })}
       // To show outline when the link is `focus-visible`.
       className="block"
     >
@@ -43,7 +44,7 @@ export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
   );
 }
 
-export function ProductCardSkeleton() {
+export function WhiskeyCardSkeleton() {
   return (
     <div className="flex flex-col gap-2 rounded-md border-2 p-2 md:p-4">
       <div className="p-2">

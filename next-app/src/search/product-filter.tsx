@@ -7,83 +7,68 @@ import type {
   WhiskeyFilterData,
   WhiskeyFilterResponse,
 } from '@/search/search-types';
-import {
-  ProductFilterKey,
-  ProductSorting,
-  getValuesOfSelectedOptions,
-} from '@/search/search-utils';
-import { useRouter } from 'next/navigation';
-import { useTransition } from 'react';
-import { useSelectedOptionsContext } from './selected-options-context';
+import { WhiskeyFilterKey } from '@/search/search-utils';
+import { usePathname, useRouter } from 'next/navigation';
 
 type WhiskeyFilterProps = {
   data: WhiskeyFilterResponse;
 };
 
-export function ProductFilter({ data }: WhiskeyFilterProps) {
+export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
-  const { optimisticSelectedOptions, setOptimisticSelectedOptions } =
-    useSelectedOptionsContext();
 
-  const values = getValuesOfSelectedOptions(optimisticSelectedOptions);
+  const state = usePathname();
 
+  const decodeState = (
+    selectedOptions: WhiskeyFilterResponse['selectedOptions'],
+  ): Record<string, string[]> => {
+    const result: Record<string, string[]> = {};
+    for (const selectedOption of selectedOptions) {
+      if (result[selectedOption.dbKey] === undefined) {
+        result[selectedOption.dbKey] = [selectedOption.value];
+      } else {
+        result[selectedOption.dbKey].push(selectedOption.value);
+      }
+    }
+    return result;
+  };
+
+  const values = decodeState(data.selectedOptions);
+  // console.log(values);
   const handleChange = (
-    filterKey: WhiskeyFilterData['filterKey'],
+    dbKey: WhiskeyFilterData['dbKey'],
     newValues: string[],
   ) => {
-    const newOptimisticSelectedOptions = optimisticSelectedOptions.filter(
-      (option) => option.filterKey !== filterKey,
-    );
 
-    const filterOption = Object.values(data.filterOptions).find(
-      (filterOption) => filterOption.filterKey === filterKey,
-    );
-
-    for (const value of newValues) {
-      const option = filterOption?.options.find(
-        (option) => option.value === value,
-      );
-
-      if (!option) continue;
-
-      newOptimisticSelectedOptions.push({
-        ...option,
-        filterKey,
-        isVisible: (option.value as ProductSorting) !== ProductSorting.DEFAULT,
-      });
+    if (newValues.length === 0) {
+      delete values[dbKey];
+    } else {
+      values[dbKey] = newValues;
     }
 
-    startTransition(() => {
-      setOptimisticSelectedOptions(newOptimisticSelectedOptions);
-
-      const params = new URLSearchParams();
-
-      for (const selectedOption of newOptimisticSelectedOptions) {
-        if (selectedOption.isVisible) {
-          params.append(selectedOption.filterKey, selectedOption.value);
-        }
+    let urlString = '?';
+    for (const [key, value] of Object.entries(values)) {
+      for (const item of values[key]) {
+        urlString += `${key}=${item}&`;
       }
+    }
+    urlString = urlString.slice(0, -1);
 
-      router.push(`/search?${params.toString()}`);
-    });
+    router.push(`/search${urlString}`);
   };
 
   return (
-    <div
-      data-pending={isPending ? true : undefined}
-      className="flex flex-col gap-4 pb-6"
-    >
+    <div data-pending={false} className="flex flex-col gap-4 pb-6">
       {Object.values(data.filterOptions).map((filter) => {
         let filterInput = null;
 
         switch (filter.filterKey) {
-          case ProductFilterKey.SORTING: {
+          case WhiskeyFilterKey.SORTING: {
             filterInput = (
               <RadioGroup
-                value={values[filter.filterKey]}
+                value={values[filter.dbKey].at(0) as string}
                 onChange={(newValue) => {
-                  handleChange(filter.filterKey, [newValue]);
+                  handleChange(filter.dbKey, [newValue]);
                 }}
               >
                 {filter.options.map((option) => {
@@ -100,9 +85,10 @@ export function ProductFilter({ data }: WhiskeyFilterProps) {
           default: {
             filterInput = (
               <CheckboxGroup
-                value={values[filter.filterKey]}
+                value={values[filter.dbKey] ?? []}
+                
                 onChange={(newValue) => {
-                  handleChange(filter.filterKey, newValue);
+                  handleChange(filter.dbKey, newValue);
                 }}
               >
                 {filter.options.map((option) => {

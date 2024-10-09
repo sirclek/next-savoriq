@@ -1,15 +1,15 @@
 import type { Whiskey } from '@/products/product-types';
-import type { ProductFilterKey } from './search-utils';
+import type { WhiskeyFilterKey } from './search-utils';
 
 export type WhiskeyFilterArgs = {
-  sorting?: string;
-  brand?: string[];
-  age?: string[];
-  region?: string[];
-  type?: string[];
-  abv?: string[];
-  cask_type?: string[];
-  special_note?: string[];
+  sortings?: string;
+  brands?: string[];
+  ages?: string[];
+  regions?: string[];
+  types?: string[];
+  abvs?: string[];
+  cask_types?: string[];
+  special_notes?: string[];
 };
 
 type WhiskeyFilterOptionItem = {
@@ -21,7 +21,8 @@ type WhiskeyFilterOptionItem = {
 export type WhiskeyFilterData = {
   title: string;
   options: WhiskeyFilterOptionItem[];
-  filterKey: ProductFilterKey;
+  filterKey: WhiskeyFilterKey;
+  dbKey: string;
 };
 
 export type WhiskeyFilterOptions = Record<
@@ -38,7 +39,8 @@ export type WhiskeyFilterOptions = Record<
 
 export type WhiskeyFilterSelectedOption = WhiskeyFilterOptionItem & {
   isVisible: boolean;
-  filterKey: ProductFilterKey;
+  filterKey: WhiskeyFilterKey;
+  dbKey: string;
 };
 
 export type WhiskeyFilterResponse = {

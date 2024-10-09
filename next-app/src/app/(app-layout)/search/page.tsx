@@ -1,6 +1,6 @@
 import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
-import { ProductFilter } from '@/search/product-filter';
+import { WhiskeyFilter } from '@/search/product-filter';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
 import { SelectedFilters } from '@/search/selected-filters';
@@ -25,9 +25,14 @@ const multipleValuesSchema = z
   .optional();
 
 const searchParamsSchema = z.object({
-  categories: multipleValuesSchema,
-  priceRanges: multipleValuesSchema,
-  sorting: singleValueSchema,
+  sortings: singleValueSchema,
+  brands: multipleValuesSchema,
+  ages: multipleValuesSchema,
+  regions: multipleValuesSchema,
+  types: multipleValuesSchema,
+  abvs: multipleValuesSchema,
+  cask_types: multipleValuesSchema,
+  special_notes: multipleValuesSchema
 });
 
 type SearchPageProps = {
@@ -35,8 +40,9 @@ type SearchPageProps = {
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
+  // console.log("Main", searchParams);
   const data = await filterProducts(searchParamsSchema.parse(searchParams));
-
+  // console.log("Selected", data.whiskeys);
   return (
     <main className="group/page">
       <PageTitle title="Search Whiskeys" srOnly />
@@ -47,7 +53,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
               Filter
             </SectionTitle>
             {/* filter pane */}
-            <ProductFilter data={data} /> 
+            <WhiskeyFilter data={data} />
           </Section>
           <Section>
             <SectionTitle as="h2" srOnly>

@@ -34,8 +34,7 @@ export async function generateMetadata({
 
 export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
   const whiskeyId = Number(params.whiskeyId);
-  console.log(params);
-  console.log(whiskeyId);
+
   const whiskey = await getOneWhiskeyById(whiskeyId);
 
   if (!whiskey) notFound();
