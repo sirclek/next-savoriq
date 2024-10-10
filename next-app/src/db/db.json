@@ -1203,5 +1203,23 @@
       "title": "Limited Edition",
       "value": "Limited Edition"
     }
+  ],
+  "aroma": [
+    {
+      "title": "Vanilla",
+      "description": "A subtle, delicate hint of vanilla sweetness, providing a soft and creamy background note."
+    },
+    {
+      "title": "Peat",
+      "description": "A subtle, delicate hint of vanilla sweetness, providing a soft and creamy background note."
+    },
+    {
+      "title": "Caramel",
+      "description": "A subtle, delicate hint of vanilla sweetness, providing a soft and creamy background note."
+    },
+    {
+      "title": "Oak",
+      "description": "Strong oak influence with a woody, aged character, rounding out the aroma profile with warmth and complexity."
+    }
   ]
 }
