@@ -20,5 +20,7 @@ export async function RelatedProducts({ whiskeyId, type }: RelatedProductsProps 
     relatedProducts = await getRelatedWhiskeysChemicals(whiskeyId);
   }
 
+  relatedProducts = relatedProducts.sort(() => 0.5 - Math.random()).slice(0, 6);
+
   return <WhiskeyGrid whiskeys={relatedProducts} />;
 }
