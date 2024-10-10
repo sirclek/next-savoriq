@@ -17,8 +17,6 @@ type WhiskeyFilterProps = {
 export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
 
-  const state = usePathname();
-
   const decodeState = (
     selectedOptions: WhiskeyFilterResponse['selectedOptions'],
   ): Record<string, string[]> => {
