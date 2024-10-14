@@ -1206,6 +1206,7 @@
   ],
   "aroma": [
     {
+      "id": 1,
       "title": "Vanilla",
       "description": "A subtle, delicate hint of vanilla sweetness, providing a soft and creamy background note."
     },
@@ -1222,32 +1223,48 @@
       "description": "Strong oak influence with a woody, aged character, rounding out the aroma profile with warmth and complexity."
     }
   ],
-  "taste": [
+"taste": [
     {
-      "Sweet": "Moderately sweet, with hints of honey or light caramel that balance the stronger elements."
+      "id": 1,
+      "title": "Sweet",
+      "description": "Moderately sweet, with hints of honey or light caramel that balance the stronger elements."
     },
     {
-      "Smoky": "A medium level of smokiness, contributing to a robust and earthy flavor without overpowering other notes."
+      "id": 2,
+      "title": "Smoky",
+      "description": "A medium level of smokiness, contributing to a robust and earthy flavor without overpowering other notes."
     },
     {
-      "Spicy": "A subtle spice, just enough to provide warmth and a gentle tingle on the palate."
+      "id": 3,
+      "title": "Spicy",
+      "description": "A subtle spice, just enough to provide warmth and a gentle tingle on the palate."
     },
     {
-      "Fruity": "A light touch of fruitiness, possibly hints of apple or pear, adding brightness to the taste profile."
+      "id": 4,
+      "title": "Fruity",
+      "description": "A light touch of fruitiness, possibly hints of apple or pear, adding brightness to the taste profile."
     }
   ],
   "finish": [
     {
-      "Long": "The flavor lingers on the palate, with each element fading slowly and evenly. "
+      "id": 1,  
+      "title": "Long",
+      "description": "The flavor lingers on the palate, with each element fading slowly and evenly."
     },
     {
-      "Warming": "A comforting warmth spreads through the mouth and throat, enhancing the drinking experience."
+      "id": 2,
+      "title": "Warming",
+      "description": "A comforting warmth spreads through the mouth and throat, enhancing the drinking experience."
     },
     {
-      "Dry": "A slightly dry sensation at the end, giving a clean, crisp finish. "
+      "id": 3,
+      "title": "Dry",
+      "description": "A slightly dry sensation at the end, giving a clean, crisp finish."
     },
     {
-      "Peaty": "A balanced, lingering peat smoke that stays on the palate, providing an earthy and smoky aftertaste."
+      "id": 4,
+      "title": "Peaty",
+      "description": "A balanced, lingering peat smoke that stays on the palate, providing an earthy and smoky aftertaste."
     }
   ]
 }
