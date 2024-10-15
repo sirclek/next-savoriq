@@ -3,56 +3,27 @@
 import { Paper, PaperTitle } from '@/common/paper';
 import { Checkbox, CheckboxGroup } from '@/forms/checkbox-group';
 import { RadioGroup, RadioGroupItem } from '@/forms/radio-group';
-import type {
-  WhiskeyFilterData,
-  WhiskeyFilterResponse,
-} from '@/search/search-types';
+import type {WhiskeyFilterData, WhiskeyFilterResponse} from '@/search/search-types';
 import { WhiskeyFilterKey } from '@/search/search-utils';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { decodeState, encodeState } from '@/routing/url-state';
 
 type WhiskeyFilterProps = {
   data: WhiskeyFilterResponse;
 };
 
 export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
+
   const router = useRouter();
 
-  const state = usePathname();
-
-  const decodeState = (
-    selectedOptions: WhiskeyFilterResponse['selectedOptions'],
-  ): Record<string, string[]> => {
-    const result: Record<string, string[]> = {};
-    for (const selectedOption of selectedOptions) {
-      if (result[selectedOption.dbKey] === undefined) {
-        result[selectedOption.dbKey] = [selectedOption.value];
-      } else {
-        result[selectedOption.dbKey].push(selectedOption.value);
-      }
-    }
-    return result;
-  };
-
   const values = decodeState(data.selectedOptions);
-  // console.log(values);
+
   const handleChange = (
     dbKey: WhiskeyFilterData['dbKey'],
     newValues: string[],
   ) => {
 
-    if (newValues.length === 0) {
-      delete values[dbKey];
-    } else {
-      values[dbKey] = newValues;
-    }
-
-    let urlString = '?';
-    for (const [key, value] of Object.entries(values)) {
-      for (const item of values[key]) {
-        urlString += `${key}=${item}&`;
-      }
-    }
-    urlString = urlString.slice(0, -1);
+    const [urlString, newValuesObject] = encodeState(dbKey, newValues, values);
 
     router.push(`/search${urlString}`);
   };
