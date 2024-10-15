@@ -40,7 +40,11 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           </p>
         ))}
         <div className='flex gap-4'>
+<<<<<<< HEAD
         <ButtonLink variant="primary" href={routes.explore()}>
+=======
+        <ButtonLink variant="primary" href={routes.chemical()}>
+>>>>>>> origin/Fixing-err-parker
           Chemical Profile
         </ButtonLink>
         <ButtonLink variant="primary" href={routes.explore()}>

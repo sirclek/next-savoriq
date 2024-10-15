@@ -4,17 +4,17 @@ import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from './product-types';
+import type { Chemical } from './chemical-types';
 
-type WhiskeyCardProps = {
-  whiskey: Whiskey;
+type ChemicalCardProps = {
+  chemical: Chemical;
 };
 
-export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
-  // console.log('Whiskey', whiskey);
+export function ChemicalCard({ chemical }: ChemicalCardProps) {
+  // console.log('Chemical', chemical);
   return (
     <NextLink
-      href={routes.whiskey({ params: { whiskeyId: whiskey.id } })}
+      href={routes.chemical({ params: { chemicalId: chemical.id } })}
       // To show outline when the link is `focus-visible`.
       className="block"
     >
@@ -23,28 +23,26 @@ export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
           <div className="relative aspect-[12/10] bg-transparent transition duration-500 ease-out group-hover:scale-110">
             <Image
               className="rounded bg-white object-contain"
-              src={`/images/whiskeys/${whiskey.id}.png`}
-              alt={whiskey.name}
+              src={`/images/chemicals/${chemical.id}.png`}
+              alt={chemical.name}
               fill
             />
           </div>
         </div>
         <div className="flex flex-col gap-2 text-center">
-          <Tooltip content={whiskey.name}>
+          <Tooltip content={chemical.name}>
             <h3 className="text-sm font-bold fixed-leading-5 fixed-line-clamp-3">
-              {whiskey.name}
+              {chemical.name}
             </h3>
           </Tooltip>
-          <div>
-            <Price className="text-primary" value={whiskey.price} />
-          </div>
+          
         </div>
       </article>
     </NextLink>
   );
 }
 
-export function WhiskeyCardSkeleton() {
+export function ChemicalCardSkeleton() {
   return (
     <div className="flex flex-col gap-2 rounded-md border-2 p-2 md:p-4">
       <div className="p-2">

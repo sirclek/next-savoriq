@@ -7,7 +7,7 @@ import type {
   WhiskeyFilterResponse,
   WhiskeyFilterSelectedOption,
 } from './search-types';
-import { ProductFilterKey, ProductSorting } from './search-utils';
+import { WhiskeyFilterKey, WhiskeySorting } from './search-utils';
 
 type SelectedOptionsContextValue = {
   optimisticSelectedOptions: WhiskeyFilterSelectedOption[];
@@ -38,15 +38,15 @@ export function SelectedOptionsProvider({
         draft.selectedOptions = newSelectedOptions;
 
         const hasSorting = draft.selectedOptions.some(
-          (option) => option.filterKey === ProductFilterKey.SORTING,
+          (option) => option.filterKey === WhiskeyFilterKey.SORTING,
         );
 
         if (!hasSorting) {
           draft.selectedOptions.push({
-            filterKey: ProductFilterKey.SORTING,
+            filterKey: WhiskeyFilterKey.SORTING,
             isVisible: false,
             title: 'Sorting',
-            value: ProductSorting.DEFAULT,
+            value: WhiskeySorting.DEFAULT,
             order: '0_0',
           });
         }

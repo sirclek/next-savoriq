@@ -22,7 +22,7 @@ export function SelectedFilters() {
     .toSorted((a, b) => orderComparer.compare(a.order, b.order));
 
   return (
-    <div data-pending={isPending ? true : undefined}>
+    <div data-pending={false}>
       {!!visibleOptions.length && (
         <MobilePadding>
           <ul className="flex flex-row flex-wrap items-center gap-1">

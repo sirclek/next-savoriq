@@ -1,20 +1,20 @@
 import type { Maybe } from '@/common/common-types';
 import type { WhiskeyFilterSelectedOption } from '@/search/search-types';
 
-export enum ProductFilterKey {
+export enum WhiskeyFilterKey {
   SORTING = 'sorting',
   CATEGORIES = 'categories',
   PRICE_RANGES = 'priceRanges',
 }
 
-export enum ProductSorting {
+export enum WhiskeySorting {
   DEFAULT = 'default',
   PRICE_ASC = 'price-asc',
   PRICE_DESC = 'price-desc',
 }
 
 function getOneSelectedOptionValue(
-  filterKey: ProductFilterKey,
+  filterKey: WhiskeyFilterKey,
   selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   return selectedOptions?.find((option) => option.filterKey === filterKey)
@@ -22,7 +22,7 @@ function getOneSelectedOptionValue(
 }
 
 function getManySelectedOptionValues(
-  filterKey: ProductFilterKey,
+  filterKey: WhiskeyFilterKey,
   selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   const values: string[] = [];
@@ -40,16 +40,16 @@ export function getValuesOfSelectedOptions(
   selectedOptions: Maybe<WhiskeyFilterSelectedOption[]>,
 ) {
   const values = {
-    [ProductFilterKey.SORTING]: getOneSelectedOptionValue(
-      ProductFilterKey.SORTING,
+    [WhiskeyFilterKey.SORTING]: getOneSelectedOptionValue(
+      WhiskeyFilterKey.SORTING,
       selectedOptions,
     ),
-    [ProductFilterKey.CATEGORIES]: getManySelectedOptionValues(
-      ProductFilterKey.CATEGORIES,
+    [WhiskeyFilterKey.CATEGORIES]: getManySelectedOptionValues(
+      WhiskeyFilterKey.CATEGORIES,
       selectedOptions,
     ),
-    [ProductFilterKey.PRICE_RANGES]: getManySelectedOptionValues(
-      ProductFilterKey.PRICE_RANGES,
+    [WhiskeyFilterKey.PRICE_RANGES]: getManySelectedOptionValues(
+      WhiskeyFilterKey.PRICE_RANGES,
       selectedOptions,
     ),
   };
