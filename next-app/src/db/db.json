@@ -1,4 +1,108 @@
 {
+  "Chemicals": [
+  {
+    "id": 1,
+    "name": "Peat",
+    "description": "sd",
+    "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The intensity of the peat flavour depends on the number of phenols present. e",
+    "intensity" : {
+      "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
+      "Cresols" : "0.5-1% (adds earthy, tar-like flavours) ",
+      "Phenol" : "0.2-0.5% (provides antiseptic, Smokey character) ",
+      "methoxyphenols" : "Trace amounts (contribute to spice and sweetness) ",
+      "Sugars and Carbohydrates" : "Varies (balances the harshness) ",
+      "Fatty Acids and Essentials Oils" : "Minor components (subtle richness) "
+    }
+  },
+  {
+    "id": 2,
+    "name": "Caramel",
+    "description": "Caramel flavour derives from the heating of sugar during caramelization. This process produces a rich, sweet, and slightly bitter profile with hints of toffee and brown sugar. The complex reactions between sugars and amino acids give caramel its distinctive taste.",
+    "title": "Caramel",
+    "intensity" : {
+      "Maltol": "1-3% (sweet, caramelized flavor) ",
+      "Diacetyl" : "0.5-1% (buttery notes) ",
+      "Furfural" : "0.1-0.5% (provides toffee and almond flavors) ",
+      "Hydroxymethylfurfural " : "Trace amounts (adds bitterness) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 3,
+    "name": "Oak",
+    "description": "Oak contributes to whisky flavor through compounds released during barrel aging. These compounds, such as vanillin, lignin, and tannins, impart woody, spicy, and vanilla notes. The aging process in oak barrels gives whisky its complexity, with each compound adding depth to the flavor.",
+    "title": "Oak",
+    "intensity" : {
+      "Vanillin": "0.5-1.5% (provides sweet, vanilla-like notes) ",
+      "Lignin" : "0.2-1% (woody, smoky character) ",
+      "Tannins" : "0.1-0.5% (adds astringency and dryness) ",
+      "Eugenol " : "Trace amounts (spicy, clove-like flavor) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 4,
+    "name": "Sweet",
+    "description": "Sweetness is primarily sensed through sugar molecules or other compounds that mimic their effect on taste receptors. This taste is generally associated with simple sugars like glucose and fructose, but can also come from artificial sweeteners, sugar alcohols, and other naturally occurring compounds. Sweet flavors balance out more intense or bitter tastes in foods and beverages. ",
+    "title": "Sweet",
+    "intensity" : {
+      "Glucose": "1-3% (primary sweetening compound) ",
+      "Fructose" : "0.5-2% (contributes a more intense sweetness) ",
+      "Sucrose" : "0.5-1.5% (common table sugar, provides clean sweetness) ",
+      "Maltose" : "0.1-0.5% (adds depth with a slight malt-like flavor) ",
+      "Aspartame " : "Trace amounts (artificial sweetener, much sweeter than sugar) ",
+      "Sugar Alcohols (Sorbitol, Xylitol)" : "Trace amounts (used in sugar-free products, adds sweetness with less caloric impact) ",
+      "Sugars and Carbohydrates" : "Varies (provides bulk and texture) ",
+      "Fatty Acids" : "Minor components (can enhance richness in sweet products) "
+    }
+  },
+  {
+    "id": 5,
+    "name": "Smoky ",
+    "description": "The smoky flavor commonly found in whisky and other foods comes from compounds formed during processes like peat burning, wood charring, or smoking over open flames. These compounds impart a deep, rich, and sometimes slightly medicinal smokiness. ",
+    "title": "Smoky ",
+    "intensity" : {
+      "Guaiacol": "0.5-2% (primary smoky and medicinal notes) ",
+      "Phenols" : "0.2-1% (adds antiseptic, charred flavors) ",
+      "Cresols" : "0.1-0.5% (contributes to tar-like, earthy notes) ",
+      "Methoxyphenols" : "Trace amounts (provides sweet, smoky nuances) ",
+      "Acetic Acid " : "Trace amounts (enhances complexity with acidity) ",
+      "Sugars and Carbohydrates" : "Varies (balances the intense smoky flavors) ",
+      "Fatty Acids" : "Minor components (adds richness and mouthfeel) "
+    }
+  },
+  {
+    "id": 6,
+    "name": "Spicy",
+    "description": "Spicy flavors in whisky come from compounds like eugenol and cinnamaldehyde, which are typically extracted from oak barrels or present in spices used in the distillation process. These compounds create warm, peppery, and sometimes clove-like notes.",
+    "title": "Spicy",
+    "intensity": {
+      "Eugenol": "0.5-1.5% (primary spicy, clove-like flavor)",
+      "Cinnamaldehyde": "0.1-0.5% (adds cinnamon and warmth)",
+      "Capsaicin": "Trace amounts (provides a burning, peppery sensation)",
+      "Piperine": "Trace amounts (adds black pepper notes)",
+      "Sugars": "Varies (balances spiciness with sweetness)",
+      "Essential Oils": "Minor components (enhances aromatic complexity)"
+    }
+  }, 
+  {
+    "id": 7,
+    "name": "Fruity",
+    "description": "Fruity flavors in whisky arise from esters and aldehydes formed during fermentation and aging. These compounds give off sweet, citrus, and stone fruit notes, balancing the more robust flavors of the whisky.",
+    "title": "Fruity",
+    "intensity": {
+      "Ethyl Acetate": "1-3% (sweet, fruity, and pineapple-like flavor)",
+      "Isoamyl Acetate": "0.5-1% (banana-like ester)",
+      "Hexyl Acetate": "0.1-0.5% (adds green apple notes)",
+      "Linalool": "Trace amounts (provides citrus, floral undertones)",
+      "Sugars": "Varies (contributes to sweetness and texture)",
+      "Fatty Acids and Esters": "Minor components (enhances the richness and mouthfeel)"
+    }
+  }
+  
+  ],
   "whiskeys": [
     {
       "id": 1,
@@ -9,6 +113,8 @@
       "type": "Rye",
       "abv": 45,
       "description": "This one changed the way we think of bourbon, all because one man changed the way he thought about making it. Bill Samuels, Sr., simply wanted a whisky he would enjoy drinking. Never bitter or sharp, Maker's Mark® is made with soft red winter wheat, instead of the usual rye, for a one-of-a-kind, full-flavored bourbon. To ensure consistency, we rotate every barrel by hand and age our bourbon to taste, not time. Each and every bottle of Maker's® is still hand-dipped in our signature red wax at our distillery in Loretto, KY., just like Bill, Sr. would have wanted.",
+      "chemical": "name chemical",
+      
       "aroma": {
         "vanilla": 1,
         "peat": 5,
