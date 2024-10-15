@@ -13,7 +13,6 @@ type WhiskeyFilterProps = {
 };
 
 export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
-
   const router = useRouter();
 
   const values = decodeState(data.selectedOptions);
