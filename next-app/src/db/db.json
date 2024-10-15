@@ -1,5 +1,5 @@
 {
-  "Chemicals": [
+  "Chemical": [
   {
     "id": 1,
     "name": "Peat",
@@ -106,15 +106,13 @@
   "whiskeys": [
     {
       "id": 1,
-      "name": "Whisky 1",
+      "name": "Maker's Mark (15 Years)",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Canada",
       "type": "Rye",
       "abv": 45,
-      "description": "This one changed the way we think of bourbon, all because one man changed the way he thought about making it. Bill Samuels, Sr., simply wanted a whisky he would enjoy drinking. Never bitter or sharp, Maker's Mark® is made with soft red winter wheat, instead of the usual rye, for a one-of-a-kind, full-flavored bourbon. To ensure consistency, we rotate every barrel by hand and age our bourbon to taste, not time. Each and every bottle of Maker's® is still hand-dipped in our signature red wax at our distillery in Loretto, KY., just like Bill, Sr. would have wanted.",
-      "chemical": "name chemical",
-      
+      "description": "A rich, rye-based whisky from Canada with a 45% ABV, offering a sweet aroma of vanilla, caramel, and oak. On the palate, it delivers a smoky, spicy, and fruity taste with a long, warming finish. Chemical components include isoamyl acetate and hexanoic acid, contributing to its complex profile.",
       "aroma": {
         "vanilla": 1,
         "peat": 5,
@@ -147,12 +145,13 @@
     },
     {
       "id": 2,
-      "name": "Whisky 2",
+      "name": "Macallan (NAS)",
       "brand": "Macallan",
       "age": "NAS",
       "region": "USA",
       "type": "Rye",
       "abv": 43,
+      "description": "A USA-based rye whisky with 43% ABV, featuring vanilla and caramel on the nose, paired with smoky and fruity flavors. The finish is warm and dry, with notable compounds such as vanillin and 2-phenylethanol, adding depth to the overall experience.",
       "aroma": {
         "vanilla": 2,
         "peat": 5,
@@ -185,12 +184,13 @@
     },
     {
       "id": 3,
-      "name": "Whisky 3",
+      "name": "Talisker (NAS)",
       "brand": "Talisker",
       "age": "NAS",
       "region": "Japan",
       "type": "Single Malt",
       "abv": 55,
+      "description": "A bold single malt from Japan with 55% ABV, showcasing strong notes of peat and oak. The taste is a complex mix of smoky, spicy, and fruity elements, with a long, peaty finish. Chemical compounds like hexanoic acid and phenol contribute to its robust profile.",
       "aroma": {
         "vanilla": 8,
         "peat": 8,
@@ -223,12 +223,13 @@
     },
     {
       "id": 4,
-      "name": "Whisky 4",
+      "name": "Glenfiddich (12 Years)",
       "brand": "Glenfiddich",
       "age": "12 years",
       "region": "Ireland",
       "type": "Blended",
       "abv": 55,
+      "description": "An Irish blended whisky with 55% ABV, offering a fruity, sweet aroma of vanilla and peat. On the palate, it brings a blend of sweet and spicy notes with a dry, peaty finish, highlighted by hexanoic acid and methoxyphenols.",
       "aroma": {
         "vanilla": 7,
         "peat": 7,
@@ -261,12 +262,13 @@
     },
     {
       "id": 5,
-      "name": "Whisky 5",
+      "name": "Ardbeg (15 Years)",
       "brand": "Ardbeg",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A 50% ABV Scotch from Ireland, known for its smoky and fruity aromas of vanilla and oak. The taste is smoky and spicy, with a long, warming finish. Its rich profile is supported by diacetyl and 2-phenylethanol.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -299,12 +301,13 @@
     },
     {
       "id": 6,
-      "name": "Whisky 6",
+      "name": "Glenfiddich (15 Years)",
       "brand": "Glenfiddich",
       "age": "15 years",
       "region": "Scotland",
       "type": "Bourbon",
       "abv": 40,
+      "description": "A smooth Scotch from Scotland with 40% ABV, featuring a sweet, fruity aroma of caramel and oak. It delivers a well-balanced sweet, smoky, and spicy palate with a long, warm, peaty finish. Phenol and vanillin add complexity.",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -337,12 +340,13 @@
     },
     {
       "id": 7,
-      "name": "Whisky 7",
+      "name": "Glenfiddich (8 Years)",
       "brand": "Glenfiddich",
       "age": "8 years",
       "region": "USA",
       "type": "Blended",
       "abv": 45,
+      "description": "A USA-based blended whisky with 45% ABV, featuring vanilla and caramel aromas, paired with a sweet, fruity taste. Its long, smoky finish is enhanced by acetaldehyde and isoamyl acetate.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -375,12 +379,13 @@
     },
     {
       "id": 8,
-      "name": "Whisky 8",
+      "name": "Highland Park (18 Years)",
       "brand": "Highland Park",
       "age": "18 years",
       "region": "Japan",
       "type": "Scotch",
       "abv": 55,
+      "description": "A 55% ABV Scotch from Japan, with a rich vanilla and oak aroma. The taste is sweet, smoky, and fruity, leading to a long, warming finish with notable eugenol and linalool compounds, adding depth. ",
       "aroma": {
         "vanilla": 5,
         "peat": 5,
@@ -413,12 +418,13 @@
     },
     {
       "id": 9,
-      "name": "Whisky 9",
+      "name": "Maker's Mark (18 Years)",
       "brand": "Maker's Mark",
       "age": "18 years",
       "region": "Scotland",
       "type": "Scotch",
       "abv": 40,
+      "description": "A Scotch whisky from Scotland, with 40% ABV, presenting strong vanilla and caramel aromas. It offers a sweet, smoky palate with a long, dry finish, supported by furfural and phenol.",
       "aroma": {
         "vanilla": 10,
         "peat": 5,
@@ -451,12 +457,13 @@
     },
     {
       "id": 10,
-      "name": "Whisky 10",
+      "name": "Ardbeg (NAS) ",
       "brand": "Ardbeg",
       "age": "NAS",
       "region": "Japan",
       "type": "Bourbon",
       "abv": 50,
+      "description": "A 50% ABV bourbon from Japan, showcasing a smoky, fruity aroma of vanilla and oak. The taste is sweet and spicy, with a dry, peaty finish, enriched by guaiacol and syringol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 7,
@@ -489,12 +496,13 @@
     },
     {
       "id": 11,
-      "name": "Whisky 11",
+      "name": "Laphroaig (8 Years) ",
       "brand": "Laphroaig",
       "age": "8 years",
       "region": "Ireland",
       "type": "Single Malt",
       "abv": 40,
+      "description": "A single malt from Ireland with 40% ABV, offering a sweet, smoky aroma of vanilla and caramel. The palate is smoky and fruity, with a long, warming finish, driven by phenol and hexanoic acid.",
       "aroma": {
         "vanilla": 4,
         "peat": 8,
@@ -527,12 +535,13 @@
     },
     {
       "id": 12,
-      "name": "Whisky 12",
+      "name": "Macallan (12 Years) ",
       "brand": "Macallan",
       "age": "12 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A rye whisky from the USA with 45% ABV, featuring a rich vanilla and oak aroma. It delivers a sweet, smoky palate with a long, peaty finish, supported by vanillin and isoamyl acetate. ",
       "aroma": {
         "vanilla": 7,
         "peat": 1,
@@ -564,12 +573,13 @@
       "special_notes": "Cask Strength"
     },{
       "id": 13,
-      "name": "Whisky 13",
+      "name": "Laphroaig (NAS) ",
       "brand": "Laphroaig",
       "age": "NAS",
       "region": "Ireland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Ireland, offering intense smoky aromas of peat and oak. The taste is sweet and spicy, with a dry, warming finish enhanced by methoxyphenols and acetaldehyde. ",      
       "aroma": {
         "vanilla": 8,
         "peat": 6,
@@ -602,12 +612,13 @@
     },
     {
       "id": 14,
-      "name": "Whisky 14",
+      "name": " Lagavulin (12 Years) ",
       "brand": "Lagavulin",
       "age": "12 years",
       "region": "Ireland",
       "type": "Bourbon",
       "abv": 55,
+      "description": "A 55% ABV bourbon from Ireland, showcasing rich caramel and oak aromas. The palate is sweet and smoky, with a long, peaty finish, highlighted by octanoic acid and diacetyl.",
       "aroma": {
         "vanilla": 4,
         "peat": 4,
@@ -640,12 +651,13 @@
     },
     {
       "id": 15,
-      "name": "Whisky 15",
+      "name": "Maker's Mark (15 Years) ",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A Scotch from Ireland with 50% ABV, offering a sweet, smoky aroma of vanilla and peat. The taste is fruity and spicy, with a long, warming finish, supported by syringol and benzaldehyde. ",
       "aroma": {
         "vanilla": 1,
         "peat": 3,
@@ -678,12 +690,13 @@
     },
     {
       "id": 16,
-      "name": "Whisky 16",
+      "name": "Laphroaig (10 Years) ",
       "brand": "Laphroaig",
       "age": "10 years",
       "region": "Canada",
       "type": "Bourbon",
       "abv": 43,
+      "description": "A 43% ABV bourbon from Canada, featuring rich vanilla and caramel aromas. On the palate, it delivers a sweet and smoky flavor, with a dry, peaty finish enriched by limonene and guaiacol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 6,
@@ -716,12 +729,13 @@
     },
     {
       "id": 17,
-      "name": "Whisky 17",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Scotland",
       "type": "Single Malt",
       "abv": 43,
+      "description": "A 43% ABV single malt from Scotland, offering vanilla and oak aromas. The taste is smoky and fruity, with a long, peaty finish, supported by phenol and linalool. ",
       "aroma": {
         "vanilla": 8,
         "peat": 4,
@@ -754,12 +768,13 @@
     },
     {
       "id": 18,
-      "name": "Whisky 18",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Japan",
       "type": "Blended",
       "abv": 40,
+      "description": "A blended whisky from Japan with 40% ABV, featuring a sweet vanilla and caramel aroma. It offers a sweet, smoky palate with a long, warming finish, driven by isoamyl acetate and 2-phenylethanol. ",
       "aroma": {
         "vanilla": 1,
         "peat": 7,
@@ -792,12 +807,13 @@
     },
     {
       "id": 19,
-      "name": "Whisky 19",
+      "name": "Talisker (15 Years) ",
       "brand": "Talisker",
       "age": "15 years",
       "region": "Scotland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Scotland, known for its smoky, fruity aromas of vanilla and oak. The taste is spicy and fruity, with a long, dry finish supported by acetaldehyde and phenol. ",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -830,12 +846,13 @@
     },
     {
       "id": 20,
-      "name": "Whisky 20",
+      "name": "Ardbeg (18 Years)",
       "brand": "Ardbeg",
       "age": "18 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A USA-based rye whisky with 45% ABV, featuring a rich aroma of vanilla and oak. The palate is sweet and spicy, with a long, smoky finish enriched by diacetyl and methional. ",
       "aroma": {
         "vanilla": 6,
         "peat": 3,

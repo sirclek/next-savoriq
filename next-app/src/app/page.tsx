@@ -49,14 +49,6 @@ export default function LandingPage() {
           </div>
         </div>
       </Container>
-      {/* <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center p-4">
-        <Image
-          src={underpicture}
-          alt='Whiskey Custome pic'
-          width={2000}
-          height={400}
-        />
-      </Container> */}
     </main>
   );
 }

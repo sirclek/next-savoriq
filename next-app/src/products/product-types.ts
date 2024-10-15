@@ -28,9 +28,7 @@ export type Whiskey = {
   region: string;
   type: string;
   abv: number;
-  description: string;
-  chemical: string
-   
+  description: string;   
   aroma: {
     flavour: string;
     intensity: number;
