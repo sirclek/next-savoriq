@@ -5,7 +5,7 @@ import { Price } from '@/common/price';
 import { ButtonLink } from '@/common/button-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from './object-types';
+import type { Whiskey } from '../common/object-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;

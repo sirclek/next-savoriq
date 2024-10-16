@@ -1,7 +1,7 @@
+import { Chemical } from '@/common/object-types';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
-import { Chemical } from '@/whiskeys/object-types';
 type WhiskeyDetailsProps = {
   chemical: Chemical;
 };

@@ -1,5 +1,5 @@
 import type { Id } from '@/common/common-types';
-import { Whiskey } from './object-types';
+import { Whiskey } from '../common/object-types';
 import { getRelatedWhiskeysChemicals, getRelatedWhiskeysFlavour } from './whiskey-fetcher';
 import { WhiskeyGrid } from './whiskey-grid';
 

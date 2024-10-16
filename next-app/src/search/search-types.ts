@@ -1,4 +1,4 @@
-import type { Whiskey } from '@/whiskeys/object-types';
+import type { Whiskey } from '@/common/object-types';
 import type { WhiskeyFilterKey } from './search-utils';
 
 export type WhiskeyFilterArgs = {

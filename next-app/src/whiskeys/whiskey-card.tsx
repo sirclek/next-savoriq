@@ -4,7 +4,7 @@ import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from './object-types';
+import type { Whiskey } from '../common/object-types';
 
 type WhiskeyCardProps = {
   whiskey: Whiskey;
