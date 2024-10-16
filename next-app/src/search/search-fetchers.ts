@@ -1,5 +1,5 @@
+import type { Whiskey } from '@/common/object-types';
 import { getDb } from '@/db/db-utils';
-import type { Whiskey } from '@/products/product-types';
 import type {
   WhiskeyFilterArgs,
   WhiskeyFilterOptions,

@@ -1,5 +1,5 @@
 import { Paper } from '@/common/paper';
-import { WhiskeyGrid, WhiskeyGridSkeleton } from '@/products/product-grid';
+import { WhiskeyGrid } from '@/whiskeys/whiskey-grid';
 import type { WhiskeyFilterResponse } from './search-types';
 
 type SearchResultsProps = {
