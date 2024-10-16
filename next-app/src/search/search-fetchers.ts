@@ -1,5 +1,4 @@
 import { getDb } from '@/db/db-utils';
-import type { Whiskey } from '@/products/product-types';
 import type {
   WhiskeyFilterArgs,
   WhiskeyFilterOptions,
@@ -7,6 +6,7 @@ import type {
   WhiskeyFilterSelectedOption,
 } from '@/search/search-types';
 import { WhiskeyFilterKey, WhiskeySorting } from '@/search/search-utils';
+import type { Whiskey } from '@/whiskeys/object-types';
 import { cache } from 'react';
 
 async function getProductFilterOptions() {

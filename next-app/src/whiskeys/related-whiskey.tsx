@@ -1,7 +1,7 @@
 import type { Id } from '@/common/common-types';
-import { getRelatedWhiskeysChemicals, getRelatedWhiskeysFlavour } from './product-fetchers';
-import { WhiskeyGrid } from './product-grid';
-import { Whiskey } from './product-types';
+import { Whiskey } from './object-types';
+import { getRelatedWhiskeysChemicals, getRelatedWhiskeysFlavour } from './whiskey-fetcher';
+import { WhiskeyGrid } from './whiskey-grid';
 
 type RelatedProductsProps = {
   whiskeyId: Id;
