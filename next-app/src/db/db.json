@@ -3,8 +3,8 @@
   {
     "id": 1,
     "name": "Peat",
-    "description": "sd",
-    "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The intensity of the peat flavour depends on the number of phenols present. e",
+    "description": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The intensity of the peat flavour depends on the number of phenols present.",
+    "title": "Peat",
     "intensity" : {
       "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
       "Cresols" : "0.5-1% (adds earthy, tar-like flavours) ",
