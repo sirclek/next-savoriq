@@ -1,13 +1,118 @@
 {
+  "Chemical": [
+  {
+    "id": 1,
+    "name": "Peat",
+    "description": "sd",
+    "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The intensity of the peat flavour depends on the number of phenols present. e",
+    "intensity" : {
+      "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
+      "Cresols" : "0.5-1% (adds earthy, tar-like flavours) ",
+      "Phenol" : "0.2-0.5% (provides antiseptic, Smokey character) ",
+      "methoxyphenols" : "Trace amounts (contribute to spice and sweetness) ",
+      "Sugars and Carbohydrates" : "Varies (balances the harshness) ",
+      "Fatty Acids and Essentials Oils" : "Minor components (subtle richness) "
+    }
+  },
+  {
+    "id": 2,
+    "name": "Caramel",
+    "description": "Caramel flavour derives from the heating of sugar during caramelization. This process produces a rich, sweet, and slightly bitter profile with hints of toffee and brown sugar. The complex reactions between sugars and amino acids give caramel its distinctive taste.",
+    "title": "Caramel",
+    "intensity" : {
+      "Maltol": "1-3% (sweet, caramelized flavor) ",
+      "Diacetyl" : "0.5-1% (buttery notes) ",
+      "Furfural" : "0.1-0.5% (provides toffee and almond flavors) ",
+      "Hydroxymethylfurfural " : "Trace amounts (adds bitterness) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 3,
+    "name": "Oak",
+    "description": "Oak contributes to whisky flavor through compounds released during barrel aging. These compounds, such as vanillin, lignin, and tannins, impart woody, spicy, and vanilla notes. The aging process in oak barrels gives whisky its complexity, with each compound adding depth to the flavor.",
+    "title": "Oak",
+    "intensity" : {
+      "Vanillin": "0.5-1.5% (provides sweet, vanilla-like notes) ",
+      "Lignin" : "0.2-1% (woody, smoky character) ",
+      "Tannins" : "0.1-0.5% (adds astringency and dryness) ",
+      "Eugenol " : "Trace amounts (spicy, clove-like flavor) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 4,
+    "name": "Sweet",
+    "description": "Sweetness is primarily sensed through sugar molecules or other compounds that mimic their effect on taste receptors. This taste is generally associated with simple sugars like glucose and fructose, but can also come from artificial sweeteners, sugar alcohols, and other naturally occurring compounds. Sweet flavors balance out more intense or bitter tastes in foods and beverages. ",
+    "title": "Sweet",
+    "intensity" : {
+      "Glucose": "1-3% (primary sweetening compound) ",
+      "Fructose" : "0.5-2% (contributes a more intense sweetness) ",
+      "Sucrose" : "0.5-1.5% (common table sugar, provides clean sweetness) ",
+      "Maltose" : "0.1-0.5% (adds depth with a slight malt-like flavor) ",
+      "Aspartame " : "Trace amounts (artificial sweetener, much sweeter than sugar) ",
+      "Sugar Alcohols (Sorbitol, Xylitol)" : "Trace amounts (used in sugar-free products, adds sweetness with less caloric impact) ",
+      "Sugars and Carbohydrates" : "Varies (provides bulk and texture) ",
+      "Fatty Acids" : "Minor components (can enhance richness in sweet products) "
+    }
+  },
+  {
+    "id": 5,
+    "name": "Smoky ",
+    "description": "The smoky flavor commonly found in whisky and other foods comes from compounds formed during processes like peat burning, wood charring, or smoking over open flames. These compounds impart a deep, rich, and sometimes slightly medicinal smokiness. ",
+    "title": "Smoky ",
+    "intensity" : {
+      "Guaiacol": "0.5-2% (primary smoky and medicinal notes) ",
+      "Phenols" : "0.2-1% (adds antiseptic, charred flavors) ",
+      "Cresols" : "0.1-0.5% (contributes to tar-like, earthy notes) ",
+      "Methoxyphenols" : "Trace amounts (provides sweet, smoky nuances) ",
+      "Acetic Acid " : "Trace amounts (enhances complexity with acidity) ",
+      "Sugars and Carbohydrates" : "Varies (balances the intense smoky flavors) ",
+      "Fatty Acids" : "Minor components (adds richness and mouthfeel) "
+    }
+  },
+  {
+    "id": 6,
+    "name": "Spicy",
+    "description": "Spicy flavors in whisky come from compounds like eugenol and cinnamaldehyde, which are typically extracted from oak barrels or present in spices used in the distillation process. These compounds create warm, peppery, and sometimes clove-like notes.",
+    "title": "Spicy",
+    "intensity": {
+      "Eugenol": "0.5-1.5% (primary spicy, clove-like flavor)",
+      "Cinnamaldehyde": "0.1-0.5% (adds cinnamon and warmth)",
+      "Capsaicin": "Trace amounts (provides a burning, peppery sensation)",
+      "Piperine": "Trace amounts (adds black pepper notes)",
+      "Sugars": "Varies (balances spiciness with sweetness)",
+      "Essential Oils": "Minor components (enhances aromatic complexity)"
+    }
+  }, 
+  {
+    "id": 7,
+    "name": "Fruity",
+    "description": "Fruity flavors in whisky arise from esters and aldehydes formed during fermentation and aging. These compounds give off sweet, citrus, and stone fruit notes, balancing the more robust flavors of the whisky.",
+    "title": "Fruity",
+    "intensity": {
+      "Ethyl Acetate": "1-3% (sweet, fruity, and pineapple-like flavor)",
+      "Isoamyl Acetate": "0.5-1% (banana-like ester)",
+      "Hexyl Acetate": "0.1-0.5% (adds green apple notes)",
+      "Linalool": "Trace amounts (provides citrus, floral undertones)",
+      "Sugars": "Varies (contributes to sweetness and texture)",
+      "Fatty Acids and Esters": "Minor components (enhances the richness and mouthfeel)"
+    }
+  }
+  
+  ],
   "whiskeys": [
     {
       "id": 1,
-      "name": "Whisky 1",
+      "name": "Maker's Mark (15 Years)",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Canada",
       "type": "Rye",
       "abv": 45,
+      "description": "A rich, rye-based whisky from Canada with a 45% ABV, offering a sweet aroma of vanilla, caramel, and oak. On the palate, it delivers a smoky, spicy, and fruity taste with a long, warming finish. Chemical components include isoamyl acetate and hexanoic acid, contributing to its complex profile.",
       "aroma": {
         "vanilla": 1,
         "peat": 5,
@@ -40,12 +145,13 @@
     },
     {
       "id": 2,
-      "name": "Whisky 2",
+      "name": "Macallan (NAS)",
       "brand": "Macallan",
       "age": "NAS",
       "region": "USA",
       "type": "Rye",
       "abv": 43,
+      "description": "A USA-based rye whisky with 43% ABV, featuring vanilla and caramel on the nose, paired with smoky and fruity flavors. The finish is warm and dry, with notable compounds such as vanillin and 2-phenylethanol, adding depth to the overall experience.",
       "aroma": {
         "vanilla": 2,
         "peat": 5,
@@ -78,12 +184,13 @@
     },
     {
       "id": 3,
-      "name": "Whisky 3",
+      "name": "Talisker (NAS)",
       "brand": "Talisker",
       "age": "NAS",
       "region": "Japan",
       "type": "Single Malt",
       "abv": 55,
+      "description": "A bold single malt from Japan with 55% ABV, showcasing strong notes of peat and oak. The taste is a complex mix of smoky, spicy, and fruity elements, with a long, peaty finish. Chemical compounds like hexanoic acid and phenol contribute to its robust profile.",
       "aroma": {
         "vanilla": 8,
         "peat": 8,
@@ -116,12 +223,13 @@
     },
     {
       "id": 4,
-      "name": "Whisky 4",
+      "name": "Glenfiddich (12 Years)",
       "brand": "Glenfiddich",
       "age": "12 years",
       "region": "Ireland",
       "type": "Blended",
       "abv": 55,
+      "description": "An Irish blended whisky with 55% ABV, offering a fruity, sweet aroma of vanilla and peat. On the palate, it brings a blend of sweet and spicy notes with a dry, peaty finish, highlighted by hexanoic acid and methoxyphenols.",
       "aroma": {
         "vanilla": 7,
         "peat": 7,
@@ -154,12 +262,13 @@
     },
     {
       "id": 5,
-      "name": "Whisky 5",
+      "name": "Ardbeg (15 Years)",
       "brand": "Ardbeg",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A 50% ABV Scotch from Ireland, known for its smoky and fruity aromas of vanilla and oak. The taste is smoky and spicy, with a long, warming finish. Its rich profile is supported by diacetyl and 2-phenylethanol.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -192,12 +301,13 @@
     },
     {
       "id": 6,
-      "name": "Whisky 6",
+      "name": "Glenfiddich (15 Years)",
       "brand": "Glenfiddich",
       "age": "15 years",
       "region": "Scotland",
       "type": "Bourbon",
       "abv": 40,
+      "description": "A smooth Scotch from Scotland with 40% ABV, featuring a sweet, fruity aroma of caramel and oak. It delivers a well-balanced sweet, smoky, and spicy palate with a long, warm, peaty finish. Phenol and vanillin add complexity.",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -230,12 +340,13 @@
     },
     {
       "id": 7,
-      "name": "Whisky 7",
+      "name": "Glenfiddich (8 Years)",
       "brand": "Glenfiddich",
       "age": "8 years",
       "region": "USA",
       "type": "Blended",
       "abv": 45,
+      "description": "A USA-based blended whisky with 45% ABV, featuring vanilla and caramel aromas, paired with a sweet, fruity taste. Its long, smoky finish is enhanced by acetaldehyde and isoamyl acetate.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -268,12 +379,13 @@
     },
     {
       "id": 8,
-      "name": "Whisky 8",
+      "name": "Highland Park (18 Years)",
       "brand": "Highland Park",
       "age": "18 years",
       "region": "Japan",
       "type": "Scotch",
       "abv": 55,
+      "description": "A 55% ABV Scotch from Japan, with a rich vanilla and oak aroma. The taste is sweet, smoky, and fruity, leading to a long, warming finish with notable eugenol and linalool compounds, adding depth. ",
       "aroma": {
         "vanilla": 5,
         "peat": 5,
@@ -306,12 +418,13 @@
     },
     {
       "id": 9,
-      "name": "Whisky 9",
+      "name": "Maker's Mark (18 Years)",
       "brand": "Maker's Mark",
       "age": "18 years",
       "region": "Scotland",
       "type": "Scotch",
       "abv": 40,
+      "description": "A Scotch whisky from Scotland, with 40% ABV, presenting strong vanilla and caramel aromas. It offers a sweet, smoky palate with a long, dry finish, supported by furfural and phenol.",
       "aroma": {
         "vanilla": 10,
         "peat": 5,
@@ -344,12 +457,13 @@
     },
     {
       "id": 10,
-      "name": "Whisky 10",
+      "name": "Ardbeg (NAS) ",
       "brand": "Ardbeg",
       "age": "NAS",
       "region": "Japan",
       "type": "Bourbon",
       "abv": 50,
+      "description": "A 50% ABV bourbon from Japan, showcasing a smoky, fruity aroma of vanilla and oak. The taste is sweet and spicy, with a dry, peaty finish, enriched by guaiacol and syringol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 7,
@@ -382,12 +496,13 @@
     },
     {
       "id": 11,
-      "name": "Whisky 11",
+      "name": "Laphroaig (8 Years) ",
       "brand": "Laphroaig",
       "age": "8 years",
       "region": "Ireland",
       "type": "Single Malt",
       "abv": 40,
+      "description": "A single malt from Ireland with 40% ABV, offering a sweet, smoky aroma of vanilla and caramel. The palate is smoky and fruity, with a long, warming finish, driven by phenol and hexanoic acid.",
       "aroma": {
         "vanilla": 4,
         "peat": 8,
@@ -420,12 +535,13 @@
     },
     {
       "id": 12,
-      "name": "Whisky 12",
+      "name": "Macallan (12 Years) ",
       "brand": "Macallan",
       "age": "12 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A rye whisky from the USA with 45% ABV, featuring a rich vanilla and oak aroma. It delivers a sweet, smoky palate with a long, peaty finish, supported by vanillin and isoamyl acetate. ",
       "aroma": {
         "vanilla": 7,
         "peat": 1,
@@ -457,12 +573,13 @@
       "special_notes": "Cask Strength"
     },{
       "id": 13,
-      "name": "Whisky 13",
+      "name": "Laphroaig (NAS) ",
       "brand": "Laphroaig",
       "age": "NAS",
       "region": "Ireland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Ireland, offering intense smoky aromas of peat and oak. The taste is sweet and spicy, with a dry, warming finish enhanced by methoxyphenols and acetaldehyde. ",      
       "aroma": {
         "vanilla": 8,
         "peat": 6,
@@ -495,12 +612,13 @@
     },
     {
       "id": 14,
-      "name": "Whisky 14",
+      "name": " Lagavulin (12 Years) ",
       "brand": "Lagavulin",
       "age": "12 years",
       "region": "Ireland",
       "type": "Bourbon",
       "abv": 55,
+      "description": "A 55% ABV bourbon from Ireland, showcasing rich caramel and oak aromas. The palate is sweet and smoky, with a long, peaty finish, highlighted by octanoic acid and diacetyl.",
       "aroma": {
         "vanilla": 4,
         "peat": 4,
@@ -533,12 +651,13 @@
     },
     {
       "id": 15,
-      "name": "Whisky 15",
+      "name": "Maker's Mark (15 Years) ",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A Scotch from Ireland with 50% ABV, offering a sweet, smoky aroma of vanilla and peat. The taste is fruity and spicy, with a long, warming finish, supported by syringol and benzaldehyde. ",
       "aroma": {
         "vanilla": 1,
         "peat": 3,
@@ -571,12 +690,13 @@
     },
     {
       "id": 16,
-      "name": "Whisky 16",
+      "name": "Laphroaig (10 Years) ",
       "brand": "Laphroaig",
       "age": "10 years",
       "region": "Canada",
       "type": "Bourbon",
       "abv": 43,
+      "description": "A 43% ABV bourbon from Canada, featuring rich vanilla and caramel aromas. On the palate, it delivers a sweet and smoky flavor, with a dry, peaty finish enriched by limonene and guaiacol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 6,
@@ -609,12 +729,13 @@
     },
     {
       "id": 17,
-      "name": "Whisky 17",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Scotland",
       "type": "Single Malt",
       "abv": 43,
+      "description": "A 43% ABV single malt from Scotland, offering vanilla and oak aromas. The taste is smoky and fruity, with a long, peaty finish, supported by phenol and linalool. ",
       "aroma": {
         "vanilla": 8,
         "peat": 4,
@@ -647,12 +768,13 @@
     },
     {
       "id": 18,
-      "name": "Whisky 18",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Japan",
       "type": "Blended",
       "abv": 40,
+      "description": "A blended whisky from Japan with 40% ABV, featuring a sweet vanilla and caramel aroma. It offers a sweet, smoky palate with a long, warming finish, driven by isoamyl acetate and 2-phenylethanol. ",
       "aroma": {
         "vanilla": 1,
         "peat": 7,
@@ -685,12 +807,13 @@
     },
     {
       "id": 19,
-      "name": "Whisky 19",
+      "name": "Talisker (15 Years) ",
       "brand": "Talisker",
       "age": "15 years",
       "region": "Scotland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Scotland, known for its smoky, fruity aromas of vanilla and oak. The taste is spicy and fruity, with a long, dry finish supported by acetaldehyde and phenol. ",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -723,12 +846,13 @@
     },
     {
       "id": 20,
-      "name": "Whisky 20",
+      "name": "Ardbeg (18 Years)",
       "brand": "Ardbeg",
       "age": "18 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A USA-based rye whisky with 45% ABV, featuring a rich aroma of vanilla and oak. The palate is sweet and spicy, with a long, smoky finish enriched by diacetyl and methional. ",
       "aroma": {
         "vanilla": 6,
         "peat": 3,

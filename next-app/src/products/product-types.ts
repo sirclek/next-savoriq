@@ -12,6 +12,14 @@ export type Product = {
   title: string;
 };
 
+export type Chemical = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  title: string;
+}
+
 export type Whiskey = {
   id: number;
   name: string;
@@ -20,6 +28,7 @@ export type Whiskey = {
   region: string;
   type: string;
   abv: number;
+  description: string;   
   aroma: {
     flavour: string;
     intensity: number;
