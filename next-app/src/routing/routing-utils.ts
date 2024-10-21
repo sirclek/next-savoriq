@@ -65,11 +65,13 @@ export const routes = {
   whiskey: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),
-  
+
   // routing-utils.ts
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
-  chemical: createRoute(() => '/chemical')
+  chemical: createRoute(() => '/chemical'),
+  flavour: createRoute(() => '/flavour'),
+  chemicalVisualize: (whiskeyId: number) => `/chem-visual/${whiskeyId}`,
 };
 
 // TODO: Will check the use cases for this.
