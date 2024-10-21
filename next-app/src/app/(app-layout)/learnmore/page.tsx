@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '/public/images/logo/SavourIQ Logo.png';
+import logo from '/public/images/logo/Logo.png';
 import bottleTop from '/public/images/categories/oracle-bottle-top.png';
 import bottle from '/public/images/categories/oracle-bottle.png';
 import { getMetadata } from '@/seo/seo-utils';
@@ -22,7 +22,7 @@ const LearnMore = () => {
           width={190} 
           height={50} 
           style={{
-            backgroundColor: 'transparent', // Adjusts logo for dark mode
+            backgroundColor: 'brightness(0) invert(1)', // Adjusts logo for dark mode
           }}
         />
       </div>
