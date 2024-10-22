@@ -1,4 +1,7 @@
 {
+  "chemicals":[
+    {"tbc":"tbc"}
+  ],
   "flavours": [
   {
     "id": 1,
