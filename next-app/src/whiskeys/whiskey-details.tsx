@@ -2,10 +2,10 @@
 import { Price } from '@/common/price';
 // import { NextLink } from '@/routing/next-link';
 // import { routes } from '@/routing/routing-utils';
-import Image from 'next/image';
-import type { Whiskey } from './product-types';
-import { routes } from '@/routing/routing-utils';
 import { ButtonLink } from '@/common/button-link';
+import { routes } from '@/routing/routing-utils';
+import Image from 'next/image';
+import type { Whiskey } from '../common/object-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;

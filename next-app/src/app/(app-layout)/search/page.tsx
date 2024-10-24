@@ -1,6 +1,6 @@
 import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
-import { WhiskeyFilter } from '@/search/product-filter';
+import { WhiskeyFilter } from '@/search/whiskey-filter';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
 import { SelectedFilters } from '@/search/selected-filters';
