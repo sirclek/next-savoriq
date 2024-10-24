@@ -2,6 +2,9 @@ import type { Id, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
 import type { WhiskeyFilterArgs } from '@/search/search-types';
 
+import { Flavour } from '../common/object-types';
+
+
 function parseToSearchParams(
   params: Maybe<Record<string, Maybe<string | string[]>>>,
 ) {
