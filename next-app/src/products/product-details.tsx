@@ -43,8 +43,7 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           <ButtonLink variant="primary" href={routes.chemicalVisualize(whiskey.id)}>
             Chemical Visual
           </ButtonLink>
-
-          <ButtonLink variant="primary" href={routes.chemical()}>
+          <ButtonLink variant="primary" href={routes.flavourVisualize(whiskey.id)}>
             Flavour Visual
           </ButtonLink>
           <ButtonLink variant="primary" href={routes.chemical()}>
