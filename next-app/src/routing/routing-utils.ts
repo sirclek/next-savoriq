@@ -1,6 +1,7 @@
 import type { Id, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
 import type { WhiskeyFilterArgs } from '@/search/search-types';
+import { Flavour } from '../products/product-types';
 
 function parseToSearchParams(
   params: Maybe<Record<string, Maybe<string | string[]>>>,
@@ -65,11 +66,15 @@ export const routes = {
   whiskey: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),
-  
+
   // routing-utils.ts
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
-  chemical: createRoute(() => '/chemical')
+  chemical: createRoute(() => '/chemical'),
+  flavour: createRoute(() => '/flavour'),
+  chemicalVisualize: (whiskeyId: number) => `/chem-visual/${whiskeyId}`,
+  flavourVisualize: (whiskeyId: number) => `/flav-visual/${whiskeyId}`,
+
 };
 
 // TODO: Will check the use cases for this.

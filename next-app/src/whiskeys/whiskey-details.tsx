@@ -32,20 +32,26 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
-        <div className="text-sm">{whiskey.description}</div>   
-          
+        <div className="text-sm">{whiskey.description}</div>
+
         {whiskey.aroma.map((aroma, index) => (          // aroma
           <p key={index} className='text-sm'>
             {aroma.flavour} - Intensity: {aroma.intensity}
           </p>
         ))}
         <div className='flex gap-4'>
-        <ButtonLink variant="primary" href={routes.chemical()}>
-          Chemical Profile
-        </ButtonLink>
-        <ButtonLink variant="primary" href={routes.explore()}>
-          Flavour Profile
-        </ButtonLink>
+          <ButtonLink variant="primary" href={routes.chemicalVisualize(whiskey.id)}>
+            Chemical Visual
+          </ButtonLink>
+          <ButtonLink variant="primary" href={routes.flavourVisualize(whiskey.id)}>
+            Flavour Visual
+          </ButtonLink>
+          <ButtonLink variant="primary" href={routes.chemical()}>
+            Chemical Profile
+          </ButtonLink>
+          <ButtonLink variant="primary" href={routes.explore()}>
+            Flavour Profile
+          </ButtonLink>
         </div>
       </div>
     </div>

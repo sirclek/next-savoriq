@@ -1,66 +1,59 @@
+import { Container } from '@/common/container';
+import { APP_DESCRIPTION, APP_TITLE } from '@/common/common-utils';
+import { routes } from '@/routing/routing-utils';
+import { ButtonLink } from '@/common/button-link';
+import { getMetadata } from '@/seo/seo-utils';
+import Image from 'next/image';
+import type { Flavour } from '@/products/product-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
-import { Section, SectionTitle } from '@/common/section';
-import { getMetadata } from '@/seo/seo-utils';
-import { RelatedProducts } from '@/whiskeys/related-whiskey';
-import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
-import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
-import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
+import { Section } from '@/common/section';
 
-export type ProductPageProps = {
-  params: {
-    productId: string;
-  };
+type WhiskeyDetailsProps = {
+  flavour: Flavour;
 };
 
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
-  const product = await getOneWhiskeyById(Number(params.productId));
+export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
-  if (!product) notFound();
-
-  return getMetadata({
-    title: product.title,
-    description: product.description,
-    pathname: `/whiskeys/${params.productId}`,
-    images: [{ url: product.image, alt: product.title }],
-  });
-}
-
-export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.productId);
-  const product = await getOneWhiskeyById(productId);
-
-  if (!product) notFound();
-
+export default function LandingPage({ flavour }: WhiskeyDetailsProps) {
   return (
-    <div className="flex flex-col gap-4">
-      <main>
-        <PageTitle title={product.title} />
+    <>
+      <Section>
         <Paper>
-          <WhiskeyDetails product={product} />
-        </Paper>
-      </main>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Flavour</SectionTitle>
-        <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
+          <div className="flex flex-col gap-4">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
+                <Image
+                  className="rounded bg-white object-contain"
+                  src="/images/flavours/taste/smoky.jpg"
+                  alt="Smoky Image"
+                  priority
+                  fill
+                />
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="text-3xl font-bold">
+                    {<p>{flavour.name}</p>} {"Smoky"}
+                  </div>
+                  <div className="text-2xl">
+                    {"Description here: "}
+                  </div>
+                </div>
+                <div className="text-sm">
+                  <p>{flavour.description}</p> {"More description here:"}
+                </div>
+              </div>
+            </div>
+          </div>
         </Paper>
       </Section>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
+
+      <Section>
         <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
+          {/* Additional flavor-related content */}
         </Paper>
       </Section>
-    </div>
+    </>
   );
 }

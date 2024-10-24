@@ -20,6 +20,14 @@ export type Chemical = {
   title: string;
 }
 
+export type Flavour = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+  title: string;
+}
+
 export type Whiskey = {
   id: number;
   name: string;
