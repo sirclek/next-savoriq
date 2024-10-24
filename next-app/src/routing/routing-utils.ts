@@ -74,7 +74,6 @@ export const routes = {
   flavour: createRoute(() => '/flavour'),
   chemicalVisualize: (whiskeyId: number) => `/chem-visual/${whiskeyId}`,
   flavourVisualize: (whiskeyId: number) => `/flav-visual/${whiskeyId}`,
-
 };
 
 // TODO: Will check the use cases for this.
