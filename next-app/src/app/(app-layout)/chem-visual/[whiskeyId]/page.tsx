@@ -3,7 +3,7 @@ import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
 import Image from 'next/image';
-import { getOneWhiskeyById } from '@/products/product-fetchers';
+import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { notFound } from 'next/navigation';
 
 export type ChemicalVisualizePageProps = {
