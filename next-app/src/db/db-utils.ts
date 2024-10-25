@@ -12,3 +12,8 @@ export const getDb = async () => {
   await wait();
   return dbJson;
 };
+
+export const getChemicals = async () => {
+  const db = await getDb();
+  return db.chemicals;
+};
