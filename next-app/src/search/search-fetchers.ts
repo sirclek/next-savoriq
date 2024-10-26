@@ -99,7 +99,7 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
           return args.abvs?.includes(whiskey.abv.toString());
         }
         if (arg === 'caskTypes') {
-          return args.specialNotes?.includes(whiskey.caskType);
+          return args.caskTypes?.includes(whiskey.caskType);
         }
         if (arg === 'specialNotes') {
           return args.specialNotes?.includes(whiskey.specialNote);
