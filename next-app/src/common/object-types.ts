@@ -20,15 +20,27 @@ export type Chemical = {
   title: string;
 }
 
+export type Flavour = {
+  id: number;
+  subType: string;
+  name: string;
+  description: string;
+  title: string;
+  chemicals: {
+    name: string;
+    value: number;
+  }[];
+};
+
 export type Whiskey = {
   id: number;
   name: string;
   brand: string;
-  age: number;
+  age: string;
   region: string;
   type: string;
   abv: number;
-  description: string;   
+  description: string;
   aroma: {
     flavour: string;
     intensity: number;
