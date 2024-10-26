@@ -44,10 +44,9 @@ export function SelectedOptionsProvider({
         if (!hasSorting) {
           draft.selectedOptions.push({
             filterKey: WhiskeyFilterKey.SORTING,
-            isVisible: false,
             title: 'Sorting',
             value: WhiskeySorting.DEFAULT,
-            order: '0_0',
+            dbKey: 'sortings',
           });
         }
       });

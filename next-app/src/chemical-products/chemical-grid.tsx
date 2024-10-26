@@ -15,12 +15,11 @@ type ChemicalGridProps = {
 };
 
 export function ChemicalGrid({ chemicals }: ChemicalGridProps) {
-  // console.log('Chemicals', chemicals);
+
   return (
     <ChemicalGridShell>
       {chemicals.map((chemical) => {
         return (
-          // console.log('Chemical2', chemical),
           <li key={chemical.id}>
             <ChemicalCard chemical={chemical} />
           </li>

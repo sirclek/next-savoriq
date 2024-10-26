@@ -11,7 +11,7 @@ type WhiskeyCardProps = {
 };
 
 export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
-  // console.log('Whiskey', whiskey);
+
   return (
     <NextLink
       href={routes.whiskey({ params: { whiskeyId: whiskey.id } })}

@@ -23,7 +23,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
   const whiskey = await getObjectById<Whiskey>(whiskeyId, 'whiskeys');
 
   if (!whiskey) notFound();
-  console.log(whiskey);
+
   return (
     <div className="flex flex-col gap-4">
       <main>

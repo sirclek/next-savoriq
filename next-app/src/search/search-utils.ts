@@ -4,7 +4,6 @@ import type { WhiskeyFilterSelectedOption } from '@/search/search-types';
 export enum WhiskeyFilterKey {
   SORTING = 'sorting',
   CATEGORIES = 'categories',
-  PRICE_RANGES = 'priceRanges',
 }
 
 export enum WhiskeySorting {
@@ -46,10 +45,6 @@ export function getValuesOfSelectedOptions(
     ),
     [WhiskeyFilterKey.CATEGORIES]: getManySelectedOptionValues(
       WhiskeyFilterKey.CATEGORIES,
-      selectedOptions,
-    ),
-    [WhiskeyFilterKey.PRICE_RANGES]: getManySelectedOptionValues(
-      WhiskeyFilterKey.PRICE_RANGES,
       selectedOptions,
     ),
   };

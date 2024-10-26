@@ -62,3 +62,5 @@ export type Whiskey = {
   caskType: string;
   specialNote: string;
 };
+
+

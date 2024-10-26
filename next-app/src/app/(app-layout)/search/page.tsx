@@ -17,7 +17,7 @@ type SearchPageProps = {
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  console.log("Main", searchParams);
+
   const data = await filterProducts(searchParams);
   return (
     <main className="group/page">

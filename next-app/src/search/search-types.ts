@@ -15,7 +15,6 @@ export type WhiskeyFilterArgs = {
 type WhiskeyFilterOptionItem = {
   title: string;
   value: string;
-  order: `${number}_${number}`;
 };
 
 export type WhiskeyFilterData = {
@@ -38,7 +37,6 @@ export type WhiskeyFilterOptions = Record<
 >;
 
 export type WhiskeyFilterSelectedOption = WhiskeyFilterOptionItem & {
-  isVisible: boolean;
   filterKey: WhiskeyFilterKey;
   dbKey: string;
 };

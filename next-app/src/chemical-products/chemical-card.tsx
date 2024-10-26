@@ -11,7 +11,6 @@ type ChemicalCardProps = {
 };
 
 export function ChemicalCard({ chemical }: ChemicalCardProps) {
-  // console.log('Chemical', chemical);
   return (
     <NextLink
       href={routes.chemical({ params: { chemicalId: chemical.id } })}
