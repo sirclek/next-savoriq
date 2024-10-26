@@ -1,7 +1,5 @@
 import type { Id, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
-import type { WhiskeyFilterArgs } from '@/search/search-types';
-import { Flavour } from '../common/object-types';
 
 function parseToSearchParams(
   params: Maybe<Record<string, Maybe<string | string[]>>>,
@@ -27,7 +25,6 @@ function parseToSearchParams(
   return searchParams;
 }
 
-// https://stackoverflow.com/a/55247867/10876256
 type RequiredKeys<T> = {
   [K in keyof T]-?: object extends { [P in K]: T[K] } ? never : K;
 }[keyof T];
@@ -40,7 +37,6 @@ type CreateRouteArgs = {
 };
 
 type CreateRouteResult<RouteArgs extends CreateRouteArgs> = (
-  // args parameter is optional when both of params and query fields are optional
   ...args: HasRequiredField<RouteArgs> extends true ? [RouteArgs] : [RouteArgs?]
 ) => string;
 
@@ -55,14 +51,10 @@ function createRoute<RouteArgs extends CreateRouteArgs>(
   };
 }
 
-// TODO: Will check the use cases for these.
-// type RouteArgs<T extends AnyFunction> = NonNullable<Parameters<T>[0]>;
-// type PathParams<T extends AnyFunction> = RouteArgs<T>['params'];
-// type QueryParams<T extends AnyFunction> = RouteArgs<T>['query'];
-
 export const routes = {
   home: createRoute(() => '/'),
-  search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
+  // search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
+  search: createRoute(() => '/search'),
   whiskey: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),
@@ -75,10 +67,3 @@ export const routes = {
   chemicalVisualize: (whiskeyId: number) => `/chem-visual/${whiskeyId}`,
   flavourVisualize: (whiskeyId: number) => `/flav-visual/${whiskeyId}`,
 };
-
-// TODO: Will check the use cases for this.
-// export function createUrl(pathname: string, searchParams?: URLSearchParams) {
-//   const paramsString = searchParams?.toString();
-//   const queryString = paramsString ? `?${paramsString}` : '';
-//   return `${pathname}${queryString}`;
-// }
