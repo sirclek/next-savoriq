@@ -7,8 +7,8 @@ type RelatedProductsProps = {
   whiskeyId: Id;
 };
 export enum RelatedProductType {
-  FLAVOUR = 'FLAVOUR',
-  CHEMICAL = 'CHEMICAL',
+  FLAVOUR = 'flavour',
+  CHEMICAL = 'chemical',
 }
 
 export async function RelatedProducts({ whiskeyId, type }: RelatedProductsProps & { type: RelatedProductType }) {

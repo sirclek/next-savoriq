@@ -5,7 +5,7 @@
   "flavours": [
   {
     "id": 1,
-    "sub-type": "aroma",
+    "subType": "aroma",
     "name": "Vanilla",
     "description": "Vanilla is a popular aroma and flavor in whisky, derived from vanillin, a compound found in vanilla beans. This sweet, creamy note adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
     "title": "Vanilla",
@@ -20,7 +20,7 @@
   },
   {
     "id": 2,
-    "sub-type": "aroma",
+    "subType": "aroma",
     "name": "Peat",
     "description": "sd",
     "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The chemical of the peat flavour depends on the number of phenols present. e",
@@ -35,7 +35,7 @@
   },
   {
     "id": 3,
-    "sub-type": "aroma",
+    "subType": "aroma",
     "name": "Caramel",
     "description": "Caramel flavour derives from the heating of sugar during caramelization. This process produces a rich, sweet, and slightly bitter profile with hints of toffee and brown sugar. The complex reactions between sugars and amino acids give caramel its distinctive taste.",
     "title": "Caramel",
@@ -50,7 +50,7 @@
   },
   {
     "id": 4,
-    "sub-type": "aroma",
+    "subType": "aroma",
     "name": "Oak",
     "description": "Oak contributes to whisky flavor through compounds released during barrel aging. These compounds, such as vanillin, lignin, and tannins, impart woody, spicy, and vanilla notes. The aging process in oak barrels gives whisky its complexity, with each compound adding depth to the flavor.",
     "title": "Oak",
@@ -65,7 +65,7 @@
   },
   {
     "id": 5,
-    "sub-type": "taste",
+    "subType": "taste",
     "name": "Sweet",
     "description": "Sweetness is primarily sensed through sugar molecules or other compounds that mimic their effect on taste receptors. This taste is generally associated with simple sugars like glucose and fructose, but can also come from artificial sweeteners, sugar alcohols, and other naturally occurring compounds. Sweet flavors balance out more intense or bitter tastes in foods and beverages. ",
     "title": "Sweet",
@@ -82,7 +82,7 @@
   },
   {
     "id": 6,
-    "sub-type": "taste",
+    "subType": "taste",
     "name": "Smoky ",
     "description": "The smoky flavor commonly found in whisky and other foods comes from compounds formed during processes like peat burning, wood charring, or smoking over open flames. These compounds impart a deep, rich, and sometimes slightly medicinal smokiness. ",
     "title": "Smoky ",
@@ -98,7 +98,7 @@
   },
   {
     "id": 7,
-    "sub-type": "taste",
+    "subType": "taste",
     "name": "Spicy",
     "description": "Spicy flavors in whisky come from compounds like eugenol and cinnamaldehyde, which are typically extracted from oak barrels or present in spices used in the distillation process. These compounds create warm, peppery, and sometimes clove-like notes.",
     "title": "Spicy",
@@ -113,7 +113,7 @@
   }, 
   {
     "id": 8,
-    "sub-type": "taste",
+    "subType": "taste",
     "name": "Fruity",
     "description": "Fruity flavors in whisky arise from esters and aldehydes formed during fermentation and aging. These compounds give off sweet, citrus, and stone fruit notes, balancing the more robust flavors of the whisky.",
     "title": "Fruity",
@@ -128,7 +128,7 @@
   },
   {
     "id": 9,
-    "sub-type": "finish",
+    "subType": "finish",
     "name": "Length",
     "description": "The length of a whisky's finish refers to how long the flavors linger on the palate after swallowing. A long finish indicates a complex and well-balanced whisky, while a short finish may suggest a simpler or less mature spirit.",
     "title": "Length",
@@ -143,7 +143,7 @@
   },
   {
     "id": 10,
-    "sub-type": "finish",
+    "subType": "finish",
     "name": "Warming",
     "description": "The warming sensation in whisky comes from the alcohol content and the compounds present in the spirit. A warming finish is often associated with higher ABV whiskies and can enhance the overall drinking experience.",
     "title": "Warming",
@@ -158,7 +158,7 @@
   },
   {
     "id": 11,
-    "sub-type": "finish",
+    "subType": "finish",
     "name": "Dry",
     "description": "A dry finish in whisky refers to the lack of residual sweetness or stickiness on the palate after swallowing. Dry whiskies are often associated with tannins and other compounds that create a clean, crisp mouthfeel.",
     "title": "Dry",
@@ -172,7 +172,7 @@
   },
   {
     "id": 12,
-    "sub-type": "finish",
+    "subType": "finish",
     "name": "Peaty",
     "description": "Peaty whiskies are characterized by the presence of phenolic compounds like guaiacol and cresols, which impart a smoky, earthy, and sometimes medicinal flavor. The peaty finish lingers on the palate, leaving a distinctive taste long after swallowing.",
     "title": "Peaty",
@@ -221,9 +221,9 @@
         "eugenol": 99
       },
       "price": 108,
-      "bottling_date": "2018-04-18",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Popular Release"
+      "bottlingDate": "2018-04-18",
+      "caskType": "Sherry Oak",
+      "specialNote": "Popular Release"
     },
     {
       "id": 2,
@@ -260,9 +260,9 @@
         "acetaldehyde": 77
       },
       "price": 44,
-      "bottling_date": "2021-08-06",
-      "cask_type": "French Oak",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2021-08-06",
+      "caskType": "French Oak",
+      "specialNote": "Award-winning"
     },
     {
       "id": 3,
@@ -299,9 +299,9 @@
         "phenol": 46
       },
       "price": 46,
-      "bottling_date": "2019-06-27",
-      "cask_type": "Ex-Sherry",
-      "special_notes": "Small Batch"
+      "bottlingDate": "2019-06-27",
+      "caskType": "Ex-Sherry",
+      "specialNote": "Small Batch"
     },
     {
       "id": 4,
@@ -338,9 +338,9 @@
         "benzaldehyde": 27
       },
       "price": 72,
-      "bottling_date": "2022-03-09",
-      "cask_type": "American Oak",
-      "special_notes": "Cask Strength"
+      "bottlingDate": "2022-03-09",
+      "caskType": "American Oak",
+      "specialNote": "Cask Strength"
     },
     {
       "id": 5,
@@ -377,9 +377,9 @@
         "lactones": 88
       },
       "price": 143,
-      "bottling_date": "2019-10-13",
-      "cask_type": "American Oak",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2019-10-13",
+      "caskType": "American Oak",
+      "specialNote": "Award-winning"
     },
     {
       "id": 6,
@@ -416,9 +416,9 @@
         "4_methylguaiacol": 17
       },
       "price": 35,
-      "bottling_date": "2021-08-14",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Small Batch"
+      "bottlingDate": "2021-08-14",
+      "caskType": "Ex-Bourbon",
+      "specialNote": "Small Batch"
     },
     {
       "id": 7,
@@ -455,9 +455,9 @@
         "isoamyl_acetate": 50
       },
       "price": 58,
-      "bottling_date": "2022-11-27",
-      "cask_type": "American Oak",
-      "special_notes": "Limited Edition"
+      "bottlingDate": "2022-11-27",
+      "caskType": "American Oak",
+      "specialNote": "Limited Edition"
     },
     {
       "id": 8,
@@ -494,9 +494,9 @@
         "acetaldehyde": 90
       },
       "price": 141,
-      "bottling_date": "2023-12-07",
-      "cask_type": "American Oak",
-      "special_notes": "Popular Release"
+      "bottlingDate": "2023-12-07",
+      "caskType": "American Oak",
+      "specialNote": "Popular Release"
     },
     {
       "id": 9,
@@ -533,9 +533,9 @@
         "lactones": 83
       },
       "price": 78,
-      "bottling_date": "2021-06-10",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Cask Strength"
+      "bottlingDate": "2021-06-10",
+      "caskType": "Sherry Oak",
+      "specialNote": "Cask Strength"
     },
     {
       "id": 10,
@@ -572,9 +572,9 @@
         "ethyl_acetate": 9
       },
       "price": 49,
-      "bottling_date": "2021-04-15",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Popular Release"
+      "bottlingDate": "2021-04-15",
+      "caskType": "Ex-Bourbon",
+      "specialNote": "Popular Release"
     },
     {
       "id": 11,
@@ -611,9 +611,9 @@
         "lactones": 32
       },
       "price": 85,
-      "bottling_date": "2019-06-13",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2019-06-13",
+      "caskType": "Ex-Bourbon",
+      "specialNote": "Award-winning"
     },
     {
       "id": 12,
@@ -650,9 +650,9 @@
         "hexanoic_acid": 27
       },
       "price": 106,
-      "bottling_date": "2020-05-25",
-      "cask_type": "American Oak",
-      "special_notes": "Cask Strength"
+      "bottlingDate": "2020-05-25",
+      "caskType": "American Oak",
+      "specialNote": "Cask Strength"
     },{
       "id": 13,
       "name": "Laphroaig (NAS) ",
@@ -688,9 +688,9 @@
         "phenol": 95
       },
       "price": 117,
-      "bottling_date": "2020-04-18",
-      "cask_type": "French Oak",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2020-04-18",
+      "caskType": "French Oak",
+      "specialNote": "Award-winning"
     },
     {
       "id": 14,
@@ -727,9 +727,9 @@
         "4_methylguaiacol": 16
       },
       "price": 50,
-      "bottling_date": "2020-02-01",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2020-02-01",
+      "caskType": "Sherry Oak",
+      "specialNote": "Award-winning"
     },
     {
       "id": 15,
@@ -766,9 +766,9 @@
         "4_methylguaiacol": 28
       },
       "price": 133,
-      "bottling_date": "2020-04-20",
-      "cask_type": "French Oak",
-      "special_notes": "Small Batch"
+      "bottlingDate": "2020-04-20",
+      "caskType": "French Oak",
+      "specialNote": "Small Batch"
     },
     {
       "id": 16,
@@ -805,9 +805,9 @@
         "ethyl_acetate": 70
       },
       "price": 133,
-      "bottling_date": "2020-08-09",
-      "cask_type": "American Oak",
-      "special_notes": "Award-winning"
+      "bottlingDate": "2020-08-09",
+      "caskType": "American Oak",
+      "specialNote": "Award-winning"
     },
     {
       "id": 17,
@@ -844,9 +844,9 @@
         "2_phenylethanol": 88
       },
       "price": 110,
-      "bottling_date": "2020-07-23",
-      "cask_type": "American Oak",
-      "special_notes": "Small Batch"
+      "bottlingDate": "2020-07-23",
+      "caskType": "American Oak",
+      "specialNote": "Small Batch"
     },
     {
       "id": 18,
@@ -883,9 +883,9 @@
         "vanillin": 21
       },
       "price": 69,
-      "bottling_date": "2018-02-08",
-      "cask_type": "French Oak",
-      "special_notes": "Small Batch"
+      "bottlingDate": "2018-02-08",
+      "caskType": "French Oak",
+      "specialNote": "Small Batch"
     },
     {
       "id": 19,
@@ -922,9 +922,9 @@
         "vanillin": 87
       },
       "price": 143,
-      "bottling_date": "2021-08-11",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Popular Release"
+      "bottlingDate": "2021-08-11",
+      "caskType": "Ex-Bourbon",
+      "specialNote": "Popular Release"
     },
     {
       "id": 20,
@@ -961,9 +961,9 @@
         "linalool": 22
       },
       "price": 36,
-      "bottling_date": "2018-07-26",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Limited Edition"
+      "bottlingDate": "2018-07-26",
+      "caskType": "Sherry Oak",
+      "specialNote": "Limited Edition"
     }
   ],
   "sortings": [
@@ -1102,7 +1102,7 @@
       "value": "40%"
     }
   ],
-  "cask_types": [
+  "caskTypes": [
     {
       "title": "Sherry Oak",
       "value": "Sherry Oak"
@@ -1124,7 +1124,7 @@
       "value": "Ex-Bourbon"
     }
   ],
-  "special_notes": [
+  "specialNotes": [
     {
       "title": "Popular Release",
       "value": "Popular Release"

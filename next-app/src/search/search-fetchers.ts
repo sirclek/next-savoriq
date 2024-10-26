@@ -1,5 +1,5 @@
 import type { Whiskey } from '@/common/object-types';
-import { getDb } from '@/db/db-utils';
+import { fetchData, getDb } from '@/db/db-utils';
 import type {
   WhiskeyFilterArgs,
   WhiskeyFilterOptions,
@@ -17,8 +17,8 @@ async function getProductFilterOptions() {
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = await getDb();
 
   const filterOptions: WhiskeyFilterOptions = {
@@ -58,20 +58,20 @@ async function getProductFilterOptions() {
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'abvs',
     },
-    cask_types: {
+    caskTypes: {
       title: 'Cask Type',
-      options: cask_types.map((option, i) => ({ ...option, order: `6_${i}` })),
+      options: caskTypes.map((option, i) => ({ ...option, order: `6_${i}` })),
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'cask_types',
+      dbKey: 'caskTypes',
     },
-    special_notes: {
+    specialNotes: {
       title: 'Special Notes',
-      options: special_notes.map((option, i) => ({
+      options: specialNotes.map((option, i) => ({
         ...option,
         order: `7_${i}`,
       })),
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'special_notes',
+      dbKey: 'specialNotes',
     },
   };
 
@@ -79,31 +79,7 @@ async function getProductFilterOptions() {
 }
 
 export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
-  const db = await getDb();
-  let response: Whiskey[] = db.whiskeys.map((whiskey) => ({
-    ...whiskey,
-    bottlingDate: whiskey.bottling_date || '',
-    caskType: whiskey.cask_type || '',
-    specialNote: whiskey.special_notes || '',
-    age: parseInt(whiskey.age) || 0,
-    aroma: Object.keys(whiskey.aroma).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.aroma[flavour as keyof typeof whiskey.aroma],
-    })),
-    taste: Object.keys(whiskey.taste).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.taste[flavour as keyof typeof whiskey.taste],
-    })),
-    finish: Object.keys(whiskey.finish).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.finish[flavour as keyof typeof whiskey.finish],
-    })),
-    compounds: Object.keys(whiskey.compounds).map((compound) => ({
-      name: compound,
-      value: whiskey.compounds[compound as keyof typeof whiskey.compounds] ?? 0,
-    })),
-  }));
-
+  let response: Whiskey[] = await fetchData<Whiskey>('whiskeys');
   for (const arg in args) {
     if (arg !== 'sortings') {
       response = response.filter((whiskey) => {
@@ -121,6 +97,12 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
         }
         if (arg === 'abvs') {
           return args.abvs?.includes(whiskey.abv.toString());
+        }
+        if (arg === 'caskTypes') {
+          return args.specialNotes?.includes(whiskey.caskType);
+        }
+        if (arg === 'specialNotes') {
+          return args.specialNotes?.includes(whiskey.specialNote);
         }
         return true; // Default case if no matching arg is found
       });
@@ -157,8 +139,8 @@ function getProductFilterSelectedOptions({
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = filterOptions;
   const selectedOptions: WhiskeyFilterSelectedOption[] = [];
 
@@ -232,23 +214,23 @@ function getProductFilterSelectedOptions({
       });
     }
   }
-  for (const cask_type of cask_types.options) {
-    if (args.cask_types?.includes(cask_type.value)) {
+  for (const cask_type of caskTypes.options) {
+    if (args.caskTypes?.includes(cask_type.value)) {
       selectedOptions.push({
         ...cask_type,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'cask_types',
+        dbKey: 'caskTypes',
       });
     }
   }
-  for (const special_note of special_notes.options) {
-    if (args.special_notes?.includes(special_note.value)) {
+  for (const special_note of specialNotes.options) {
+    if (args.specialNotes?.includes(special_note.value)) {
       selectedOptions.push({
         ...special_note,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'special_notes',
+        dbKey: 'specialNotes',
       });
     }
   }
