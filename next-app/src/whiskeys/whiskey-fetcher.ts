@@ -1,31 +1,26 @@
+import { getObjectById, fetchData } from '@/db/db-utils';
 import { filterProducts, getManyWhiskeys } from '@/search/search-fetchers';
 import { cache } from 'react';
-
-export const getOneWhiskeyById = cache(async (whiskeyId: number) => {
-  const whiskeys = getManyWhiskeys({});
-  for (const whiskey of await whiskeys) {
-    if (whiskey.id === whiskeyId) return whiskey;
-  }
-});
+import { Whiskey } from '@/common/object-types';
 
 export const getManyWhiskeysByIds = cache(async (whiskeyIds: number[]) => {
-  const whiskeys = await getManyWhiskeys({});
+  const whiskeys = await fetchData<Whiskey>('whiskeys');
   return whiskeys.filter((whiskey) => whiskeyIds.includes(whiskey.id));
 });
 
 export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
-  const whiskey = await getOneWhiskeyById(whiskeyId);
+  const whiskey = await getObjectById<Whiskey>(whiskeyId, 'whiskeys');
 
   if (!whiskey) return [];
 
   const { whiskeys } = await filterProducts({
-    brand: [whiskey.brand],
-    age: [whiskey.age.toString()],
-    region: [whiskey.region],
-    type: [whiskey.type],
-    abv: [whiskey.abv.toString()],
-    cask_type: [whiskey.caskType],
-    special_note: [whiskey.specialNote],
+    brands: [whiskey.brand],
+    ages: [whiskey.age.toString()],
+    regions: [whiskey.region],
+    types: [whiskey.type],
+    abvs: [whiskey.abv.toString()],
+    caskTypes: [whiskey.caskType],
+    specialNotes: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(
@@ -36,18 +31,18 @@ export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
 });
 
 export const getRelatedWhiskeysChemicals = cache(async (whiskeyId: number) => {
-  const whiskey = await getOneWhiskeyById(whiskeyId);
+  const whiskey = await getObjectById<Whiskey>(whiskeyId, 'whiskeys');
 
   if (!whiskey) return [];
 
   const { whiskeys } = await filterProducts({
-    brand: [whiskey.brand],
-    age: [whiskey.age.toString()],
-    region: [whiskey.region],
-    type: [whiskey.type],
-    abv: [whiskey.abv.toString()],
-    cask_type: [whiskey.caskType],
-    special_note: [whiskey.specialNote],
+    brands: [whiskey.brand],
+    ages: [whiskey.age],
+    regions: [whiskey.region],
+    types: [whiskey.type],
+    abvs: [whiskey.abv.toString()],
+    caskTypes: [whiskey.caskType],
+    specialNotes: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(
