@@ -1,18 +1,16 @@
-import { Container } from '@/common/container';
 import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
-
-import { RelatedProducts, RelatedProductType } from '@/whiskeys/related-whiskey';
+import { RelatedProducts } from '@/whiskeys/related-whiskey';
 import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
-import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
-
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { getObjectById } from '@/db/db-utils';
+import { Flavour } from '@/common/object-types';
 
 
 export type ProductPageProps = {
@@ -24,7 +22,10 @@ export type ProductPageProps = {
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const flavour = await getOneWhiskeyById(Number(params.flavourId));
+  const flavour = await getObjectById<Flavour>(
+    Number(params.flavourId),
+    'flavours',
+  );
 
   if (!flavour) notFound();
 
@@ -37,8 +38,7 @@ export async function generateMetadata({
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const flavourId = Number(params.flavourId);
-  const flavour = await getOneWhiskeyById(flavourId);
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId), 'flavours');
 
   if (!flavour) notFound();
 

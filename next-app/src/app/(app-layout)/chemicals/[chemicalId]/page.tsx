@@ -1,34 +1,37 @@
-import { Id2 } from '@/common/common-types';
+import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
 import { Chemical } from '@/common/object-types';
-import { getChemicals } from '@/db/db-utils';
+import { getObjectById } from '@/db/db-utils';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 type ChemicalPageProps = {
   params: {
-    chemicalId: Id2;
+  chemicalId: Id | string | number;
   };
 };
 
 export async function generateMetadata({
   params,
 }: ChemicalPageProps): Promise<Metadata> {
-  const chemicals = await getChemicals();
-  const chemical = chemicals.find(c => c.id === Number(params.chemicalId));
-  return getMetadata({ title: chemical ? chemical.name : 'Chemical', pathname: `/chemicals/${params.chemicalId}` });
+  const chemical = await getObjectById<Chemical>(
+    Number(params.chemicalId),
+    'chemicals',
+  );
+  return getMetadata({
+    title: chemical ? chemical.name : 'Chemical',
+    pathname: `/chemicals/${params.chemicalId}`,
+  });
 }
 
 export default async function ChemicalPage({ params }: ChemicalPageProps) {
-  const chemicals = await getChemicals();
-  const chemical = chemicals.find(c => c.id === Number(params.chemicalId));
+  const chemical = await getObjectById<Chemical>(Number(params.chemicalId),'chemicals');
 
-  if (!chemical) {
-    return <div>Chemical not found</div>;
-  }
+  if (!chemical) notFound();
 
   return (
     <>
@@ -47,12 +50,8 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
               </div>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
-                  <div className="text-3xl font-bold">
-                    {chemical.name}
-                  </div>
-                  <div className="text-2xl">
-                    {/* for text*/}
-                  </div>
+                  <div className="text-3xl font-bold">{chemical.name}</div>
+                  <div className="text-2xl">{/* for text*/}</div>
                 </div>
                 <div className="text-sm">
                   <p>{chemical.description}</p>
@@ -62,10 +61,8 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
           </div>
         </Paper>
       </Section>
-    
-      <Section>
-       
-      </Section>
+
+      <Section></Section>
     </>
   );
 }

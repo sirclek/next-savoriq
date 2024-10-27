@@ -1,5 +1,5 @@
 import type { Whiskey } from '@/common/object-types';
-import { getDb } from '@/db/db-utils';
+import { fetchData, getDb } from '@/db/db-utils';
 import type {
   WhiskeyFilterArgs,
   WhiskeyFilterOptions,
@@ -9,7 +9,7 @@ import type {
 import { WhiskeyFilterKey, WhiskeySorting } from '@/search/search-utils';
 import { cache } from 'react';
 
-async function getProductFilterOptions() {
+async function getWhiskeyFilterOptions() {
   const {
     sortings,
     brands,
@@ -17,61 +17,58 @@ async function getProductFilterOptions() {
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = await getDb();
 
   const filterOptions: WhiskeyFilterOptions = {
     sortings: {
       title: 'Sorting',
-      options: sortings.map((option, i) => ({ ...option, order: `0_${i}` })),
+      options: sortings,
       filterKey: WhiskeyFilterKey.SORTING,
       dbKey: 'sortings',
     },
     brands: {
       title: 'Brand',
-      options: brands.map((option, i) => ({ ...option, order: `1_${i}` })),
+      options: brands,
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'brands',
     },
     ages: {
       title: 'Age',
-      options: ages.map((option, i) => ({ ...option, order: `2_${i}` })),
+      options: ages,
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'ages',
     },
     regions: {
       title: 'Region',
-      options: regions.map((option, i) => ({ ...option, order: `3_${i}` })),
+      options: regions,
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'regions',
     },
     types: {
       title: 'Type',
-      options: types.map((option, i) => ({ ...option, order: `4_${i}` })),
+      options: types,
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'types',
     },
     abvs: {
       title: 'ABV',
-      options: abvs.map((option, i) => ({ ...option, order: `5_${i}` })),
+      options: abvs,
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'abvs',
     },
-    cask_types: {
+    caskTypes: {
       title: 'Cask Type',
-      options: cask_types.map((option, i) => ({ ...option, order: `6_${i}` })),
+      options: caskTypes,
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'cask_types',
+      dbKey: 'caskTypes',
     },
-    special_notes: {
+    specialNotes: {
       title: 'Special Notes',
-      options: special_notes.map((option, i) => ({
-        ...option,
-        order: `7_${i}`,
-      })),
+      options: specialNotes,
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'special_notes',
+      dbKey: 'specialNotes',
     },
   };
 
@@ -79,31 +76,7 @@ async function getProductFilterOptions() {
 }
 
 export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
-  const db = await getDb();
-  let response: Whiskey[] = db.whiskeys.map((whiskey) => ({
-    ...whiskey,
-    bottlingDate: whiskey.bottling_date || '',
-    caskType: whiskey.cask_type || '',
-    specialNote: whiskey.special_notes || '',
-    age: parseInt(whiskey.age) || 0,
-    aroma: Object.keys(whiskey.aroma).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.aroma[flavour as keyof typeof whiskey.aroma],
-    })),
-    taste: Object.keys(whiskey.taste).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.taste[flavour as keyof typeof whiskey.taste],
-    })),
-    finish: Object.keys(whiskey.finish).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.finish[flavour as keyof typeof whiskey.finish],
-    })),
-    compounds: Object.keys(whiskey.compounds).map((compound) => ({
-      name: compound,
-      value: whiskey.compounds[compound as keyof typeof whiskey.compounds] ?? 0,
-    })),
-  }));
-
+  let response: Whiskey[] = await fetchData<Whiskey>('whiskeys');
   for (const arg in args) {
     if (arg !== 'sortings') {
       response = response.filter((whiskey) => {
@@ -122,28 +95,21 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
         if (arg === 'abvs') {
           return args.abvs?.includes(whiskey.abv.toString());
         }
+        if (arg === 'caskTypes') {
+          return args.caskTypes?.includes(whiskey.caskType);
+        }
+        if (arg === 'specialNotes') {
+          return args.specialNotes?.includes(whiskey.specialNote);
+        }
         return true; // Default case if no matching arg is found
       });
-    }
-  }
-
-  if (args.sortings) {
-    switch (args.sortings as WhiskeySorting) {
-      case WhiskeySorting.PRICE_ASC: {
-        response.sort((a, b) => a.price - b.price);
-        break;
-      }
-      case WhiskeySorting.PRICE_DESC: {
-        response.sort((a, b) => b.price - a.price);
-        break;
-      }
     }
   }
 
   return response;
 }
 
-function getProductFilterSelectedOptions({
+function getWhiskeyFilterSelectedOptions({
   filterOptions,
   args,
 }: {
@@ -157,8 +123,8 @@ function getProductFilterSelectedOptions({
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = filterOptions;
   const selectedOptions: WhiskeyFilterSelectedOption[] = [];
 
@@ -175,8 +141,6 @@ function getProductFilterSelectedOptions({
   if (selectedSorting) {
     selectedOptions.push({
       ...selectedSorting,
-      isVisible:
-        (selectedSorting.value as WhiskeySorting) !== WhiskeySorting.DEFAULT,
       filterKey: WhiskeyFilterKey.SORTING,
       dbKey: 'sortings',
     });
@@ -186,7 +150,6 @@ function getProductFilterSelectedOptions({
     if (args.brands?.includes(brand.value)) {
       selectedOptions.push({
         ...brand,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'brands',
       });
@@ -196,7 +159,6 @@ function getProductFilterSelectedOptions({
     if (args.ages?.includes(age.value)) {
       selectedOptions.push({
         ...age,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'ages',
       });
@@ -206,7 +168,6 @@ function getProductFilterSelectedOptions({
     if (args.regions?.includes(region.value)) {
       selectedOptions.push({
         ...region,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'regions',
       });
@@ -216,7 +177,6 @@ function getProductFilterSelectedOptions({
     if (args.types?.includes(type.value)) {
       selectedOptions.push({
         ...type,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'types',
       });
@@ -226,29 +186,26 @@ function getProductFilterSelectedOptions({
     if (args.abvs?.includes(abv.value)) {
       selectedOptions.push({
         ...abv,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'abvs',
       });
     }
   }
-  for (const cask_type of cask_types.options) {
-    if (args.cask_types?.includes(cask_type.value)) {
+  for (const cask_type of caskTypes.options) {
+    if (args.caskTypes?.includes(cask_type.value)) {
       selectedOptions.push({
         ...cask_type,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'cask_types',
+        dbKey: 'caskTypes',
       });
     }
   }
-  for (const special_note of special_notes.options) {
-    if (args.special_notes?.includes(special_note.value)) {
+  for (const special_note of specialNotes.options) {
+    if (args.specialNotes?.includes(special_note.value)) {
       selectedOptions.push({
         ...special_note,
-        isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'special_notes',
+        dbKey: 'specialNotes',
       });
     }
   }
@@ -259,11 +216,11 @@ function getProductFilterSelectedOptions({
 export const filterProducts = cache(
   async (args: WhiskeyFilterArgs): Promise<WhiskeyFilterResponse> => {
     const [filterOptions, whiskeys] = await Promise.all([
-      getProductFilterOptions(),
+      getWhiskeyFilterOptions(),
       getManyWhiskeys(args),
     ]);
 
-    const selectedOptions = getProductFilterSelectedOptions({
+    const selectedOptions = getWhiskeyFilterSelectedOptions({
       filterOptions,
       args,
     });
