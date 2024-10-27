@@ -24,8 +24,8 @@ export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
     region: [whiskey.region],
     type: [whiskey.type],
     abv: [whiskey.abv.toString()],
-    cask_type: [whiskey.caskType],
-    special_note: [whiskey.specialNote],
+    caskType: [whiskey.caskType],
+    specialNote: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(
@@ -46,8 +46,8 @@ export const getRelatedWhiskeysChemicals = cache(async (whiskeyId: number) => {
     region: [whiskey.region],
     type: [whiskey.type],
     abv: [whiskey.abv.toString()],
-    cask_type: [whiskey.caskType],
-    special_note: [whiskey.specialNote],
+    caskType: [whiskey.caskType],
+    specialNote: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(

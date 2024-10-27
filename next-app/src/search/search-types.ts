@@ -8,8 +8,8 @@ export type WhiskeyFilterArgs = {
   regions?: string[];
   types?: string[];
   abvs?: string[];
-  cask_types?: string[];
-  special_notes?: string[];
+  caskTypes?: string[];
+  specialNotes?: string[];
 };
 
 type WhiskeyFilterOptionItem = {
@@ -32,8 +32,8 @@ export type WhiskeyFilterOptions = Record<
   | 'regions'
   | 'types'
   | 'abvs'
-  | 'cask_types'
-  | 'special_notes',
+  | 'caskTypes'
+  | 'specialNotes',
   WhiskeyFilterData
 >;
 

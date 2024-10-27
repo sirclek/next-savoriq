@@ -17,8 +17,8 @@ async function getProductFilterOptions() {
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = await getDb();
 
   const filterOptions: WhiskeyFilterOptions = {
@@ -58,20 +58,20 @@ async function getProductFilterOptions() {
       filterKey: WhiskeyFilterKey.CATEGORIES,
       dbKey: 'abvs',
     },
-    cask_types: {
+    caskTypes: {
       title: 'Cask Type',
-      options: cask_types.map((option, i) => ({ ...option, order: `6_${i}` })),
+      options: caskTypes.map((option, i) => ({ ...option, order: `6_${i}` })),
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'cask_types',
+      dbKey: 'caskTypes',
     },
-    special_notes: {
+    specialNotes: {
       title: 'Special Notes',
-      options: special_notes.map((option, i) => ({
+      options: specialNotes.map((option, i) => ({
         ...option,
         order: `7_${i}`,
       })),
       filterKey: WhiskeyFilterKey.CATEGORIES,
-      dbKey: 'special_notes',
+      dbKey: 'specialNotes',
     },
   };
 
@@ -83,8 +83,8 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
   let response: Whiskey[] = db.whiskeys.map((whiskey) => ({
     ...whiskey,
     bottlingDate: whiskey.bottling_date || '',
-    caskType: whiskey.cask_type || '',
-    specialNote: whiskey.special_notes || '',
+    caskType: whiskey.caskType || '',
+    specialNote: whiskey.specialNotes || '',
     age: parseInt(whiskey.age) || 0,
     aroma: Object.keys(whiskey.aroma).map((flavour) => ({
       flavour: flavour,
@@ -122,6 +122,12 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
         if (arg === 'abvs') {
           return args.abvs?.includes(whiskey.abv.toString());
         }
+        if (arg === 'caskTypes') {
+          return args.caskTypes?.includes(whiskey.caskType);
+        }
+        if (arg === 'specialNotes') {
+          return args.specialNotes?.includes(whiskey.specialNote);
+        }
         return true; // Default case if no matching arg is found
       });
     }
@@ -157,8 +163,8 @@ function getProductFilterSelectedOptions({
     regions,
     types,
     abvs,
-    cask_types,
-    special_notes,
+    caskTypes,
+    specialNotes,
   } = filterOptions;
   const selectedOptions: WhiskeyFilterSelectedOption[] = [];
 
@@ -232,23 +238,23 @@ function getProductFilterSelectedOptions({
       });
     }
   }
-  for (const cask_type of cask_types.options) {
-    if (args.cask_types?.includes(cask_type.value)) {
+  for (const caskType of caskTypes.options) {
+    if (args.caskTypes?.includes(caskType.value)) {
       selectedOptions.push({
-        ...cask_type,
+        ...caskType,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'cask_types',
+        dbKey: 'caskTypes',
       });
     }
   }
-  for (const special_note of special_notes.options) {
-    if (args.special_notes?.includes(special_note.value)) {
+  for (const specialNote of specialNotes.options) {
+    if (args.specialNotes?.includes(specialNote.value)) {
       selectedOptions.push({
-        ...special_note,
+        ...specialNote,
         isVisible: true,
         filterKey: WhiskeyFilterKey.CATEGORIES,
-        dbKey: 'special_notes',
+        dbKey: 'specialNotes',
       });
     }
   }
