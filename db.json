@@ -1,0 +1,1270 @@
+{
+  "chemicals": [
+    {
+      "id": 1,
+      "name": "Isoamyl Acetate",
+      "description": "An ester compound with chemical formula CH3COO(CH2)2CH(CH3)2. Colorless transparent liquid at room temperature with a characteristic banana-like odor.",
+      "title": "Isoamyl Acetate"
+    },
+    {
+      "id": 2,
+      "name": "2-Phenylethanol",
+      "description": "An aromatic alcohol compound with chemical formula C6H5CH2CH2OH. Colorless oily liquid with a rose-like aroma.",
+      "title": "2-Phenylethanol"
+    },
+    {
+      "id": 3,
+      "name": "Methoxyphenols",
+      "description": "A class of aromatic compounds containing methoxy (-OCH3) and hydroxyl (-OH) groups, derived from lignin degradation.",
+      "title": "Methoxyphenols"
+    },
+    {
+      "id": 4,
+      "name": "Hexanoic Acid",
+      "description": "A straight-chain saturated fatty acid with chemical formula CH3(CH2)4COOH. Oily liquid with a distinctive pungent odor.",
+      "title": "Hexanoic Acid"
+    },
+    {
+      "id": 5,
+      "name": "Linalool",
+      "description": "A naturally occurring terpene alcohol with chemical formula C10H18O. Colorless liquid with a floral scent.",
+      "title": "Linalool"
+    },
+    {
+      "id": 6,
+      "name": "Phenol",
+      "description": "An aromatic organic compound with formula C6H5OH. White crystalline solid at room temperature with characteristic medicinal odor.",
+      "title": "Phenol"
+    },
+    {
+      "id": 7,
+      "name": "Syringol",
+      "description": "A dimethoxyphenol with chemical formula C8H10O3. White crystalline solid derived from wood smoke and lignin pyrolysis.",
+      "title": "Syringol"
+    },
+    {
+      "id": 8,
+      "name": "Ethyl Acetate",
+      "description": "An organic compound with chemical formula CH3COOC2H5. Colorless liquid with characteristic sweet smell.",
+      "title": "Ethyl Acetate"
+    },
+    {
+      "id": 9,
+      "name": "Acetaldehyde",
+      "description": "An organic chemical compound with formula CH3CHO. Colorless, flammable liquid at room temperature with pungent odor.",
+      "title": "Acetaldehyde"
+    },
+    {
+      "id": 10,
+      "name": "Benzaldehyde",
+      "description": "An organic compound with formula C6H5CHO. Colorless liquid with characteristic almond-like odor.",
+      "title": "Benzaldehyde"
+    },
+    {
+      "id": 11,
+      "name": "Vanillin",
+      "description": "An organic compound with formula C8H8O3. White crystalline powder, primary component of vanilla bean extract.",
+      "title": "Vanillin"
+    },
+    {
+      "id": 12,
+      "name": "Furfural",
+      "description": "An organic compound with formula C5H4O2. Colorless oily liquid that turns yellow-brown on exposure to air.",
+      "title": "Furfural"
+    },
+    {
+      "id": 13,
+      "name": "Octanoic Acid",
+      "description": "A saturated fatty acid with chemical formula CH3(CH2)6COOH. Oily liquid with unpleasant rancid-like odor.",
+      "title": "Octanoic Acid"
+    },
+    {
+      "id": 14,
+      "name": "Diacetyl",
+      "description": "An organic compound with formula (CH3CO)2. Yellow-green liquid with strong butter-like aroma.",
+      "title": "Diacetyl"
+    },
+    {
+      "id": 15,
+      "name": "Lactones",
+      "description": "Cyclic esters formed by internal esterification of hydroxycarboxylic acids. Various ring sizes possible.",
+      "title": "Lactones"
+    },
+    {
+      "id": 16,
+      "name": "Methional",
+      "description": "An organic sulfur compound with formula C4H8OS. Colorless liquid with characteristic cooked potato odor.",
+      "title": "Methional"
+    },
+    {
+      "id": 17,
+      "name": "4-Methylguaiacol",
+      "description": "A methoxyphenol compound with formula C8H10O2. Colorless to pale yellow liquid derived from wood smoke.",
+      "title": "4-Methylguaiacol"
+    },
+    {
+      "id": 18,
+      "name": "Guaiacol",
+      "description": "An organic compound with formula C7H8O2. Yellowish aromatic oil derived from wood creosote and smoke.",
+      "title": "Guaiacol"
+    },
+    {
+      "id": 19,
+      "name": "Eugenol",
+      "description": "An allyl chain-substituted guaiacol with formula C10H12O2. Colorless to pale yellow oily liquid.",
+      "title": "Eugenol"
+    },
+    {
+      "id": 20,
+      "name": "Limonene",
+      "description": "A cyclic monoterpene with formula C10H16. Colorless liquid with strong citrus odor.",
+      "title": "Limonene"
+    }
+  ],
+  
+  
+  "flavours": [
+  {
+    "id": 1,
+    "sub-type": "aroma",
+    "name": "Vanilla",
+    "description": "Vanilla is a popular aroma and flavor in whisky, derived from vanillin, a compound found in vanilla beans. This sweet, creamy note adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
+    "title": "Vanilla",
+    "chemical" : {
+      "Vanillin": "1-2% (provides sweet, vanilla-like notes) ",
+      "Lactones" : "0.5-1% (adds creamy, coconut-like flavors) ",
+      "Furfural" : "0.1-0.5% (provides almond and caramel notes) ",
+      "Maltol" : "Trace amounts (adds sweetness and depth) ",
+      "Sugars and Carbohydrates" : "Varies (balances the sweetness) ",
+      "Fatty Acids and Essentials Oils" : "Minor components (enhance richness) "
+    }
+  },
+  {
+    "id": 2,
+    "sub-type": "aroma",
+    "name": "Peat",
+    "description": "sd",
+    "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The chemical of the peat flavour depends on the number of phenols present. e",
+    "chemical" : {
+      "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
+      "Cresols" : "0.5-1% (adds earthy, tar-like flavours) ",
+      "Phenol" : "0.2-0.5% (provides antiseptic, Smokey character) ",
+      "methoxyphenols" : "Trace amounts (contribute to spice and sweetness) ",
+      "Sugars and Carbohydrates" : "Varies (balances the harshness) ",
+      "Fatty Acids and Essentials Oils" : "Minor components (subtle richness) "
+    }
+  },
+  {
+    "id": 3,
+    "sub-type": "aroma",
+    "name": "Caramel",
+    "description": "Caramel flavour derives from the heating of sugar during caramelization. This process produces a rich, sweet, and slightly bitter profile with hints of toffee and brown sugar. The complex reactions between sugars and amino acids give caramel its distinctive taste.",
+    "title": "Caramel",
+    "chemical" : {
+      "Maltol": "1-3% (sweet, caramelized flavor) ",
+      "Diacetyl" : "0.5-1% (buttery notes) ",
+      "Furfural" : "0.1-0.5% (provides toffee and almond flavors) ",
+      "Hydroxymethylfurfural " : "Trace amounts (adds bitterness) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 4,
+    "sub-type": "aroma",
+    "name": "Oak",
+    "description": "Oak contributes to whisky flavor through compounds released during barrel aging. These compounds, such as vanillin, lignin, and tannins, impart woody, spicy, and vanilla notes. The aging process in oak barrels gives whisky its complexity, with each compound adding depth to the flavor.",
+    "title": "Oak",
+    "chemical" : {
+      "Vanillin": "0.5-1.5% (provides sweet, vanilla-like notes) ",
+      "Lignin" : "0.2-1% (woody, smoky character) ",
+      "Tannins" : "0.1-0.5% (adds astringency and dryness) ",
+      "Eugenol " : "Trace amounts (spicy, clove-like flavor) ",
+      "Sugars" : "Varies (contributes to sweetness and texture) ",
+      "Fatty Acids" : "Minor components (adds richness) "
+    }
+  },
+  {
+    "id": 5,
+    "sub-type": "taste",
+    "name": "Sweet",
+    "description": "Sweetness is primarily sensed through sugar molecules or other compounds that mimic their effect on taste receptors. This taste is generally associated with simple sugars like glucose and fructose, but can also come from artificial sweeteners, sugar alcohols, and other naturally occurring compounds. Sweet flavors balance out more intense or bitter tastes in foods and beverages. ",
+    "title": "Sweet",
+    "chemical" : {
+      "Glucose": "1-3% (primary sweetening compound) ",
+      "Fructose" : "0.5-2% (contributes a more intense sweetness) ",
+      "Sucrose" : "0.5-1.5% (common table sugar, provides clean sweetness) ",
+      "Maltose" : "0.1-0.5% (adds depth with a slight malt-like flavor) ",
+      "Aspartame " : "Trace amounts (artificial sweetener, much sweeter than sugar) ",
+      "Sugar Alcohols (Sorbitol, Xylitol)" : "Trace amounts (used in sugar-free products, adds sweetness with less caloric impact) ",
+      "Sugars and Carbohydrates" : "Varies (provides bulk and texture) ",
+      "Fatty Acids" : "Minor components (can enhance richness in sweet products) "
+    }
+  },
+  {
+    "id": 6,
+    "sub-type": "taste",
+    "name": "Smoky ",
+    "description": "The smoky flavor commonly found in whisky and other foods comes from compounds formed during processes like peat burning, wood charring, or smoking over open flames. These compounds impart a deep, rich, and sometimes slightly medicinal smokiness. ",
+    "title": "Smoky ",
+    "chemical" : {
+      "Guaiacol": "0.5-2% (primary smoky and medicinal notes) ",
+      "Phenols" : "0.2-1% (adds antiseptic, charred flavors) ",
+      "Cresols" : "0.1-0.5% (contributes to tar-like, earthy notes) ",
+      "Methoxyphenols" : "Trace amounts (provides sweet, smoky nuances) ",
+      "Acetic Acid " : "Trace amounts (enhances complexity with acidity) ",
+      "Sugars and Carbohydrates" : "Varies (balances the intense smoky flavors) ",
+      "Fatty Acids" : "Minor components (adds richness and mouthfeel) "
+    }
+  },
+  {
+    "id": 7,
+    "sub-type": "taste",
+    "name": "Spicy",
+    "description": "Spicy flavors in whisky come from compounds like eugenol and cinnamaldehyde, which are typically extracted from oak barrels or present in spices used in the distillation process. These compounds create warm, peppery, and sometimes clove-like notes.",
+    "title": "Spicy",
+    "chemical": {
+      "Eugenol": "0.5-1.5% (primary spicy, clove-like flavor)",
+      "Cinnamaldehyde": "0.1-0.5% (adds cinnamon and warmth)",
+      "Capsaicin": "Trace amounts (provides a burning, peppery sensation)",
+      "Piperine": "Trace amounts (adds black pepper notes)",
+      "Sugars": "Varies (balances spiciness with sweetness)",
+      "Essential Oils": "Minor components (enhances aromatic complexity)"
+    }
+  }, 
+  {
+    "id": 8,
+    "sub-type": "taste",
+    "name": "Fruity",
+    "description": "Fruity flavors in whisky arise from esters and aldehydes formed during fermentation and aging. These compounds give off sweet, citrus, and stone fruit notes, balancing the more robust flavors of the whisky.",
+    "title": "Fruity",
+    "chemical": {
+      "Ethyl Acetate": "1-3% (sweet, fruity, and pineapple-like flavor)",
+      "Isoamyl Acetate": "0.5-1% (banana-like ester)",
+      "Hexyl Acetate": "0.1-0.5% (adds green apple notes)",
+      "Linalool": "Trace amounts (provides citrus, floral undertones)",
+      "Sugars": "Varies (contributes to sweetness and texture)",
+      "Fatty Acids and Esters": "Minor components (enhances the richness and mouthfeel)"
+    }
+  },
+  {
+    "id": 9,
+    "sub-type": "finish",
+    "name": "Length",
+    "description": "The length of a whisky's finish refers to how long the flavors linger on the palate after swallowing. A long finish indicates a complex and well-balanced whisky, while a short finish may suggest a simpler or less mature spirit.",
+    "title": "Length",
+    "chemical": {
+      "Isoamyl Acetate": "1-3% (provides a fruity, banana-like flavor)",
+      "Hexanoic Acid": "0.5-1% (adds a buttery, fatty note)",
+      "2-Phenylethanol": "0.1-0.5% (provides a floral, rose-like aroma)",
+      "Furfural": "Trace amounts (adds almond and caramel notes)",
+      "Sugars": "Varies (balances the sweetness and texture)",
+      "Fatty Acids and Esters": "Minor components (enhances richness and mouthfeel)"
+    }
+  },
+  {
+    "id": 10,
+    "sub-type": "finish",
+    "name": "Warming",
+    "description": "The warming sensation in whisky comes from the alcohol content and the compounds present in the spirit. A warming finish is often associated with higher ABV whiskies and can enhance the overall drinking experience.",
+    "title": "Warming",
+    "chemical": {
+      "Ethyl Acetate": "1-3% (provides a fruity, pear-like flavor)",
+      "Acetaldehyde": "0.5-1% (adds green apple and nutty notes)",
+      "2-Phenylethanol": "0.1-0.5% (provides a floral, rose-like aroma)",
+      "Hexanoic Acid": "Trace amounts (adds a buttery, fatty note)",
+      "Sugars": "Varies (balances the sweetness and texture)",
+      "Fatty Acids and Esters": "Minor components (enhances richness and mouthfeel)"
+    }
+  },
+  {
+    "id": 11,
+    "sub-type": "finish",
+    "name": "Dry",
+    "description": "A dry finish in whisky refers to the lack of residual sweetness or stickiness on the palate after swallowing. Dry whiskies are often associated with tannins and other compounds that create a clean, crisp mouthfeel.",
+    "title": "Dry",
+    "chemical": {
+      "Tannins": "1-3% (adds astringency and dryness)",
+      "Sugars": "0.5-1% (provides a hint of sweetness)",
+      "Lactones": "0.1-0.5% (adds creamy, coconut-like flavors)",
+      "Octanoic Acid": "Trace amounts (provides a buttery, fatty note)",
+      "Fatty Acids and Esters": "Varies (enhances richness and mouthfeel)"
+    }
+  },
+  {
+    "id": 12,
+    "sub-type": "finish",
+    "name": "Peaty",
+    "description": "Peaty whiskies are characterized by the presence of phenolic compounds like guaiacol and cresols, which impart a smoky, earthy, and sometimes medicinal flavor. The peaty finish lingers on the palate, leaving a distinctive taste long after swallowing.",
+    "title": "Peaty",
+    "chemical": {
+      "Guaiacol": "1-3% (provides smoky, medicinal notes)",
+      "Cresols": "0.5-1% (adds earthy, tar-like flavors)",
+      "Phenol": "0.1-0.5% (provides antiseptic, Smokey character)",
+      "Hexanoic Acid": "Trace amounts (adds a buttery, fatty note)",
+      "Fatty Acids and Esters": "Varies (enhances richness and mouthfeel)"
+    }
+  }
+  ],
+  "whiskeys": [
+    {
+      "id": 1,
+      "name": "Maker's Mark (15 Years)",
+      "brand": "Maker's Mark",
+      "age": "15 years",
+      "region": "Canada",
+      "type": "Rye",
+      "abv": 45,
+      "description": "A rich, rye-based whisky from Canada with a 45% ABV, offering a sweet aroma of vanilla, caramel, and oak. On the palate, it delivers a smoky, spicy, and fruity taste with a long, warming finish. Chemical components include isoamyl acetate and hexanoic acid, contributing to its complex profile.",
+      "aroma": {
+        "vanilla": 1,
+        "peat": 5,
+        "caramel": 9,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 3,
+        "smoky": 3,
+        "spicy": 1,
+        "fruity": 2
+      },
+      "finish": {
+        "length": 6,
+        "warming": 4,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "isoamyl_acetate": 54,
+        "hexanoic_acid": 6,
+        "2_phenylethanol": 87,
+        "furfural": 52,
+        "eugenol": 99
+      },
+      "price": 108,
+      "bottling_date": "2018-04-18",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Popular Release"
+    },
+    {
+      "id": 2,
+      "name": "Macallan (NAS)",
+      "brand": "Macallan",
+      "age": "NAS",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 43,
+      "description": "A USA-based rye whisky with 43% ABV, featuring vanilla and caramel on the nose, paired with smoky and fruity flavors. The finish is warm and dry, with notable compounds such as vanillin and 2-phenylethanol, adding depth to the overall experience.",
+      "aroma": {
+        "vanilla": 2,
+        "peat": 5,
+        "caramel": 10,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 4,
+        "smoky": 7,
+        "spicy": 6,
+        "fruity": 1
+      },
+      "finish": {
+        "length": 4,
+        "warming": 3,
+        "dry": 5,
+        "peaty": 8
+      },
+      "compounds": {
+        "vanillin": 42,
+        "limonene": 72,
+        "2_phenylethanol": 96,
+        "ethyl_acetate": 28,
+        "acetaldehyde": 77
+      },
+      "price": 44,
+      "bottling_date": "2021-08-06",
+      "cask_type": "French Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 3,
+      "name": "Talisker (NAS)",
+      "brand": "Talisker",
+      "age": "NAS",
+      "region": "Japan",
+      "type": "Single Malt",
+      "abv": 55,
+      "description": "A bold single malt from Japan with 55% ABV, showcasing strong notes of peat and oak. The taste is a complex mix of smoky, spicy, and fruity elements, with a long, peaty finish. Chemical compounds like hexanoic acid and phenol contribute to its robust profile.",
+      "aroma": {
+        "vanilla": 8,
+        "peat": 8,
+        "caramel": 3,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 1,
+        "smoky": 7,
+        "spicy": 1,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 10,
+        "warming": 8,
+        "dry": 8,
+        "peaty": 10
+      },
+      "compounds": {
+        "hexanoic_acid": 11,
+        "benzaldehyde": 9,
+        "linalool": 73,
+        "2_phenylethanol": 19,
+        "phenol": 46
+      },
+      "price": 46,
+      "bottling_date": "2019-06-27",
+      "cask_type": "Ex-Sherry",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 4,
+      "name": "Glenfiddich (12 Years)",
+      "brand": "Glenfiddich",
+      "age": "12 years",
+      "region": "Ireland",
+      "type": "Blended",
+      "abv": 55,
+      "description": "An Irish blended whisky with 55% ABV, offering a fruity, sweet aroma of vanilla and peat. On the palate, it brings a blend of sweet and spicy notes with a dry, peaty finish, highlighted by hexanoic acid and methoxyphenols.",
+      "aroma": {
+        "vanilla": 7,
+        "peat": 7,
+        "caramel": 1,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 2,
+        "smoky": 3,
+        "spicy": 9,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 4,
+        "peaty": 10
+      },
+      "compounds": {
+        "hexanoic_acid": 94,
+        "methoxyphenols": 70,
+        "syringol": 66,
+        "octanoic_acid": 27,
+        "benzaldehyde": 27
+      },
+      "price": 72,
+      "bottling_date": "2022-03-09",
+      "cask_type": "American Oak",
+      "special_notes": "Cask Strength"
+    },
+    {
+      "id": 5,
+      "name": "Ardbeg (15 Years)",
+      "brand": "Ardbeg",
+      "age": "15 years",
+      "region": "Ireland",
+      "type": "Scotch",
+      "abv": 50,
+      "description": "A 50% ABV Scotch from Ireland, known for its smoky and fruity aromas of vanilla and oak. The taste is smoky and spicy, with a long, warming finish. Its rich profile is supported by diacetyl and 2-phenylethanol.",
+      "aroma": {
+        "vanilla": 2,
+        "peat": 2,
+        "caramel": 1,
+        "oak": 2
+      },
+      "taste": {
+        "sweet": 8,
+        "smoky": 9,
+        "spicy": 9,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 3,
+        "warming": 4,
+        "dry": 7,
+        "peaty": 10
+      },
+      "compounds": {
+        "diacetyl": 27,
+        "2_phenylethanol": 72,
+        "limonene": 90,
+        "isoamyl_acetate": 42,
+        "lactones": 88
+      },
+      "price": 143,
+      "bottling_date": "2019-10-13",
+      "cask_type": "American Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 6,
+      "name": "Glenfiddich (15 Years)",
+      "brand": "Glenfiddich",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Bourbon",
+      "abv": 40,
+      "description": "A smooth Scotch from Scotland with 40% ABV, featuring a sweet, fruity aroma of caramel and oak. It delivers a well-balanced sweet, smoky, and spicy palate with a long, warm, peaty finish. Phenol and vanillin add complexity.",
+      "aroma": {
+        "vanilla": 5,
+        "peat": 1,
+        "caramel": 3,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 2,
+        "spicy": 4,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 10,
+        "warming": 7,
+        "dry": 2,
+        "peaty": 2
+      },
+      "compounds": {
+        "phenol": 37,
+        "isoamyl_acetate": 46,
+        "vanillin": 43,
+        "methional": 62,
+        "4_methylguaiacol": 17
+      },
+      "price": 35,
+      "bottling_date": "2021-08-14",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 7,
+      "name": "Glenfiddich (8 Years)",
+      "brand": "Glenfiddich",
+      "age": "8 years",
+      "region": "USA",
+      "type": "Blended",
+      "abv": 45,
+      "description": "A USA-based blended whisky with 45% ABV, featuring vanilla and caramel aromas, paired with a sweet, fruity taste. Its long, smoky finish is enhanced by acetaldehyde and isoamyl acetate.",
+      "aroma": {
+        "vanilla": 2,
+        "peat": 2,
+        "caramel": 9,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 6,
+        "spicy": 5,
+        "fruity": 10
+      },
+      "finish": {
+        "length": 1,
+        "warming": 7,
+        "dry": 4,
+        "peaty": 7
+      },
+      "compounds": {
+        "acetaldehyde": 19,
+        "furfural": 34,
+        "2_phenylethanol": 64,
+        "hexanoic_acid": 26,
+        "isoamyl_acetate": 50
+      },
+      "price": 58,
+      "bottling_date": "2022-11-27",
+      "cask_type": "American Oak",
+      "special_notes": "Limited Edition"
+    },
+    {
+      "id": 8,
+      "name": "Highland Park (18 Years)",
+      "brand": "Highland Park",
+      "age": "18 years",
+      "region": "Japan",
+      "type": "Scotch",
+      "abv": 55,
+      "description": "A 55% ABV Scotch from Japan, with a rich vanilla and oak aroma. The taste is sweet, smoky, and fruity, leading to a long, warming finish with notable eugenol and linalool compounds, adding depth. ",
+      "aroma": {
+        "vanilla": 5,
+        "peat": 5,
+        "caramel": 6,
+        "oak": 10
+      },
+      "taste": {
+        "sweet": 10,
+        "smoky": 4,
+        "spicy": 5,
+        "fruity": 8
+      },
+      "finish": {
+        "length": 4,
+        "warming": 9,
+        "dry": 5,
+        "peaty": 3
+      },
+      "compounds": {
+        "eugenol": 73,
+        "linalool": 96,
+        "furfural": 92,
+        "isoamyl_acetate": 49,
+        "acetaldehyde": 90
+      },
+      "price": 141,
+      "bottling_date": "2023-12-07",
+      "cask_type": "American Oak",
+      "special_notes": "Popular Release"
+    },
+    {
+      "id": 9,
+      "name": "Maker's Mark (18 Years)",
+      "brand": "Maker's Mark",
+      "age": "18 years",
+      "region": "Scotland",
+      "type": "Scotch",
+      "abv": 40,
+      "description": "A Scotch whisky from Scotland, with 40% ABV, presenting strong vanilla and caramel aromas. It offers a sweet, smoky palate with a long, dry finish, supported by furfural and phenol.",
+      "aroma": {
+        "vanilla": 10,
+        "peat": 5,
+        "caramel": 4,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 10,
+        "spicy": 3,
+        "fruity": 9
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 6,
+        "peaty": 2
+      },
+      "compounds": {
+        "furfural": 29,
+        "phenol": 27,
+        "linalool": 79,
+        "octanoic_acid": 76,
+        "lactones": 83
+      },
+      "price": 78,
+      "bottling_date": "2021-06-10",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Cask Strength"
+    },
+    {
+      "id": 10,
+      "name": "Ardbeg (NAS) ",
+      "brand": "Ardbeg",
+      "age": "NAS",
+      "region": "Japan",
+      "type": "Bourbon",
+      "abv": 50,
+      "description": "A 50% ABV bourbon from Japan, showcasing a smoky, fruity aroma of vanilla and oak. The taste is sweet and spicy, with a dry, peaty finish, enriched by guaiacol and syringol. ",
+      "aroma": {
+        "vanilla": 3,
+        "peat": 7,
+        "caramel": 8,
+        "oak": 5
+      },
+      "taste": {
+        "sweet": 2,
+        "smoky": 7,
+        "spicy": 9,
+        "fruity": 6
+      },
+      "finish": {
+        "length": 2,
+        "warming": 4,
+        "dry": 4,
+        "peaty": 1
+      },
+      "compounds": {
+        "guaiacol": 72,
+        "syringol": 62,
+        "lactones": 31,
+        "isoamyl_acetate": 49,
+        "ethyl_acetate": 9
+      },
+      "price": 49,
+      "bottling_date": "2021-04-15",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Popular Release"
+    },
+    {
+      "id": 11,
+      "name": "Laphroaig (8 Years) ",
+      "brand": "Laphroaig",
+      "age": "8 years",
+      "region": "Ireland",
+      "type": "Single Malt",
+      "abv": 40,
+      "description": "A single malt from Ireland with 40% ABV, offering a sweet, smoky aroma of vanilla and caramel. The palate is smoky and fruity, with a long, warming finish, driven by phenol and hexanoic acid.",
+      "aroma": {
+        "vanilla": 4,
+        "peat": 8,
+        "caramel": 3,
+        "oak": 6
+      },
+      "taste": {
+        "sweet": 7,
+        "smoky": 10,
+        "spicy": 4,
+        "fruity": 7
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 2,
+        "peaty": 4
+      },
+      "compounds": {
+        "2_phenylethanol": 33,
+        "hexanoic_acid": 31,
+        "syringol": 26,
+        "ethyl_acetate": 19,
+        "lactones": 32
+      },
+      "price": 85,
+      "bottling_date": "2019-06-13",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 12,
+      "name": "Macallan (12 Years) ",
+      "brand": "Macallan",
+      "age": "12 years",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 45,
+      "description": "A rye whisky from the USA with 45% ABV, featuring a rich vanilla and oak aroma. It delivers a sweet, smoky palate with a long, peaty finish, supported by vanillin and isoamyl acetate. ",
+      "aroma": {
+        "vanilla": 7,
+        "peat": 1,
+        "caramel": 10,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 4,
+        "smoky": 9,
+        "spicy": 8,
+        "fruity": 8
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 5,
+        "peaty": 8
+      },
+      "compounds": {
+        "vanillin": 62,
+        "guaiacol": 31,
+        "isoamyl_acetate": 77,
+        "linalool": 47,
+        "hexanoic_acid": 27
+      },
+      "price": 106,
+      "bottling_date": "2020-05-25",
+      "cask_type": "American Oak",
+      "special_notes": "Cask Strength"
+    },{
+      "id": 13,
+      "name": "Laphroaig (NAS) ",
+      "brand": "Laphroaig",
+      "age": "NAS",
+      "region": "Ireland",
+      "type": "Rye",
+      "abv": 50,
+      "description": "A 50% ABV rye whisky from Ireland, offering intense smoky aromas of peat and oak. The taste is sweet and spicy, with a dry, warming finish enhanced by methoxyphenols and acetaldehyde. ",      
+      "aroma": {
+        "vanilla": 8,
+        "peat": 6,
+        "caramel": 3,
+        "oak": 7
+      },
+      "taste": {
+        "sweet": 7,
+        "smoky": 1,
+        "spicy": 5,
+        "fruity": 4
+      },
+      "finish": {
+        "length": 4,
+        "warming": 6,
+        "dry": 2,
+        "peaty": 9
+      },
+      "compounds": {
+        "methoxyphenols": 32,
+        "acetaldehyde": 98,
+        "2_phenylethanol": 92,
+        "isoamyl_acetate": 10,
+        "phenol": 95
+      },
+      "price": 117,
+      "bottling_date": "2020-04-18",
+      "cask_type": "French Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 14,
+      "name": " Lagavulin (12 Years) ",
+      "brand": "Lagavulin",
+      "age": "12 years",
+      "region": "Ireland",
+      "type": "Bourbon",
+      "abv": 55,
+      "description": "A 55% ABV bourbon from Ireland, showcasing rich caramel and oak aromas. The palate is sweet and smoky, with a long, peaty finish, highlighted by octanoic acid and diacetyl.",
+      "aroma": {
+        "vanilla": 4,
+        "peat": 4,
+        "caramel": 2,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 6,
+        "spicy": 1,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 5,
+        "warming": 6,
+        "dry": 10,
+        "peaty": 4
+      },
+      "compounds": {
+        "octanoic_acid": 17,
+        "acetaldehyde": 36,
+        "linalool": 73,
+        "diacetyl": 90,
+        "4_methylguaiacol": 16
+      },
+      "price": 50,
+      "bottling_date": "2020-02-01",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 15,
+      "name": "Maker's Mark (15 Years) ",
+      "brand": "Maker's Mark",
+      "age": "15 years",
+      "region": "Ireland",
+      "type": "Scotch",
+      "abv": 50,
+      "description": "A Scotch from Ireland with 50% ABV, offering a sweet, smoky aroma of vanilla and peat. The taste is fruity and spicy, with a long, warming finish, supported by syringol and benzaldehyde. ",
+      "aroma": {
+        "vanilla": 1,
+        "peat": 3,
+        "caramel": 3,
+        "oak": 5
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 5,
+        "spicy": 5,
+        "fruity": 9
+      },
+      "finish": {
+        "length": 5,
+        "warming": 5,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "syringol": 89,
+        "benzaldehyde": 54,
+        "2_phenylethanol": 25,
+        "ethyl_acetate": 47,
+        "4_methylguaiacol": 28
+      },
+      "price": 133,
+      "bottling_date": "2020-04-20",
+      "cask_type": "French Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 16,
+      "name": "Laphroaig (10 Years) ",
+      "brand": "Laphroaig",
+      "age": "10 years",
+      "region": "Canada",
+      "type": "Bourbon",
+      "abv": 43,
+      "description": "A 43% ABV bourbon from Canada, featuring rich vanilla and caramel aromas. On the palate, it delivers a sweet and smoky flavor, with a dry, peaty finish enriched by limonene and guaiacol. ",
+      "aroma": {
+        "vanilla": 3,
+        "peat": 6,
+        "caramel": 8,
+        "oak": 2
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 9,
+        "spicy": 3,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 2,
+        "warming": 6,
+        "dry": 1,
+        "peaty": 5
+      },
+      "compounds": {
+        "limonene": 70,
+        "methoxyphenols": 91,
+        "guaiacol": 33,
+        "benzaldehyde": 55,
+        "ethyl_acetate": 70
+      },
+      "price": 133,
+      "bottling_date": "2020-08-09",
+      "cask_type": "American Oak",
+      "special_notes": "Award-winning"
+    },
+    {
+      "id": 17,
+      "name": "Macallan (15 Years) ",
+      "brand": "Macallan",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Single Malt",
+      "abv": 43,
+      "description": "A 43% ABV single malt from Scotland, offering vanilla and oak aromas. The taste is smoky and fruity, with a long, peaty finish, supported by phenol and linalool. ",
+      "aroma": {
+        "vanilla": 8,
+        "peat": 4,
+        "caramel": 6,
+        "oak": 7
+      },
+      "taste": {
+        "sweet": 6,
+        "smoky": 7,
+        "spicy": 6,
+        "fruity": 4
+      },
+      "finish": {
+        "length": 5,
+        "warming": 2,
+        "dry": 7,
+        "peaty": 9
+      },
+      "compounds": {
+        "phenol": 40,
+        "syringol": 97,
+        "methoxyphenols": 94,
+        "linalool": 76,
+        "2_phenylethanol": 88
+      },
+      "price": 110,
+      "bottling_date": "2020-07-23",
+      "cask_type": "American Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 18,
+      "name": "Macallan (15 Years) ",
+      "brand": "Macallan",
+      "age": "15 years",
+      "region": "Japan",
+      "type": "Blended",
+      "abv": 40,
+      "description": "A blended whisky from Japan with 40% ABV, featuring a sweet vanilla and caramel aroma. It offers a sweet, smoky palate with a long, warming finish, driven by isoamyl acetate and 2-phenylethanol. ",
+      "aroma": {
+        "vanilla": 1,
+        "peat": 7,
+        "caramel": 9,
+        "oak": 8
+      },
+      "taste": {
+        "sweet": 6,
+        "smoky": 6,
+        "spicy": 2,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 1,
+        "warming": 9,
+        "dry": 9,
+        "peaty": 4
+      },
+      "compounds": {
+        "ethyl_acetate": 91,
+        "linalool": 66,
+        "2_phenylethanol": 7,
+        "hexanoic_acid": 32,
+        "vanillin": 21
+      },
+      "price": 69,
+      "bottling_date": "2018-02-08",
+      "cask_type": "French Oak",
+      "special_notes": "Small Batch"
+    },
+    {
+      "id": 19,
+      "name": "Talisker (15 Years) ",
+      "brand": "Talisker",
+      "age": "15 years",
+      "region": "Scotland",
+      "type": "Rye",
+      "abv": 50,
+      "description": "A 50% ABV rye whisky from Scotland, known for its smoky, fruity aromas of vanilla and oak. The taste is spicy and fruity, with a long, dry finish supported by acetaldehyde and phenol. ",
+      "aroma": {
+        "vanilla": 5,
+        "peat": 1,
+        "caramel": 9,
+        "oak": 4
+      },
+      "taste": {
+        "sweet": 5,
+        "smoky": 1,
+        "spicy": 10,
+        "fruity": 5
+      },
+      "finish": {
+        "length": 9,
+        "warming": 7,
+        "dry": 10,
+        "peaty": 6
+      },
+      "compounds": {
+        "isoamyl_acetate": 7,
+        "phenol": 99,
+        "methoxyphenols": 81,
+        "acetaldehyde": 55,
+        "vanillin": 87
+      },
+      "price": 143,
+      "bottling_date": "2021-08-11",
+      "cask_type": "Ex-Bourbon",
+      "special_notes": "Popular Release"
+    },
+    {
+      "id": 20,
+      "name": "Ardbeg (18 Years)",
+      "brand": "Ardbeg",
+      "age": "18 years",
+      "region": "USA",
+      "type": "Rye",
+      "abv": 45,
+      "description": "A USA-based rye whisky with 45% ABV, featuring a rich aroma of vanilla and oak. The palate is sweet and spicy, with a long, smoky finish enriched by diacetyl and methional. ",
+      "aroma": {
+        "vanilla": 6,
+        "peat": 3,
+        "caramel": 4,
+        "oak": 1
+      },
+      "taste": {
+        "sweet": 9,
+        "smoky": 3,
+        "spicy": 10,
+        "fruity": 10
+      },
+      "finish": {
+        "length": 7,
+        "warming": 6,
+        "dry": 1,
+        "peaty": 1
+      },
+      "compounds": {
+        "diacetyl": 60,
+        "methional": 82,
+        "methoxyphenols": 96,
+        "hexanoic_acid": 69,
+        "linalool": 22
+      },
+      "price": 36,
+      "bottling_date": "2018-07-26",
+      "cask_type": "Sherry Oak",
+      "special_notes": "Limited Edition"
+    }
+  ],
+  "sortings": [
+    {
+      "title": "Default",
+      "value": "default"
+    },
+    {
+      "title": "Alcohol Percentage Low to High",
+      "value": "price-asc"
+    },
+    {
+      "title": "Alcohol Percentage High to Low",
+      "value": "price-asc"
+    },
+    {
+      "title": "Age Low to High",
+      "value": "price-asc"
+    },
+    {
+      "title": "Age High to Low",
+      "value": "price-desc"
+    }
+  ],
+  "brands": [
+    {
+      "title": "Maker's Mark",
+      "value": "Maker's Mark"
+    },
+    {
+      "title": "Macallan",
+      "value": "Macallan"
+    },
+    {
+      "title": "Talisker",
+      "value": "Talisker"
+    },
+    {
+      "title": "Glenfiddich",
+      "value": "Glenfiddich"
+    },
+    {
+      "title": "Ardbeg",
+      "value": "Ardbeg"
+    },
+    {
+      "title": "Highland Park",
+      "value": "Highland Park"
+    }
+  ],
+  "ages": [
+    {
+      "title": "15 years",
+      "value": "15 years"
+    },
+    {
+      "title": "NAS",
+      "value": "NAS"
+    },
+    {
+      "title": "12 years",
+      "value": "12 years"
+    },
+    {
+      "title": "8 years",
+      "value": "8 years"
+    },
+    {
+      "title": "18 years",
+      "value": "18 years"
+    }
+  ],
+  "regions": [
+    {
+      "title": "Canada",
+      "value": "Canada"
+    },
+    {
+      "title": "USA",
+      "value": "USA"
+    },
+    {
+      "title": "Japan",
+      "value": "Japan"
+    },
+    {
+      "title": "Ireland",
+      "value": "Ireland"
+    },
+    {
+      "title": "Scotland",
+      "value": "Scotland"
+    }
+  ],
+  "types": [
+    {
+      "title": "Rye",
+      "value": "Rye"
+    },
+    {
+      "title": "Single Malt",
+      "value": "Single Malt"
+    },
+    {
+      "title": "Blended",
+      "value": "Blended"
+    },
+    {
+      "title": "Scotch",
+      "value": "Scotch"
+    },
+    {
+      "title": "Bourbon",
+      "value": "Bourbon"
+    }
+  ],
+  "abvs": [
+    {
+      "title": "45%",
+      "value": "45%"
+    },
+    {
+      "title": "43%",
+      "value": "43%"
+    },
+    {
+      "title": "55%",
+      "value": "55%"
+    },
+    {
+      "title": "50%",
+      "value": "50%"
+    },
+    {
+      "title": "40%",
+      "value": "40%"
+    }
+  ],
+  "cask_types": [
+    {
+      "title": "Sherry Oak",
+      "value": "Sherry Oak"
+    },
+    {
+      "title": "French Oak",
+      "value": "French Oak"
+    },
+    {
+      "title": "Ex-Sherry",
+      "value": "Ex-Sherry"
+    },
+    {
+      "title": "American Oak",
+      "value": "American Oak"
+    },
+    {
+      "title": "Ex-Bourbon",
+      "value": "Ex-Bourbon"
+    }
+  ],
+  "special_notes": [
+    {
+      "title": "Popular Release",
+      "value": "Popular Release"
+    },
+    {
+      "title": "Award-winning",
+      "value": "Award-winning"
+    },
+    {
+      "title": "Small Batch",
+      "value": "Small Batch"
+    },
+    {
+      "title": "Cask Strength",
+      "value": "Cask Strength"
+    },
+    {
+      "title": "Limited Edition",
+      "value": "Limited Edition"
+    }
+  ]
+}
