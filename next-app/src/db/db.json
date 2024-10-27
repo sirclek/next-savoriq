@@ -1,7 +1,255 @@
 {
-  "chemicals":[
-    {"tbc":"tbc"}
-  ],
+  "chemicals": [
+    {
+      "id": 1,
+      "name": "Vanillin",
+      "description": "A compound found in vanilla beans and oak barrels that provides sweet, vanilla-like notes. It adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
+      "title": "Vanillin"
+    },
+    {
+      "id": 2,
+      "name": "Lactones",
+      "description": "Compounds that add creamy, coconut-like flavors to whisky. They contribute to both aroma and taste, particularly in oak-aged spirits.",
+      "title": "Lactones"
+    },
+    {
+      "id": 3,
+      "name": "Furfural",
+      "description": "A compound that provides almond and caramel notes to whisky. It contributes to both aroma and finish characteristics.",
+      "title": "Furfural"
+    },
+    {
+      "id": 4,
+      "name": "Maltol",
+      "description": "A compound that adds sweetness and depth to whisky. It's particularly important in creating caramelized flavors.",
+      "title": "Maltol"
+    },
+    {
+      "id": 5,
+      "name": "Guaiacol",
+      "description": "A phenolic compound that contributes to smoky, medicinal notes. It's particularly important in peated whiskies.",
+      "title": "Guaiacol"
+    },
+    {
+      "id": 6,
+      "name": "Cresols",
+      "description": "Compounds that add earthy, tar-like flavours to whisky. They're particularly important in peated expressions.",
+      "title": "Cresols"
+    },
+    {
+      "id": 7,
+      "name": "Phenol",
+      "description": "A compound that provides antiseptic, smoky character to whisky, particularly in peated varieties.",
+      "title": "Phenol"
+    },
+    {
+      "id": 8,
+      "name": "Methoxyphenols",
+      "description": "Compounds that contribute to spice and sweetness in whisky, providing sweet, smoky nuances.",
+      "title": "Methoxyphenols"
+    },
+    {
+      "id": 9,
+      "name": "Diacetyl",
+      "description": "A compound that provides buttery notes to whisky, contributing to its rich flavor profile.",
+      "title": "Diacetyl"
+    },
+    {
+      "id": 10,
+      "name": "Hydroxymethylfurfural",
+      "description": "A compound that adds bitterness to whisky, contributing to its complex flavor profile.",
+      "title": "Hydroxymethylfurfural"
+    },
+    {
+      "id": 11,
+      "name": "Lignin",
+      "description": "A compound that provides woody, smoky character to whisky, derived from oak barrel aging.",
+      "title": "Lignin"
+    },
+    {
+      "id": 12,
+      "name": "Tannins",
+      "description": "Compounds that add astringency and dryness to whisky, particularly important in creating a dry finish.",
+      "title": "Tannins"
+    },
+    {
+      "id": 13,
+      "name": "Eugenol",
+      "description": "A compound that provides spicy, clove-like flavor to whisky, typically extracted from oak barrels.",
+      "title": "Eugenol"
+    },
+    {
+      "id": 14,
+      "name": "Glucose",
+      "description": "A primary sweetening compound in whisky that contributes to its basic sweet taste.",
+      "title": "Glucose"
+    },
+    {
+      "id": 15,
+      "name": "Fructose",
+      "description": "A sugar that contributes a more intense sweetness to whisky compared to other sugars.",
+      "title": "Fructose"
+    },
+    {
+      "id": 16,
+      "name": "Sucrose",
+      "description": "A common table sugar that provides clean sweetness to whisky.",
+      "title": "Sucrose"
+    },
+    {
+      "id": 17,
+      "name": "Maltose",
+      "description": "A sugar that adds depth with a slight malt-like flavor to whisky.",
+      "title": "Maltose"
+    },
+    {
+      "id": 18,
+      "name": "Aspartame",
+      "description": "An artificial sweetener that can be present in trace amounts, much sweeter than sugar.",
+      "title": "Aspartame"
+    },
+    {
+      "id": 19,
+      "name": "Sugar Alcohols",
+      "description": "Compounds like Sorbitol and Xylitol that add sweetness with less caloric impact.",
+      "title": "Sugar Alcohols"
+    },
+    {
+      "id": 20,
+      "name": "Acetic Acid",
+      "description": "A compound that enhances complexity with acidity in smoky whiskies.",
+      "title": "Acetic Acid"
+    },
+    {
+      "id": 21,
+      "name": "Cinnamaldehyde",
+      "description": "A compound that adds cinnamon and warmth to whisky's spicy character.",
+      "title": "Cinnamaldehyde"
+    },
+    {
+      "id": 22,
+      "name": "Capsaicin",
+      "description": "A compound that provides a burning, peppery sensation in spicy whiskies.",
+      "title": "Capsaicin"
+    },
+    {
+      "id": 23,
+      "name": "Piperine",
+      "description": "A compound that adds black pepper notes to whisky's spicy profile.",
+      "title": "Piperine"
+    },
+    {
+      "id": 24,
+      "name": "Ethyl Acetate",
+      "description": "An ester that provides sweet, fruity, and pineapple-like flavor to whisky.",
+      "title": "Ethyl Acetate"
+    },
+    {
+      "id": 25,
+      "name": "Isoamyl Acetate",
+      "description": "An ester that provides a fruity, banana-like flavor to whisky.",
+      "title": "Isoamyl Acetate"
+    },
+    {
+      "id": 26,
+      "name": "Hexyl Acetate",
+      "description": "A compound that adds green apple notes to whisky's fruity profile.",
+      "title": "Hexyl Acetate"
+    },
+    {
+      "id": 27,
+      "name": "Linalool",
+      "description": "A compound that provides citrus and floral undertones to whisky.",
+      "title": "Linalool"
+    },
+    {
+      "id": 28,
+      "name": "Hexanoic Acid",
+      "description": "An acid that adds buttery, fatty notes to whisky's finish.",
+      "title": "Hexanoic Acid"
+    },
+    {
+      "id": 29,
+      "name": "2-Phenylethanol",
+      "description": "A compound that provides a floral, rose-like aroma to whisky.",
+      "title": "2-Phenylethanol"
+    },
+    {
+      "id": 30,
+      "name": "Acetaldehyde",
+      "description": "A compound that adds green apple and nutty notes to whisky.",
+      "title": "Acetaldehyde"
+    },
+    {
+      "id": 31,
+      "name": "Octanoic Acid",
+      "description": "An acid that provides buttery, fatty notes to whisky's dry finish.",
+      "title": "Octanoic Acid"
+    },
+    {
+      "id": 32,
+      "name": "Fatty Acids",
+      "description": "Compounds that add richness and enhance mouthfeel in whisky.",
+      "title": "Fatty Acids"
+    },
+    {
+      "id": 33,
+      "name": "Essential Oils",
+      "description": "Compounds that enhance aromatic complexity in whisky.",
+      "title": "Essential Oils"
+    },
+    {
+      "id": 34,
+      "name": "Fatty Acids and Esters",
+      "description": "Compounds that enhance the richness and mouthfeel of whisky's finish.",
+      "title": "Fatty Acids and Esters"
+    },
+    {
+      "id": 35,
+      "name": "Sugars",
+      "description": "Compounds that contribute to sweetness and texture in whisky.",
+      "title": "Sugars"
+    },
+    {
+      "id": 36,
+      "name": "Sugars and Carbohydrates",
+      "description": "Compounds that provide bulk and texture while balancing other flavors in whisky.",
+      "title": "Sugars and Carbohydrates"
+    },
+
+ {
+  "id": 37,
+  "name": "Limonene",
+  "description": "A compound found in whisky that contributes to its flavor profile, often appearing alongside other esters and providing citrus notes.",
+  "title": "Limonene"
+},
+{
+  "id": 38,
+  "name": "Benzaldehyde",
+  "description": "A compound present in whisky that contributes to its aromatic profile and flavor complexity.",
+  "title": "Benzaldehyde"
+},
+{
+  "id": 39,
+  "name": "Syringol",
+  "description": "A compound found in whisky that adds to its flavor profile, particularly in expressions with smoky characteristics.",
+  "title": "Syringol"
+},
+{
+  "id": 40,
+  "name": "Methional",
+  "description": "A compound present in whisky that contributes to its overall flavor complexity and aroma profile.",
+  "title": "Methional"
+},
+{
+  "id": 41,
+  "name": "4-Methylguaiacol",
+  "description": "A compound found in whisky that contributes to its flavor profile, particularly in expressions with smoky or woody characteristics.",
+  "title": "4-Methylguaiacol"
+}
+],
+
+
   "flavours": [
   {
     "id": 1,
