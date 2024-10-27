@@ -19,13 +19,13 @@ export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
   if (!whiskey) return [];
 
   const { whiskeys } = await filterProducts({
-    brand: [whiskey.brand],
-    age: [whiskey.age.toString()],
-    region: [whiskey.region],
-    type: [whiskey.type],
-    abv: [whiskey.abv.toString()],
-    caskType: [whiskey.caskType],
-    specialNote: [whiskey.specialNote],
+    brands: [whiskey.brand],
+    ages: [whiskey.age.toString()],
+    regions: [whiskey.region],
+    types: [whiskey.type],
+    abvs: [whiskey.abv.toString()],
+    caskTypes: [whiskey.caskType],
+    specialNotes: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(
@@ -41,13 +41,13 @@ export const getRelatedWhiskeysChemicals = cache(async (whiskeyId: number) => {
   if (!whiskey) return [];
 
   const { whiskeys } = await filterProducts({
-    brand: [whiskey.brand],
-    age: [whiskey.age.toString()],
-    region: [whiskey.region],
-    type: [whiskey.type],
-    abv: [whiskey.abv.toString()],
-    caskType: [whiskey.caskType],
-    specialNote: [whiskey.specialNote],
+    brands: [whiskey.brand],
+    ages: [whiskey.age.toString()],
+    regions: [whiskey.region],
+    types: [whiskey.type],
+    abvs: [whiskey.abv.toString()],
+    caskTypes: [whiskey.caskType],
+    specialNotes: [whiskey.specialNote],
   });
 
   const relatedWhiskeys = whiskeys.filter(

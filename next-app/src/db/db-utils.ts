@@ -97,7 +97,6 @@ function mapChemicalData(chemical: any): Chemical {
     id: chemical.id,
     name: chemical.name,
     description: chemical.description,
-    image: chemical.image,
     title: chemical.title,
   };
 }

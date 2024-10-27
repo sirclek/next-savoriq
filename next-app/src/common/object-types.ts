@@ -14,7 +14,6 @@ export type Chemical = {
   id: number;
   name: string;
   description: string;
-  image: string;
   title: string;
 }
 
