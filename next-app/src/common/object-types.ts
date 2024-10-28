@@ -1,16 +1,21 @@
-import type { Id } from '@/common/common-types';
-
-export type Product = {
-  id: Id;
-  category: {
-    title: string;
-    value: string;
-  };
+export type Flavour = {
+  id: number;
+  subType: string;
+  name: string;
   description: string;
-  image: string;
-  price: number;
   title: string;
+  chemicals: {
+    name: string;
+    value: number;
+  }[];
 };
+
+export type Chemical = {
+  id: number;
+  name: string;
+  description: string;
+  title: string;
+}
 
 export type Whiskey = {
   id: number;
@@ -20,6 +25,7 @@ export type Whiskey = {
   region: string;
   type: string;
   abv: number;
+  description: string;   
   aroma: {
     flavour: string;
     intensity: number;

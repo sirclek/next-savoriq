@@ -1,66 +1,68 @@
+import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { WhiskeyDetails } from '@/products/product-details';
-import { getOneWhiskeyById } from '@/products/product-fetchers';
-import { WhiskeyGridSkeleton } from '@/products/product-grid';
-import { RelatedProducts } from '@/products/related-products';
 import { getMetadata } from '@/seo/seo-utils';
-import type { Metadata } from 'next';
+import { Chemical } from '@/common/object-types';
+import { getObjectById } from '@/db/db-utils';
+import { Metadata } from 'next';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 
-export type ProductPageProps = {
+type ChemicalPageProps = {
   params: {
-    productId: string;
+  chemicalId: Id | string | number;
   };
 };
 
 export async function generateMetadata({
   params,
-}: ProductPageProps): Promise<Metadata> {
-  const product = await getOneWhiskeyById(Number(params.productId));
-
-  if (!product) notFound();
-
+}: ChemicalPageProps): Promise<Metadata> {
+  const chemical = await getObjectById<Chemical>(
+    Number(params.chemicalId),
+    'chemicals',
+  );
   return getMetadata({
-    title: product.title,
-    description: product.description,
-    pathname: `/whiskeys/${params.productId}`,
-    images: [{ url: product.image, alt: product.title }],
+    title: chemical ? chemical.name : 'Chemical',
+    pathname: `/chemicals/${params.chemicalId}`,
   });
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.productId);
-  const product = await getOneWhiskeyById(productId);
+export default async function ChemicalPage({ params }: ChemicalPageProps) {
+  const chemical = await getObjectById<Chemical>(Number(params.chemicalId),'chemicals');
 
-  if (!product) notFound();
+  if (!chemical) notFound();
 
   return (
-    <div className="flex flex-col gap-4">
-      <main>
-        <PageTitle title={product.title} />
+    <>
+      <Section>
         <Paper>
-          <WhiskeyDetails product={product} />
-        </Paper>
-      </main>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Flavour</SectionTitle>
-        <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
+          <div className="flex flex-col gap-4">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
+                <Image
+                  className="rounded bg-white object-contain"
+                  src={`/images/chemicals/${chemical.id}.png`}
+                  alt={chemical.name}
+                  priority
+                  fill
+                />
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="text-3xl font-bold">{chemical.name}</div>
+                  <div className="text-2xl">{/* for text*/}</div>
+                </div>
+                <div className="text-sm">
+                  <p>{chemical.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Paper>
       </Section>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
-        <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
-        </Paper>
-      </Section>
-    </div>
+
+      <Section></Section>
+    </>
   );
 }

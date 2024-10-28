@@ -1,5 +1,5 @@
 import { Paper } from '@/common/paper';
-import { WhiskeyGrid, WhiskeyGridSkeleton } from '@/products/product-grid';
+import { WhiskeyGrid } from '@/whiskeys/whiskey-grid';
 import type { WhiskeyFilterResponse } from './search-types';
 
 type SearchResultsProps = {
@@ -9,10 +9,7 @@ type SearchResultsProps = {
 export function SearchResults({ data }: SearchResultsProps) {
   return (
     <Paper>
-      <div className="hidden group-has-[[data-pending]]/page:block">
-        <WhiskeyGridSkeleton itemCount={8} />
-      </div>
-      <div className="group-has-[[data-pending]]/page:hidden">
+      <div className="page:hidden">
         <WhiskeyGrid whiskeys={data.whiskeys} />
       </div>
     </Paper>

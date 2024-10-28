@@ -2,8 +2,10 @@
 import { Price } from '@/common/price';
 // import { NextLink } from '@/routing/next-link';
 // import { routes } from '@/routing/routing-utils';
+import { ButtonLink } from '@/common/button-link';
+import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from './product-types';
+import type { Whiskey } from '../common/object-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
@@ -30,7 +32,25 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             <Price className="text-primary" value={whiskey.price} />
           </div>
         </div>
-        <p className="text-sm">{whiskey.name}</p>
+        <div className="text-sm">{whiskey.description}</div>
+
+        {whiskey.aroma.map((aroma, index) => (          // aroma
+          <p key={index} className='text-sm'>
+            {aroma.flavour} - Intensity: {aroma.intensity}
+          </p>
+        ))}
+        <div className='flex gap-4'>
+          <ButtonLink variant="primary" href={routes.chemicalVisualize(whiskey.id)}>
+            Chemical Visual
+          </ButtonLink>
+          <ButtonLink variant="primary" href={routes.flavourVisualize(whiskey.id)}>
+            Flavour Visual
+          </ButtonLink>
+          
+          <ButtonLink variant="primary" href={routes.flavour()}>
+            Flavour Profile
+          </ButtonLink>
+        </div>
       </div>
     </div>
   );

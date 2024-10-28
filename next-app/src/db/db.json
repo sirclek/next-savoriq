@@ -1,13 +1,447 @@
 {
+  "chemicals": [
+    {
+      "id": 1,
+      "name": "Vanillin",
+      "description": "A compound found in vanilla beans and oak barrels that provides sweet, vanilla-like notes. It adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
+      "title": "Vanillin"
+    },
+    {
+      "id": 2,
+      "name": "Lactones",
+      "description": "Compounds that add creamy, coconut-like flavors to whisky. They contribute to both aroma and taste, particularly in oak-aged spirits.",
+      "title": "Lactones"
+    },
+    {
+      "id": 3,
+      "name": "Furfural",
+      "description": "A compound that provides almond and caramel notes to whisky. It contributes to both aroma and finish characteristics.",
+      "title": "Furfural"
+    },
+    {
+      "id": 4,
+      "name": "Maltol",
+      "description": "A compound that adds sweetness and depth to whisky. It's particularly important in creating caramelized flavors.",
+      "title": "Maltol"
+    },
+    {
+      "id": 5,
+      "name": "Guaiacol",
+      "description": "A phenolic compound that contributes to smoky, medicinal notes. It's particularly important in peated whiskies.",
+      "title": "Guaiacol"
+    },
+    {
+      "id": 6,
+      "name": "Cresols",
+      "description": "Compounds that add earthy, tar-like flavours to whisky. They're particularly important in peated expressions.",
+      "title": "Cresols"
+    },
+    {
+      "id": 7,
+      "name": "Phenol",
+      "description": "A compound that provides antiseptic, smoky character to whisky, particularly in peated varieties.",
+      "title": "Phenol"
+    },
+    {
+      "id": 8,
+      "name": "Methoxyphenols",
+      "description": "Compounds that contribute to spice and sweetness in whisky, providing sweet, smoky nuances.",
+      "title": "Methoxyphenols"
+    },
+    {
+      "id": 9,
+      "name": "Diacetyl",
+      "description": "A compound that provides buttery notes to whisky, contributing to its rich flavor profile.",
+      "title": "Diacetyl"
+    },
+    {
+      "id": 10,
+      "name": "Hydroxymethylfurfural",
+      "description": "A compound that adds bitterness to whisky, contributing to its complex flavor profile.",
+      "title": "Hydroxymethylfurfural"
+    },
+    {
+      "id": 11,
+      "name": "Lignin",
+      "description": "A compound that provides woody, smoky character to whisky, derived from oak barrel aging.",
+      "title": "Lignin"
+    },
+    {
+      "id": 12,
+      "name": "Tannins",
+      "description": "Compounds that add astringency and dryness to whisky, particularly important in creating a dry finish.",
+      "title": "Tannins"
+    },
+    {
+      "id": 13,
+      "name": "Eugenol",
+      "description": "A compound that provides spicy, clove-like flavor to whisky, typically extracted from oak barrels.",
+      "title": "Eugenol"
+    },
+    {
+      "id": 14,
+      "name": "Glucose",
+      "description": "A primary sweetening compound in whisky that contributes to its basic sweet taste.",
+      "title": "Glucose"
+    },
+    {
+      "id": 15,
+      "name": "Fructose",
+      "description": "A sugar that contributes a more intense sweetness to whisky compared to other sugars.",
+      "title": "Fructose"
+    },
+    {
+      "id": 16,
+      "name": "Sucrose",
+      "description": "A common table sugar that provides clean sweetness to whisky.",
+      "title": "Sucrose"
+    },
+    {
+      "id": 17,
+      "name": "Maltose",
+      "description": "A sugar that adds depth with a slight malt-like flavor to whisky.",
+      "title": "Maltose"
+    },
+    {
+      "id": 18,
+      "name": "Aspartame",
+      "description": "An artificial sweetener that can be present in trace amounts, much sweeter than sugar.",
+      "title": "Aspartame"
+    },
+    {
+      "id": 19,
+      "name": "Sugar Alcohols",
+      "description": "Compounds like Sorbitol and Xylitol that add sweetness with less caloric impact.",
+      "title": "Sugar Alcohols"
+    },
+    {
+      "id": 20,
+      "name": "Acetic Acid",
+      "description": "A compound that enhances complexity with acidity in smoky whiskies.",
+      "title": "Acetic Acid"
+    },
+    {
+      "id": 21,
+      "name": "Cinnamaldehyde",
+      "description": "A compound that adds cinnamon and warmth to whisky's spicy character.",
+      "title": "Cinnamaldehyde"
+    },
+    {
+      "id": 22,
+      "name": "Capsaicin",
+      "description": "A compound that provides a burning, peppery sensation in spicy whiskies.",
+      "title": "Capsaicin"
+    },
+    {
+      "id": 23,
+      "name": "Piperine",
+      "description": "A compound that adds black pepper notes to whisky's spicy profile.",
+      "title": "Piperine"
+    },
+    {
+      "id": 24,
+      "name": "Ethyl Acetate",
+      "description": "An ester that provides sweet, fruity, and pineapple-like flavor to whisky.",
+      "title": "Ethyl Acetate"
+    },
+    {
+      "id": 25,
+      "name": "Isoamyl Acetate",
+      "description": "An ester that provides a fruity, banana-like flavor to whisky.",
+      "title": "Isoamyl Acetate"
+    },
+    {
+      "id": 26,
+      "name": "Hexyl Acetate",
+      "description": "A compound that adds green apple notes to whisky's fruity profile.",
+      "title": "Hexyl Acetate"
+    },
+    {
+      "id": 27,
+      "name": "Linalool",
+      "description": "A compound that provides citrus and floral undertones to whisky.",
+      "title": "Linalool"
+    },
+    {
+      "id": 28,
+      "name": "Hexanoic Acid",
+      "description": "An acid that adds buttery, fatty notes to whisky's finish.",
+      "title": "Hexanoic Acid"
+    },
+    {
+      "id": 29,
+      "name": "2-Phenylethanol",
+      "description": "A compound that provides a floral, rose-like aroma to whisky.",
+      "title": "2-Phenylethanol"
+    },
+    {
+      "id": 30,
+      "name": "Acetaldehyde",
+      "description": "A compound that adds green apple and nutty notes to whisky.",
+      "title": "Acetaldehyde"
+    },
+    {
+      "id": 31,
+      "name": "Octanoic Acid",
+      "description": "An acid that provides buttery, fatty notes to whisky's dry finish.",
+      "title": "Octanoic Acid"
+    },
+    {
+      "id": 32,
+      "name": "Fatty Acids",
+      "description": "Compounds that add richness and enhance mouthfeel in whisky.",
+      "title": "Fatty Acids"
+    },
+    {
+      "id": 33,
+      "name": "Essential Oils",
+      "description": "Compounds that enhance aromatic complexity in whisky.",
+      "title": "Essential Oils"
+    },
+    {
+      "id": 34,
+      "name": "Fatty Acids and Esters",
+      "description": "Compounds that enhance the richness and mouthfeel of whisky's finish.",
+      "title": "Fatty Acids and Esters"
+    },
+    {
+      "id": 35,
+      "name": "Sugars",
+      "description": "Compounds that contribute to sweetness and texture in whisky.",
+      "title": "Sugars"
+    },
+    {
+      "id": 36,
+      "name": "Sugars and Carbohydrates",
+      "description": "Compounds that provide bulk and texture while balancing other flavors in whisky.",
+      "title": "Sugars and Carbohydrates"
+    },
+
+    {
+      "id": 37,
+      "name": "Limonene",
+      "description": "A compound found in whisky that contributes to its flavor profile, often appearing alongside other esters and providing citrus notes.",
+      "title": "Limonene"
+    },
+    {
+      "id": 38,
+      "name": "Benzaldehyde",
+      "description": "A compound present in whisky that contributes to its aromatic profile and flavor complexity.",
+      "title": "Benzaldehyde"
+    },
+    {
+      "id": 39,
+      "name": "Syringol",
+      "description": "A compound found in whisky that adds to its flavor profile, particularly in expressions with smoky characteristics.",
+      "title": "Syringol"
+    },
+    {
+      "id": 40,
+      "name": "Methional",
+      "description": "A compound present in whisky that contributes to its overall flavor complexity and aroma profile.",
+      "title": "Methional"
+    },
+    {
+      "id": 41,
+      "name": "4-Methylguaiacol",
+      "description": "A compound found in whisky that contributes to its flavor profile, particularly in expressions with smoky or woody characteristics.",
+      "title": "4-Methylguaiacol"
+    }
+  ],
+
+  "flavours": [
+    {
+      "id": 1,
+      "sub-type": "aroma",
+      "name": "Vanilla",
+      "description": "Vanilla is a popular aroma and flavor in whisky, derived from vanillin, a compound found in vanilla beans. This sweet, creamy note adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
+      "title": "Vanilla",
+      "chemical": {
+        "Vanillin": "1-2% (provides sweet, vanilla-like notes) ",
+        "Lactones": "0.5-1% (adds creamy, coconut-like flavors) ",
+        "Furfural": "0.1-0.5% (provides almond and caramel notes) ",
+        "Maltol": "Trace amounts (adds sweetness and depth) ",
+        "Sugars and Carbohydrates": "Varies (balances the sweetness) ",
+        "Fatty Acids and Essentials Oils": "Minor components (enhance richness) "
+      }
+    },
+    {
+      "id": 2,
+      "sub-type": "aroma",
+      "name": "Peat",
+      "description": "sd",
+      "title": "Peat's distinctive flavour comes from the phenolic compounds released during peat burning in whisky production. These compounds, such as guaiacol and cresols, impart a smoky, earthy character that defines peated whisky. The chemical of the peat flavour depends on the number of phenols present. e",
+      "chemical": {
+        "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
+        "Cresols": "0.5-1% (adds earthy, tar-like flavours) ",
+        "Phenol": "0.2-0.5% (provides antiseptic, Smokey character) ",
+        "methoxyphenols": "Trace amounts (contribute to spice and sweetness) ",
+        "Sugars and Carbohydrates": "Varies (balances the harshness) ",
+        "Fatty Acids and Essentials Oils": "Minor components (subtle richness) "
+      }
+    },
+    {
+      "id": 3,
+      "sub-type": "aroma",
+      "name": "Caramel",
+      "description": "Caramel flavour derives from the heating of sugar during caramelization. This process produces a rich, sweet, and slightly bitter profile with hints of toffee and brown sugar. The complex reactions between sugars and amino acids give caramel its distinctive taste.",
+      "title": "Caramel",
+      "chemical": {
+        "Maltol": "1-3% (sweet, caramelized flavor) ",
+        "Diacetyl": "0.5-1% (buttery notes) ",
+        "Furfural": "0.1-0.5% (provides toffee and almond flavors) ",
+        "Hydroxymethylfurfural ": "Trace amounts (adds bitterness) ",
+        "Sugars": "Varies (contributes to sweetness and texture) ",
+        "Fatty Acids": "Minor components (adds richness) "
+      }
+    },
+    {
+      "id": 4,
+      "sub-type": "aroma",
+      "name": "Oak",
+      "description": "Oak contributes to whisky flavor through compounds released during barrel aging. These compounds, such as vanillin, lignin, and tannins, impart woody, spicy, and vanilla notes. The aging process in oak barrels gives whisky its complexity, with each compound adding depth to the flavor.",
+      "title": "Oak",
+      "chemical": {
+        "Vanillin": "0.5-1.5% (provides sweet, vanilla-like notes) ",
+        "Lignin": "0.2-1% (woody, smoky character) ",
+        "Tannins": "0.1-0.5% (adds astringency and dryness) ",
+        "Eugenol ": "Trace amounts (spicy, clove-like flavor) ",
+        "Sugars": "Varies (contributes to sweetness and texture) ",
+        "Fatty Acids": "Minor components (adds richness) "
+      }
+    },
+    {
+      "id": 5,
+      "sub-type": "taste",
+      "name": "Sweet",
+      "description": "Sweetness is primarily sensed through sugar molecules or other compounds that mimic their effect on taste receptors. This taste is generally associated with simple sugars like glucose and fructose, but can also come from artificial sweeteners, sugar alcohols, and other naturally occurring compounds. Sweet flavors balance out more intense or bitter tastes in foods and beverages. ",
+      "title": "Sweet",
+      "chemical": {
+        "Glucose": "1-3% (primary sweetening compound) ",
+        "Fructose": "0.5-2% (contributes a more intense sweetness) ",
+        "Sucrose": "0.5-1.5% (common table sugar, provides clean sweetness) ",
+        "Maltose": "0.1-0.5% (adds depth with a slight malt-like flavor) ",
+        "Aspartame ": "Trace amounts (artificial sweetener, much sweeter than sugar) ",
+        "Sugar Alcohols (Sorbitol, Xylitol)": "Trace amounts (used in sugar-free products, adds sweetness with less caloric impact) ",
+        "Sugars and Carbohydrates": "Varies (provides bulk and texture) ",
+        "Fatty Acids": "Minor components (can enhance richness in sweet products) "
+      }
+    },
+    {
+      "id": 6,
+      "sub-type": "taste",
+      "name": "Smoky ",
+      "description": "The smoky flavor commonly found in whisky and other foods comes from compounds formed during processes like peat burning, wood charring, or smoking over open flames. These compounds impart a deep, rich, and sometimes slightly medicinal smokiness. ",
+      "title": "Smoky ",
+      "chemical": {
+        "Guaiacol": "0.5-2% (primary smoky and medicinal notes) ",
+        "Phenols": "0.2-1% (adds antiseptic, charred flavors) ",
+        "Cresols": "0.1-0.5% (contributes to tar-like, earthy notes) ",
+        "Methoxyphenols": "Trace amounts (provides sweet, smoky nuances) ",
+        "Acetic Acid ": "Trace amounts (enhances complexity with acidity) ",
+        "Sugars and Carbohydrates": "Varies (balances the intense smoky flavors) ",
+        "Fatty Acids": "Minor components (adds richness and mouthfeel) "
+      }
+    },
+    {
+      "id": 7,
+      "sub-type": "taste",
+      "name": "Spicy",
+      "description": "Spicy flavors in whisky come from compounds like eugenol and cinnamaldehyde, which are typically extracted from oak barrels or present in spices used in the distillation process. These compounds create warm, peppery, and sometimes clove-like notes.",
+      "title": "Spicy",
+      "chemical": {
+        "Eugenol": "0.5-1.5% (primary spicy, clove-like flavor)",
+        "Cinnamaldehyde": "0.1-0.5% (adds cinnamon and warmth)",
+        "Capsaicin": "Trace amounts (provides a burning, peppery sensation)",
+        "Piperine": "Trace amounts (adds black pepper notes)",
+        "Sugars": "Varies (balances spiciness with sweetness)",
+        "Essential Oils": "Minor components (enhances aromatic complexity)"
+      }
+    },
+    {
+      "id": 8,
+      "sub-type": "taste",
+      "name": "Fruity",
+      "description": "Fruity flavors in whisky arise from esters and aldehydes formed during fermentation and aging. These compounds give off sweet, citrus, and stone fruit notes, balancing the more robust flavors of the whisky.",
+      "title": "Fruity",
+      "chemical": {
+        "Ethyl Acetate": "1-3% (sweet, fruity, and pineapple-like flavor)",
+        "Isoamyl Acetate": "0.5-1% (banana-like ester)",
+        "Hexyl Acetate": "0.1-0.5% (adds green apple notes)",
+        "Linalool": "Trace amounts (provides citrus, floral undertones)",
+        "Sugars": "Varies (contributes to sweetness and texture)",
+        "Fatty Acids and Esters": "Minor components (enhances the richness and mouthfeel)"
+      }
+    },
+    {
+      "id": 9,
+      "sub-type": "finish",
+      "name": "Length",
+      "description": "The length of a whisky's finish refers to how long the flavors linger on the palate after swallowing. A long finish indicates a complex and well-balanced whisky, while a short finish may suggest a simpler or less mature spirit.",
+      "title": "Length",
+      "chemical": {
+        "Isoamyl Acetate": "1-3% (provides a fruity, banana-like flavor)",
+        "Hexanoic Acid": "0.5-1% (adds a buttery, fatty note)",
+        "2-Phenylethanol": "0.1-0.5% (provides a floral, rose-like aroma)",
+        "Furfural": "Trace amounts (adds almond and caramel notes)",
+        "Sugars": "Varies (balances the sweetness and texture)",
+        "Fatty Acids and Esters": "Minor components (enhances richness and mouthfeel)"
+      }
+    },
+    {
+      "id": 10,
+      "sub-type": "finish",
+      "name": "Warming",
+      "description": "The warming sensation in whisky comes from the alcohol content and the compounds present in the spirit. A warming finish is often associated with higher ABV whiskies and can enhance the overall drinking experience.",
+      "title": "Warming",
+      "chemical": {
+        "Ethyl Acetate": "1-3% (provides a fruity, pear-like flavor)",
+        "Acetaldehyde": "0.5-1% (adds green apple and nutty notes)",
+        "2-Phenylethanol": "0.1-0.5% (provides a floral, rose-like aroma)",
+        "Hexanoic Acid": "Trace amounts (adds a buttery, fatty note)",
+        "Sugars": "Varies (balances the sweetness and texture)",
+        "Fatty Acids and Esters": "Minor components (enhances richness and mouthfeel)"
+      }
+    },
+    {
+      "id": 11,
+      "sub-type": "finish",
+      "name": "Dry",
+      "description": "A dry finish in whisky refers to the lack of residual sweetness or stickiness on the palate after swallowing. Dry whiskies are often associated with tannins and other compounds that create a clean, crisp mouthfeel.",
+      "title": "Dry",
+      "chemical": {
+        "Tannins": "1-3% (adds astringency and dryness)",
+        "Sugars": "0.5-1% (provides a hint of sweetness)",
+        "Lactones": "0.1-0.5% (adds creamy, coconut-like flavors)",
+        "Octanoic Acid": "Trace amounts (provides a buttery, fatty note)",
+        "Fatty Acids and Esters": "Varies (enhances richness and mouthfeel)"
+      }
+    },
+    {
+      "id": 12,
+      "sub-type": "finish",
+      "name": "Peaty",
+      "description": "Peaty whiskies are characterized by the presence of phenolic compounds like guaiacol and cresols, which impart a smoky, earthy, and sometimes medicinal flavor. The peaty finish lingers on the palate, leaving a distinctive taste long after swallowing.",
+      "title": "Peaty",
+      "chemical": {
+        "Guaiacol": "1-3% (provides smoky, medicinal notes)",
+        "Cresols": "0.5-1% (adds earthy, tar-like flavors)",
+        "Phenol": "0.1-0.5% (provides antiseptic, Smokey character)",
+        "Hexanoic Acid": "Trace amounts (adds a buttery, fatty note)",
+        "Fatty Acids and Esters": "Varies (enhances richness and mouthfeel)"
+      }
+    }
+  ],
   "whiskeys": [
     {
       "id": 1,
-      "name": "Whisky 1",
+      "name": "Maker's Mark (15 Years)",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Canada",
       "type": "Rye",
       "abv": 45,
+      "description": "A rich, rye-based whisky from Canada with a 45% ABV, offering a sweet aroma of vanilla, caramel, and oak. On the palate, it delivers a smoky, spicy, and fruity taste with a long, warming finish. Chemical components include isoamyl acetate and hexanoic acid, contributing to its complex profile.",
       "aroma": {
         "vanilla": 1,
         "peat": 5,
@@ -35,17 +469,18 @@
       },
       "price": 108,
       "bottling_date": "2018-04-18",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Popular Release"
+      "caskType": "Sherry Oak",
+      "specialNotes": "Popular Release"
     },
     {
       "id": 2,
-      "name": "Whisky 2",
+      "name": "Macallan (NAS)",
       "brand": "Macallan",
       "age": "NAS",
       "region": "USA",
       "type": "Rye",
       "abv": 43,
+      "description": "A USA-based rye whisky with 43% ABV, featuring vanilla and caramel on the nose, paired with smoky and fruity flavors. The finish is warm and dry, with notable compounds such as vanillin and 2-phenylethanol, adding depth to the overall experience.",
       "aroma": {
         "vanilla": 2,
         "peat": 5,
@@ -73,17 +508,18 @@
       },
       "price": 44,
       "bottling_date": "2021-08-06",
-      "cask_type": "French Oak",
-      "special_notes": "Award-winning"
+      "caskType": "French Oak",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 3,
-      "name": "Whisky 3",
+      "name": "Talisker (NAS)",
       "brand": "Talisker",
       "age": "NAS",
       "region": "Japan",
       "type": "Single Malt",
       "abv": 55,
+      "description": "A bold single malt from Japan with 55% ABV, showcasing strong notes of peat and oak. The taste is a complex mix of smoky, spicy, and fruity elements, with a long, peaty finish. Chemical compounds like hexanoic acid and phenol contribute to its robust profile.",
       "aroma": {
         "vanilla": 8,
         "peat": 8,
@@ -111,17 +547,18 @@
       },
       "price": 46,
       "bottling_date": "2019-06-27",
-      "cask_type": "Ex-Sherry",
-      "special_notes": "Small Batch"
+      "caskType": "Ex-Sherry",
+      "specialNotes": "Small Batch"
     },
     {
       "id": 4,
-      "name": "Whisky 4",
+      "name": "Glenfiddich (12 Years)",
       "brand": "Glenfiddich",
       "age": "12 years",
       "region": "Ireland",
       "type": "Blended",
       "abv": 55,
+      "description": "An Irish blended whisky with 55% ABV, offering a fruity, sweet aroma of vanilla and peat. On the palate, it brings a blend of sweet and spicy notes with a dry, peaty finish, highlighted by hexanoic acid and methoxyphenols.",
       "aroma": {
         "vanilla": 7,
         "peat": 7,
@@ -149,17 +586,18 @@
       },
       "price": 72,
       "bottling_date": "2022-03-09",
-      "cask_type": "American Oak",
-      "special_notes": "Cask Strength"
+      "caskType": "American Oak",
+      "specialNotes": "Cask Strength"
     },
     {
       "id": 5,
-      "name": "Whisky 5",
+      "name": "Ardbeg (15 Years)",
       "brand": "Ardbeg",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A 50% ABV Scotch from Ireland, known for its smoky and fruity aromas of vanilla and oak. The taste is smoky and spicy, with a long, warming finish. Its rich profile is supported by diacetyl and 2-phenylethanol.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -187,17 +625,18 @@
       },
       "price": 143,
       "bottling_date": "2019-10-13",
-      "cask_type": "American Oak",
-      "special_notes": "Award-winning"
+      "caskType": "American Oak",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 6,
-      "name": "Whisky 6",
+      "name": "Glenfiddich (15 Years)",
       "brand": "Glenfiddich",
       "age": "15 years",
       "region": "Scotland",
       "type": "Bourbon",
       "abv": 40,
+      "description": "A smooth Scotch from Scotland with 40% ABV, featuring a sweet, fruity aroma of caramel and oak. It delivers a well-balanced sweet, smoky, and spicy palate with a long, warm, peaty finish. Phenol and vanillin add complexity.",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -225,17 +664,18 @@
       },
       "price": 35,
       "bottling_date": "2021-08-14",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Small Batch"
+      "caskType": "Ex-Bourbon",
+      "specialNotes": "Small Batch"
     },
     {
       "id": 7,
-      "name": "Whisky 7",
+      "name": "Glenfiddich (8 Years)",
       "brand": "Glenfiddich",
       "age": "8 years",
       "region": "USA",
       "type": "Blended",
       "abv": 45,
+      "description": "A USA-based blended whisky with 45% ABV, featuring vanilla and caramel aromas, paired with a sweet, fruity taste. Its long, smoky finish is enhanced by acetaldehyde and isoamyl acetate.",
       "aroma": {
         "vanilla": 2,
         "peat": 2,
@@ -263,17 +703,18 @@
       },
       "price": 58,
       "bottling_date": "2022-11-27",
-      "cask_type": "American Oak",
-      "special_notes": "Limited Edition"
+      "caskType": "American Oak",
+      "specialNotes": "Limited Edition"
     },
     {
       "id": 8,
-      "name": "Whisky 8",
+      "name": "Highland Park (18 Years)",
       "brand": "Highland Park",
       "age": "18 years",
       "region": "Japan",
       "type": "Scotch",
       "abv": 55,
+      "description": "A 55% ABV Scotch from Japan, with a rich vanilla and oak aroma. The taste is sweet, smoky, and fruity, leading to a long, warming finish with notable eugenol and linalool compounds, adding depth. ",
       "aroma": {
         "vanilla": 5,
         "peat": 5,
@@ -301,17 +742,18 @@
       },
       "price": 141,
       "bottling_date": "2023-12-07",
-      "cask_type": "American Oak",
-      "special_notes": "Popular Release"
+      "caskType": "American Oak",
+      "specialNotes": "Popular Release"
     },
     {
       "id": 9,
-      "name": "Whisky 9",
+      "name": "Maker's Mark (18 Years)",
       "brand": "Maker's Mark",
       "age": "18 years",
       "region": "Scotland",
       "type": "Scotch",
       "abv": 40,
+      "description": "A Scotch whisky from Scotland, with 40% ABV, presenting strong vanilla and caramel aromas. It offers a sweet, smoky palate with a long, dry finish, supported by furfural and phenol.",
       "aroma": {
         "vanilla": 10,
         "peat": 5,
@@ -339,17 +781,18 @@
       },
       "price": 78,
       "bottling_date": "2021-06-10",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Cask Strength"
+      "caskType": "Sherry Oak",
+      "specialNotes": "Cask Strength"
     },
     {
       "id": 10,
-      "name": "Whisky 10",
+      "name": "Ardbeg (NAS) ",
       "brand": "Ardbeg",
       "age": "NAS",
       "region": "Japan",
       "type": "Bourbon",
       "abv": 50,
+      "description": "A 50% ABV bourbon from Japan, showcasing a smoky, fruity aroma of vanilla and oak. The taste is sweet and spicy, with a dry, peaty finish, enriched by guaiacol and syringol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 7,
@@ -377,17 +820,18 @@
       },
       "price": 49,
       "bottling_date": "2021-04-15",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Popular Release"
+      "caskType": "Ex-Bourbon",
+      "specialNotes": "Popular Release"
     },
     {
       "id": 11,
-      "name": "Whisky 11",
+      "name": "Laphroaig (8 Years) ",
       "brand": "Laphroaig",
       "age": "8 years",
       "region": "Ireland",
       "type": "Single Malt",
       "abv": 40,
+      "description": "A single malt from Ireland with 40% ABV, offering a sweet, smoky aroma of vanilla and caramel. The palate is smoky and fruity, with a long, warming finish, driven by phenol and hexanoic acid.",
       "aroma": {
         "vanilla": 4,
         "peat": 8,
@@ -415,17 +859,18 @@
       },
       "price": 85,
       "bottling_date": "2019-06-13",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Award-winning"
+      "caskType": "Ex-Bourbon",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 12,
-      "name": "Whisky 12",
+      "name": "Macallan (12 Years) ",
       "brand": "Macallan",
       "age": "12 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A rye whisky from the USA with 45% ABV, featuring a rich vanilla and oak aroma. It delivers a sweet, smoky palate with a long, peaty finish, supported by vanillin and isoamyl acetate. ",
       "aroma": {
         "vanilla": 7,
         "peat": 1,
@@ -453,16 +898,18 @@
       },
       "price": 106,
       "bottling_date": "2020-05-25",
-      "cask_type": "American Oak",
-      "special_notes": "Cask Strength"
-    },{
+      "caskType": "American Oak",
+      "specialNotes": "Cask Strength"
+    },
+    {
       "id": 13,
-      "name": "Whisky 13",
+      "name": "Laphroaig (NAS) ",
       "brand": "Laphroaig",
       "age": "NAS",
       "region": "Ireland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Ireland, offering intense smoky aromas of peat and oak. The taste is sweet and spicy, with a dry, warming finish enhanced by methoxyphenols and acetaldehyde. ",
       "aroma": {
         "vanilla": 8,
         "peat": 6,
@@ -490,17 +937,18 @@
       },
       "price": 117,
       "bottling_date": "2020-04-18",
-      "cask_type": "French Oak",
-      "special_notes": "Award-winning"
+      "caskType": "French Oak",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 14,
-      "name": "Whisky 14",
+      "name": " Lagavulin (12 Years) ",
       "brand": "Lagavulin",
       "age": "12 years",
       "region": "Ireland",
       "type": "Bourbon",
       "abv": 55,
+      "description": "A 55% ABV bourbon from Ireland, showcasing rich caramel and oak aromas. The palate is sweet and smoky, with a long, peaty finish, highlighted by octanoic acid and diacetyl.",
       "aroma": {
         "vanilla": 4,
         "peat": 4,
@@ -528,17 +976,18 @@
       },
       "price": 50,
       "bottling_date": "2020-02-01",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Award-winning"
+      "caskType": "Sherry Oak",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 15,
-      "name": "Whisky 15",
+      "name": "Maker's Mark (15 Years) ",
       "brand": "Maker's Mark",
       "age": "15 years",
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
+      "description": "A Scotch from Ireland with 50% ABV, offering a sweet, smoky aroma of vanilla and peat. The taste is fruity and spicy, with a long, warming finish, supported by syringol and benzaldehyde. ",
       "aroma": {
         "vanilla": 1,
         "peat": 3,
@@ -566,17 +1015,18 @@
       },
       "price": 133,
       "bottling_date": "2020-04-20",
-      "cask_type": "French Oak",
-      "special_notes": "Small Batch"
+      "caskType": "French Oak",
+      "specialNotes": "Small Batch"
     },
     {
       "id": 16,
-      "name": "Whisky 16",
+      "name": "Laphroaig (10 Years) ",
       "brand": "Laphroaig",
       "age": "10 years",
       "region": "Canada",
       "type": "Bourbon",
       "abv": 43,
+      "description": "A 43% ABV bourbon from Canada, featuring rich vanilla and caramel aromas. On the palate, it delivers a sweet and smoky flavor, with a dry, peaty finish enriched by limonene and guaiacol. ",
       "aroma": {
         "vanilla": 3,
         "peat": 6,
@@ -604,17 +1054,18 @@
       },
       "price": 133,
       "bottling_date": "2020-08-09",
-      "cask_type": "American Oak",
-      "special_notes": "Award-winning"
+      "caskType": "American Oak",
+      "specialNotes": "Award-winning"
     },
     {
       "id": 17,
-      "name": "Whisky 17",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Scotland",
       "type": "Single Malt",
       "abv": 43,
+      "description": "A 43% ABV single malt from Scotland, offering vanilla and oak aromas. The taste is smoky and fruity, with a long, peaty finish, supported by phenol and linalool. ",
       "aroma": {
         "vanilla": 8,
         "peat": 4,
@@ -642,17 +1093,18 @@
       },
       "price": 110,
       "bottling_date": "2020-07-23",
-      "cask_type": "American Oak",
-      "special_notes": "Small Batch"
+      "caskType": "American Oak",
+      "specialNotes": "Small Batch"
     },
     {
       "id": 18,
-      "name": "Whisky 18",
+      "name": "Macallan (15 Years) ",
       "brand": "Macallan",
       "age": "15 years",
       "region": "Japan",
       "type": "Blended",
       "abv": 40,
+      "description": "A blended whisky from Japan with 40% ABV, featuring a sweet vanilla and caramel aroma. It offers a sweet, smoky palate with a long, warming finish, driven by isoamyl acetate and 2-phenylethanol. ",
       "aroma": {
         "vanilla": 1,
         "peat": 7,
@@ -680,17 +1132,18 @@
       },
       "price": 69,
       "bottling_date": "2018-02-08",
-      "cask_type": "French Oak",
-      "special_notes": "Small Batch"
+      "caskType": "French Oak",
+      "specialNotes": "Small Batch"
     },
     {
       "id": 19,
-      "name": "Whisky 19",
+      "name": "Talisker (15 Years) ",
       "brand": "Talisker",
       "age": "15 years",
       "region": "Scotland",
       "type": "Rye",
       "abv": 50,
+      "description": "A 50% ABV rye whisky from Scotland, known for its smoky, fruity aromas of vanilla and oak. The taste is spicy and fruity, with a long, dry finish supported by acetaldehyde and phenol. ",
       "aroma": {
         "vanilla": 5,
         "peat": 1,
@@ -718,17 +1171,18 @@
       },
       "price": 143,
       "bottling_date": "2021-08-11",
-      "cask_type": "Ex-Bourbon",
-      "special_notes": "Popular Release"
+      "caskType": "Ex-Bourbon",
+      "specialNotes": "Popular Release"
     },
     {
       "id": 20,
-      "name": "Whisky 20",
+      "name": "Ardbeg (18 Years)",
       "brand": "Ardbeg",
       "age": "18 years",
       "region": "USA",
       "type": "Rye",
       "abv": 45,
+      "description": "A USA-based rye whisky with 45% ABV, featuring a rich aroma of vanilla and oak. The palate is sweet and spicy, with a long, smoky finish enriched by diacetyl and methional. ",
       "aroma": {
         "vanilla": 6,
         "peat": 3,
@@ -756,198 +1210,8 @@
       },
       "price": 36,
       "bottling_date": "2018-07-26",
-      "cask_type": "Sherry Oak",
-      "special_notes": "Limited Edition"
-    }
-  ],
-  
-  "products": [
-    {
-      "id": 1,
-      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": { "title": "Men's Clothing", "value": "mens-clothing" },
-      "image": "/images/products/81fPKd-2AYL._AC_SL1500_.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": { "title": "Men's Clothing", "value": "mens-clothing" },
-      "image": "/images/products/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": { "title": "Men's Clothing", "value": "mens-clothing" },
-      "image": "/images/products/71li-ujtlUL._AC_UX679_.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Mens Casual Slim Fit",
-      "price": 15.99,
-      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      "category": { "title": "Men's Clothing", "value": "mens-clothing" },
-      "image": "/images/products/71YXzeOuslL._AC_UY879_.jpg"
-    },
-    {
-      "id": 5,
-      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-      "price": 695,
-      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-      "category": { "title": "Jewelery", "value": "jewelery" },
-      "image": "/images/products/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Solid Gold Petite Micropave ",
-      "price": 168,
-      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-      "category": { "title": "Jewelery", "value": "jewelery" },
-      "image": "/images/products/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
-    },
-    {
-      "id": 7,
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": { "title": "Jewelery", "value": "jewelery" },
-      "image": "/images/products/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
-    },
-    {
-      "id": 8,
-      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-      "price": 10.99,
-      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-      "category": { "title": "Jewelery", "value": "jewelery" },
-      "image": "/images/products/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
-    },
-    {
-      "id": 9,
-      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-      "price": 64,
-      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/61IBBVJvSDL._AC_SY879_.jpg"
-    },
-    {
-      "id": 10,
-      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-      "price": 109,
-      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/61U7T1koQqL._AC_SX679_.jpg"
-    },
-    {
-      "id": 11,
-      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-      "price": 109,
-      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/71kWymZ+c+L._AC_SX679_.jpg"
-    },
-    {
-      "id": 12,
-      "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-      "price": 114,
-      "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/61mtL65D4cL._AC_SX679_.jpg"
-    },
-    {
-      "id": 13,
-      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-      "price": 599,
-      "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/81QpkIctqPL._AC_SX679_.jpg"
-    },
-    {
-      "id": 14,
-      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-      "price": 999.99,
-      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-      "category": { "title": "Electronics", "value": "electronics" },
-      "image": "/images/products/81Zt42ioCgL._AC_SX679_.jpg"
-    },
-    {
-      "id": 15,
-      "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-      "price": 56.99,
-      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/51Y5NI-I5jL._AC_UX679_.jpg"
-    },
-    {
-      "id": 16,
-      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-      "price": 29.95,
-      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/81XH0e8fefL._AC_UY879_.jpg"
-    },
-    {
-      "id": 17,
-      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-      "price": 39.99,
-      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/71HblAHs5xL._AC_UY879_-2.jpg"
-    },
-    {
-      "id": 18,
-      "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
-      "price": 9.85,
-      "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/71z3kpMAYsL._AC_UY879_.jpg"
-    },
-    {
-      "id": 19,
-      "title": "Opna Women's Short Sleeve Moisture",
-      "price": 7.95,
-      "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/51eg55uWmdL._AC_UX679_.jpg"
-    },
-    {
-      "id": 20,
-      "title": "DANVOUY Womens T Shirt Casual Cotton Short",
-      "price": 12.99,
-      "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-      "category": { "title": "Women's Clothing", "value": "womens-clothing" },
-      "image": "/images/products/61pHAEJ4NML._AC_UX679_.jpg"
-    }
-  ],
-  "categories": [
-    {
-      "title": "Learn-More",
-      "value": "Learn-More",
-      "image": "/images/categories/learnmore.png",
-      "color": "hsl(230 50% 50%)"
-
-    },
-    {
-      "title": "Explore",
-      "value": "Explore",
-      "image": "/images/categories/Explore.png",
-      "color": "hsl(230 50% 50%)"
-    },
-    {
-      "title": "Chemical",
-      "value": "Chemical",
-      "image": "/images/categories/chemical.png",
-      "color": "hsl(230 50% 50%)"
-    },
-    {
-      "title": "Jewelery",
-      "value": "jewelery",
-      "image": "/images/categories/jewelery.jpg",
-      "color": "hsl(230 50% 50%)"
+      "caskType": "Sherry Oak",
+      "specialNotes": "Limited Edition"
     }
   ],
   "sortings": [
@@ -970,80 +1234,6 @@
     {
       "title": "Age High to Low",
       "value": "price-desc"
-    }
-  ],
-  "priceRanges": [
-    { "title": "Less than $10,00", "value": "0-10" },
-    { "title": "$10,00 - $50,00", "value": "10-50" },
-    { "title": "$50,00 - $100,00", "value": "50-100" },
-    { "title": "More than $100,00", "value": "100-max" }
-  ],
-  "continents": [
-    {
-      "id": "middle-earth",
-      "name": "Middle-earth",
-      "series": "The Lord of the Rings",
-      "regions": [
-        {
-          "id": "gondor",
-          "name": "Gondor",
-          "cities": [
-            { "id": "minas-tirith", "name": "Minas Tirith" },
-            { "id": "osgiliath", "name": "Osgiliath" },
-            { "id": "dol-amroth", "name": "Dol Amroth" }
-          ]
-        },
-        {
-          "id": "rohan",
-          "name": "Rohan",
-          "cities": [
-            { "id": "edoras", "name": "Edoras" },
-            { "id": "helms-deep", "name": "Helm's Deep" },
-            { "id": "aldburg", "name": "Aldburg" }
-          ]
-        },
-        {
-          "id": "the-shire",
-          "name": "The Shire",
-          "cities": [
-            { "id": "hobbiton", "name": "Hobbiton" },
-            { "id": "buckland", "name": "Buckland" },
-            { "id": "tuckborough", "name": "Tuckborough" }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "westeros",
-      "name": "Westeros",
-      "series": "Game of Thrones",
-      "regions": [
-        {
-          "id": "the-north",
-          "name": "The North",
-          "cities": [
-            { "id": "winterfell", "name": "Winterfell" },
-            { "id": "white-harbor", "name": "White Harbor" },
-            { "id": "castle-black", "name": "Castle Black" }
-          ]
-        },
-        {
-          "id": "the-westerlands",
-          "name": "The Westerlands",
-          "cities": [
-            { "id": "casterly-rock", "name": "Casterly Rock" },
-            { "id": "lannisport", "name": "Lannisport" }
-          ]
-        },
-        {
-          "id": "the-reach",
-          "name": "The Reach",
-          "cities": [
-            { "id": "highgarden", "name": "Highgarden" },
-            { "id": "oldtown", "name": "Oldtown" }
-          ]
-        }
-      ]
     }
   ],
   "brands": [
@@ -1160,7 +1350,7 @@
       "value": "40%"
     }
   ],
-  "cask_types": [
+  "caskTypes": [
     {
       "title": "Sherry Oak",
       "value": "Sherry Oak"
@@ -1182,7 +1372,7 @@
       "value": "Ex-Bourbon"
     }
   ],
-  "special_notes": [
+  "specialNotes": [
     {
       "title": "Popular Release",
       "value": "Popular Release"

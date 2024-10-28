@@ -1,6 +1,6 @@
 import { createMockArray } from '@/common/common-utils';
-import { ProductCardSkeleton, WhiskeyCard } from './product-card';
-import type { Whiskey } from './product-types';
+import type { Whiskey } from '../common/object-types';
+import { WhiskeyCard, WhiskeyCardSkeleton } from './whiskey-card';
 
 type ProductGridShellProps = React.PropsWithChildren;
 
@@ -15,11 +15,12 @@ type WhiskeyGridProps = {
 };
 
 export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
-  console.log(whiskeys);
+  // console.log('Whiskeys', whiskeys);
   return (
     <WhiskeyGridShell>
       {whiskeys.map((whiskey) => {
         return (
+          // console.log('Whiskey2', whiskey),
           <li key={whiskey.id}>
             <WhiskeyCard whiskey={whiskey} />
           </li>
@@ -39,7 +40,7 @@ export function WhiskeyGridSkeleton({ itemCount }: WhiskeyGridSkeletonProps) {
       {createMockArray(itemCount).map((i) => {
         return (
           <li key={i}>
-            <ProductCardSkeleton />
+            <WhiskeyCardSkeleton />
           </li>
         );
       })}

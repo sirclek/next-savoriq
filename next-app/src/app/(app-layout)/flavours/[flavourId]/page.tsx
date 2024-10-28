@@ -1,48 +1,53 @@
+import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
 import { RelatedProducts } from '@/whiskeys/related-whiskey';
 import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
-import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { getObjectById } from '@/db/db-utils';
+import { Flavour } from '@/common/object-types';
+
 
 export type ProductPageProps = {
   params: {
-    productId: string;
+    flavourId: Id;
   };
 };
 
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const product = await getOneWhiskeyById(Number(params.productId));
+  const flavour = await getObjectById<Flavour>(
+    Number(params.flavourId),
+    'flavours',
+  );
 
-  if (!product) notFound();
+  if (!flavour) notFound();
 
   return getMetadata({
-    title: product.title,
-    description: product.description,
-    pathname: /whiskeys/${params.productId},
-    images: [{ url: product.image, alt: product.title }],
+    title: flavour.name,
+    description: flavour.description,
+    pathname: `/flavours/${params.flavourId}`,
+    images: [{ url: '/images/flavours/', alt: flavour.name }],
   });
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.productId);
-  const product = await getOneWhiskeyById(productId);
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId), 'flavours');
 
-  if (!product) notFound();
+  if (!flavour) notFound();
 
   return (
     <div className="flex flex-col gap-4">
       <main>
-        <PageTitle title={product.title} />
+        <PageTitle title={flavour.name} />
         <Paper>
-          <WhiskeyDetails product={product} />
+          <WhiskeyDetails flavour={product} />
         </Paper>
       </main>
       <Section as="aside">
