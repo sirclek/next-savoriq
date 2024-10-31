@@ -1,251 +1,125 @@
 {
+  
   "chemicals": [
     {
       "id": 1,
-      "name": "Vanillin",
-      "description": "A compound found in vanilla beans and oak barrels that provides sweet, vanilla-like notes. It adds depth and richness to the whisky, complementing other flavors like caramel and oak.",
-      "title": "Vanillin"
-    },
-    {
-      "id": 2,
-      "name": "Lactones",
-      "description": "Compounds that add creamy, coconut-like flavors to whisky. They contribute to both aroma and taste, particularly in oak-aged spirits.",
-      "title": "Lactones"
-    },
-    {
-      "id": 3,
-      "name": "Furfural",
-      "description": "A compound that provides almond and caramel notes to whisky. It contributes to both aroma and finish characteristics.",
-      "title": "Furfural"
-    },
-    {
-      "id": 4,
-      "name": "Maltol",
-      "description": "A compound that adds sweetness and depth to whisky. It's particularly important in creating caramelized flavors.",
-      "title": "Maltol"
-    },
-    {
-      "id": 5,
-      "name": "Guaiacol",
-      "description": "A phenolic compound that contributes to smoky, medicinal notes. It's particularly important in peated whiskies.",
-      "title": "Guaiacol"
-    },
-    {
-      "id": 6,
-      "name": "Cresols",
-      "description": "Compounds that add earthy, tar-like flavours to whisky. They're particularly important in peated expressions.",
-      "title": "Cresols"
-    },
-    {
-      "id": 7,
-      "name": "Phenol",
-      "description": "A compound that provides antiseptic, smoky character to whisky, particularly in peated varieties.",
-      "title": "Phenol"
-    },
-    {
-      "id": 8,
-      "name": "Methoxyphenols",
-      "description": "Compounds that contribute to spice and sweetness in whisky, providing sweet, smoky nuances.",
-      "title": "Methoxyphenols"
-    },
-    {
-      "id": 9,
-      "name": "Diacetyl",
-      "description": "A compound that provides buttery notes to whisky, contributing to its rich flavor profile.",
-      "title": "Diacetyl"
-    },
-    {
-      "id": 10,
-      "name": "Hydroxymethylfurfural",
-      "description": "A compound that adds bitterness to whisky, contributing to its complex flavor profile.",
-      "title": "Hydroxymethylfurfural"
-    },
-    {
-      "id": 11,
-      "name": "Lignin",
-      "description": "A compound that provides woody, smoky character to whisky, derived from oak barrel aging.",
-      "title": "Lignin"
-    },
-    {
-      "id": 12,
-      "name": "Tannins",
-      "description": "Compounds that add astringency and dryness to whisky, particularly important in creating a dry finish.",
-      "title": "Tannins"
-    },
-    {
-      "id": 13,
-      "name": "Eugenol",
-      "description": "A compound that provides spicy, clove-like flavor to whisky, typically extracted from oak barrels.",
-      "title": "Eugenol"
-    },
-    {
-      "id": 14,
-      "name": "Glucose",
-      "description": "A primary sweetening compound in whisky that contributes to its basic sweet taste.",
-      "title": "Glucose"
-    },
-    {
-      "id": 15,
-      "name": "Fructose",
-      "description": "A sugar that contributes a more intense sweetness to whisky compared to other sugars.",
-      "title": "Fructose"
-    },
-    {
-      "id": 16,
-      "name": "Sucrose",
-      "description": "A common table sugar that provides clean sweetness to whisky.",
-      "title": "Sucrose"
-    },
-    {
-      "id": 17,
-      "name": "Maltose",
-      "description": "A sugar that adds depth with a slight malt-like flavor to whisky.",
-      "title": "Maltose"
-    },
-    {
-      "id": 18,
-      "name": "Aspartame",
-      "description": "An artificial sweetener that can be present in trace amounts, much sweeter than sugar.",
-      "title": "Aspartame"
-    },
-    {
-      "id": 19,
-      "name": "Sugar Alcohols",
-      "description": "Compounds like Sorbitol and Xylitol that add sweetness with less caloric impact.",
-      "title": "Sugar Alcohols"
-    },
-    {
-      "id": 20,
-      "name": "Acetic Acid",
-      "description": "A compound that enhances complexity with acidity in smoky whiskies.",
-      "title": "Acetic Acid"
-    },
-    {
-      "id": 21,
-      "name": "Cinnamaldehyde",
-      "description": "A compound that adds cinnamon and warmth to whisky's spicy character.",
-      "title": "Cinnamaldehyde"
-    },
-    {
-      "id": 22,
-      "name": "Capsaicin",
-      "description": "A compound that provides a burning, peppery sensation in spicy whiskies.",
-      "title": "Capsaicin"
-    },
-    {
-      "id": 23,
-      "name": "Piperine",
-      "description": "A compound that adds black pepper notes to whisky's spicy profile.",
-      "title": "Piperine"
-    },
-    {
-      "id": 24,
-      "name": "Ethyl Acetate",
-      "description": "An ester that provides sweet, fruity, and pineapple-like flavor to whisky.",
-      "title": "Ethyl Acetate"
-    },
-    {
-      "id": 25,
       "name": "Isoamyl Acetate",
-      "description": "An ester that provides a fruity, banana-like flavor to whisky.",
+      "description": "An ester compound with chemical formula CH3COO(CH2)2CH(CH3)2. Colorless transparent liquid at room temperature with a characteristic banana-like odor.",
       "title": "Isoamyl Acetate"
     },
     {
-      "id": 26,
-      "name": "Hexyl Acetate",
-      "description": "A compound that adds green apple notes to whisky's fruity profile.",
-      "title": "Hexyl Acetate"
-    },
-    {
-      "id": 27,
-      "name": "Linalool",
-      "description": "A compound that provides citrus and floral undertones to whisky.",
-      "title": "Linalool"
-    },
-    {
-      "id": 28,
-      "name": "Hexanoic Acid",
-      "description": "An acid that adds buttery, fatty notes to whisky's finish.",
-      "title": "Hexanoic Acid"
-    },
-    {
-      "id": 29,
+      "id": 2,
       "name": "2-Phenylethanol",
-      "description": "A compound that provides a floral, rose-like aroma to whisky.",
+      "description": "An aromatic alcohol compound with chemical formula C6H5CH2CH2OH. Colorless oily liquid with a rose-like aroma.",
       "title": "2-Phenylethanol"
     },
     {
-      "id": 30,
-      "name": "Acetaldehyde",
-      "description": "A compound that adds green apple and nutty notes to whisky.",
-      "title": "Acetaldehyde"
+      "id": 3,
+      "name": "Methoxyphenols",
+      "description": "A class of aromatic compounds containing methoxy (-OCH3) and hydroxyl (-OH) groups, derived from lignin degradation.",
+      "title": "Methoxyphenols"
     },
     {
-      "id": 31,
-      "name": "Octanoic Acid",
-      "description": "An acid that provides buttery, fatty notes to whisky's dry finish.",
-      "title": "Octanoic Acid"
+      "id": 4,
+      "name": "Hexanoic Acid",
+      "description": "A straight-chain saturated fatty acid with chemical formula CH3(CH2)4COOH. Oily liquid with a distinctive pungent odor.",
+      "title": "Hexanoic Acid"
     },
     {
-      "id": 32,
-      "name": "Fatty Acids",
-      "description": "Compounds that add richness and enhance mouthfeel in whisky.",
-      "title": "Fatty Acids"
+      "id": 5,
+      "name": "Linalool",
+      "description": "A naturally occurring terpene alcohol with chemical formula C10H18O. Colorless liquid with a floral scent.",
+      "title": "Linalool"
     },
     {
-      "id": 33,
-      "name": "Essential Oils",
-      "description": "Compounds that enhance aromatic complexity in whisky.",
-      "title": "Essential Oils"
+      "id": 6,
+      "name": "Phenol",
+      "description": "An aromatic organic compound with formula C6H5OH. White crystalline solid at room temperature with characteristic medicinal odor.",
+      "title": "Phenol"
     },
     {
-      "id": 34,
-      "name": "Fatty Acids and Esters",
-      "description": "Compounds that enhance the richness and mouthfeel of whisky's finish.",
-      "title": "Fatty Acids and Esters"
-    },
-    {
-      "id": 35,
-      "name": "Sugars",
-      "description": "Compounds that contribute to sweetness and texture in whisky.",
-      "title": "Sugars"
-    },
-    {
-      "id": 36,
-      "name": "Sugars and Carbohydrates",
-      "description": "Compounds that provide bulk and texture while balancing other flavors in whisky.",
-      "title": "Sugars and Carbohydrates"
-    },
-
-    {
-      "id": 37,
-      "name": "Limonene",
-      "description": "A compound found in whisky that contributes to its flavor profile, often appearing alongside other esters and providing citrus notes.",
-      "title": "Limonene"
-    },
-    {
-      "id": 38,
-      "name": "Benzaldehyde",
-      "description": "A compound present in whisky that contributes to its aromatic profile and flavor complexity.",
-      "title": "Benzaldehyde"
-    },
-    {
-      "id": 39,
+      "id": 7,
       "name": "Syringol",
-      "description": "A compound found in whisky that adds to its flavor profile, particularly in expressions with smoky characteristics.",
+      "description": "A dimethoxyphenol with chemical formula C8H10O3. White crystalline solid derived from wood smoke and lignin pyrolysis.",
       "title": "Syringol"
     },
     {
-      "id": 40,
+      "id": 8,
+      "name": "Ethyl Acetate",
+      "description": "An organic compound with chemical formula CH3COOC2H5. Colorless liquid with characteristic sweet smell.",
+      "title": "Ethyl Acetate"
+    },
+    {
+      "id": 9,
+      "name": "Acetaldehyde",
+      "description": "An organic chemical compound with formula CH3CHO. Colorless, flammable liquid at room temperature with pungent odor.",
+      "title": "Acetaldehyde"
+    },
+    {
+      "id": 10,
+      "name": "Benzaldehyde",
+      "description": "An organic compound with formula C6H5CHO. Colorless liquid with characteristic almond-like odor.",
+      "title": "Benzaldehyde"
+    },
+    {
+      "id": 11,
+      "name": "Vanillin",
+      "description": "An organic compound with formula C8H8O3. White crystalline powder, primary component of vanilla bean extract.",
+      "title": "Vanillin"
+    },
+    {
+      "id": 12,
+      "name": "Furfural",
+      "description": "An organic compound with formula C5H4O2. Colorless oily liquid that turns yellow-brown on exposure to air.",
+      "title": "Furfural"
+    },
+    {
+      "id": 13,
+      "name": "Octanoic Acid",
+      "description": "A saturated fatty acid with chemical formula CH3(CH2)6COOH. Oily liquid with unpleasant rancid-like odor.",
+      "title": "Octanoic Acid"
+    },
+    {
+      "id": 14,
+      "name": "Diacetyl",
+      "description": "An organic compound with formula (CH3CO)2. Yellow-green liquid with strong butter-like aroma.",
+      "title": "Diacetyl"
+    },
+    {
+      "id": 15,
+      "name": "Lactones",
+      "description": "Cyclic esters formed by internal esterification of hydroxycarboxylic acids. Various ring sizes possible.",
+      "title": "Lactones"
+    },
+    {
+      "id": 16,
       "name": "Methional",
-      "description": "A compound present in whisky that contributes to its overall flavor complexity and aroma profile.",
+      "description": "An organic sulfur compound with formula C4H8OS. Colorless liquid with characteristic cooked potato odor.",
       "title": "Methional"
     },
     {
-      "id": 41,
+      "id": 17,
       "name": "4-Methylguaiacol",
-      "description": "A compound found in whisky that contributes to its flavor profile, particularly in expressions with smoky or woody characteristics.",
+      "description": "A methoxyphenol compound with formula C8H10O2. Colorless to pale yellow liquid derived from wood smoke.",
       "title": "4-Methylguaiacol"
+    },
+    {
+      "id": 18,
+      "name": "Guaiacol",
+      "description": "An organic compound with formula C7H8O2. Yellowish aromatic oil derived from wood creosote and smoke.",
+      "title": "Guaiacol"
+    },
+    {
+      "id": 19,
+      "name": "Eugenol",
+      "description": "An allyl chain-substituted guaiacol with formula C10H12O2. Colorless to pale yellow oily liquid.",
+      "title": "Eugenol"
+    },
+    {
+      "id": 20,
+      "name": "Limonene",
+      "description": "A cyclic monoterpene with formula C10H16. Colorless liquid with strong citrus odor.",
+      "title": "Limonene"
     }
   ],
 
