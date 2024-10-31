@@ -72,7 +72,7 @@ function mapWhiskeyData(whiskey: any): Whiskey {
     price: whiskey.price,
     bottlingDate: whiskey.bottlingDate,
     caskType: whiskey.caskType,
-    specialNote: whiskey.specialNote,
+    specialNote: whiskey.specialNotes,
   };
 }
 

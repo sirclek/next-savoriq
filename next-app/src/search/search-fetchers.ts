@@ -191,19 +191,19 @@ function getWhiskeyFilterSelectedOptions({
       });
     }
   }
-  for (const cask_type of caskTypes.options) {
-    if (args.caskTypes?.includes(cask_type.value)) {
+  for (const caskType of caskTypes.options) {
+    if (args.caskTypes?.includes(caskType.value)) {
       selectedOptions.push({
-        ...cask_type,
+        ...caskType,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'caskTypes',
       });
     }
   }
-  for (const special_note of specialNotes.options) {
-    if (args.specialNotes?.includes(special_note.value)) {
+  for (const specialNote of specialNotes.options) {
+    if (args.specialNotes?.includes(specialNote.value)) {
       selectedOptions.push({
-        ...special_note,
+        ...specialNote,
         filterKey: WhiskeyFilterKey.CATEGORIES,
         dbKey: 'specialNotes',
       });
@@ -224,7 +224,7 @@ export const filterProducts = cache(
       filterOptions,
       args,
     });
-
+    // console.log('whiskeys', whiskeys);
     return { filterOptions, selectedOptions, whiskeys };
   },
 );
