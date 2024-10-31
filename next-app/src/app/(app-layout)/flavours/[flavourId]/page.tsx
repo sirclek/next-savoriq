@@ -3,69 +3,66 @@ import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
-import { RelatedProducts } from '@/whiskeys/related-whiskey';
-import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
-import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
-import { getObjectById } from '@/db/db-utils';
 import { Flavour } from '@/common/object-types';
+import { getObjectById } from '@/db/db-utils';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
-
-export type ProductPageProps = {
+type FlavourPageProps = {
   params: {
-    flavourId: Id;
+    flavourId: Id | string | number;
   };
 };
 
 export async function generateMetadata({
   params,
-}: ProductPageProps): Promise<Metadata> {
+}: FlavourPageProps): Promise<Metadata> {
   const flavour = await getObjectById<Flavour>(
     Number(params.flavourId),
     'flavours',
   );
-
-  if (!flavour) notFound();
-
   return getMetadata({
-    title: flavour.name,
-    description: flavour.description,
+    title: flavour ? flavour.name : 'Flavour',
     pathname: `/flavours/${params.flavourId}`,
-    images: [{ url: '/images/flavours/', alt: flavour.name }],
   });
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId), 'flavours');
+export default async function FlavourPage({ params }: FlavourPageProps) {
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId),'flavours');
 
   if (!flavour) notFound();
 
   return (
-    <div className="flex flex-col gap-4">
-      <main>
-        <PageTitle title={flavour.name} />
+    <>
+      <Section>
         <Paper>
-          <WhiskeyDetails flavour={product} />
-        </Paper>
-      </main>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Flavour</SectionTitle>
-        <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
+          <div className="flex flex-col gap-4">
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
+                <Image
+                  className="rounded bg-white object-contain"
+                  src={`/images/flavours/${flavour.id}.png`}
+                  alt={flavour.name}
+                  priority
+                  fill
+                />
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="text-3xl font-bold">{flavour.name}</div>
+                  <div className="text-2xl">{/* for text*/}</div>
+                </div>
+                <div className="text-sm">
+                  <p>{flavour.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </Paper>
       </Section>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
-        <Paper>
-          <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts whiskeyId={productId} />
-          </Suspense>
-        </Paper>
-      </Section>
-    </div>
+
+      <Section></Section>
+    </>
   );
 }

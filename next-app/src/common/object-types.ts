@@ -6,7 +6,7 @@ export type Flavour = {
   title: string;
   chemicals: {
     name: string;
-    value: number;
+    value: string;
   }[];
 };
 

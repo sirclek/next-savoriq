@@ -84,10 +84,10 @@ function mapFlavourData(flavour: any): Flavour {
     name: flavour.name,
     description: flavour.description,
     title: flavour.title,
-    chemicals: flavour.chemicals.map((chemical: any) => ({
-      name: chemical.name,
-      value: chemical.value,
-    })),
+    chemicals: Object.keys(flavour.chemical).map((chem) => ({
+      name: chem,
+      value: flavour.chemical[chem as keyof typeof flavour.chemical] ?? 0,
+    }))
   };
 }
 
