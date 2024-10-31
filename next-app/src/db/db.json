@@ -1,5 +1,4 @@
 {
-  
   "chemicals": [
     {
       "id": 1,
@@ -342,7 +341,7 @@
         "eugenol": 99
       },
       "price": 108,
-      "bottling_date": "2018-04-18",
+      "bottlingDate": "2018-04-18",
       "caskType": "Sherry Oak",
       "specialNotes": "Popular Release"
     },
@@ -381,7 +380,7 @@
         "acetaldehyde": 77
       },
       "price": 44,
-      "bottling_date": "2021-08-06",
+      "bottlingDate": "2021-08-06",
       "caskType": "French Oak",
       "specialNotes": "Award-winning"
     },
@@ -420,7 +419,7 @@
         "phenol": 46
       },
       "price": 46,
-      "bottling_date": "2019-06-27",
+      "bottlingDate": "2019-06-27",
       "caskType": "Ex-Sherry",
       "specialNotes": "Small Batch"
     },
@@ -459,7 +458,7 @@
         "benzaldehyde": 27
       },
       "price": 72,
-      "bottling_date": "2022-03-09",
+      "bottlingDate": "2022-03-09",
       "caskType": "American Oak",
       "specialNotes": "Cask Strength"
     },
@@ -498,7 +497,7 @@
         "lactones": 88
       },
       "price": 143,
-      "bottling_date": "2019-10-13",
+      "bottlingDate": "2019-10-13",
       "caskType": "American Oak",
       "specialNotes": "Award-winning"
     },
@@ -537,7 +536,7 @@
         "4_methylguaiacol": 17
       },
       "price": 35,
-      "bottling_date": "2021-08-14",
+      "bottlingDate": "2021-08-14",
       "caskType": "Ex-Bourbon",
       "specialNotes": "Small Batch"
     },
@@ -576,7 +575,7 @@
         "isoamyl_acetate": 50
       },
       "price": 58,
-      "bottling_date": "2022-11-27",
+      "bottlingDate": "2022-11-27",
       "caskType": "American Oak",
       "specialNotes": "Limited Edition"
     },
@@ -615,7 +614,7 @@
         "acetaldehyde": 90
       },
       "price": 141,
-      "bottling_date": "2023-12-07",
+      "bottlingDate": "2023-12-07",
       "caskType": "American Oak",
       "specialNotes": "Popular Release"
     },
@@ -654,7 +653,7 @@
         "lactones": 83
       },
       "price": 78,
-      "bottling_date": "2021-06-10",
+      "bottlingDate": "2021-06-10",
       "caskType": "Sherry Oak",
       "specialNotes": "Cask Strength"
     },
@@ -693,7 +692,7 @@
         "ethyl_acetate": 9
       },
       "price": 49,
-      "bottling_date": "2021-04-15",
+      "bottlingDate": "2021-04-15",
       "caskType": "Ex-Bourbon",
       "specialNotes": "Popular Release"
     },
@@ -732,7 +731,7 @@
         "lactones": 32
       },
       "price": 85,
-      "bottling_date": "2019-06-13",
+      "bottlingDate": "2019-06-13",
       "caskType": "Ex-Bourbon",
       "specialNotes": "Award-winning"
     },
@@ -771,7 +770,7 @@
         "hexanoic_acid": 27
       },
       "price": 106,
-      "bottling_date": "2020-05-25",
+      "bottlingDate": "2020-05-25",
       "caskType": "American Oak",
       "specialNotes": "Cask Strength"
     },
@@ -810,7 +809,7 @@
         "phenol": 95
       },
       "price": 117,
-      "bottling_date": "2020-04-18",
+      "bottlingDate": "2020-04-18",
       "caskType": "French Oak",
       "specialNotes": "Award-winning"
     },
@@ -849,7 +848,7 @@
         "4_methylguaiacol": 16
       },
       "price": 50,
-      "bottling_date": "2020-02-01",
+      "bottlingDate": "2020-02-01",
       "caskType": "Sherry Oak",
       "specialNotes": "Award-winning"
     },
@@ -888,7 +887,7 @@
         "4_methylguaiacol": 28
       },
       "price": 133,
-      "bottling_date": "2020-04-20",
+      "bottlingDate": "2020-04-20",
       "caskType": "French Oak",
       "specialNotes": "Small Batch"
     },
@@ -927,7 +926,7 @@
         "ethyl_acetate": 70
       },
       "price": 133,
-      "bottling_date": "2020-08-09",
+      "bottlingDate": "2020-08-09",
       "caskType": "American Oak",
       "specialNotes": "Award-winning"
     },
@@ -966,7 +965,7 @@
         "2_phenylethanol": 88
       },
       "price": 110,
-      "bottling_date": "2020-07-23",
+      "bottlingDate": "2020-07-23",
       "caskType": "American Oak",
       "specialNotes": "Small Batch"
     },
@@ -1005,7 +1004,7 @@
         "vanillin": 21
       },
       "price": 69,
-      "bottling_date": "2018-02-08",
+      "bottlingDate": "2018-02-08",
       "caskType": "French Oak",
       "specialNotes": "Small Batch"
     },
@@ -1044,7 +1043,7 @@
         "vanillin": 87
       },
       "price": 143,
-      "bottling_date": "2021-08-11",
+      "bottlingDate": "2021-08-11",
       "caskType": "Ex-Bourbon",
       "specialNotes": "Popular Release"
     },
@@ -1083,7 +1082,7 @@
         "linalool": 22
       },
       "price": 36,
-      "bottling_date": "2018-07-26",
+      "bottlingDate": "2018-07-26",
       "caskType": "Sherry Oak",
       "specialNotes": "Limited Edition"
     }
