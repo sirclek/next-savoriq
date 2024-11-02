@@ -56,6 +56,11 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   <p>{flavour.description}</p>
                 </div>
+                <div className='text-sm'>
+                  {flavour.chemicals.map((chemical, index) => (
+                    <p key={index}>{chemical.name}: {chemical.value}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
