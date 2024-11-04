@@ -11,7 +11,7 @@ import { notFound } from 'next/navigation';
 
 type ChemicalPageProps = {
   params: {
-  chemicalId: Id | string | number;
+  chemicalId: Id;
   };
 };
 
