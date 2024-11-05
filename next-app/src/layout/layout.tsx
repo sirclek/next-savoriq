@@ -43,7 +43,7 @@ type LayoutContentProps = React.PropsWithChildren<{
 
 export function LayoutContent({ className, children }: LayoutContentProps) {
   return (
-    <Container maxWidth="xl" className={twMerge('py-2 md:p-4', className)}>
+    <Container maxWidth="xl" className={twMerge('py-2 md:p-4 h-full', className)}>
       {children}
     </Container>
   );

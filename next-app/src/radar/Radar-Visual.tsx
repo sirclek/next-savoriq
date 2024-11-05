@@ -20,13 +20,13 @@ export default function ChemicalVisualizePage({
 }: ChemicalVisualizePageProps) {
 
   return (
-    <div className="flex flex-col gap-4">
-      <main>
+    <div className="flex min-h-screen flex-col gap-4">
+      <main className="min-h-full flex-1">
         <PageTitle title={`Compound Visual - ${whiskey.name}`} />
-        <Paper>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <Paper className="h-full">
+          <div className="grid gap-6 md:grid-cols-4" style={{ height: '80vh' }}>
             {/* Whiskey Image */}
-            <div className="relative mx-auto aspect-square w-full max-w-sm md:col-span-1 md:max-w-lg">
+            <div className="relative aspect-square md:col-span-1">
               <Image
                 className="rounded bg-white object-contain"
                 src={`/images/whiskeys/${whiskey.id}.png`}
@@ -38,12 +38,15 @@ export default function ChemicalVisualizePage({
             </div>
 
             {/* Radar Chart Canvas with Dummy Data */}
-            <div className="relative mx-auto aspect-square w-full max-w-sm md:col-span-2 md:max-w-lg">
-              <RadarChart whiskey={whiskey} /> 
+            <div
+              className="relative w-full md:col-span-3"
+              style={{ height: '75vh' }}
+            >
+              <RadarChart whiskey={whiskey} />
             </div>
 
             {/* Whiskey Name */}
-            <div className="flex flex-col items-center justify-center gap-4 md:col-span-3">
+            <div className="flex flex-col items-center justify-center gap-4 md:col-span-4">
               <h2 className="text-3xl font-bold">{whiskey.name}</h2>
             </div>
           </div>

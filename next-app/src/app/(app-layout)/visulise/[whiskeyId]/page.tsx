@@ -17,5 +17,9 @@ export default async function ChemicalVisualizeWrapper({
 
   if (!whiskey) notFound();
 
-  return <ChemicalVisualizePage whiskey={whiskey} />;
+  return (
+    <div className="flex min-h-screen flex-col">
+      <ChemicalVisualizePage whiskey={whiskey} />
+    </div>
+  );
 }

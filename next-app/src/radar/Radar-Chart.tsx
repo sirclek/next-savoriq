@@ -10,49 +10,47 @@ type RadarChartProps = {
 const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   const chemicals = whiskey.chemicals;
-  const flavours: Flavour[] = [];
 
   useEffect(() => {
     const fetchFlavours = async () => {
+      const flavours: any[] = [];
       const allFlavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
-      for (let i = 1; i <= flavours.length; i++) {
-        const flavour = allFlavours.find((flavour) => flavour.id === i);
-        if (flavour) {
-          flavours.push(flavour);
+      for (let i = 1; i <= whiskey.flavours.length; i++) {
+        const flavour = allFlavours.find((flavour) => flavour.id === i) as Flavour;
+        flavours.push({id: flavour.id,name: flavour.name,subType: flavour.subType,value: whiskey.flavours[i-1]});
         }
-      }
     };
-
+    
     fetchFlavours();
-  }, [whiskey]);
+  },[whiskey.flavours]);
 
   useEffect(() => {
-    if (divRef.current) {
-      setWidth(divRef.current.offsetWidth);
-    }
-
-    const handleResize = () => {
+    const updateDimensions = () => {
       if (divRef.current) {
         setWidth(divRef.current.offsetWidth);
+        setHeight(divRef.current.offsetHeight);
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    updateDimensions();
+
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
   useEffect(() => {
     const sketch = (p: p5) => {
       const numPoints = chemicals.length;
-      const radius = width / 2.5; // Adjust to fit within canvas size
+      const radius = Math.min(width, height) / 2.5; // Adjust to fit within canvas size
       const points: p5.Vector[] = [];
       let radarColor: p5.Color;
-
+      console.log("width: ", width, "height: ", height);
       p.setup = () => {
         if (divRef.current) {
-          p.createCanvas(width, width).parent(divRef.current);
+          p.createCanvas(width,height).parent(divRef.current);
         }
         radarColor = p.color(180, 120, 60, 150);
         p.textSize(16);
