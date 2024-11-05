@@ -6,11 +6,15 @@ export const getDb = async () => {
   return dbJson;
 };
 
-type inputTypes = 'whiskeys' | 'flavours' | 'chemicals';
+export enum dataTypes {
+  WHISKEYS = 'whiskeys',
+  FLAVOURS = 'flavours',
+  CHEMICALS = 'chemicals',
+}
 
-const cache: { [key in inputTypes]?: any[] } = {};
+const cache: { [key in dataTypes]?: any[] } = {};
 
-export async function fetchData<T>(type: inputTypes): Promise<T[]> {
+export async function fetchData<T>(type: dataTypes): Promise<T[]> {
   if (cache[type]) {
     return cache[type] as T[];
   }
@@ -36,7 +40,7 @@ export async function fetchData<T>(type: inputTypes): Promise<T[]> {
 
 export async function getObjectById<T extends { id: number | Id }>(
   Id: number | Id,
-  type: inputTypes,
+  type: dataTypes,
 ): Promise<T> {
   const data = await fetchData<T>(type);
   return data.find((item) => item.id === Id) as T;
@@ -65,7 +69,7 @@ function mapWhiskeyData(whiskey: any): Whiskey {
       flavour: flavour,
       intensity: whiskey.finish[flavour as keyof typeof whiskey.finish],
     })),
-    compounds: Object.keys(whiskey.compounds).map((compound) => ({
+    chemicals: Object.keys(whiskey.compounds).map((compound) => ({
       name: compound,
       value: whiskey.compounds[compound as keyof typeof whiskey.compounds] ?? 0,
     })),
@@ -87,7 +91,7 @@ function mapFlavourData(flavour: any): Flavour {
     chemicals: Object.keys(flavour.chemical).map((chem) => ({
       name: chem,
       value: flavour.chemical[chem as keyof typeof flavour.chemical] ?? 0,
-    }))
+    })),
   };
 }
 
