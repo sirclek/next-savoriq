@@ -46,4 +46,5 @@ export type Whiskey = {
   bottlingDate: string;
   caskType: string;
   specialNote: string;
+  flavours: number[];
 };

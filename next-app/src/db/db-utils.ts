@@ -77,6 +77,7 @@ function mapWhiskeyData(whiskey: any): Whiskey {
     bottlingDate: whiskey.bottlingDate,
     caskType: whiskey.caskType,
     specialNote: whiskey.specialNotes,
+    flavours: whiskey.flavours,
   };
 }
 

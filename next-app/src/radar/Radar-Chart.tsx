@@ -17,12 +17,12 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   useEffect(() => {
     const fetchFlavours = async () => {
       const allFlavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
-      const flavourMap = new Map(allFlavours.map(flavour => [flavour.name, flavour.subType]));
-      const flavours = whiskey.aroma.concat(whiskey.taste, whiskey.finish).map(flavour => ({
-        ...flavour,
-        subType: flavourMap.get(flavour.name)
-      }));
-      console.log(flavours, flavourMap);
+      for (let i = 1; i <= flavours.length; i++) {
+        const flavour = allFlavours.find((flavour) => flavour.id === i);
+        if (flavour) {
+          flavours.push(flavour);
+        }
+      }
     };
 
     fetchFlavours();
