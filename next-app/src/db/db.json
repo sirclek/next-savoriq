@@ -148,7 +148,7 @@
         "Guaiacol": "1-2% (contributes to smoky, medicinal notes) ",
         "Cresols": "0.5-1% (adds earthy, tar-like flavours) ",
         "Phenol": "0.2-0.5% (provides antiseptic, Smokey character) ",
-        "methoxyphenols": "Trace amounts (contribute to spice and sweetness) ",
+        "Methoxyphenols": "Trace amounts (contribute to spice and sweetness) ",
         "Sugars and Carbohydrates": "Varies (balances the harshness) ",
         "Fatty Acids and Essentials Oils": "Minor components (subtle richness) "
       }
@@ -334,11 +334,11 @@
         "peaty": 5
       },
       "compounds": {
-        "isoamyl_acetate": 54,
-        "hexanoic_acid": 6,
-        "2_phenylethanol": 87,
-        "furfural": 52,
-        "eugenol": 99
+        "Isoamyl Acetate": 54,
+        "Hexanoic Acid": 6,
+        "2-Phenylethanol": 87,
+        "Furfural": 52,
+        "Eugenol": 99
       },
       "price": 108,
       "bottlingDate": "2018-04-18",
@@ -374,11 +374,11 @@
         "peaty": 8
       },
       "compounds": {
-        "vanillin": 42,
-        "limonene": 72,
-        "2_phenylethanol": 96,
-        "ethyl_acetate": 28,
-        "acetaldehyde": 77
+        "Vanillin": 42,
+        "Limonene": 72,
+        "2-Phenylethanol": 96,
+        "Ethyl Acetate": 28,
+        "Acetaldehyde": 77
       },
       "price": 44,
       "bottlingDate": "2021-08-06",
@@ -414,11 +414,11 @@
         "peaty": 10
       },
       "compounds": {
-        "hexanoic_acid": 11,
-        "benzaldehyde": 9,
-        "linalool": 73,
-        "2_phenylethanol": 19,
-        "phenol": 46
+        "Hexanoic Acid": 11,
+        "Benzaldehyde": 9,
+        "Linalool": 73,
+        "2-Phenylethanol": 19,
+        "Phenol": 46
       },
       "price": 46,
       "bottlingDate": "2019-06-27",
@@ -454,11 +454,11 @@
         "peaty": 10
       },
       "compounds": {
-        "hexanoic_acid": 94,
-        "methoxyphenols": 70,
-        "syringol": 66,
-        "octanoic_acid": 27,
-        "benzaldehyde": 27
+        "Hexanoic Acid": 94,
+        "Methoxyphenols": 70,
+        "Syringol": 66,
+        "Octanoic Acid": 27,
+        "Benzaldehyde": 27
       },
       "price": 72,
       "bottlingDate": "2022-03-09",
@@ -494,11 +494,11 @@
         "peaty": 10
       },
       "compounds": {
-        "diacetyl": 27,
-        "2_phenylethanol": 72,
-        "limonene": 90,
-        "isoamyl_acetate": 42,
-        "lactones": 88
+        "Diacetyl": 27,
+        "2-Phenylethanol": 72,
+        "Limonene": 90,
+        "Isoamyl Acetate": 42,
+        "Lactones": 88
       },
       "price": 143,
       "bottlingDate": "2019-10-13",
@@ -534,11 +534,11 @@
         "peaty": 2
       },
       "compounds": {
-        "phenol": 37,
-        "isoamyl_acetate": 46,
-        "vanillin": 43,
-        "methional": 62,
-        "4_methylguaiacol": 17
+        "Phenol": 37,
+        "Isoamyl Acetate": 46,
+        "Vanillin": 43,
+        "Methional": 62,
+        "4-Methylguaiacol": 17
       },
       "price": 35,
       "bottlingDate": "2021-08-14",
@@ -574,11 +574,11 @@
         "peaty": 7
       },
       "compounds": {
-        "acetaldehyde": 19,
-        "furfural": 34,
-        "2_phenylethanol": 64,
-        "hexanoic_acid": 26,
-        "isoamyl_acetate": 50
+        "Acetaldehyde": 19,
+        "Furfural": 34,
+        "2-Phenylethanol": 64,
+        "Hexanoic Acid": 26,
+        "Isoamyl Acetate": 50
       },
       "price": 58,
       "bottlingDate": "2022-11-27",
@@ -614,11 +614,11 @@
         "peaty": 3
       },
       "compounds": {
-        "eugenol": 73,
-        "linalool": 96,
-        "furfural": 92,
-        "isoamyl_acetate": 49,
-        "acetaldehyde": 90
+        "Eugenol": 73,
+        "Linalool": 96,
+        "Furfural": 92,
+        "Isoamyl Acetate": 49,
+        "Acetaldehyde": 90
       },
       "price": 141,
       "bottlingDate": "2023-12-07",
@@ -654,11 +654,11 @@
         "peaty": 2
       },
       "compounds": {
-        "furfural": 29,
-        "phenol": 27,
-        "linalool": 79,
-        "octanoic_acid": 76,
-        "lactones": 83
+        "Furfural": 29,
+        "Phenol": 27,
+        "Linalool": 79,
+        "Octanoic Acid": 76,
+        "Lactones": 83
       },
       "price": 78,
       "bottlingDate": "2021-06-10",
@@ -694,11 +694,11 @@
         "peaty": 1
       },
       "compounds": {
-        "guaiacol": 72,
-        "syringol": 62,
-        "lactones": 31,
-        "isoamyl_acetate": 49,
-        "ethyl_acetate": 9
+        "Guaiacol": 72,
+        "Syringol": 62,
+        "Lactones": 31,
+        "Isoamyl Acetate": 49,
+        "Ethyl Acetate": 9
       },
       "price": 49,
       "bottlingDate": "2021-04-15",
@@ -734,11 +734,11 @@
         "peaty": 4
       },
       "compounds": {
-        "2_phenylethanol": 33,
-        "hexanoic_acid": 31,
-        "syringol": 26,
-        "ethyl_acetate": 19,
-        "lactones": 32
+        "2-Phenylethanol": 33,
+        "Hexanoic Acid": 31,
+        "Syringol": 26,
+        "Ethyl Acetate": 19,
+        "Lactones": 32
       },
       "price": 85,
       "bottlingDate": "2019-06-13",
@@ -774,11 +774,11 @@
         "peaty": 8
       },
       "compounds": {
-        "vanillin": 62,
-        "guaiacol": 31,
-        "isoamyl_acetate": 77,
-        "linalool": 47,
-        "hexanoic_acid": 27
+        "Vanillin": 62,
+        "Guaiacol": 31,
+        "Isoamyl Acetate": 77,
+        "Linalool": 47,
+        "Hexanoic Acid": 27
       },
       "price": 106,
       "bottlingDate": "2020-05-25",
@@ -814,11 +814,11 @@
         "peaty": 9
       },
       "compounds": {
-        "methoxyphenols": 32,
-        "acetaldehyde": 98,
-        "2_phenylethanol": 92,
-        "isoamyl_acetate": 10,
-        "phenol": 95
+        "Methoxyphenols": 32,
+        "Acetaldehyde": 98,
+        "2-Phenylethanol": 92,
+        "Isoamyl Acetate": 10,
+        "Phenol": 95
       },
       "price": 117,
       "bottlingDate": "2020-04-18",
@@ -854,11 +854,11 @@
         "peaty": 4
       },
       "compounds": {
-        "octanoic_acid": 17,
-        "acetaldehyde": 36,
-        "linalool": 73,
-        "diacetyl": 90,
-        "4_methylguaiacol": 16
+        "Octanoic Acid": 17,
+        "Acetaldehyde": 36,
+        "Linalool": 73,
+        "Diacetyl": 90,
+        "4-Methylguaiacol": 16
       },
       "price": 50,
       "bottlingDate": "2020-02-01",
@@ -894,11 +894,11 @@
         "peaty": 5
       },
       "compounds": {
-        "syringol": 89,
-        "benzaldehyde": 54,
-        "2_phenylethanol": 25,
-        "ethyl_acetate": 47,
-        "4_methylguaiacol": 28
+        "Syringol": 89,
+        "Benzaldehyde": 54,
+        "2-Phenylethanol": 25,
+        "Ethyl Acetate": 47,
+        "4-Methylguaiacol": 28
       },
       "price": 133,
       "bottlingDate": "2020-04-20",
@@ -934,11 +934,11 @@
         "peaty": 5
       },
       "compounds": {
-        "limonene": 70,
-        "methoxyphenols": 91,
-        "guaiacol": 33,
-        "benzaldehyde": 55,
-        "ethyl_acetate": 70
+        "Limonene": 70,
+        "Methoxyphenols": 91,
+        "Guaiacol": 33,
+        "Benzaldehyde": 55,
+        "Ethyl Acetate": 70
       },
       "price": 133,
       "bottlingDate": "2020-08-09",
@@ -974,11 +974,11 @@
         "peaty": 9
       },
       "compounds": {
-        "phenol": 40,
-        "syringol": 97,
-        "methoxyphenols": 94,
-        "linalool": 76,
-        "2_phenylethanol": 88
+        "Phenol": 40,
+        "Syringol": 97,
+        "Methoxyphenols": 94,
+        "Linalool": 76,
+        "2-Phenylethanol": 88
       },
       "price": 110,
       "bottlingDate": "2020-07-23",
@@ -1014,11 +1014,11 @@
         "peaty": 4
       },
       "compounds": {
-        "ethyl_acetate": 91,
-        "linalool": 66,
-        "2_phenylethanol": 7,
-        "hexanoic_acid": 32,
-        "vanillin": 21
+        "Ethyl Acetate": 91,
+        "Linalool": 66,
+        "2-Phenylethanol": 7,
+        "Hexanoic Acid": 32,
+        "Vanillin": 21
       },
       "price": 69,
       "bottlingDate": "2018-02-08",
@@ -1054,11 +1054,11 @@
         "peaty": 6
       },
       "compounds": {
-        "isoamyl_acetate": 7,
-        "phenol": 99,
-        "methoxyphenols": 81,
-        "acetaldehyde": 55,
-        "vanillin": 87
+        "Isoamyl Acetate": 7,
+        "Phenol": 99,
+        "Methoxyphenols": 81,
+        "Acetaldehyde": 55,
+        "Vanillin": 87
       },
       "price": 143,
       "bottlingDate": "2021-08-11",
@@ -1094,11 +1094,11 @@
         "peaty": 1
       },
       "compounds": {
-        "diacetyl": 60,
-        "methional": 82,
-        "methoxyphenols": 96,
-        "hexanoic_acid": 69,
-        "linalool": 22
+        "Diacetyl": 60,
+        "Methional": 82,
+        "Methoxyphenols": 96,
+        "Hexanoic Acid": 69,
+        "Linalool": 22
       },
       "price": 36,
       "bottlingDate": "2018-07-26",

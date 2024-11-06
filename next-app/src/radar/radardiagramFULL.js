@@ -6,9 +6,33 @@ let searchInput; // Search input for whisky names
 
 // Simulated whisky data database (replace with actual API fetch in production)
 const whiskyDatabase = {
-  "Highland Park": { chemicals: [{ name: "Vanillin", value: 70 }, { name: "Acetone", value: 80 }, { name: "Guaiacol", value: 50 }, { name: "Acetic Acid", value: 60 }, { name: "Xylenol", value: 90 }] },
-  "Macallan": { chemicals: [{ name: "Vanillin", value: 60 }, { name: "Acetone", value: 65 }, { name: "Guaiacol", value: 55 }, { name: "Acetic Acid", value: 70 }, { name: "Xylenol", value: 85 }] },
-  "Glenlivet": { chemicals: [{ name: "Vanillin", value: 80 }, { name: "Acetone", value: 75 }, { name: "Guaiacol", value: 65 }, { name: "Acetic Acid", value: 85 }, { name: "Xylenol", value: 60 }] }
+  'Highland Park': {
+    chemicals: [
+      { name: 'Vanillin', value: 70 },
+      { name: 'Acetone', value: 80 },
+      { name: 'Guaiacol', value: 50 },
+      { name: 'Acetic Acid', value: 60 },
+      { name: 'Xylenol', value: 90 },
+    ],
+  },
+  Macallan: {
+    chemicals: [
+      { name: 'Vanillin', value: 60 },
+      { name: 'Acetone', value: 65 },
+      { name: 'Guaiacol', value: 55 },
+      { name: 'Acetic Acid', value: 70 },
+      { name: 'Xylenol', value: 85 },
+    ],
+  },
+  Glenlivet: {
+    chemicals: [
+      { name: 'Vanillin', value: 80 },
+      { name: 'Acetone', value: 75 },
+      { name: 'Guaiacol', value: 65 },
+      { name: 'Acetic Acid', value: 85 },
+      { name: 'Xylenol', value: 60 },
+    ],
+  },
 };
 
 // Initial data (set as empty until search is performed)
@@ -23,10 +47,10 @@ function setup() {
   searchInput = createInput();
   searchInput.position(20, 620);
   searchInput.size(200);
-  searchInput.attribute("placeholder", "Enter Whisky Name");
+  searchInput.attribute('placeholder', 'Enter Whisky Name');
 
   // Search button
-  const searchButton = createButton("Search");
+  const searchButton = createButton('Search');
   searchButton.position(searchInput.x + searchInput.width + 10, 620);
   searchButton.mousePressed(fetchWhiskyData);
 
@@ -56,7 +80,7 @@ function draw() {
   stroke(0);
   fill(0);
   for (let i = 0; i < numPoints; i++) {
-    let angle = TWO_PI / numPoints * i;
+    let angle = (TWO_PI / numPoints) * i;
     let x = width / 2 + 80 + cos(angle) * radius;
     let y = height / 2 + sin(angle) * radius;
     line(width / 2 + 80, height / 2, x, y);
@@ -74,7 +98,7 @@ function drawTitle() {
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Radar Diagram - Whisky Chemicals", width / 2, 30);
+  text('Radar Diagram - Whisky Chemicals', width / 2, 30);
   textAlign(LEFT);
   textSize(16);
 }
@@ -91,10 +115,10 @@ function drawSpiderwebBorders() {
   stroke(150);
   noFill();
   for (let i = 1; i <= 10; i++) {
-    let r = radius * i / 10;
+    let r = (radius * i) / 10;
     beginShape();
     for (let j = 0; j < numPoints; j++) {
-      let angle = TWO_PI / numPoints * j;
+      let angle = (TWO_PI / numPoints) * j;
       let x = width / 2 + 80 + cos(angle) * r;
       let y = height / 2 + sin(angle) * r;
       vertex(x, y);
@@ -113,13 +137,13 @@ function fetchWhiskyData() {
     // Update points positions based on new data
     points = [];
     for (let j = 0; j < numPoints; j++) {
-      let angle = TWO_PI / numPoints * j;
+      let angle = (TWO_PI / numPoints) * j;
       let valueRatio = currentWhiskyData.chemicals[j].value / 100;
       let x = width / 2 + 80 + cos(angle) * valueRatio * radius;
       let y = height / 2 + sin(angle) * valueRatio * radius;
       points.push(createVector(x, y));
     }
   } else {
-    alert("Whisky not found in the database.");
+    alert('Whisky not found in the database.');
   }
 }

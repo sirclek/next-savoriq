@@ -3,7 +3,7 @@ let radius = 200; // Radius of the radar chart
 let points = []; // Array to hold the points' positions for the dataset
 let dragging = []; // Array to track if a point is being dragged
 let values = [0.7, 0.8, 0.5, 0.6, 0.9]; // Dataset with only 5 values
-let labels = ["Vanillin", "Acetone", "Guaiacol", "Acetic Acid", "Xylenol"]; // Axis labels
+let labels = ['Vanillin', 'Acetone', 'Guaiacol', 'Acetic Acid', 'Xylenol']; // Axis labels
 let inputNames = []; // Array for input names
 let radarColor; // Color for the radar chart
 let webValues = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]; // Values for the spiderweb effect
@@ -19,7 +19,7 @@ function setup() {
 
   // Initialize points positions for the dataset
   for (let j = 0; j < numPoints; j++) {
-    let angle = TWO_PI / numPoints * j;
+    let angle = (TWO_PI / numPoints) * j;
     let x = width / 2 + 80 + cos(angle) * values[j] * radius; // Move diagram slightly to the left
     let y = height / 2 + sin(angle) * values[j] * radius;
     points.push(createVector(x, y));
@@ -48,7 +48,7 @@ function draw() {
       let dx = mouseX - (width / 2 + 80); // Update center point for dragging
       let dy = mouseY - height / 2;
       let axisIndex = j; // Snap to the correct axis
-      let axisAngle = TWO_PI / numPoints * axisIndex; // Calculate the angle for the current axis
+      let axisAngle = (TWO_PI / numPoints) * axisIndex; // Calculate the angle for the current axis
       let distFromCenter = dist(width / 2 + 80, height / 2, mouseX, mouseY);
       distFromCenter = constrain(distFromCenter, 0, radius); // Limit dragging to within the radar radius
       values[j] = distFromCenter / radius; // Update the value based on distance from center
@@ -65,7 +65,7 @@ function draw() {
   stroke(0);
   fill(0);
   for (let i = 0; i < numPoints; i++) {
-    let angle = TWO_PI / numPoints * i;
+    let angle = (TWO_PI / numPoints) * i;
     let x = width / 2 + 80 + cos(angle) * radius; // Move axis lines and labels to the left
     let y = height / 2 + sin(angle) * radius;
     line(width / 2 + 80, height / 2, x, y);
@@ -83,7 +83,7 @@ function drawTitle() {
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Radar Diagram Version 1.0", width / 2, 30);
+  text('Radar Diagram Version 1.0', width / 2, 30);
   textAlign(LEFT);
   textSize(16);
 }
@@ -100,10 +100,10 @@ function drawSpiderwebBorders() {
   stroke(150);
   noFill();
   for (let i = 1; i <= 10; i++) {
-    let r = radius * i / 10;
+    let r = (radius * i) / 10;
     beginShape();
     for (let j = 0; j < numPoints; j++) {
-      let angle = TWO_PI / numPoints * j;
+      let angle = (TWO_PI / numPoints) * j;
       let x = width / 2 + 80 + cos(angle) * r;
       let y = height / 2 + sin(angle) * r;
       vertex(x, y);
@@ -116,7 +116,7 @@ function drawInputTable() {
   fill(240, 200, 150);
   rect(10, 20, 200, 180);
   fill(0);
-  text("Chemicals", 30, 40);
+  text('Chemicals', 30, 40);
   for (let i = 0; i < 5; i++) {
     if (currentInputIndex === i && inputMode) {
       fill(255);
@@ -135,7 +135,7 @@ function drawSubmitButton() {
   rect(width / 2 - 50, height - 50, 100, 40);
   fill(0);
   textAlign(CENTER, CENTER);
-  text("Submit", width / 2, height - 30);
+  text('Submit', width / 2, height - 30);
   textAlign(LEFT);
 }
 
@@ -149,7 +149,7 @@ function handleSubmitAnimation() {
     rect(width / 2 - 50, height - 50, 100, 40);
     fill(0);
     textAlign(CENTER, CENTER);
-    text("Submit", width / 2, height - 30);
+    text('Submit', width / 2, height - 30);
     textAlign(LEFT);
     submitFlashDuration--;
     if (submitFlashDuration <= 0) {
@@ -166,13 +166,23 @@ function mousePressed() {
     }
   }
   for (let i = 0; i < 5; i++) {
-    if (mouseX > 30 && mouseX < 180 && mouseY > 50 + i * 30 && mouseY < 75 + i * 30) {
+    if (
+      mouseX > 30 &&
+      mouseX < 180 &&
+      mouseY > 50 + i * 30 &&
+      mouseY < 75 + i * 30
+    ) {
       inputMode = true;
       currentInputIndex = i;
       return;
     }
   }
-  if (mouseX > width / 2 - 50 && mouseX < width / 2 + 50 && mouseY > height - 50 && mouseY < height - 10) {
+  if (
+    mouseX > width / 2 - 50 &&
+    mouseX < width / 2 + 50 &&
+    mouseY > height - 50 &&
+    mouseY < height - 10
+  ) {
     submitClicked = true;
     inputMode = false;
   }
@@ -188,8 +198,15 @@ function mouseReleased() {
 function keyPressed() {
   if (inputMode && currentInputIndex >= 0) {
     if (keyCode === BACKSPACE && inputNames[currentInputIndex].length > 0) {
-      inputNames[currentInputIndex] = inputNames[currentInputIndex].substring(0, inputNames[currentInputIndex].length - 1);
-    } else if (keyCode !== BACKSPACE && keyCode !== ENTER && keyCode !== RETURN) {
+      inputNames[currentInputIndex] = inputNames[currentInputIndex].substring(
+        0,
+        inputNames[currentInputIndex].length - 1,
+      );
+    } else if (
+      keyCode !== BACKSPACE &&
+      keyCode !== ENTER &&
+      keyCode !== RETURN
+    ) {
       inputNames[currentInputIndex] += key;
     }
   }

@@ -40,15 +40,12 @@ export default function ChemicalVisualizePage({
             {/* Radar Chart Canvas with Dummy Data */}
             <div
               className="relative w-full md:col-span-3"
-              style={{ height: '75vh' }}
+              style={{ height: '80vh' }}
             >
               <RadarChart whiskey={whiskey} />
             </div>
 
-            {/* Whiskey Name */}
-            <div className="flex flex-col items-center justify-center gap-4 md:col-span-4">
-              <h2 className="text-3xl font-bold">{whiskey.name}</h2>
-            </div>
+
           </div>
         </Paper>
       </main>

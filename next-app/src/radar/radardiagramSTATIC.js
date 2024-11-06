@@ -6,12 +6,12 @@ let radarColor; // Color for the radar chart
 // Sample chemical data (simulating database values)
 const chemicalData = {
   chemicals: [
-    { name: "Vanillin", value: 70 },
-    { name: "Acetone", value: 80 },
-    { name: "Guaiacol", value: 50 },
-    { name: "Acetic Acid", value: 60 },
-    { name: "Xylenol", value: 90 }
-  ]
+    { name: 'Vanillin', value: 70 },
+    { name: 'Acetone', value: 80 },
+    { name: 'Guaiacol', value: 50 },
+    { name: 'Acetic Acid', value: 60 },
+    { name: 'Xylenol', value: 90 },
+  ],
 };
 
 function setup() {
@@ -21,9 +21,14 @@ function setup() {
 
   // Calculate points based on chemical values
   for (let j = 0; j < numPoints; j++) {
-    let angle = TWO_PI / numPoints * j;
-    let x = width / 2 + 80 + cos(angle) * (chemicalData.chemicals[j].value / 100) * radius;
-    let y = height / 2 + sin(angle) * (chemicalData.chemicals[j].value / 100) * radius;
+    let angle = (TWO_PI / numPoints) * j;
+    let x =
+      width / 2 +
+      80 +
+      cos(angle) * (chemicalData.chemicals[j].value / 100) * radius;
+    let y =
+      height / 2 +
+      sin(angle) * (chemicalData.chemicals[j].value / 100) * radius;
     points.push(createVector(x, y));
   }
 }
@@ -32,7 +37,7 @@ function draw() {
   background(255);
   drawTitle();
   drawValueLabels();
-  
+
   // Draw radar chart
   stroke(radarColor);
   fill(radarColor);
@@ -46,7 +51,7 @@ function draw() {
   stroke(0);
   fill(0);
   for (let i = 0; i < numPoints; i++) {
-    let angle = TWO_PI / numPoints * i;
+    let angle = (TWO_PI / numPoints) * i;
     let x = width / 2 + 80 + cos(angle) * radius;
     let y = height / 2 + sin(angle) * radius;
     line(width / 2 + 80, height / 2, x, y);
@@ -61,7 +66,7 @@ function drawTitle() {
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Radar Diagram - Whisky Chemicals", width / 2, 30);
+  text('Radar Diagram - Whisky Chemicals', width / 2, 30);
   textAlign(LEFT);
   textSize(16);
 }
@@ -78,10 +83,10 @@ function drawSpiderwebBorders() {
   stroke(150);
   noFill();
   for (let i = 1; i <= 10; i++) {
-    let r = radius * i / 10;
+    let r = (radius * i) / 10;
     beginShape();
     for (let j = 0; j < numPoints; j++) {
-      let angle = TWO_PI / numPoints * j;
+      let angle = (TWO_PI / numPoints) * j;
       let x = width / 2 + 80 + cos(angle) * r;
       let y = height / 2 + sin(angle) * r;
       vertex(x, y);
