@@ -208,7 +208,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             y +
               (y == centerY ? 0 : y > centerY ? 5 : -5),
           );
-
+          p.textAlign(p.CENTER, p.CENTER);
           // Draw number scale on up, down, left, right lines
           if (i % (numPoints / 4) === 0) {
             for (let j = 0; j <= maxValue; dataType === 'chemicals' ? j+=10 : j++) {

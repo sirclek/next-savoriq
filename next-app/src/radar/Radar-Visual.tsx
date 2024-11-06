@@ -20,13 +20,14 @@ export default function ChemicalVisualizePage({
 }: ChemicalVisualizePageProps) {
 
   return (
-    <div className="flex min-h-screen flex-col gap-4">
+    <div className="flex min-h-screen flex-col gap-0">
       <main className="min-h-full flex-1">
         <PageTitle title={`Compound Visual - ${whiskey.name}`} />
         <Paper className="h-full">
           <div className="grid gap-6 md:grid-cols-4" style={{ height: '80vh' }}>
             {/* Whiskey Image */}
-            <div className="relative aspect-square md:col-span-1">
+            <div className="relative md:col-span-1 grid grid-rows-2 gap-4">
+              <div className="relative row-span-1 justify-left">
               <Image
                 className="rounded bg-white object-contain"
                 src={`/images/whiskeys/${whiskey.id}.png`}
@@ -34,7 +35,10 @@ export default function ChemicalVisualizePage({
                 priority
                 fill
               />
-              <h2 className="text-3xl font-bold">{whiskey.name}</h2>
+              </div>
+              <div className="row-span-1 flex justify-left">
+              <h2 className="text-m font-bold">{whiskey.description}</h2>
+              </div>
             </div>
 
             {/* Radar Chart Canvas with Dummy Data */}
