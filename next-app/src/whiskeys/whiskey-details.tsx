@@ -34,22 +34,40 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
         </div>
         <div className="text-sm">{whiskey.description}</div>
 
-        {whiskey.aroma.map((aroma, index) => (          // aroma
-          <p key={index} className='text-sm'>
-            {aroma.flavour} - Intensity: {aroma.intensity}
-          </p>
-        ))}
-        <div className='flex gap-4'>
-          <ButtonLink variant="primary" href={routes.chemicalVisualize(whiskey.id)}>
-            Chemical Visual
+        {whiskey.aroma.map(
+          (
+            aroma,
+            index, // aroma
+          ) => (
+            <p key={index} className="text-sm">
+              {aroma.flavour} - Intensity: {aroma.intensity}
+            </p>
+          ),
+        )}
+        <div className="flex gap-4 justify-center">
+          <ButtonLink
+            variant="primary"
+            href={routes.visulise(whiskey.id)}
+            style={{
+              padding: '1% 50%',
+              borderRadius: '10px',
+              transition: 'transform 0.2s',
+            }}
+          >
+            Visulise
           </ButtonLink>
-          <ButtonLink variant="primary" href={routes.flavourVisualize(whiskey.id)}>
-            Flavour Visual
-          </ButtonLink>
-          
-          <ButtonLink variant="primary" href={routes.flavour()}>
-            Flavour Profile
-          </ButtonLink>
+            <ButtonLink
+            variant="primary"
+            href={routes.flavour()}
+            style={{
+              padding: '1% 50%',
+              borderRadius: '10px',
+              transition: 'transform 0.2s',
+              whiteSpace: 'nowrap',
+            }}
+            >
+            See Similar
+            </ButtonLink>
         </div>
       </div>
     </div>
