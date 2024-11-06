@@ -66,7 +66,7 @@ export const routes = {
   whiskey: createRoute<{ params: { whiskeyId: Id } }>(
     (params) => `/whiskeys/${params.whiskeyId}`,
   ),
-  
+
   chemical: createRoute<{ params: { chemicalId: Id2 } }>(
     (params) => `/chemicals/${params.chemicalId}`,
   ),
@@ -75,8 +75,7 @@ export const routes = {
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
   flavour: createRoute(() => '/flavour'),
-  chemicalVisualize: (whiskeyId: number) => `/chem-visual/${whiskeyId}`,
-  flavourVisualize: (whiskeyId: number) => `/flav-visual/${whiskeyId}`,
+  visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`
 };
 
 // TODO: Will check the use cases for this.

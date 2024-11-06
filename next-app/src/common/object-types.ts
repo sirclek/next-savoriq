@@ -15,7 +15,7 @@ export type Chemical = {
   name: string;
   description: string;
   title: string;
-}
+};
 
 export type Whiskey = {
   id: number;
@@ -25,7 +25,7 @@ export type Whiskey = {
   region: string;
   type: string;
   abv: number;
-  description: string;   
+  description: string;
   aroma: {
     flavour: string;
     intensity: number;
@@ -38,7 +38,7 @@ export type Whiskey = {
     flavour: string;
     intensity: number;
   }[];
-  compounds: {
+  chemicals: {
     name: string;
     value: number;
   }[];
@@ -46,4 +46,5 @@ export type Whiskey = {
   bottlingDate: string;
   caskType: string;
   specialNote: string;
+  flavours: number[];
 };

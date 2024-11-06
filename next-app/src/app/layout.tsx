@@ -35,13 +35,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <head />
-      <body className="bg-background text-foreground">
+      <body className="bg-background text-foreground min-h-screen">
         <ThemeProvider>
           <TooltipProvider>
             <Layout>
               <LayoutHeader>
               </LayoutHeader>
-              <div className="mt-app-header">{children}</div>
+              <div className="mt-app-header min-h-screen">{children}</div>
             </Layout>
           </TooltipProvider>
         </ThemeProvider>
