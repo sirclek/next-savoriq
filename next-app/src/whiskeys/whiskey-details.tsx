@@ -5,7 +5,8 @@ import { Price } from '@/common/price';
 import { ButtonLink } from '@/common/button-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from '../common/object-types';
+import type { Flavour, Whiskey } from '../common/object-types';
+import { dataTypes, fetchData } from '@/db/db-utils';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
@@ -13,7 +14,8 @@ type WhiskeyDetailsProps = {
 
 // handles the display of a product's details, including its image, title, price, description, and category. Activated when a user clicks on a product card.
 
-export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
+export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
+  const flavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
@@ -34,33 +36,37 @@ export function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
         </div>
         <div className="text-sm">{whiskey.description}</div>
 
-        {whiskey.aroma.map(
-          (
-            aroma,
-            index, // aroma
-          ) => (
-            <p key={index} className="text-sm">
-              {aroma.flavour} - Intensity: {aroma.intensity}
-            </p>
-          ),
-        )}
+        {flavours.slice(0, 4).map((flavour, i) => (
+          <p key={i} className="text-sm">
+            {flavour.name} - Intensity: {whiskey.flavours[i]}
+          </p>
+        ))}
+
+
         <div className="flex gap-4 justify-center">
           <ButtonLink
             variant="primary"
+            prefetch={true}
             href={routes.visulise(whiskey.id)}
             style={{
-              padding: '1% 50%',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '1% 40%',
               borderRadius: '10px',
               transition: 'transform 0.2s',
+              whiteSpace: 'nowrap',
             }}
           >
             Visulise
           </ButtonLink>
             <ButtonLink
             variant="primary"
+            prefetch={true}
             href={routes.flavour()}
             style={{
-              padding: '1% 50%',
+              justifyContent: 'center',
+              width: '100%',
+              padding: '1% 40%',
               borderRadius: '10px',
               transition: 'transform 0.2s',
               whiteSpace: 'nowrap',

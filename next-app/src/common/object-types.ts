@@ -26,25 +26,10 @@ export type Whiskey = {
   type: string;
   abv: number;
   description: string;
-  aroma: {
-    flavour: string;
-    intensity: number;
-  }[];
-  taste: {
-    flavour: string;
-    intensity: number;
-  }[];
-  finish: {
-    flavour: string;
-    intensity: number;
-  }[];
-  chemicals: {
-    name: string;
-    value: number;
-  }[];
   price: number;
   bottlingDate: string;
   caskType: string;
   specialNote: string;
   flavours: number[];
+  chemicals: number[];
 };

@@ -57,27 +57,12 @@ function mapWhiskeyData(whiskey: any): Whiskey {
     type: whiskey.type,
     abv: whiskey.abv,
     description: whiskey.description,
-    aroma: Object.keys(whiskey.aroma).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.aroma[flavour as keyof typeof whiskey.aroma],
-    })),
-    taste: Object.keys(whiskey.taste).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.taste[flavour as keyof typeof whiskey.taste],
-    })),
-    finish: Object.keys(whiskey.finish).map((flavour) => ({
-      flavour: flavour,
-      intensity: whiskey.finish[flavour as keyof typeof whiskey.finish],
-    })),
-    chemicals: Object.keys(whiskey.compounds).map((compound) => ({
-      name: compound,
-      value: whiskey.compounds[compound as keyof typeof whiskey.compounds] ?? 0,
-    })),
     price: whiskey.price,
     bottlingDate: whiskey.bottlingDate,
     caskType: whiskey.caskType,
     specialNote: whiskey.specialNotes,
-    flavours: whiskey.flavours,
+    flavours: whiskey.flavourValues,
+    chemicals: whiskey.chemicalValues,
   };
 }
 

@@ -2,6 +2,7 @@ import { dataTypes, fetchData } from '@/db/db-utils';
 import p5 from 'p5';
 import React, { useEffect, useRef, useState } from 'react';
 import { Chemical, Flavour, Whiskey } from '../common/object-types';
+import { routes } from '@/routing/routing-utils';
 
 type RadarChartProps = {
   whiskey: Whiskey;
@@ -35,7 +36,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     const fetchFlavours = async () => {
       const flavours: FlavourData[] = [];
       const allFlavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
-      for (let i = 1; i <= whiskey.flavours.length; i++) {
+      for (let i = 0; i < whiskey.flavours.length; i++) {
         const flavour = allFlavours.find(
           (flavour) => flavour.id === i,
         ) as Flavour;
@@ -43,7 +44,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           id: flavour.id,
           name: flavour.name,
           subType: flavour.subType,
-          value: whiskey.flavours[i - 1],
+          value: whiskey.flavours[i],
         });
       }
       setFlavours(flavours);
@@ -56,29 +57,20 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     const fetchChemicals = async () => {
       const chemicals: ChemicalData[] = [];
       const allChemicals = await fetchData<Chemical>(dataTypes.CHEMICALS);
-      allChemicals.forEach((chemical: Chemical) => {
-        console.log(whiskey.chemicals);
-        const foundChemical = whiskey.chemicals.find(
-          (c) => c.name === chemical.name,
-        );
-        if (foundChemical) {
-            chemicals.push({
-              id: chemical.id,
-              name: chemical.name,
-              subType: "Chemical",
-              value: foundChemical.value+5,
-            });
-        } else {
-          chemicals.push({
-            id: chemical.id,
-            name: chemical.name,
-            subType: 'Chemical',
-            value: 5,
-          });
-        }
-      });
+      for (let i = 0; i < whiskey.chemicals.length; i++) {
+        const chemical = allChemicals.find(
+          (chemical) => chemical.id === i,
+        ) as Chemical;
+        chemicals.push({
+          id: chemical.id,
+          name: chemical.name,
+          subType: "Chemical",
+          value: whiskey.chemicals[i],
+        });
+      }
       setChemicals(chemicals);
     };
+
     fetchChemicals();
   }, [whiskey.chemicals]);
 
@@ -135,18 +127,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           };
             for (let i = 0; i < numPoints; i++) {
             const angle = (p.TWO_PI / numPoints) * i;
-            const x =
-              centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
-            const y =
-              centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
+            const x = centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
+            const y = centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
             const nextIndex = (i + 1) % numPoints;
             const nextAngle = (p.TWO_PI / numPoints) * nextIndex;
-            const nextX =
-              centerX + p.cos(nextAngle) * (data[nextIndex].value / maxValue) * radius;
-            const nextY =
-              centerY + p.sin(nextAngle) * (data[nextIndex].value / maxValue) * radius;
+            const nextX = centerX + p.cos(nextAngle) * (data[nextIndex].value / maxValue) * radius;
+            const nextY = centerY + p.sin(nextAngle) * (data[nextIndex].value / maxValue) * radius;
 
-            // Assert that data[i] will always have subType
             const color = subTypeColors[data[i].subType] || [180, 120, 60, 150];
             p.fill(...color);
             p.beginShape();
@@ -238,40 +225,56 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
       <div
-      style={{
-        height: '8%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '10%',
-      }}
-      >
-      <button
-        onClick={() => setDataType('chemicals')}
-        className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'chemicals' ? 'text-white' : 'text-gray-700'}`}
         style={{
-        padding: '1% 10%',
-        borderRadius: '10px',
-        transition: 'transform 0.2s',
+          height: '8%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '5%',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
       >
-        Chemicals
-      </button>
-      <button
-        onClick={() => setDataType('flavours')}
-        className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'flavours' ? 'text-white' : 'text-gray-700'}`}
-        style={{
-        padding: '1% 10%',
-        borderRadius: '10px',
-        transition: 'transform 0.2s',
-        }}
-        onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-      >
-        Flavours
-      </button>
+        <button
+          onClick={() => setDataType('chemicals')}
+          className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'chemicals' ? 'text-white' : 'text-gray-700'}`}
+          style={{
+            width: '100%',
+            padding: '1% 5%',
+            borderRadius: '10px',
+            transition: 'transform 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        >
+          Chemicals
+        </button>
+        <button
+          onClick={() => setDataType('flavours')}
+          className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'flavours' ? 'text-white' : 'text-gray-700'}`}
+          style={{
+            width: '100%',
+            padding: '1% 5%',
+            borderRadius: '10px',
+            transition: 'transform 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        >
+          Flavours
+        </button>
+        <button
+          onClick={() => routes.customise(whiskey.id)}
+          className={`bg-primary-hover text-xl text-white`}
+          style={{
+            width: '100%',
+            padding: '1% 5%',
+            borderRadius: '10px',
+            transition: 'transform 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+        >
+          Customise
+        </button>
       </div>
       <div ref={divRef} style={{ width: '100%', height: '92%' }}></div>
     </div>

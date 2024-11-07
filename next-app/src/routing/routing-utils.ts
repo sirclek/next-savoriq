@@ -75,7 +75,8 @@ export const routes = {
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
   flavour: createRoute(() => '/flavour'),
-  visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`
+  visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`,
+  customise: (whiskeyId: number) => `/customise/${whiskeyId}`,
 };
 
 // TODO: Will check the use cases for this.
