@@ -387,9 +387,7 @@
       "caskType": "French Oak",
       "specialNotes": "Award-winning",
       "flavourValues": [2, 5, 10, 10, 4, 7, 6, 1, 4, 3, 5, 8],
-      "chemicalValues": [
-        0, 96, 0, 0, 0, 0, 0, 28, 77, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 72
-      ]
+      "chemicalValues": [0, 96, 0, 0, 0, 0, 0, 28, 77, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 72]
     },
     {
       "id": 3,
