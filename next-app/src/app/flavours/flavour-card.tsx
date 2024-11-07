@@ -1,10 +1,10 @@
+import type { Flavour } from '@/common/object-types';
 import { Price } from '@/common/price';
 import { Skeleton } from '@/common/skeleton';
 import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Flavour } from '@/common/object-types';
 
 type FlavourCardProps = {
   flavour: Flavour;

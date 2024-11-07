@@ -2,8 +2,8 @@ import { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
-import Image from 'next/image';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 export type ChemicalVisualizePageProps = {
@@ -12,7 +12,9 @@ export type ChemicalVisualizePageProps = {
   };
 };
 
-export default async function ChemicalVisualizePage({ params }: ChemicalVisualizePageProps) {
+export default async function ChemicalVisualizePage({
+  params,
+}: ChemicalVisualizePageProps) {
   const whiskeyId = Number(params.whiskeyId);
   const whiskey = await getOneWhiskeyById(whiskeyId);
 
@@ -23,7 +25,7 @@ export default async function ChemicalVisualizePage({ params }: ChemicalVisualiz
       <main>
         <PageTitle title={`Compound Visual - ${whiskey.name}`} />
         <Paper>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {/* Whiskey Image */}
             <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
               <Image
@@ -50,7 +52,6 @@ export default async function ChemicalVisualizePage({ params }: ChemicalVisualiz
             <div className="flex flex-col items-center justify-center gap-4">
               <h2 className="text-3xl font-bold">{whiskey.name}</h2>
             </div>
-
           </div>
         </Paper>
       </main>

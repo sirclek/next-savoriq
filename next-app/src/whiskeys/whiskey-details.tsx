@@ -3,10 +3,10 @@ import { Price } from '@/common/price';
 // import { NextLink } from '@/routing/next-link';
 // import { routes } from '@/routing/routing-utils';
 import { ButtonLink } from '@/common/button-link';
+import { dataTypes, fetchData } from '@/db/db-utils';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
 import type { Flavour, Whiskey } from '../common/object-types';
-import { dataTypes, fetchData } from '@/db/db-utils';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
@@ -42,8 +42,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           </p>
         ))}
 
-
-        <div className="flex gap-4 justify-center">
+        <div className="flex justify-center gap-4">
           <ButtonLink
             variant="primary"
             prefetch={true}
@@ -59,7 +58,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           >
             Visulise
           </ButtonLink>
-            <ButtonLink
+          <ButtonLink
             variant="primary"
             prefetch={true}
             href={routes.flavour()}
@@ -71,9 +70,9 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
               transition: 'transform 0.2s',
               whiteSpace: 'nowrap',
             }}
-            >
+          >
             See Similar
-            </ButtonLink>
+          </ButtonLink>
         </div>
       </div>
     </div>

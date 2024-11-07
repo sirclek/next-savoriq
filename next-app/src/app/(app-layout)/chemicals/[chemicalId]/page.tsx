@@ -1,17 +1,17 @@
 import { Id } from '@/common/common-types';
+import { Chemical } from '@/common/object-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { getMetadata } from '@/seo/seo-utils';
-import { Chemical } from '@/common/object-types';
 import { getObjectById } from '@/db/db-utils';
+import { getMetadata } from '@/seo/seo-utils';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type ChemicalPageProps = {
   params: {
-  chemicalId: Id;
+    chemicalId: Id;
   };
 };
 
@@ -29,7 +29,10 @@ export async function generateMetadata({
 }
 
 export default async function ChemicalPage({ params }: ChemicalPageProps) {
-  const chemical = await getObjectById<Chemical>(Number(params.chemicalId),'chemicals');
+  const chemical = await getObjectById<Chemical>(
+    Number(params.chemicalId),
+    'chemicals',
+  );
 
   if (!chemical) notFound();
 

@@ -3,10 +3,13 @@
 import { Paper, PaperTitle } from '@/common/paper';
 import { Checkbox, CheckboxGroup } from '@/forms/checkbox-group';
 import { RadioGroup, RadioGroupItem } from '@/forms/radio-group';
-import type {WhiskeyFilterData, WhiskeyFilterResponse} from '@/search/search-types';
+import { decodeState, encodeState } from '@/routing/url-state';
+import type {
+  WhiskeyFilterData,
+  WhiskeyFilterResponse,
+} from '@/search/search-types';
 import { WhiskeyFilterKey } from '@/search/search-utils';
 import { useRouter } from 'next/navigation';
-import { decodeState, encodeState } from '@/routing/url-state';
 
 type WhiskeyFilterProps = {
   data: WhiskeyFilterResponse;
@@ -21,7 +24,6 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
     dbKey: WhiskeyFilterData['dbKey'],
     newValues: string[],
   ) => {
-
     const [urlString, newValuesObject] = encodeState(dbKey, newValues, values);
 
     router.push(`/search${urlString}`);
@@ -56,7 +58,6 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
             filterInput = (
               <CheckboxGroup
                 value={values[filter.dbKey] ?? []}
-                
                 onChange={(newValue) => {
                   handleChange(filter.dbKey, newValue);
                 }}

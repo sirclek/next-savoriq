@@ -1,32 +1,33 @@
 // app/page.tsx
-import React from 'react';
-import { Container } from '@/common/container';
-import { APP_DESCRIPTION, APP_TITLE, } from '@/common/common-utils';
-import { routes } from '@/routing/routing-utils';
-import { ButtonLink } from '@/common/button-link';
-import { Divider } from '@/common/divider';
-import { getMetadata } from '@/seo/seo-utils';
-import Image from 'next/image';
+import logo from '@/app/logo.png';
 import mainpicture from '@/app/mainpic.png';
 import underpicture from '@/app/underpicture.png';
-import logo from '@/app/logo.png';
+import { ButtonLink } from '@/common/button-link';
+import { APP_DESCRIPTION, APP_TITLE } from '@/common/common-utils';
+import { Container } from '@/common/container';
+import { Divider } from '@/common/divider';
+import { routes } from '@/routing/routing-utils';
+import { getMetadata } from '@/seo/seo-utils';
+import Image from 'next/image';
+import React from 'react';
 export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
 export default function LandingPage() {
   return (
     <main>
-      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-end justify-end p-1">
-        <Image
-          src={logo}
-          alt='SavorIQ Logo'
-          width={150}
-          height={150}
-        />
+      <Container
+        maxWidth="xl"
+        className="flex flex-col items-end justify-end p-1 lg:flex-row"
+      >
+        <Image src={logo} alt="SavorIQ Logo" width={150} height={150} />
       </Container>
-      <Container maxWidth="xl" className="flex flex-col lg:flex-row items-center justify-center p-4">
+      <Container
+        maxWidth="xl"
+        className="flex flex-col items-center justify-center p-4 lg:flex-row"
+      >
         <Image
           src={mainpicture}
-          alt='Whiskey collection'
+          alt="Whiskey collection"
           width={1000}
           height={300}
         />
@@ -52,4 +53,3 @@ export default function LandingPage() {
     </main>
   );
 }
-

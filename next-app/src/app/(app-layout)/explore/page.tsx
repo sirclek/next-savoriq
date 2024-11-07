@@ -15,15 +15,10 @@ export default function LandingPage({ chemical }: WhiskeyDetailsProps) {
         <Paper>
           <div className="flex flex-col gap-4">
             <div className="grid gap-6 md:grid-cols-2">
-              
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
-                  <div className="text-3xl font-bold">
-                    {<p>Explore</p>}
-                  </div>
-                  <div className="text-2xl">
-                    {/* for text*/}
-                  </div>
+                  <div className="text-3xl font-bold">{<p>Explore</p>}</div>
+                  <div className="text-2xl">{/* for text*/}</div>
                 </div>
                 <div className="text-sm">
                   <p>Explore </p>
@@ -33,10 +28,9 @@ export default function LandingPage({ chemical }: WhiskeyDetailsProps) {
           </div>
         </Paper>
       </Section>
-    
+
       <Section>
-        <Paper>
-        </Paper>
+        <Paper></Paper>
       </Section>
     </>
   );

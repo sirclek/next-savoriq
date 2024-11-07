@@ -1,10 +1,10 @@
 import { Id } from '@/common/common-types';
+import { Flavour } from '@/common/object-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { getMetadata } from '@/seo/seo-utils';
-import { Flavour } from '@/common/object-types';
 import { getObjectById } from '@/db/db-utils';
+import { getMetadata } from '@/seo/seo-utils';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -29,7 +29,10 @@ export async function generateMetadata({
 }
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId),'flavours');
+  const flavour = await getObjectById<Flavour>(
+    Number(params.flavourId),
+    'flavours',
+  );
 
   if (!flavour) notFound();
 
@@ -56,9 +59,11 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   <p>{flavour.description}</p>
                 </div>
-                <div className='text-sm'>
+                <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
-                    <p key={index}>{chemical.name}: {chemical.value}</p>
+                    <p key={index}>
+                      {chemical.name}: {chemical.value}
+                    </p>
                   ))}
                 </div>
               </div>

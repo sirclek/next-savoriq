@@ -1,8 +1,14 @@
 import { dataTypes, fetchData } from '@/db/db-utils';
-import p5 from 'p5';
-import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
-import { Chemical, Flavour, Whiskey } from '../common/object-types';
 import { routes } from '@/routing/routing-utils';
+import p5 from 'p5';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { Chemical, Flavour, Whiskey } from '../common/object-types';
 
 type RadarChartProps = {
   whiskey: Whiskey;
@@ -19,7 +25,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
-  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>('chemicals');
+  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>(
+    'chemicals',
+  );
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
 
@@ -27,7 +35,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     try {
       const allFlavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
       const flavours = whiskey.flavours.map((value, i) => {
-        const flavour = allFlavours.find((flavour) => flavour.id === i) as Flavour;
+        const flavour = allFlavours.find(
+          (flavour) => flavour.id === i,
+        ) as Flavour;
         return {
           id: flavour.id,
           name: flavour.name,
@@ -45,11 +55,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     try {
       const allChemicals = await fetchData<Chemical>(dataTypes.CHEMICALS);
       const chemicals = whiskey.chemicals.map((value, i) => {
-        const chemical = allChemicals.find((chemical) => chemical.id === i) as Chemical;
+        const chemical = allChemicals.find(
+          (chemical) => chemical.id === i,
+        ) as Chemical;
         return {
           id: chemical.id,
           name: chemical.name,
-          subType: "Chemical",
+          subType: 'Chemical',
           value,
         };
       });
@@ -83,7 +95,10 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     };
   }, []);
 
-  const data = useMemo(() => (dataType === 'chemicals' ? chemicals : flavours), [dataType, chemicals, flavours]);
+  const data = useMemo(
+    () => (dataType === 'chemicals' ? chemicals : flavours),
+    [dataType, chemicals, flavours],
+  );
 
   useEffect(() => {
     const sketch = (p: p5) => {
@@ -105,7 +120,11 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         p.fill(0);
         p.textAlign(p.CENTER, p.CENTER);
         p.textSize(14);
-        p.text(`Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`, centerX, 30);
+        p.text(
+          `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
+          centerX,
+          30,
+        );
 
         if (dataType === 'flavours') {
           const subTypeColors: { [key: string]: [number, number, number] } = {
@@ -115,12 +134,18 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           };
           for (let i = 0; i < numPoints; i++) {
             const angle = (p.TWO_PI / numPoints) * i;
-            const x = centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
-            const y = centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
+            const x =
+              centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
+            const y =
+              centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
             const nextIndex = (i + 1) % numPoints;
             const nextAngle = (p.TWO_PI / numPoints) * nextIndex;
-            const nextX = centerX + p.cos(nextAngle) * (data[nextIndex].value / maxValue) * radius;
-            const nextY = centerY + p.sin(nextAngle) * (data[nextIndex].value / maxValue) * radius;
+            const nextX =
+              centerX +
+              p.cos(nextAngle) * (data[nextIndex].value / maxValue) * radius;
+            const nextY =
+              centerY +
+              p.sin(nextAngle) * (data[nextIndex].value / maxValue) * radius;
 
             const color = subTypeColors[data[i].subType] || [180, 120, 60, 150];
             p.fill(...color);
@@ -143,8 +168,10 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         p.beginShape();
         for (let i = 0; i < numPoints; i++) {
           const angle = (p.TWO_PI / numPoints) * i;
-          const x = centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
-          const y = centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
+          const x =
+            centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
+          const y =
+            centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
           p.vertex(x, y);
         }
         p.endShape(p.CLOSE);
@@ -158,17 +185,33 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           p.stroke(128);
           p.line(centerX, centerY, x, y);
           p.textAlign(
-            Math.abs(x - centerX) / radius < 0.03 ? p.CENTER : x < centerX ? p.RIGHT : p.LEFT,
-            Math.abs(y - centerY) / radius < 0.03 ? p.CENTER : y < centerY ? p.BOTTOM : p.TOP,
+            Math.abs(x - centerX) / radius < 0.03
+              ? p.CENTER
+              : x < centerX
+                ? p.RIGHT
+                : p.LEFT,
+            Math.abs(y - centerY) / radius < 0.03
+              ? p.CENTER
+              : y < centerY
+                ? p.BOTTOM
+                : p.TOP,
           );
 
           p.textFont('sans-serif');
           p.textSize(16);
-          p.text(data[i].name, x + (x == centerX ? 0 : x > centerX ? 5 : -5), y + (y == centerY ? 0 : y > centerY ? 5 : -5));
+          p.text(
+            data[i].name,
+            x + (x == centerX ? 0 : x > centerX ? 5 : -5),
+            y + (y == centerY ? 0 : y > centerY ? 5 : -5),
+          );
           p.textAlign(p.CENTER, p.CENTER);
 
           if (i % (numPoints / 4) === 0) {
-            for (let j = 0; j <= maxValue; dataType === 'chemicals' ? j += 10 : j++) {
+            for (
+              let j = 0;
+              j <= maxValue;
+              dataType === 'chemicals' ? (j += 10) : j++
+            ) {
               const scaleX = centerX + p.cos(angle) * (radius / maxValue) * j;
               const scaleY = centerY + p.sin(angle) * (radius / maxValue) * j;
               p.textSize(12);

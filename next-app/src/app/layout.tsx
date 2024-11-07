@@ -6,7 +6,6 @@ import { ThemeProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 
-
 const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
@@ -35,12 +34,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <head />
-      <body className="bg-background text-foreground min-h-screen">
+      <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider>
           <TooltipProvider>
             <Layout>
-              <LayoutHeader>
-              </LayoutHeader>
+              <LayoutHeader></LayoutHeader>
               <div className="mt-app-header min-h-screen">{children}</div>
             </Layout>
           </TooltipProvider>

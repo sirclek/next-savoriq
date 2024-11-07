@@ -20,7 +20,7 @@ export default function LandingPage({ chemical }: WhiskeyDetailsProps) {
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
                 <Image
                   className="rounded bg-white object-contain"
-                  src="/images/chemicals/1.jpg" 
+                  src="/images/chemicals/1.jpg"
                   alt="Chemical Image"
                   priority
                   fill
@@ -31,9 +31,7 @@ export default function LandingPage({ chemical }: WhiskeyDetailsProps) {
                   <div className="text-3xl font-bold">
                     {<p>Chemical Name 1</p>}
                   </div>
-                  <div className="text-2xl">
-                    {/* for text*/}
-                  </div>
+                  <div className="text-2xl">{/* for text*/}</div>
                 </div>
                 <div className="text-sm">
                   <p>Chemical description 1 </p>
@@ -43,10 +41,9 @@ export default function LandingPage({ chemical }: WhiskeyDetailsProps) {
           </div>
         </Paper>
       </Section>
-    
+
       <Section>
-        <Paper>
-        </Paper>
+        <Paper></Paper>
       </Section>
     </>
   );
