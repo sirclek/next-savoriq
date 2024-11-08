@@ -8,6 +8,7 @@ import { getObjectById } from '@/db/db-utils';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import StaticSmokeyPage from './StaticSmokeyPage';
 
 type FlavourPageProps = {
   params: {
@@ -20,7 +21,7 @@ export async function generateMetadata({
 }: FlavourPageProps): Promise<Metadata> {
   const flavour = await getObjectById<Flavour>(
     Number(params.flavourId),
-    'flavours',
+    'flavours'
   );
   return getMetadata({
     title: flavour ? flavour.name : 'Flavour',
@@ -29,10 +30,17 @@ export async function generateMetadata({
 }
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId),'flavours');
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId), 'flavours');
 
   if (!flavour) notFound();
 
+  // Check if the flavour is Smokey by name or ID
+  if (flavour.name === "Smoky") {
+    // Render Static Smokey Page if it matches Smokey flavour
+    return <StaticSmokeyPage />;
+  }
+
+  // Default dynamic content for other flavours
   return (
     <>
       <Section>
@@ -51,14 +59,16 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
                   <div className="text-3xl font-bold">{flavour.name}</div>
-                  <div className="text-2xl">{/* for text*/}</div>
+                  <div className="text-2xl">{/* Additional text can go here */}</div>
                 </div>
                 <div className="text-sm">
                   <p>{flavour.description}</p>
                 </div>
-                <div className='text-sm'>
+                <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
-                    <p key={index}>{chemical.name}: {chemical.value}</p>
+                    <p key={index}>
+                      {chemical.name}: {chemical.value}
+                    </p>
                   ))}
                 </div>
               </div>
@@ -67,7 +77,7 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
         </Paper>
       </Section>
 
-      <Section></Section>
+      {/* Additional sections can go here */}
     </>
   );
 }
