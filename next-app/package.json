@@ -1,6 +1,6 @@
 {
-  "name": "next-shopper",
-  "version": "0.1.0",
+  "name": "savorIQ",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -32,7 +32,7 @@
     "immer": "^10.1.1",
     "lucide-react": "^0.394.0",
     "next": "^14.2.4",
-    "next-shopper": "file:",
+    "savorIQ": "file:",
     "next-themes": "^0.3.0",
     "p5": "^1.11.1",
     "react": "^18.3.1",
