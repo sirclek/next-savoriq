@@ -1,5 +1,5 @@
 import { Id } from '@/common/common-types';
-import ChemicalVisualizePage from '@/radar/Radar-Visual';
+import ChemicalVisualizePage from '@/radar/radar-visual';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { notFound } from 'next/navigation';
 

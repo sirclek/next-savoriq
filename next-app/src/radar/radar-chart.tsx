@@ -1,5 +1,4 @@
-import { dataTypes, fetchData } from '@/db/db-utils';
-import { routes } from '@/routing/routing-utils';
+import { dataTypes } from '@/db/db-utils';
 import p5 from 'p5';
 import React, {
   useCallback,
@@ -8,7 +7,8 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Chemical, Flavour, Whiskey } from '../common/object-types';
+import { Whiskey } from '../common/object-types';
+import { getGraphData } from './radar-data';
 
 type RadarChartProps = {
   whiskey: Whiskey;
@@ -30,45 +30,16 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   );
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
+  const [customizeMode, setCustomizeMode] = useState<boolean>(false);
+  const [customData, setCustomData] = useState<ChartData[]>([]);
+  const [draggedPoint, setDraggedPoint] = useState<number | null>(null);
 
   const fetchFlavours = useCallback(async () => {
-    try {
-      const allFlavours = await fetchData<Flavour>(dataTypes.FLAVOURS);
-      const flavours = whiskey.flavours.map((value, i) => {
-        const flavour = allFlavours.find(
-          (flavour) => flavour.id === i,
-        ) as Flavour;
-        return {
-          id: flavour.id,
-          name: flavour.name,
-          subType: flavour.subType,
-          value,
-        };
-      });
-      setFlavours(flavours);
-    } catch (error) {
-      console.error('Error fetching flavours:', error);
-    }
+    setFlavours(await getGraphData(whiskey, dataTypes.FLAVOURS));
   }, [whiskey.flavours]);
 
   const fetchChemicals = useCallback(async () => {
-    try {
-      const allChemicals = await fetchData<Chemical>(dataTypes.CHEMICALS);
-      const chemicals = whiskey.chemicals.map((value, i) => {
-        const chemical = allChemicals.find(
-          (chemical) => chemical.id === i,
-        ) as Chemical;
-        return {
-          id: chemical.id,
-          name: chemical.name,
-          subType: 'Chemical',
-          value,
-        };
-      });
-      setChemicals(chemicals);
-    } catch (error) {
-      console.error('Error fetching chemicals:', error);
-    }
+    setChemicals(await getGraphData(whiskey, dataTypes.CHEMICALS));
   }, [whiskey.chemicals]);
 
   useEffect(() => {
@@ -101,6 +72,12 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   );
 
   useEffect(() => {
+    if (customizeMode) {
+      setCustomData(data);
+    }
+  }, [customizeMode, data]);
+
+  useEffect(() => {
     const sketch = (p: p5) => {
       p.setup = () => {
         if (divRef.current) {
@@ -126,55 +103,26 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           30,
         );
 
-        if (dataType === 'flavours') {
-          const subTypeColors: { [key: string]: [number, number, number] } = {
-            aroma: [192, 159, 114],
-            taste: [222, 190, 145],
-            finish: [241, 227, 208],
-          };
+        const drawChart = (chartData: ChartData[], alpha: number) => {
+          p.stroke(0, 0, 0, 0);
+          p.fill(180, 120, 60, alpha);
+          p.beginShape();
           for (let i = 0; i < numPoints; i++) {
             const angle = (p.TWO_PI / numPoints) * i;
             const x =
-              centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
+              centerX + p.cos(angle) * (chartData[i].value / maxValue) * radius;
             const y =
-              centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
-            const nextIndex = (i + 1) % numPoints;
-            const nextAngle = (p.TWO_PI / numPoints) * nextIndex;
-            const nextX =
-              centerX +
-              p.cos(nextAngle) * (data[nextIndex].value / maxValue) * radius;
-            const nextY =
-              centerY +
-              p.sin(nextAngle) * (data[nextIndex].value / maxValue) * radius;
-
-            const color = subTypeColors[data[i].subType] || [180, 120, 60, 150];
-            p.fill(...color);
-            p.beginShape();
-            p.vertex(centerX, centerY);
+              centerY + p.sin(angle) * (chartData[i].value / maxValue) * radius;
             p.vertex(x, y);
-            if (data[i].subType === data[nextIndex].subType) {
-              p.vertex(nextX, nextY);
-            }
-            p.endShape(p.CLOSE);
           }
-        }
+          p.endShape(p.CLOSE);
+        };
 
-        p.stroke(0, 0, 0, 0);
-        if (dataType === 'flavours') {
-          p.noFill();
-        } else {
-          p.fill(180, 120, 60, 150);
+        drawChart(data, 150);
+
+        if (customizeMode) {
+          drawChart(customData, 75);
         }
-        p.beginShape();
-        for (let i = 0; i < numPoints; i++) {
-          const angle = (p.TWO_PI / numPoints) * i;
-          const x =
-            centerX + p.cos(angle) * (data[i].value / maxValue) * radius;
-          const y =
-            centerY + p.sin(angle) * (data[i].value / maxValue) * radius;
-          p.vertex(x, y);
-        }
-        p.endShape(p.CLOSE);
 
         p.stroke(0);
         p.fill(0);
@@ -224,6 +172,60 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         p.stroke(200);
         p.rect(0, 0, p.width - 1, p.height - 1);
       };
+
+      p.mousePressed = () => {
+        if (customizeMode) {
+          const numPoints = data.length;
+          const radius = Math.min(width, height) / 2.6;
+          const maxValue = Math.max(...data.map((d) => d.value));
+          const centerX = p.width / 2;
+          const centerY = p.height / 2 + height * 0.03;
+
+          for (let i = 0; i < numPoints; i++) {
+            const angle = (p.TWO_PI / numPoints) * i;
+            const x =
+              centerX +
+              p.cos(angle) * (customData[i].value / maxValue) * radius;
+            const y =
+              centerY +
+              p.sin(angle) * (customData[i].value / maxValue) * radius;
+
+            if (p.dist(p.mouseX, p.mouseY, x, y) < 10) {
+              console.log(`Dragging point ${i}`);
+              setDraggedPoint(i);
+            }
+          }
+        }
+      };
+
+      p.mouseDragged = () => {
+        if (customizeMode && draggedPoint !== null) {
+          const numPoints = data.length;
+          const radius = Math.min(width, height) / 2.6;
+          const maxValue = Math.max(...data.map((d) => d.value));
+          const centerX = p.width / 2;
+          const centerY = p.height / 2 + height * 0.03;
+
+          const angle = (p.TWO_PI / numPoints) * draggedPoint;
+          const dx = p.mouseX - centerX;
+          const dy = p.mouseY - centerY;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const newValue = Math.min(
+            maxValue,
+            Math.max(0, (distance / radius) * maxValue),
+          );
+
+          console.log(`Dragging point ${draggedPoint} to value ${newValue}`);
+
+          const updatedData = [...customData];
+          updatedData[draggedPoint].value = newValue;
+          setCustomData(updatedData);
+        }
+      };
+
+      p.mouseReleased = () => {
+        setDraggedPoint(null);
+      };
     };
 
     const p5Instance = new p5(sketch);
@@ -231,7 +233,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     return () => {
       p5Instance.remove();
     };
-  }, [width, height, data, dataType]);
+  }, [width, height, data, dataType, customizeMode, customData, draggedPoint]);
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -273,7 +275,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           Flavours
         </button>
         <button
-          onClick={() => routes.customise(whiskey.id)}
+          onClick={() => setCustomizeMode(!customizeMode)}
           className={`bg-primary-hover text-xl text-white`}
           style={{
             width: '100%',
@@ -284,7 +286,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Customise
+          {customizeMode ? 'Save' : 'Customise'}
         </button>
       </div>
       <div ref={divRef} style={{ width: '100%', height: '92%' }}></div>

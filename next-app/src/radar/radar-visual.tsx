@@ -7,11 +7,12 @@ import { Paper } from '@/common/paper';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
+
 export type ChemicalVisualizePageProps = {
   whiskey: Whiskey;
 };
 
-const RadarChart = dynamic(() => import('../radar/Radar-Chart'), {
+const RadarChart = dynamic(() => import('./radar-edit-chart'), {
   ssr: false,
 });
 
