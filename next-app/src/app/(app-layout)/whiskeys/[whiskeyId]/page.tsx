@@ -1,4 +1,4 @@
-import { Id } from '@/common/common-types';
+import type { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';

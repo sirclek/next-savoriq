@@ -1,5 +1,5 @@
 import { TooltipProvider } from '@/common/tooltip';
-import { Layout, LayoutFooter, LayoutHeader } from '@/layout/layout';
+import { Layout, LayoutHeader } from '@/layout/layout';
 import '@/styles/global.css';
 import type { Viewport } from 'next';
 import { ThemeProvider } from 'next-themes';

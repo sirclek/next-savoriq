@@ -32,7 +32,7 @@ const LearnMore = () => {
           gateway to an unparalleled understanding of whisky flavors. Our
           revolutionary platform goes beyond traditional tasting notes by
           offering a deep dive into the chemical compositions that define each
-          whisky's unique profile.
+          whisky&apos;s unique profile.
         </p>
 
         {/* Home and Explore Buttons */}

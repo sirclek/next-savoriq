@@ -1,17 +1,16 @@
-import { Id } from '@/common/common-types';
-import { Flavour } from '@/common/object-types';
-import { PageTitle } from '@/common/page-title';
+import type { Id } from '@/common/common-types';
+import type { Flavour } from '@/common/object-types';
 import { Paper } from '@/common/paper';
-import { Section, SectionTitle } from '@/common/section';
-import { getObjectById } from '@/db/db-utils';
+import { Section } from '@/common/section';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type FlavourPageProps = {
   params: {
-    flavourId: Id | string | number;
+    flavourId: Id;
   };
 };
 
@@ -20,10 +19,10 @@ export async function generateMetadata({
 }: FlavourPageProps): Promise<Metadata> {
   const flavour = await getObjectById<Flavour>(
     Number(params.flavourId),
-    'flavours',
+    dataTypes.FLAVOURS,
   );
   return getMetadata({
-    title: flavour ? flavour.name : 'Flavour',
+    title: flavour.name,
     pathname: `/flavours/${params.flavourId}`,
   });
 }
@@ -31,10 +30,10 @@ export async function generateMetadata({
 export default async function FlavourPage({ params }: FlavourPageProps) {
   const flavour = await getObjectById<Flavour>(
     Number(params.flavourId),
-    'flavours',
+    dataTypes.FLAVOURS,
   );
 
-  if (!flavour) notFound();
+  if (flavour.id === -1) notFound();
 
   return (
     <>

@@ -17,17 +17,17 @@ type WhiskeyFilterProps = {
 
 export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
-
   const values = decodeState(data.selectedOptions);
 
   const handleChange = (
     dbKey: WhiskeyFilterData['dbKey'],
     newValues: string[],
   ) => {
-    const [urlString, newValuesObject] = encodeState(dbKey, newValues, values);
+    const [urlString] = encodeState(dbKey, newValues, values);
 
     router.push(`/search${urlString}`);
   };
+
 
   return (
     <div data-pending={false} className="flex flex-col gap-4 pb-6">

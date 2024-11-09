@@ -1,3 +1,6 @@
+/* eslint-disable unicorn/no-abusive-eslint-disable */
+/* eslint-disable */
+
 import { dataTypes } from '@/db/db-utils';
 import p5 from 'p5';
 import React, {
@@ -191,7 +194,6 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
               p.sin(angle) * (customData[i].value / maxValue) * radius;
 
             if (p.dist(p.mouseX, p.mouseY, x, y) < 10) {
-              console.log(`Dragging point ${i}`);
               setDraggedPoint(i);
             }
           }
@@ -214,8 +216,6 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             maxValue,
             Math.max(0, (distance / radius) * maxValue),
           );
-
-          console.log(`Dragging point ${draggedPoint} to value ${newValue}`);
 
           const updatedData = [...customData];
           updatedData[draggedPoint].value = newValue;

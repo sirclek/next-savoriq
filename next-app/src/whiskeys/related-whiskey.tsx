@@ -1,5 +1,5 @@
 import type { Id } from '@/common/common-types';
-import { Whiskey } from '../common/object-types';
+import type { Whiskey } from '../common/object-types';
 import {
   getRelatedWhiskeysChemicals,
   getRelatedWhiskeysFlavour,

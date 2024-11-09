@@ -1,3 +1,5 @@
+import type { Id } from "./common-types";
+
 export type Flavour = {
   id: number;
   subType: string;
@@ -18,10 +20,10 @@ export type Chemical = {
 };
 
 export type Whiskey = {
-  id: number;
+  id: Id;
   name: string;
   brand: string;
-  age: number;
+  age: string;
   region: string;
   type: string;
   abv: number;

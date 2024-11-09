@@ -1,4 +1,4 @@
-import { WhiskeyFilterResponse } from '@/search/search-types';
+import type { WhiskeyFilterResponse } from '@/search/search-types';
 
 export function decodeState(
   selectedOptions: WhiskeyFilterResponse['selectedOptions'],
@@ -6,11 +6,8 @@ export function decodeState(
   const result: Record<string, string[]> = {};
 
   for (const selectedOption of selectedOptions) {
-    if (result[selectedOption.dbKey] === undefined) {
-      result[selectedOption.dbKey] = [selectedOption.value];
-    } else {
-      result[selectedOption.dbKey].push(selectedOption.value);
-    }
+    result[selectedOption.dbKey] ??= [];
+    result[selectedOption.dbKey].push(selectedOption.value);
   }
   return result;
 }
@@ -20,19 +17,19 @@ export function encodeState(
   newValues: string[],
   values: Record<string, string[]>,
 ): [url: string, values: Record<string, string[]>] {
+  let updatedValues = { ...values };
+
   if (newValues.length === 0) {
-    delete values[dbKey];
+    const { [dbKey]: _, ...remainingValues } = updatedValues;
+    updatedValues = remainingValues;
   } else {
-    values[dbKey] = newValues;
+    updatedValues[dbKey] = newValues;
   }
 
-  let urlString = '?';
-  for (const [key, value] of Object.entries(values)) {
-    for (const item of values[key]) {
-      urlString += `${key}=${item}&`;
-    }
-  }
-  urlString = urlString.slice(0, -1);
 
-  return [urlString, values];
+  const urlString = Object.entries(updatedValues)
+    .flatMap(([key, items]) => items.map((item) => `${key}=${item}`))
+    .join('&');
+
+  return [`?${urlString}`, updatedValues];
 }

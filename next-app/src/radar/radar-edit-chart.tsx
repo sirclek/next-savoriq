@@ -1,4 +1,16 @@
 import { dataTypes } from '@/db/db-utils';
+import type { BubbleDataPoint, ChartType, Point } from 'chart.js';
+import {
+  Chart,
+  Filler,
+  Legend,
+  LineElement,
+  PointElement,
+  RadarController,
+  RadialLinearScale,
+  Tooltip,
+} from 'chart.js';
+import 'chartjs-plugin-dragdata';
 import React, {
   useCallback,
   useEffect,
@@ -6,13 +18,18 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Whiskey } from '../common/object-types';
+import type { Whiskey } from '../common/object-types';
 import { getGraphData } from './radar-data';
-import { Chart, RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js';
-import 'chartjs-plugin-dragdata';
 
-
-Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
+Chart.register(
+  RadarController,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+);
 
 type RadarChartProps = {
   whiskey: Whiskey;
@@ -28,7 +45,9 @@ type ChartData = {
 const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
-  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>('chemicals');
+  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>(
+    'chemicals',
+  );
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
   const [customizeMode, setCustomizeMode] = useState<boolean>(false);
@@ -36,18 +55,18 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
 
   const fetchFlavours = useCallback(async () => {
     setFlavours(await getGraphData(whiskey, dataTypes.FLAVOURS));
-  }, [whiskey.flavours]);
+  }, [whiskey]);
 
   const fetchChemicals = useCallback(async () => {
     setChemicals(await getGraphData(whiskey, dataTypes.CHEMICALS));
-  }, [whiskey.chemicals]);
+  }, [whiskey]);
 
   useEffect(() => {
-    fetchFlavours();
+    void fetchFlavours();
   }, [fetchFlavours]);
 
   useEffect(() => {
-    fetchChemicals();
+    void fetchChemicals();
   }, [fetchChemicals]);
 
   const data = useMemo(
@@ -69,54 +88,72 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           chartRef.current.destroy();
         }
 
-        chartRef.current = new Chart<'radar'>(ctx, {
-          type: 'radar',
+        chartRef.current = new Chart(ctx, {
+          type: 'radar' as ChartType,
           data: {
-            labels: data.map(d => d.name),
+            labels: data.map((d) => d.name),
             datasets: [
               {
                 label: `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
-                data: data.map(d => d.value),
+                data: data.map((d) => d.value),
                 backgroundColor: 'rgba(180, 120, 60, 0.5)',
                 borderColor: 'rgba(180, 120, 60, 1)',
                 borderWidth: 1,
                 dragData: customizeMode,
               },
-              ...(customizeMode ? [{
-                label: 'Custom Data',
-                data: customData.map(d => d.value),
-                backgroundColor: 'rgba(180, 120, 60, 0.25)',
-                borderColor: 'rgba(180, 120, 60, 0.5)',
-                borderWidth: 1,
-                dragData: customizeMode,
-              }] : []),
+              ...(customizeMode
+                ? [
+                    {
+                      label: 'Custom Data',
+                      data: customData.map((d) => d.value),
+                      backgroundColor: 'rgba(180, 120, 60, 0.25)',
+                      borderColor: 'rgba(180, 120, 60, 0.5)',
+                      borderWidth: 1,
+                      dragData: customizeMode,
+                    },
+                  ]
+                : []),
             ],
           },
           options: {
             scales: {
               r: {
                 beginAtZero: true,
-                max: Math.max(...data.map(d => d.value)),
+                max: Math.max(...data.map((d) => d.value)),
               },
             },
             plugins: {
               tooltip: {
                 callbacks: {
-                  label: function(context) {
-                    return `${context.label}: ${context.raw}`;
+                  label(context) {
+                    return `${context.label}: ${context.raw as number}`;
                   },
                 },
               },
               dragData: {
                 magnet: {
-                  to: (value: number | null) => value !== null ? Math.round(value) : null,
+                  to: (
+                    value:
+                      | number
+                      | [number, number]
+                      | Point
+                      | BubbleDataPoint
+                      | null,
+                  ) => {
+                    if (typeof value === 'number') {
+                      return Math.round(value);
+                    }
+                    return value;
+                  },
                 },
-                onDragEnd: function(e, datasetIndex, index, value) {
-                  const newCustomData = [...customData];
+                onDragEnd: (e, datasetIndex, index, value) => {
                   if (value !== null) {
-                    newCustomData[index].value = value;
+                    const newCustomData = [...customData];
+                    if (typeof value === 'number') {
+                      newCustomData[index].value = value;
+                    }
+                    setCustomData(newCustomData);
                   }
-                  setCustomData(newCustomData);
                 },
               },
             },
@@ -138,8 +175,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         }}
       >
         <button
-          onClick={() => {setCustomizeMode(false); setDataType('chemicals');}}
-          className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'chemicals' ? 'text-white' : 'text-gray-700'}`}
+          onClick={() => {
+            setCustomizeMode(false);
+            setDataType('chemicals');
+          }}
+          className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${
+            dataType === 'chemicals' ? 'text-white' : 'text-gray-700'
+          }`}
           style={{
             width: '100%',
             padding: '1% 5%',
@@ -152,8 +194,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           Chemicals
         </button>
         <button
-          onClick={() => { setCustomizeMode(false); setDataType('flavours'); }}
-          className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${dataType === 'flavours' ? 'text-white' : 'text-gray-700'}`}
+          onClick={() => {
+            setCustomizeMode(false);
+            setDataType('flavours');
+          }}
+          className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${
+            dataType === 'flavours' ? 'text-white' : 'text-gray-700'
+          }`}
           style={{
             width: '100%',
             padding: '1% 5%',
@@ -166,8 +213,8 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           Flavours
         </button>
         <button
-          onClick={() => setCustomizeMode(!customizeMode)}
-          className={`bg-primary-hover text-xl text-white`}
+          onClick={() => {setCustomizeMode(!customizeMode)}}
+          className="bg-primary-hover text-xl text-white"
           style={{
             width: '100%',
             padding: '1% 5%',

@@ -1,5 +1,5 @@
-import { fetchData, dataTypes } from '../db/db-utils';
-import { Flavour, Chemical, Whiskey } from '../common/object-types';
+import type { Chemical, Flavour, Whiskey } from '../common/object-types';
+import { dataTypes, fetchData } from '../db/db-utils';
 
 type ChartData = {
   id: number;
@@ -17,27 +17,25 @@ export async function getGraphData(
       ? await fetchData<Chemical>(dataType)
       : await fetchData<Flavour>(dataType);
 
-  if (dataType === dataTypes.CHEMICALS) {
-    return whiskey.chemicals.map((value: number, i: number) => {
-      const chemical = allData.find(
-        (chemical) => chemical.id === i,
-      ) as Chemical;
-      return {
-        id: chemical.id,
-        name: chemical.name,
-        subType: 'Chemical',
-        value: value+5,
-      };
-    });
-  } else {
-    return whiskey.flavours.map((value: number, i: number) => {
-      const flavour = allData.find((flavour) => flavour.id === i) as Flavour;
-      return {
-        id: flavour.id,
-        name: flavour.name,
-        subType: flavour.subType,
-        value,
-      };
-    });
-  }
+  return dataType === dataTypes.CHEMICALS
+    ? whiskey.chemicals.map((value: number, i: number) => {
+        const chemical = allData.find(
+          (chemical) => chemical.id === i,
+        ) as Chemical;
+        return {
+          id: chemical.id,
+          name: chemical.name,
+          subType: 'Chemical',
+          value: value + 5,
+        };
+      })
+    : whiskey.flavours.map((value: number, i: number) => {
+        const flavour = allData.find((flavour) => flavour.id === i) as Flavour;
+        return {
+          id: flavour.id,
+          name: flavour.name,
+          subType: flavour.subType,
+          value,
+        };
+      });
 }
