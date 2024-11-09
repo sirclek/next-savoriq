@@ -213,7 +213,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           Flavours
         </button>
         <button
-          onClick={() => {setCustomizeMode(!customizeMode)}}
+          onClick={() => {
+            setCustomizeMode(!customizeMode);
+          }}
           className="bg-primary-hover text-xl text-white"
           style={{
             width: '100%',

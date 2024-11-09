@@ -7,7 +7,6 @@ import { Paper } from '@/common/paper';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-
 export type ChemicalVisualizePageProps = {
   whiskey: Whiskey;
 };

@@ -1,4 +1,4 @@
-import type { Id } from "./common-types";
+import type { Id } from './common-types';
 
 export type Flavour = {
   id: number;

@@ -1,8 +1,8 @@
-import type {Id} from '@/common/common-types';
+import type { Id } from '@/common/common-types';
 import type { Chemical } from '@/common/object-types';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
-import { getObjectById, dataTypes } from '@/db/db-utils';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
 import Image from 'next/image';

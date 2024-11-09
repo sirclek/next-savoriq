@@ -26,7 +26,6 @@ export function encodeState(
     updatedValues[dbKey] = newValues;
   }
 
-
   const urlString = Object.entries(updatedValues)
     .flatMap(([key, items]) => items.map((item) => `${key}=${item}`))
     .join('&');

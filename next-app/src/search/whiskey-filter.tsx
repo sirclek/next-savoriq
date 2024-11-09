@@ -28,7 +28,6 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
     router.push(`/search${urlString}`);
   };
 
-
   return (
     <div data-pending={false} className="flex flex-col gap-4 pb-6">
       {Object.values(data.filterOptions).map((filter) => {

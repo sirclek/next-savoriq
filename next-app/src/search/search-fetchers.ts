@@ -1,5 +1,10 @@
 import type { Whiskey } from '@/common/object-types';
-import { dataTypes, fetchData, fetchCategories, categoryData} from '@/db/db-utils';
+import {
+  categoryData,
+  dataTypes,
+  fetchCategories,
+  fetchData,
+} from '@/db/db-utils';
 import type {
   WhiskeyFilterArgs,
   WhiskeyFilterOptions,
@@ -10,7 +15,7 @@ import { WhiskeyFilterKey, WhiskeySorting } from '@/search/search-utils';
 import { cache } from 'react';
 
 async function getWhiskeyFilterOptions() {
-  const categoryData = await fetchCategories() as categoryData;
+  const categoryData = (await fetchCategories()) as categoryData;
 
   const filterOptions: WhiskeyFilterOptions = {
     sortings: {

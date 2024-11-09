@@ -52,11 +52,14 @@ export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {
   const isAllOption = checkboxValue === allSymbol;
   return (
     <div className={rootClassName}>
-      
       <RadixCheckbox.Root
         className={itemClassName}
         id={id}
-        checked={isAllOption ? !value.length : value.some((val) => val === checkboxValue)}
+        checked={
+          isAllOption
+            ? !value.length
+            : value.some((val) => val === checkboxValue)
+        }
         onCheckedChange={() => {
           if (isAllOption) {
             onChange([]);

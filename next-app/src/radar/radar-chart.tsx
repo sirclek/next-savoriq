@@ -148,7 +148,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                 : p.TOP,
           );
 
-          p.textFont('sans-serif');
+          p.textFont('inter');
           p.textSize(16);
           p.text(
             data[i].name,

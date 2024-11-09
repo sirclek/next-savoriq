@@ -18,26 +18,16 @@ export function getMetadata({
   return {
     title: metaTitle,
     description: metaDescription,
-    creator: 'Onur Önder',
+    creator: 'UTS | Savor IQ',
     metadataBase: new URL(APP_URL),
     openGraph: {
       type: 'website',
       title: metaTitle,
       description: metaDescription,
       siteName: APP_TITLE,
-      locale: 'en_US',
+      locale: 'en_AU',
       images,
       url: pathname,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: metaTitle,
-      description: metaDescription,
-      images,
-      creator: '@onderonur_',
-    },
-    alternates: {
-      canonical: pathname,
     },
   };
 }

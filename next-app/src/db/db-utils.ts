@@ -22,14 +22,32 @@ export type categoryData = {
   abvs: WhiskeyFilterOptionItem[];
   caskTypes: WhiskeyFilterOptionItem[];
   specialNotes: WhiskeyFilterOptionItem[];
-}
+};
 
 const cache: { [key in dataTypes]?: Whiskey[] | Flavour[] | Chemical[] } = {};
 
 export async function fetchCategories(): Promise<categoryData> {
   const db = await getDb();
-  const { sortings, brands, ages, regions, types, abvs, caskTypes, specialNotes } = db;
-  return { sortings, brands, ages, regions, types, abvs, caskTypes, specialNotes } as categoryData;
+  const {
+    sortings,
+    brands,
+    ages,
+    regions,
+    types,
+    abvs,
+    caskTypes,
+    specialNotes,
+  } = db;
+  return {
+    sortings,
+    brands,
+    ages,
+    regions,
+    types,
+    abvs,
+    caskTypes,
+    specialNotes,
+  } as categoryData;
 }
 
 export async function fetchData<T>(type: dataTypes): Promise<T[]> {
@@ -50,7 +68,9 @@ export async function fetchData<T>(type: dataTypes): Promise<T[]> {
       break;
     }
     case dataTypes.CHEMICALS: {
-      response = db.chemicals.map((chemical) => mapChemicalData(chemical)) as T[];
+      response = db.chemicals.map((chemical) =>
+        mapChemicalData(chemical),
+      ) as T[];
       break;
     }
     default: {
@@ -69,14 +89,18 @@ export async function getObjectById<T extends { id: Id }>(
 ): Promise<T> {
   const data = await fetchData<T>(type);
   const foundObject = data.find((item) => item.id === Id);
-  
+
   if (foundObject) {
     return foundObject;
   }
 
-  return { id: -1, ...Object.fromEntries(Object.keys(data[0]).map(key => [key as keyof T, null])) } as T;
+  return {
+    id: -1,
+    ...Object.fromEntries(
+      Object.keys(data[0]).map((key) => [key as keyof T, null]),
+    ),
+  } as T;
 }
-
 
 /* eslint-disable unicorn/no-abusive-eslint-disable */
 /* eslint-disable */
