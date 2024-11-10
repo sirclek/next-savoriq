@@ -42,6 +42,21 @@ type ChartData = {
   value: number;
 };
 
+const FLAVOURMAX = 10;
+const CHEMICALMAX = 150;
+// const CHEMICALMAX =
+//   Math.max(
+//     Math.max(...data.map((d) => d.value)),
+//     customizeMode ? Math.max(...customData.map((d) => d.value)) : 0,
+//   ) +
+//   (10 -
+//     (Math.max(
+//       Math.max(...data.map((d) => d.value)),
+//       customizeMode ? Math.max(...customData.map((d) => d.value)) : 0,
+//     ) %
+//       10));
+const CUSTOMDATANAME = 'Customised Data';
+
 const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
@@ -96,17 +111,22 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
               {
                 label: `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
                 data: data.map((d) => d.value),
-                backgroundColor: 'rgba(180, 120, 60, 0.5)',
-                borderColor: 'rgba(180, 120, 60, 1)',
+                backgroundColor: customizeMode
+                  ? 'rgba(128, 128, 128, 0.5)'
+                  : 'rgba(180, 120, 60, 0.5)',
+                borderColor: customizeMode
+                  ? 'rgba(128, 128, 128, 1)'
+                  : 'rgba(180, 120, 60, 1)',
                 borderWidth: 1,
-                dragData: customizeMode,
+                dragData: false,
+                order: 1,
               },
               ...(customizeMode
                 ? [
                     {
-                      label: 'Custom Data',
+                      label: CUSTOMDATANAME,
                       data: customData.map((d) => d.value),
-                      backgroundColor: 'rgba(180, 120, 60, 0.25)',
+                      backgroundColor: 'rgba(180, 120, 60, 0.5)',
                       borderColor: 'rgba(180, 120, 60, 0.5)',
                       borderWidth: 1,
                       dragData: customizeMode,
@@ -116,43 +136,45 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             ],
           },
           options: {
+            animation: { duration: 500, easing: 'easeInOutQuint' },
+
             scales: {
               r: {
                 beginAtZero: true,
-                max: Math.max(...data.map((d) => d.value)),
+                ticks: {
+                  stepSize: dataType === 'chemicals' ? 10 : 1,
+                },
+                max: dataType === 'chemicals' ? CHEMICALMAX : FLAVOURMAX,
               },
             },
             plugins: {
               tooltip: {
                 callbacks: {
                   label(context) {
-                    return `${context.label}: ${context.raw as number}`;
+                    const value = context.dataset.data[context.dataIndex];
+                    const roundValue =
+                      typeof value === 'number' ? Math.round(value) : 0;
+                    const label = context.dataset.label + ': ' + roundValue;
+                    const customDataPoint = data[context.dataIndex].value;
+                    return (
+                      label +
+                      ' ' +
+                      (context.dataset.label === CUSTOMDATANAME
+                        ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})`
+                        : '')
+                    );
                   },
                 },
               },
               dragData: {
-                magnet: {
-                  to: (
-                    value:
-                      | number
-                      | [number, number]
-                      | Point
-                      | BubbleDataPoint
-                      | null,
-                  ) => {
-                    if (typeof value === 'number') {
-                      return Math.round(value);
-                    }
-                    return value;
-                  },
-                },
                 onDragEnd: (e, datasetIndex, index, value) => {
-                  if (value !== null) {
-                    const newCustomData = [...customData];
-                    if (typeof value === 'number') {
-                      newCustomData[index].value = value;
-                    }
-                    setCustomData(newCustomData);
+                  if (customizeMode && chartRef.current) {
+                    // Update customData with the new dragged value
+                    setCustomData((prevData) =>
+                      prevData.map((d, i) =>
+                        i === index ? { ...d, value: value as number } : d,
+                      ),
+                    );
                   }
                 },
               },
@@ -161,7 +183,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         });
       }
     }
-  }, [data, dataType, customizeMode, customData]);
+  }, [customizeMode, data, dataType]);
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -174,44 +196,77 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           gap: '5%',
         }}
       >
-        <button
-          onClick={() => {
-            setCustomizeMode(false);
-            setDataType('chemicals');
-          }}
-          className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${
-            dataType === 'chemicals' ? 'text-white' : 'text-gray-700'
-          }`}
-          style={{
-            width: '100%',
-            padding: '1% 5%',
-            borderRadius: '10px',
-            transition: 'transform 0.2s',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Chemicals
-        </button>
-        <button
-          onClick={() => {
-            setCustomizeMode(false);
-            setDataType('flavours');
-          }}
-          className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${
-            dataType === 'flavours' ? 'text-white' : 'text-gray-700'
-          }`}
-          style={{
-            width: '100%',
-            padding: '1% 5%',
-            borderRadius: '10px',
-            transition: 'transform 0.2s',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          Flavours
-        </button>
+        {!customizeMode ? (
+          <>
+            <button
+              onClick={() => {
+                setCustomizeMode(false);
+                setCustomData(chemicals);
+                setDataType('chemicals');
+              }}
+              className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${
+                dataType === 'chemicals' ? 'text-white' : 'text-gray-700'
+              }`}
+              style={{
+                width: '100%',
+                padding: '1% 5%',
+                borderRadius: '10px',
+                transition: 'transform 0.2s',
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = 'scale(1.1)')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = 'scale(1)')
+              }
+            >
+              Chemicals
+            </button>
+            <button
+              onClick={() => {
+                setCustomizeMode(false);
+                setCustomData(flavours);
+                setDataType('flavours');
+              }}
+              className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${
+                dataType === 'flavours' ? 'text-white' : 'text-gray-700'
+              }`}
+              style={{
+                width: '100%',
+                padding: '1% 5%',
+                borderRadius: '10px',
+                transition: 'transform 0.2s',
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = 'scale(1.1)')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = 'scale(1)')
+              }
+            >
+              Flavours
+            </button>
+          </>
+        ) : (
+          <button
+            onClick={() => {
+              window.location.href = '/search/similar';
+            }}
+            className={'text-xl bg-primary text-white'}
+            style={{
+              width: '255%',
+              padding: '1% 5%',
+              borderRadius: '10px',
+              transition: 'transform 0.2s',
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.transform = 'scale(1.1)')
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+          >
+            Search Whiskeys With This Profile
+          </button>
+        )}
         <button
           onClick={() => {
             setCustomizeMode(!customizeMode);

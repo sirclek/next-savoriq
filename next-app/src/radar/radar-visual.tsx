@@ -7,7 +7,7 @@ import { Paper } from '@/common/paper';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-export type ChemicalVisualizePageProps = {
+export type VisualizePageProps = {
   whiskey: Whiskey;
 };
 
@@ -15,9 +15,9 @@ const RadarChart = dynamic(() => import('./radar-edit-chart'), {
   ssr: false,
 });
 
-export default function ChemicalVisualizePage({
+export default function VisualizePage({
   whiskey,
-}: ChemicalVisualizePageProps) {
+}: VisualizePageProps) {
   return (
     <div className="flex min-h-screen flex-col gap-0">
       <main className="min-h-full flex-1">
