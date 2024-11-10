@@ -1,17 +1,16 @@
-import { Id } from '@/common/common-types';
-import { PageTitle } from '@/common/page-title';
+import type { Id } from '@/common/common-types';
+import type { Flavour } from '@/common/object-types';
 import { Paper } from '@/common/paper';
-import { Section, SectionTitle } from '@/common/section';
+import { Section } from '@/common/section';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
-import { Flavour } from '@/common/object-types';
-import { getObjectById } from '@/db/db-utils';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type FlavourPageProps = {
   params: {
-    flavourId: Id | string | number;
+    flavourId: Id;
   };
 };
 
@@ -20,18 +19,21 @@ export async function generateMetadata({
 }: FlavourPageProps): Promise<Metadata> {
   const flavour = await getObjectById<Flavour>(
     Number(params.flavourId),
-    'flavours',
+    dataTypes.FLAVOURS,
   );
   return getMetadata({
-    title: flavour ? flavour.name : 'Flavour',
+    title: flavour.name,
     pathname: `/flavours/${params.flavourId}`,
   });
 }
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId),'flavours');
+  const flavour = await getObjectById<Flavour>(
+    Number(params.flavourId),
+    dataTypes.FLAVOURS,
+  );
 
-  if (!flavour) notFound();
+  if (flavour.id === -1) notFound();
 
   return (
     <>
@@ -56,9 +58,11 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   <p>{flavour.description}</p>
                 </div>
-                <div className='text-sm'>
+                <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
-                    <p key={index}>{chemical.name}: {chemical.value}</p>
+                    <p key={index}>
+                      {chemical.name}: {chemical.value}
+                    </p>
                   ))}
                 </div>
               </div>

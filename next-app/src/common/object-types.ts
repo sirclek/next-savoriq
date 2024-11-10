@@ -1,3 +1,5 @@
+import type { Id } from './common-types';
+
 export type Flavour = {
   id: number;
   subType: string;
@@ -18,33 +20,18 @@ export type Chemical = {
 };
 
 export type Whiskey = {
-  id: number;
+  id: Id;
   name: string;
   brand: string;
-  age: number;
+  age: string;
   region: string;
   type: string;
   abv: number;
   description: string;
-  aroma: {
-    flavour: string;
-    intensity: number;
-  }[];
-  taste: {
-    flavour: string;
-    intensity: number;
-  }[];
-  finish: {
-    flavour: string;
-    intensity: number;
-  }[];
-  chemicals: {
-    name: string;
-    value: number;
-  }[];
   price: number;
   bottlingDate: string;
   caskType: string;
   specialNote: string;
   flavours: number[];
+  chemicals: number[];
 };

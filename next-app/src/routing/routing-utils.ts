@@ -1,7 +1,6 @@
-import type { Id, Maybe, Id2 } from '@/common/common-types';
+import type { Id, Id2, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
 import type { WhiskeyFilterArgs } from '@/search/search-types';
-
 
 function parseToSearchParams(
   params: Maybe<Record<string, Maybe<string | string[]>>>,
@@ -75,7 +74,8 @@ export const routes = {
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
   flavour: createRoute(() => '/flavour'),
-  visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`
+  visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`,
+  customise: (whiskeyId: number) => `/customise/${whiskeyId}`,
 };
 
 // TODO: Will check the use cases for this.

@@ -1,9 +1,12 @@
-import { Id } from '@/common/common-types';
+import type { Id } from '@/common/common-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { getMetadata } from '@/seo/seo-utils';
-import { RelatedProducts, RelatedProductType } from '@/whiskeys/related-whiskey';
+import {
+  RelatedProductType,
+  RelatedProducts,
+} from '@/whiskeys/related-whiskey';
 import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
@@ -62,9 +65,9 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
           <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts 
-            whiskeyId={whiskeyId} 
-            type={RelatedProductType.CHEMICAL}
+            <RelatedProducts
+              whiskeyId={whiskeyId}
+              type={RelatedProductType.CHEMICAL}
             />
           </Suspense>
         </Paper>

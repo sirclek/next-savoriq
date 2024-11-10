@@ -1,17 +1,16 @@
-import { Id } from '@/common/common-types';
-import { PageTitle } from '@/common/page-title';
+import type { Id } from '@/common/common-types';
+import type { Chemical } from '@/common/object-types';
 import { Paper } from '@/common/paper';
-import { Section, SectionTitle } from '@/common/section';
+import { Section } from '@/common/section';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
-import { Chemical } from '@/common/object-types';
-import { getObjectById } from '@/db/db-utils';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type ChemicalPageProps = {
   params: {
-  chemicalId: Id;
+    chemicalId: Id;
   };
 };
 
@@ -20,18 +19,21 @@ export async function generateMetadata({
 }: ChemicalPageProps): Promise<Metadata> {
   const chemical = await getObjectById<Chemical>(
     Number(params.chemicalId),
-    'chemicals',
+    dataTypes.CHEMICALS,
   );
   return getMetadata({
-    title: chemical ? chemical.name : 'Chemical',
+    title: chemical.name,
     pathname: `/chemicals/${params.chemicalId}`,
   });
 }
 
 export default async function ChemicalPage({ params }: ChemicalPageProps) {
-  const chemical = await getObjectById<Chemical>(Number(params.chemicalId),'chemicals');
+  const chemical = await getObjectById<Chemical>(
+    Number(params.chemicalId),
+    dataTypes.CHEMICALS,
+  );
 
-  if (!chemical) notFound();
+  if (chemical.id === -1) notFound();
 
   return (
     <>

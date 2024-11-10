@@ -22,6 +22,7 @@ export default {
           light: 'hsl(var(--primary-light) / <alpha-value>)',
           hover: 'hsl(var(--primary-hover) / <alpha-value>)',
           active: 'hsl(var(--primary-active) / <alpha-value>)',
+          gray: 'hsl(var(--primary-gray) / <alpha-value>)',
           foreground: 'hsl(var(--primary-foreground) / <alpha-value>)',
         },
         accent: {

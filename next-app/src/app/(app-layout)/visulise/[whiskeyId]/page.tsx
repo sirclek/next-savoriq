@@ -1,5 +1,5 @@
-import { Id } from '@/common/common-types';
-import ChemicalVisualizePage from '@/radar/Radar-Visual';
+import type { Id } from '@/common/common-types';
+import VisualizePage from '@/radar/radar-visual';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { notFound } from 'next/navigation';
 
@@ -19,7 +19,7 @@ export default async function ChemicalVisualizeWrapper({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <ChemicalVisualizePage whiskey={whiskey} />
+      <VisualizePage whiskey={whiskey} />
     </div>
   );
 }

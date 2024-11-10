@@ -50,17 +50,20 @@ export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {
   const { value, onChange } = useCheckboxGroupContext();
 
   const isAllOption = checkboxValue === allSymbol;
-
   return (
     <div className={rootClassName}>
       <RadixCheckbox.Root
         className={itemClassName}
         id={id}
-        checked={isAllOption ? !value.length : value.includes(checkboxValue)}
+        checked={
+          isAllOption
+            ? !value.length
+            : value.some((val) => val === checkboxValue)
+        }
         onCheckedChange={() => {
           if (isAllOption) {
             onChange([]);
-          } else if (value.includes(checkboxValue)) {
+          } else if (value.some((val) => val === checkboxValue)) {
             onChange(value.filter((item) => item !== checkboxValue));
           } else {
             onChange([...value, checkboxValue]);

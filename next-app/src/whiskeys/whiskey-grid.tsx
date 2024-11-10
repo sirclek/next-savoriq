@@ -15,12 +15,10 @@ type WhiskeyGridProps = {
 };
 
 export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
-  // console.log('Whiskeys', whiskeys);
   return (
     <WhiskeyGridShell>
       {whiskeys.map((whiskey) => {
         return (
-          // console.log('Whiskey2', whiskey),
           <li key={whiskey.id}>
             <WhiskeyCard whiskey={whiskey} />
           </li>

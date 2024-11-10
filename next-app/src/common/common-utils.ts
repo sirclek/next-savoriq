@@ -1,6 +1,6 @@
 import type { Nil } from './common-types';
 
-export const APP_URL = 'https://next-shopper.vercel.app';
+export const APP_URL = 'https://savorIQ.vercel.app';
 export const APP_TITLE = 'SavorIQ';
 export const APP_DESCRIPTION = `${APP_TITLE} is the best, and most informative way, to learn more about your Whiskey profile.`;
 export const APP_REPOSITORY_URL = 'https://github.com/sirclek/next-savouriq';

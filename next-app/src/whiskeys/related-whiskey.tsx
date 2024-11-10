@@ -1,6 +1,9 @@
 import type { Id } from '@/common/common-types';
-import { Whiskey } from '../common/object-types';
-import { getRelatedWhiskeysChemicals, getRelatedWhiskeysFlavour } from './whiskey-fetcher';
+import type { Whiskey } from '../common/object-types';
+import {
+  getRelatedWhiskeysChemicals,
+  getRelatedWhiskeysFlavour,
+} from './whiskey-fetcher';
 import { WhiskeyGrid } from './whiskey-grid';
 
 type RelatedProductsProps = {
@@ -11,11 +14,14 @@ export enum RelatedProductType {
   CHEMICAL = 'CHEMICAL',
 }
 
-export async function RelatedProducts({ whiskeyId, type }: RelatedProductsProps & { type: RelatedProductType }) {
+export async function RelatedProducts({
+  whiskeyId,
+  type,
+}: RelatedProductsProps & { type: RelatedProductType }) {
   let relatedProducts: Whiskey[] = [];
   if (type === RelatedProductType.FLAVOUR) {
     relatedProducts = await getRelatedWhiskeysFlavour(whiskeyId);
-  } 
+  }
   if (type === RelatedProductType.CHEMICAL) {
     relatedProducts = await getRelatedWhiskeysChemicals(whiskeyId);
   }

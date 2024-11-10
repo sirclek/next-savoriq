@@ -12,7 +12,7 @@ export type WhiskeyFilterArgs = {
   specialNotes?: string[];
 };
 
-type WhiskeyFilterOptionItem = {
+export type WhiskeyFilterOptionItem = {
   title: string;
   value: string;
 };
@@ -36,7 +36,8 @@ export type WhiskeyFilterOptions = Record<
   WhiskeyFilterData
 >;
 
-export type WhiskeyFilterSelectedOption = WhiskeyFilterOptionItem & {
+export type WhiskeyFilterSelectedOption = {
+  value: string;
   filterKey: WhiskeyFilterKey;
   dbKey: string;
 };
