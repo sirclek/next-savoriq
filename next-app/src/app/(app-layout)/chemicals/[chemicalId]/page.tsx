@@ -1,5 +1,4 @@
-import type { Id } from '@/common/common-types';
-import type { Chemical } from '@/common/object-types';
+import type { Chemical, Id } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
 import { dataTypes, getObjectById } from '@/db/db-utils';

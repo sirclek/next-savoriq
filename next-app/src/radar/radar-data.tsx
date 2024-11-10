@@ -1,4 +1,4 @@
-import type { Chemical, Flavour, Whiskey } from '../common/object-types';
+import type { Chemical, Flavour, Whiskey } from '../common/custom-types';
 import { dataTypes, fetchData } from '../db/db-utils';
 
 type ChartData = {

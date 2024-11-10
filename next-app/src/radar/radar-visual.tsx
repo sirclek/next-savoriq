@@ -1,7 +1,7 @@
 // ChemicalVisualizePage.tsx
 'use client';
 
-import type { Whiskey } from '@/common/object-types'; // Update this path as needed
+import type { Whiskey } from '@/common/custom-types'; // Update this path as needed
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import dynamic from 'next/dynamic';

@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import type { GetButtonBasePropsArgs } from './button-base-utils';
 import { getButtonBaseProps } from './button-base-utils';
-import type { Omit } from './common-types';
+import type { Omit } from './custom-types';
 
 export type ButtonProps = Omit<React.ComponentPropsWithoutRef<'button'>, 'disabled'> & GetButtonBasePropsArgs;
 

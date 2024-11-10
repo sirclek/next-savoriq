@@ -1,4 +1,4 @@
-import type { Id } from '@/common/common-types';
+import type { Id } from '@/common/custom-types';
 import VisualizePage from '@/radar/radar-visual';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { notFound } from 'next/navigation';

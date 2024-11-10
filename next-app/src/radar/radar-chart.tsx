@@ -4,7 +4,7 @@
 import { dataTypes } from '@/db/db-utils';
 import p5 from 'p5';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Whiskey } from '../common/object-types';
+import { Whiskey } from '../common/custom-types';
 import { getGraphData } from './radar-data';
 
 type RadarChartProps = {

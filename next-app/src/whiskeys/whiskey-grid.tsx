@@ -1,5 +1,5 @@
 import { createMockArray } from '@/common/common-utils';
-import type { Whiskey } from '../common/object-types';
+import type { Whiskey } from '../common/custom-types';
 import { WhiskeyCard, WhiskeyCardSkeleton } from './whiskey-card';
 
 type ProductGridShellProps = React.PropsWithChildren;

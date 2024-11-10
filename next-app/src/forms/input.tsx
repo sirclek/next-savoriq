@@ -1,4 +1,4 @@
-import type { Omit } from '@/common/common-types';
+import type { Omit } from '@/common/custom-types';
 import { forwardRef } from 'react';
 import { useFormItemContext } from './form-item';
 

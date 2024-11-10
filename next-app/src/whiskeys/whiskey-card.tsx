@@ -1,26 +1,45 @@
+'use client';
+
 import { Price } from '@/common/price';
 import { Skeleton } from '@/common/skeleton';
 import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Whiskey } from '../common/object-types';
+import { useState } from 'react';
+import type { Whiskey } from '../common/custom-types';
 
 type WhiskeyCardProps = {
   whiskey: Whiskey;
+  onLoad?: () => void;
 };
 
-export function WhiskeyCard({ whiskey }: WhiskeyCardProps) {
+export function WhiskeyCard({ whiskey, onLoad }: WhiskeyCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+    if (onLoad) {
+      onLoad();
+    }
+  };
+
   return (
-    <NextLink
-      href={routes.whiskey({ params: { whiskeyId: whiskey.id } })}
-      // To show outline when the link is `focus-visible`.
-      className="block"
-    >
-      <article className="group flex flex-col gap-2 rounded-md border-2 p-2 md:p-4">
+    <NextLink href={routes.whiskey({ params: { whiskeyId: whiskey.id } })} className="block">
+      <article
+        className={`group flex flex-col gap-2 rounded-md border-2 p-2 md:p-4 ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        } transition-opacity duration-500`}
+      >
         <div className="p-2">
           <div className="relative aspect-[12/10] bg-transparent transition duration-500 ease-out group-hover:scale-110">
-            <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} fill />
+            <Image
+              className="rounded bg-white object-contain"
+              src={`/images/whiskeys/${whiskey.id}.png`}
+              alt={whiskey.name}
+              fill
+              onLoad={handleImageLoad}
+            />
           </div>
         </div>
         <div className="flex flex-col gap-2 text-center">

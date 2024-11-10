@@ -6,7 +6,7 @@ import { ButtonLink } from '@/common/button-link';
 import { dataTypes, fetchData } from '@/db/db-utils';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Flavour, Whiskey } from '../common/object-types';
+import type { Flavour, Whiskey } from '../common/custom-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;

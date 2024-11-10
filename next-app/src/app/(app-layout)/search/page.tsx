@@ -21,9 +21,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <PageTitle title="Search Whiskeys" srOnly />
       <div className="grid gap-2 md:grid-cols-[theme(spacing.72)_1fr]">
         <Section className="sticky top-24 hidden max-h-[80vh] overflow-auto px-2 md:block">
-          <SectionTitle as="h2" srOnly>
-            Filter
-          </SectionTitle>
           {/* filter pane */}
           <WhiskeyFilter data={data} />
         </Section>

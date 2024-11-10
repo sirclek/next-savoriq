@@ -1,4 +1,4 @@
-import type { Maybe } from '@/common/common-types';
+import type { Maybe } from '@/common/custom-types';
 import * as RadixRadioGroup from '@radix-ui/react-radio-group';
 import { useId } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -12,7 +12,7 @@ type RadioGroupProps = React.PropsWithChildren<{
 
 export function RadioGroup({ value, children, onChange }: RadioGroupProps) {
   return (
-    <RadixRadioGroup.Root className="flex flex-col gap-1" value={value ?? ''} onValueChange={onChange}>
+    <RadixRadioGroup.Root className="flex flex-col gap-1" value={String(value ?? '')} onValueChange={onChange}>
       {children}
     </RadixRadioGroup.Root>
   );

@@ -2,7 +2,7 @@
 
 import type { ButtonProps } from '@/common/button';
 import { Button } from '@/common/button';
-import type { Omit } from '@/common/common-types';
+import type { Omit } from '@/common/custom-types';
 import { useFormStatus } from 'react-dom';
 
 type SubmitButtonProps = Omit<ButtonProps, 'type' | 'isLoading'>;

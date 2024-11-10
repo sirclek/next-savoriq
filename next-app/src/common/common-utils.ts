@@ -1,4 +1,4 @@
-import type { Nil } from './common-types';
+import type { Nil } from './custom-types';
 
 export const APP_URL = 'https://savorIQ.vercel.app';
 export const APP_TITLE = 'SavorIQ';

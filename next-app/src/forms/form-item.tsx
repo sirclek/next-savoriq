@@ -1,4 +1,4 @@
-import type { Maybe, Omit } from '@/common/common-types';
+import type { Maybe, Omit } from '@/common/custom-types';
 import { createSafeContext } from '@/common/safe-context';
 import { useId } from 'react';
 import { Label } from './label';

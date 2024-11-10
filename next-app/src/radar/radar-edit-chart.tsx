@@ -1,9 +1,9 @@
 import { dataTypes } from '@/db/db-utils';
-import type { BubbleDataPoint, ChartType, Point } from 'chart.js';
+import type { ChartType } from 'chart.js';
 import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { Whiskey } from '../common/object-types';
+import type { Whiskey } from '../common/custom-types';
 import { getGraphData } from './radar-data';
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
@@ -152,22 +152,22 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         });
 
         // Handle label click events
-        divRef.current.addEventListener('click', (event) => {
-          const chartArea = chartRef.current!.chartArea;
-          const centerX = (chartArea.left + chartArea.right) / 2;
-          const centerY = (chartArea.top + chartArea.bottom) / 2;
-          const angleStep = (2 * Math.PI) / chartRef.current!.data.labels!.length;
+        // divRef.current.addEventListener('click', (event) => {
+        //   const chartArea = chartRef.current!.chartArea;
+        //   const centerX = (chartArea.left + chartArea.right) / 2;
+        //   const centerY = (chartArea.top + chartArea.bottom) / 2;
+        //   const angleStep = (2 * Math.PI) / chartRef.current!.data.labels!.length;
 
-          chartRef.current!.data.labels!.forEach((label, i) => {
-            const angle = angleStep * i - Math.PI / 2;
-            const labelX = centerX + (centerX - 10) * Math.cos(angle);
-            const labelY = centerY + (centerY - 10) * Math.sin(angle);
+        //   chartRef.current!.data.labels!.forEach((label, i) => {
+        //     const angle = angleStep * i - Math.PI / 2;
+        //     const labelX = centerX + (centerX - 10) * Math.cos(angle);
+        //     const labelY = centerY + (centerY - 10) * Math.sin(angle);
 
-            if (Math.abs(event.offsetX - labelX) < 10 && Math.abs(event.offsetY - labelY) < 10) {
-              window.location.href = `/item/${label}`;
-            }
-          });
-        });
+        //     if (Math.abs(event.offsetX - labelX) < 10 && Math.abs(event.offsetY - labelY) < 10) {
+        //       window.location.href = `/item/${label}`;
+        //     }
+        //   });
+        // });
       }
     }
   }, [customizeMode, data, dataType]);

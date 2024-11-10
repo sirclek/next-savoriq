@@ -1,6 +1,4 @@
-import type { Id } from '@/common/common-types';
-import type { Chemical, Flavour, Whiskey } from '@/common/object-types';
-import type { WhiskeyFilterOptionItem } from '@/search/search-types';
+import type { Chemical, Flavour, Id, Whiskey, WhiskeyFilterOptionItem } from '@/common/custom-types';
 import dbJson from './db.json'; // Adjust the path to where your db object is defined
 
 const getDb = async () => {

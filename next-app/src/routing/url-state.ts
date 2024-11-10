@@ -1,7 +1,7 @@
-import type { WhiskeyFilterResponse } from '@/search/search-types';
+import type { FilterDataType, WhiskeyFilterResponse } from '@/common/custom-types';
 
-export function decodeState(selectedOptions: WhiskeyFilterResponse['selectedOptions']): Record<string, string[]> {
-  const result: Record<string, string[]> = {};
+export function decodeState(selectedOptions: WhiskeyFilterResponse['selectedOptions']): Record<string, FilterDataType[]> {
+  const result: Record<string, FilterDataType[]> = {};
 
   for (const selectedOption of selectedOptions) {
     result[selectedOption.dbKey] ??= [];
@@ -10,7 +10,11 @@ export function decodeState(selectedOptions: WhiskeyFilterResponse['selectedOpti
   return result;
 }
 
-export function encodeState(dbKey: string, newValues: string[], values: Record<string, string[]>): [url: string, values: Record<string, string[]>] {
+export function encodeState(
+  dbKey: string,
+  newValues: FilterDataType[],
+  values: Record<string, FilterDataType[]>,
+): [url: string, values: Record<string, FilterDataType[]>] {
   let updatedValues = { ...values };
 
   if (newValues.length === 0) {

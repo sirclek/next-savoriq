@@ -1,3 +1,4 @@
+import type { FilterDataType } from '@/common/custom-types';
 import { createSafeContext } from '@/common/safe-context';
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { useId } from 'react';
@@ -5,8 +6,8 @@ import { Label } from './label';
 import { getSelectableItemProps } from './selectable-item-utils';
 
 type CheckboxGroupContextValue = {
-  value: string[];
-  onChange: (value: string[]) => void;
+  value: FilterDataType[];
+  onChange: (value: FilterDataType[]) => void;
 };
 
 const [CheckboxGroupContext, useCheckboxGroupContext] = createSafeContext<CheckboxGroupContextValue>({
@@ -31,7 +32,7 @@ const allSymbol = Symbol('all');
 const { rootClassName, itemClassName, indicatorClassName, icon, labelClassName } = getSelectableItemProps();
 
 type CheckboxProps = React.PropsWithChildren<{
-  value: string | typeof allSymbol;
+  value: FilterDataType | typeof allSymbol;
 }>;
 
 export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {

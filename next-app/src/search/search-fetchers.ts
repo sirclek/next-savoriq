@@ -1,11 +1,18 @@
-import type { Whiskey } from '@/common/object-types';
-import { categoryData, dataTypes, fetchCategories, fetchData } from '@/db/db-utils';
-import { sortWhiskeys, WhiskeyFilterKey, WhiskeySorting } from '@/search/search-sorting';
-import type { WhiskeyFilterArgs, WhiskeyFilterOptions, WhiskeyFilterResponse, WhiskeyFilterSelectedOption } from '@/search/search-types';
+import type {
+  FilterDataType,
+  Whiskey,
+  WhiskeyFilterArgs,
+  WhiskeyFilterOptions,
+  WhiskeyFilterResponse,
+  WhiskeyFilterSelectedOption,
+} from '@/common/custom-types';
+import { WhiskeyFilterKey, WhiskeySorting } from '@/common/custom-types';
+import { dataTypes, fetchCategories, fetchData } from '@/db/db-utils';
+import { sortWhiskeys } from '@/search/search-sorting';
 import { cache } from 'react';
 
 async function getWhiskeyFilterOptions() {
-  const categoryData = (await fetchCategories()) as categoryData;
+  const categoryData = await fetchCategories();
 
   const filterOptions: WhiskeyFilterOptions = {
     sortings: {
@@ -61,7 +68,7 @@ async function getWhiskeyFilterOptions() {
   return filterOptions;
 }
 
-function filterByKey<T>(argsValue: String[] | String, whiskeyValue: String | Number) {
+function filterByKey(argsValue: string[] | string, whiskeyValue: FilterDataType) {
   return Array.isArray(argsValue) ? argsValue.includes(String(whiskeyValue)) : argsValue === String(whiskeyValue);
 }
 
@@ -73,25 +80,25 @@ export async function getManyWhiskeys(args: WhiskeyFilterArgs) {
       response = response.filter((whiskey) => {
         switch (arg) {
           case 'brands': {
-            return filterByKey(args.brands!, whiskey.brand);
+            return filterByKey(args.brands ?? [], whiskey.brand);
           }
           case 'ages': {
-            return filterByKey(args.ages!, whiskey.age);
+            return filterByKey(args.ages ?? [], whiskey.age);
           }
           case 'regions': {
-            return filterByKey(args.regions!, whiskey.region);
+            return filterByKey(args.regions ?? [], whiskey.region);
           }
           case 'types': {
-            return filterByKey(args.types!, whiskey.type);
+            return filterByKey(args.types ?? [], whiskey.type);
           }
           case 'abvs': {
-            return filterByKey(args.abvs!, whiskey.abv);
+            return filterByKey(args.abvs ?? [], whiskey.abv);
           }
           case 'caskTypes': {
-            return filterByKey(args.caskTypes!, whiskey.caskType);
+            return filterByKey(args.caskTypes ?? [], whiskey.caskType);
           }
           case 'specialNotes': {
-            return filterByKey(args.specialNotes!, whiskey.specialNote);
+            return filterByKey(args.specialNotes ?? [], whiskey.specialNote);
           }
           default: {
             return true;
@@ -119,7 +126,12 @@ function getWhiskeyFilterSelectedOptions({ filterOptions, args }: { filterOption
     });
   }
 
-  const addSelectedOptions = (options: { value: string }[], argsKey: string | string[] | undefined, filterKey: WhiskeyFilterKey, dbKey: string) => {
+  const addSelectedOptions = (
+    options: { value: FilterDataType }[],
+    argsKey: string | string[] | undefined,
+    filterKey: WhiskeyFilterKey,
+    dbKey: string,
+  ) => {
     for (const option of options) {
       if (filterByKey(argsKey as string | string[], option.value)) {
         selectedOptions.push({
@@ -148,7 +160,10 @@ export const filterProducts = cache(async (args: WhiskeyFilterArgs): Promise<Whi
     args,
   });
 
-  whiskeys = sortWhiskeys(whiskeys, args.sortings);
+  const sorting = Object.values(WhiskeySorting).includes(args.sortings as WhiskeySorting)
+    ? (args.sortings as WhiskeySorting)
+    : WhiskeySorting.DEFAULT;
+  whiskeys = sortWhiskeys(whiskeys, sorting);
 
   return { filterOptions, selectedOptions, whiskeys };
 });

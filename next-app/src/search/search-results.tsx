@@ -1,6 +1,6 @@
+import type { WhiskeyFilterResponse } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
 import { WhiskeyGrid } from '@/whiskeys/whiskey-grid';
-import type { WhiskeyFilterResponse } from './search-types';
 
 type SearchResultsProps = {
   data: WhiskeyFilterResponse;

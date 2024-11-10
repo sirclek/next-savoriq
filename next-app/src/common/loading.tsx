@@ -1,5 +1,5 @@
 import { twJoin, twMerge } from 'tailwind-merge';
-import type { Maybe } from './common-types';
+import type { Maybe } from './custom-types';
 
 type LoadingProps = React.PropsWithChildren<{
   className?: string;

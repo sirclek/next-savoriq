@@ -1,5 +1,6 @@
-import { matchWhiskeys, WhiskeyMatching } from '@/search/search-sorting';
-import type { Whiskey } from '../common/object-types';
+import { WhiskeyMatching } from '@/common/custom-types';
+import { matchWhiskeys } from '@/search/search-sorting';
+import type { Whiskey } from '../common/custom-types';
 import { WhiskeyGrid } from './whiskey-grid';
 
 type RelatedProductsProps = {
@@ -7,7 +8,7 @@ type RelatedProductsProps = {
   type: WhiskeyMatching;
 };
 
-export async function RelatedProducts({ whiskey, type }: RelatedProductsProps) {
+export async function RelatedWhiskeyRow({ whiskey, type }: RelatedProductsProps) {
   let relatedProducts: Whiskey[] = [];
   if (type === WhiskeyMatching.FLAVOUR) {
     relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.FLAVOUR, 6);

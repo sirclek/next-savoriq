@@ -1,48 +1,31 @@
-import type { Whiskey } from '@/common/object-types';
+import { WhiskeyMatching, WhiskeySorting, type Whiskey } from '@/common/custom-types';
+
 import { dataTypes, fetchData } from '@/db/db-utils';
 
-export enum WhiskeyFilterKey {
-  SORTING = 'sorting',
-  CATEGORIES = 'categories',
-}
-
-export enum WhiskeySorting {
-  DEFAULT = 'default',
-  ALC_ASC = 'alc-asc',
-  ALC_DESC = 'alc-desc',
-  PRICE_ASC = 'price-asc',
-  PRICE_DESC = 'price-desc',
-  AGE_ASC = 'age-asc',
-  AGE_DESC = 'age-desc',
-}
-
-export enum WhiskeyMatching {
-  FLAVOUR = 'flavour',
-  CHEMICAL = 'chemical',
-}
-
-export function sortWhiskeys(whiskeys: Whiskey[], sorting: string) {
+export function sortWhiskeys(whiskeys: Whiskey[], sorting: WhiskeySorting) {
   switch (sorting) {
-    case WhiskeySorting.PRICE_ASC:
+    case WhiskeySorting.PRICE_ASC: {
       return whiskeys.sort((a, b) => a.price - b.price);
-
-    case WhiskeySorting.PRICE_DESC:
+    }
+    case WhiskeySorting.PRICE_DESC: {
       return whiskeys.sort((a, b) => b.price - a.price);
-
-    case WhiskeySorting.ALC_ASC:
+    }
+    case WhiskeySorting.ALC_ASC: {
       return whiskeys.sort((a, b) => a.abv - b.abv);
-
-    case WhiskeySorting.ALC_DESC:
+    }
+    case WhiskeySorting.ALC_DESC: {
       return whiskeys.sort((a, b) => b.abv - a.abv);
-
-    case WhiskeySorting.AGE_ASC:
+    }
+    case WhiskeySorting.AGE_ASC: {
       return whiskeys.sort((a, b) => a.age - b.age);
-
-    case WhiskeySorting.AGE_DESC:
+    }
+    case WhiskeySorting.AGE_DESC: {
       return whiskeys.sort((a, b) => b.age - a.age);
+    }
 
-    default:
+    default: {
       return whiskeys.sort((a, b) => a.id - b.id);
+    }
   }
 }
 
@@ -57,7 +40,7 @@ export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMa
   let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
 
   switch (matchType) {
-    case WhiskeyMatching.FLAVOUR:
+    case WhiskeyMatching.FLAVOUR: {
       whiskeyData = whiskeyData
         .map((whiskey) => ({
           ...whiskey,
@@ -65,8 +48,8 @@ export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMa
         }))
         .sort((a, b) => b.similarity - a.similarity);
       break;
-
-    case WhiskeyMatching.CHEMICAL:
+    }
+    case WhiskeyMatching.CHEMICAL: {
       whiskeyData = whiskeyData
         .map((whiskey) => ({
           ...whiskey,
@@ -74,9 +57,10 @@ export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMa
         }))
         .sort((a, b) => b.similarity - a.similarity);
       break;
-
-    default:
+    }
+    default: {
       [];
+    }
   }
   // whiskeyData.forEach(whiskey => {
   //   console.log(matchType, { id: whiskey.id, name: whiskey.name, similarity: whiskey.similarity });
