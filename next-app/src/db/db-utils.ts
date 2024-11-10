@@ -28,16 +28,7 @@ const cache: { [key in dataTypes]?: Whiskey[] | Flavour[] | Chemical[] } = {};
 
 export async function fetchCategories(): Promise<categoryData> {
   const db = await getDb();
-  const {
-    sortings,
-    brands,
-    ages,
-    regions,
-    types,
-    abvs,
-    caskTypes,
-    specialNotes,
-  } = db;
+  const { sortings, brands, ages, regions, types, abvs, caskTypes, specialNotes } = db;
   return {
     sortings,
     brands,
@@ -68,9 +59,7 @@ export async function fetchData<T>(type: dataTypes): Promise<T[]> {
       break;
     }
     case dataTypes.CHEMICALS: {
-      response = db.chemicals.map((chemical) =>
-        mapChemicalData(chemical),
-      ) as T[];
+      response = db.chemicals.map((chemical) => mapChemicalData(chemical)) as T[];
       break;
     }
     default: {
@@ -83,10 +72,7 @@ export async function fetchData<T>(type: dataTypes): Promise<T[]> {
   return response;
 }
 
-export async function getObjectById<T extends { id: Id }>(
-  Id: Id,
-  type: dataTypes,
-): Promise<T> {
+export async function getObjectById<T extends { id: Id }>(Id: Id, type: dataTypes): Promise<T> {
   const data = await fetchData<T>(type);
   const foundObject = data.find((item) => item.id === Id);
 
@@ -96,9 +82,7 @@ export async function getObjectById<T extends { id: Id }>(
 
   return {
     id: -1,
-    ...Object.fromEntries(
-      Object.keys(data[0]).map((key) => [key as keyof T, null]),
-    ),
+    ...Object.fromEntries(Object.keys(data[0]).map((key) => [key as keyof T, null])),
   } as T;
 }
 
@@ -111,7 +95,7 @@ function mapWhiskeyData(whiskey: any): Whiskey {
     id: whiskey.id as Id,
     name: whiskey.name as string,
     brand: whiskey.brand as string,
-    age: whiskey.age as string,
+    age: whiskey.age as number,
     region: whiskey.region as string,
     type: whiskey.type as string,
     abv: whiskey.abv as number,

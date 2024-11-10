@@ -1,35 +1,12 @@
 import { dataTypes } from '@/db/db-utils';
 import type { BubbleDataPoint, ChartType, Point } from 'chart.js';
-import {
-  Chart,
-  Filler,
-  Legend,
-  LineElement,
-  PointElement,
-  RadarController,
-  RadialLinearScale,
-  Tooltip,
-} from 'chart.js';
+import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Whiskey } from '../common/object-types';
 import { getGraphData } from './radar-data';
 
-Chart.register(
-  RadarController,
-  RadialLinearScale,
-  PointElement,
-  LineElement,
-  Filler,
-  Tooltip,
-  Legend,
-);
+Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 type RadarChartProps = {
   whiskey: Whiskey;
@@ -60,9 +37,7 @@ const CUSTOMDATANAME = 'Customised Data';
 const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
-  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>(
-    'chemicals',
-  );
+  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>('chemicals');
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
   const [customizeMode, setCustomizeMode] = useState<boolean>(false);
@@ -84,10 +59,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     void fetchChemicals();
   }, [fetchChemicals]);
 
-  const data = useMemo(
-    () => (dataType === 'chemicals' ? chemicals : flavours),
-    [dataType, chemicals, flavours],
-  );
+  const data = useMemo(() => (dataType === 'chemicals' ? chemicals : flavours), [dataType, chemicals, flavours]);
 
   useEffect(() => {
     if (customizeMode) {
@@ -111,15 +83,12 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
               {
                 label: `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
                 data: data.map((d) => d.value),
-                backgroundColor: customizeMode
-                  ? 'rgba(128, 128, 128, 0.5)'
-                  : 'rgba(180, 120, 60, 0.5)',
-                borderColor: customizeMode
-                  ? 'rgba(128, 128, 128, 1)'
-                  : 'rgba(180, 120, 60, 1)',
+                backgroundColor: customizeMode ? 'rgba(128, 128, 128, 0.5)' : 'rgba(180, 120, 60, 0.5)',
+                borderColor: customizeMode ? 'rgba(128, 128, 128, 1)' : 'rgba(180, 120, 60, 1)',
                 borderWidth: 1,
                 dragData: false,
                 order: 1,
+                pointRadius: customizeMode ? 0 : 3, // Remove dot bubbles in customize mode
               },
               ...(customizeMode
                 ? [
@@ -130,6 +99,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                       borderColor: 'rgba(180, 120, 60, 0.5)',
                       borderWidth: 1,
                       dragData: customizeMode,
+                      pointRadius: 3,
                     },
                   ]
                 : []),
@@ -137,7 +107,6 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           },
           options: {
             animation: { duration: 500, easing: 'easeInOutQuint' },
-
             scales: {
               r: {
                 beginAtZero: true,
@@ -145,6 +114,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                   stepSize: dataType === 'chemicals' ? 10 : 1,
                 },
                 max: dataType === 'chemicals' ? CHEMICALMAX : FLAVOURMAX,
+                min: 0,
+                grid: { lineWidth: 2 },
+                angleLines: { lineWidth: 2 },
               },
             },
             plugins: {
@@ -152,8 +124,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                 callbacks: {
                   label(context) {
                     const value = context.dataset.data[context.dataIndex];
-                    const roundValue =
-                      typeof value === 'number' ? Math.round(value) : 0;
+                    const roundValue = typeof value === 'number' ? Math.round(value) : 0;
                     const label = context.dataset.label + ': ' + roundValue;
                     const customDataPoint = data[context.dataIndex].value;
                     return (
@@ -169,122 +140,132 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
               dragData: {
                 onDragEnd: (e, datasetIndex, index, value) => {
                   if (customizeMode && chartRef.current) {
-                    // Update customData with the new dragged value
-                    setCustomData((prevData) =>
-                      prevData.map((d, i) =>
-                        i === index ? { ...d, value: value as number } : d,
-                      ),
-                    );
+                    const roundedValue = Math.round(value as number);
+                    setCustomData((prevData) => prevData.map((d, i) => (i === index ? { ...d, value: roundedValue } : d)));
+                    chartRef.current.data.datasets[datasetIndex].data[index] = roundedValue;
+                    chartRef.current.update();
                   }
                 },
               },
             },
           },
         });
+
+        // Handle label click events
+        divRef.current.addEventListener('click', (event) => {
+          const chartArea = chartRef.current!.chartArea;
+          const centerX = (chartArea.left + chartArea.right) / 2;
+          const centerY = (chartArea.top + chartArea.bottom) / 2;
+          const angleStep = (2 * Math.PI) / chartRef.current!.data.labels!.length;
+
+          chartRef.current!.data.labels!.forEach((label, i) => {
+            const angle = angleStep * i - Math.PI / 2;
+            const labelX = centerX + (centerX - 10) * Math.cos(angle);
+            const labelY = centerY + (centerY - 10) * Math.sin(angle);
+
+            if (Math.abs(event.offsetX - labelX) < 10 && Math.abs(event.offsetY - labelY) < 10) {
+              window.location.href = `/item/${label}`;
+            }
+          });
+        });
       }
     }
   }, [customizeMode, data, dataType]);
 
+  const buttonStyle = {
+    width: '100%',
+    padding: '0.5% 5%',
+    borderRadius: '10px',
+    transition: 'transform 0.2s',
+  };
+
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <div
-        style={{
-          height: '8%',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '5%',
-        }}
-      >
-        {!customizeMode ? (
-          <>
+      <div className="button-container">
+        <div
+          style={{
+            height: '8%',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '5%',
+          }}
+        >
+          {!customizeMode ? (
+            <>
+              <button
+                onClick={() => {
+                  setCustomizeMode(false);
+                  setCustomData(chemicals);
+                  setDataType('chemicals');
+                }}
+                className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${
+                  dataType === 'chemicals' ? 'text-white' : 'text-gray-700'
+                }`}
+                style={buttonStyle}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              >
+                Chemicals
+              </button>
+              <button
+                onClick={() => {
+                  setCustomizeMode(false);
+                  setCustomData(flavours);
+                  setDataType('flavours');
+                }}
+                className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${
+                  dataType === 'flavours' ? 'text-white' : 'text-gray-700'
+                }`}
+                style={buttonStyle}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              >
+                Flavours
+              </button>
+            </>
+          ) : (
             <button
               onClick={() => {
-                setCustomizeMode(false);
-                setCustomData(chemicals);
-                setDataType('chemicals');
+                window.location.href = '/search/similar';
               }}
-              className={`text-xl ${dataType === 'chemicals' ? 'bg-primary' : 'bg-primary-light'} ${
-                dataType === 'chemicals' ? 'text-white' : 'text-gray-700'
-              }`}
+              className={'bg-primary text-xl text-white'}
               style={{
-                width: '100%',
-                padding: '1% 5%',
+                width: '255%',
+                padding: '0.5% 5%',
                 borderRadius: '10px',
                 transition: 'transform 0.2s',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = 'scale(1.1)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = 'scale(1)')
-              }
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
-              Chemicals
+              Search Whiskeys With This Profile
             </button>
-            <button
-              onClick={() => {
-                setCustomizeMode(false);
-                setCustomData(flavours);
-                setDataType('flavours');
-              }}
-              className={`text-xl ${dataType === 'flavours' ? 'bg-primary' : 'bg-primary-light'} ${
-                dataType === 'flavours' ? 'text-white' : 'text-gray-700'
-              }`}
-              style={{
-                width: '100%',
-                padding: '1% 5%',
-                borderRadius: '10px',
-                transition: 'transform 0.2s',
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = 'scale(1.1)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = 'scale(1)')
-              }
-            >
-              Flavours
-            </button>
-          </>
-        ) : (
+          )}
           <button
             onClick={() => {
-              window.location.href = '/search/similar';
+              setCustomizeMode(!customizeMode);
             }}
-            className={'text-xl bg-primary text-white'}
-            style={{
-              width: '255%',
-              padding: '1% 5%',
-              borderRadius: '10px',
-              transition: 'transform 0.2s',
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = 'scale(1.1)')
-            }
+            className="bg-primary-hover text-xl text-white"
+            style={buttonStyle}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
-            Search Whiskeys With This Profile
+            {customizeMode ? 'Cancel' : 'Customise'}
           </button>
-        )}
-        <button
-          onClick={() => {
-            setCustomizeMode(!customizeMode);
-          }}
-          className="bg-primary-hover text-xl text-white"
-          style={{
-            width: '100%',
-            padding: '1% 5%',
-            borderRadius: '10px',
-            transition: 'transform 0.2s',
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-        >
-          {customizeMode ? 'Cancel' : 'Customise'}
-        </button>
+        </div>
       </div>
-      <canvas ref={divRef} style={{ width: '100%', height: '92%' }}></canvas>
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          height: '92%',
+        }}
+      >
+        <canvas ref={divRef} style={{ flex: 1 }}></canvas>
+      </div>
     </div>
   );
 };

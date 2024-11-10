@@ -19,13 +19,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
   return (
     <div className="grid gap-6 md:grid-cols-2">
       <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
-        <Image
-          className="rounded bg-white object-contain"
-          src={`/images/whiskeys/${whiskey.id}.png`}
-          alt={whiskey.name}
-          priority
-          fill
-        />
+        <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} priority fill />
       </div>
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-col gap-2 text-center">

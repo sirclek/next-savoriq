@@ -8,20 +8,12 @@ type ChartData = {
   value: number;
 };
 
-export async function getGraphData(
-  whiskey: Whiskey,
-  dataType: dataTypes,
-): Promise<ChartData[]> {
-  const allData =
-    dataType === dataTypes.CHEMICALS
-      ? await fetchData<Chemical>(dataType)
-      : await fetchData<Flavour>(dataType);
+export async function getGraphData(whiskey: Whiskey, dataType: dataTypes): Promise<ChartData[]> {
+  const allData = dataType === dataTypes.CHEMICALS ? await fetchData<Chemical>(dataType) : await fetchData<Flavour>(dataType);
 
   return dataType === dataTypes.CHEMICALS
     ? whiskey.chemicals.map((value: number, i: number) => {
-        const chemical = allData.find(
-          (chemical) => chemical.id === i,
-        ) as Chemical;
+        const chemical = allData.find((chemical) => chemical.id === i) as Chemical;
         return {
           id: chemical.id,
           name: chemical.name,

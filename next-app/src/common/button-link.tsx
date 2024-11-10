@@ -4,18 +4,9 @@ import type { GetButtonBasePropsArgs } from './button-base-utils';
 import { getButtonBaseProps } from './button-base-utils';
 import type { Omit } from './common-types';
 
-export type ButtonLinkProps = NextLinkProps &
-  Omit<GetButtonBasePropsArgs, 'isDisabled' | 'isLoading'>;
+export type ButtonLinkProps = NextLinkProps & Omit<GetButtonBasePropsArgs, 'isDisabled' | 'isLoading'>;
 
-export function ButtonLink({
-  className,
-  icon,
-  iconAlignment,
-  circle,
-  variant,
-  children,
-  ...rest
-}: ButtonLinkProps) {
+export function ButtonLink({ className, icon, iconAlignment, circle, variant, children, ...rest }: ButtonLinkProps) {
   return (
     <NextLink
       {...rest}

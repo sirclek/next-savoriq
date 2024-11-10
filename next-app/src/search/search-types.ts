@@ -1,5 +1,5 @@
 import type { Whiskey } from '@/common/object-types';
-import type { WhiskeyFilterKey } from './search-utils';
+import type { WhiskeyFilterKey } from './search-sorting';
 
 export type WhiskeyFilterArgs = {
   sortings?: string;
@@ -14,7 +14,7 @@ export type WhiskeyFilterArgs = {
 
 export type WhiskeyFilterOptionItem = {
   title: string;
-  value: string;
+  value: string | number;
 };
 
 export type WhiskeyFilterData = {
@@ -25,14 +25,7 @@ export type WhiskeyFilterData = {
 };
 
 export type WhiskeyFilterOptions = Record<
-  | 'sortings'
-  | 'brands'
-  | 'ages'
-  | 'regions'
-  | 'types'
-  | 'abvs'
-  | 'caskTypes'
-  | 'specialNotes',
+  'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'caskTypes' | 'specialNotes',
   WhiskeyFilterData
 >;
 

@@ -4,11 +4,8 @@ import { Paper, PaperTitle } from '@/common/paper';
 import { Checkbox, CheckboxGroup } from '@/forms/checkbox-group';
 import { RadioGroup, RadioGroupItem } from '@/forms/radio-group';
 import { decodeState, encodeState } from '@/routing/url-state';
-import type {
-  WhiskeyFilterData,
-  WhiskeyFilterResponse,
-} from '@/search/search-types';
-import { WhiskeyFilterKey } from '@/search/search-utils';
+import { WhiskeyFilterKey } from '@/search/search-sorting';
+import type { WhiskeyFilterData, WhiskeyFilterResponse } from '@/search/search-types';
 import { useRouter } from 'next/navigation';
 
 type WhiskeyFilterProps = {
@@ -19,10 +16,7 @@ export function WhiskeyFilter({ data }: WhiskeyFilterProps) {
   const router = useRouter();
   const values = decodeState(data.selectedOptions);
 
-  const handleChange = (
-    dbKey: WhiskeyFilterData['dbKey'],
-    newValues: string[],
-  ) => {
+  const handleChange = (dbKey: WhiskeyFilterData['dbKey'], newValues: string[]) => {
     const [urlString] = encodeState(dbKey, newValues, values);
 
     router.push(`/search${urlString}`);

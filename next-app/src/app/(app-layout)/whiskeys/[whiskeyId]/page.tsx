@@ -1,12 +1,12 @@
 import type { Id } from '@/common/common-types';
+import { Whiskey } from '@/common/object-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
+import { dataTypes, getObjectById } from '@/db/db-utils';
+import { WhiskeyMatching } from '@/search/search-sorting';
 import { getMetadata } from '@/seo/seo-utils';
-import {
-  RelatedProductType,
-  RelatedProducts,
-} from '@/whiskeys/related-whiskey';
+import { RelatedProductType, RelatedProducts } from '@/whiskeys/related-whiskey';
 import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
 import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
@@ -20,10 +20,8 @@ export type WhiskeyPageProps = {
   };
 };
 
-export async function generateMetadata({
-  params,
-}: WhiskeyPageProps): Promise<Metadata> {
-  const whiskey = await getOneWhiskeyById(Number(params.whiskeyId));
+export async function generateMetadata({ params }: WhiskeyPageProps): Promise<Metadata> {
+  const whiskey = await getObjectById<Whiskey>(Number(params.whiskeyId), dataTypes.WHISKEYS);
 
   if (!whiskey) notFound();
 
@@ -36,11 +34,9 @@ export async function generateMetadata({
 }
 
 export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
-  const whiskeyId = Number(params.whiskeyId);
+  const whiskey = await getObjectById<Whiskey>(Number(params.whiskeyId), dataTypes.WHISKEYS);
 
-  const whiskey = await getOneWhiskeyById(whiskeyId);
-
-  if (!whiskey) notFound();
+  if (whiskey.id == -1) notFound();
 
   return (
     <div className="flex flex-col gap-4">
@@ -54,10 +50,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
           <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts
-              whiskeyId={whiskeyId}
-              type={RelatedProductType.FLAVOUR}
-            />
+            <RelatedProducts whiskey={whiskey} type={WhiskeyMatching.FLAVOUR} />
           </Suspense>
         </Paper>
       </Section>
@@ -65,10 +58,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
           <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedProducts
-              whiskeyId={whiskeyId}
-              type={RelatedProductType.CHEMICAL}
-            />
+            <RelatedProducts whiskey={whiskey} type={WhiskeyMatching.CHEMICAL} />
           </Suspense>
         </Paper>
       </Section>

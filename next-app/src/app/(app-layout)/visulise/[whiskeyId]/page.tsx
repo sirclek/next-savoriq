@@ -9,9 +9,7 @@ export type ChemicalVisualizeWrapperProps = {
   };
 };
 
-export default async function ChemicalVisualizeWrapper({
-  params,
-}: ChemicalVisualizeWrapperProps) {
+export default async function ChemicalVisualizeWrapper({ params }: ChemicalVisualizeWrapperProps) {
   const whiskeyId = Number(params.whiskeyId);
   const whiskey = await getOneWhiskeyById(whiskeyId);
 

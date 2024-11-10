@@ -11,9 +11,7 @@ import { twMerge } from 'tailwind-merge';
 type LayoutProps = React.PropsWithChildren;
 
 export function Layout({ children }: LayoutProps) {
-  return (
-    <div className="grid min-h-screen grid-rows-[1fr_auto]">{children}</div>
-  );
+  return <div className="grid min-h-screen grid-rows-[1fr_auto]">{children}</div>;
 }
 
 type LayoutHeaderProps = React.PropsWithChildren;
@@ -21,10 +19,7 @@ type LayoutHeaderProps = React.PropsWithChildren;
 export function LayoutHeader({ children }: LayoutHeaderProps) {
   return (
     <header className="fixed z-10 h-app-header w-full border-b bg-background/75 backdrop-blur-md">
-      <Container
-        maxWidth="xl"
-        className="flex h-full items-center justify-between px-4"
-      >
+      <Container maxWidth="xl" className="flex h-full items-center justify-between px-4">
         <NextLink href="/" className="text-2xl font-bold text-primary">
           {APP_TITLE}
         </NextLink>
@@ -43,25 +38,15 @@ type LayoutContentProps = React.PropsWithChildren<{
 
 export function LayoutContent({ className, children }: LayoutContentProps) {
   return (
-    <Container
-      maxWidth="xl"
-      className={twMerge('h-full py-2 md:p-4', className)}
-    >
+    <Container maxWidth="xl" className={twMerge('h-full py-2 md:p-4', className)}>
       {children}
     </Container>
   );
 }
 
-type MobileNavButtonBaseProps = Pick<
-  ButtonLinkProps,
-  'variant' | 'className' | 'iconAlignment' | 'icon'
->;
+type MobileNavButtonBaseProps = Pick<ButtonLinkProps, 'variant' | 'className' | 'iconAlignment' | 'icon'>;
 
-export function getMobileNavButtonBaseProps({
-  icon,
-}: {
-  icon: LucideIcon;
-}): MobileNavButtonBaseProps {
+export function getMobileNavButtonBaseProps({ icon }: { icon: LucideIcon }): MobileNavButtonBaseProps {
   const Icon = icon;
 
   return {
@@ -82,10 +67,7 @@ type LayoutFooterProps = React.PropsWithChildren;
 export function LayoutFooter({ children }: LayoutFooterProps) {
   return (
     <footer className="pb-16 md:pb-0">
-      <Container
-        maxWidth="xl"
-        className="flex items-center justify-between px-4 py-6"
-      >
+      <Container maxWidth="xl" className="flex items-center justify-between px-4 py-6">
         <p className="text-muted-foreground">
           {new Date().getFullYear()} © {APP_TITLE}
         </p>
@@ -103,10 +85,7 @@ export function LayoutFooter({ children }: LayoutFooterProps) {
           {mobileNavLinks.map((link) => {
             return (
               <li key={link.href} className="w-1/4">
-                <ButtonLink
-                  href={link.href}
-                  {...getMobileNavButtonBaseProps({ icon: link.icon })}
-                >
+                <ButtonLink href={link.href} {...getMobileNavButtonBaseProps({ icon: link.icon })}>
                   {link.title}
                 </ButtonLink>
               </li>

@@ -6,22 +6,17 @@ import { createSafeContext } from './safe-context';
 
 type SectionContextValue = { headingId: string };
 
-const [SectionContext, useSectionContext] =
-  createSafeContext<SectionContextValue>({
-    displayName: 'SectionContext',
-  });
+const [SectionContext, useSectionContext] = createSafeContext<SectionContextValue>({
+  displayName: 'SectionContext',
+});
 
 type SectionAs = keyof Pick<React.JSX.IntrinsicElements, 'section' | 'aside'>;
 
-type SectionProps<As extends SectionAs = 'section'> =
-  React.ComponentPropsWithoutRef<As> & {
-    as?: SectionAs;
-  };
+type SectionProps<As extends SectionAs = 'section'> = React.ComponentPropsWithoutRef<As> & {
+  as?: SectionAs;
+};
 
-export function Section<As extends SectionAs = 'section'>({
-  as = 'section',
-  ...rest
-}: SectionProps<As>) {
+export function Section<As extends SectionAs = 'section'>({ as = 'section', ...rest }: SectionProps<As>) {
   const As = as;
   const headingId = useId();
 
@@ -32,10 +27,7 @@ export function Section<As extends SectionAs = 'section'>({
   );
 }
 
-type SectionTitleAs = keyof Pick<
-  React.JSX.IntrinsicElements,
-  'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
->;
+type SectionTitleAs = keyof Pick<React.JSX.IntrinsicElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
 
 type SectionTitleProps = React.PropsWithChildren<{
   as: SectionTitleAs;
@@ -44,13 +36,7 @@ type SectionTitleProps = React.PropsWithChildren<{
   className?: string;
 }>;
 
-export function SectionTitle({
-  as,
-  srOnly,
-  actions,
-  className,
-  children,
-}: SectionTitleProps) {
+export function SectionTitle({ as, srOnly, actions, className, children }: SectionTitleProps) {
   const { headingId } = useSectionContext();
   const As = as;
 
@@ -65,10 +51,7 @@ export function SectionTitle({
   return (
     <MobilePadding className={className}>
       <header className="mb-1 flex items-center justify-between">
-        <As
-          id={headingId}
-          className="text-lg font-semibold text-muted-foreground"
-        >
+        <As id={headingId} className="text-lg font-semibold text-muted-foreground">
           {children}
         </As>
         {actions ? <div>{actions}</div> : null}

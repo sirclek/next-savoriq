@@ -1,8 +1,6 @@
 import type { WhiskeyFilterResponse } from '@/search/search-types';
 
-export function decodeState(
-  selectedOptions: WhiskeyFilterResponse['selectedOptions'],
-): Record<string, string[]> {
+export function decodeState(selectedOptions: WhiskeyFilterResponse['selectedOptions']): Record<string, string[]> {
   const result: Record<string, string[]> = {};
 
   for (const selectedOption of selectedOptions) {
@@ -12,11 +10,7 @@ export function decodeState(
   return result;
 }
 
-export function encodeState(
-  dbKey: string,
-  newValues: string[],
-  values: Record<string, string[]>,
-): [url: string, values: Record<string, string[]>] {
+export function encodeState(dbKey: string, newValues: string[], values: Record<string, string[]>): [url: string, values: Record<string, string[]>] {
   let updatedValues = { ...values };
 
   if (newValues.length === 0) {

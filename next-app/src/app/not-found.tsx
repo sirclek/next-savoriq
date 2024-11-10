@@ -10,10 +10,7 @@ export const metadata = getMetadata({
 
 export default function NotFoundPage() {
   return (
-    <ErrorPage
-      statusCode={StatusCodes.NOT_FOUND}
-      message="This page could not be found"
-    >
+    <ErrorPage statusCode={StatusCodes.NOT_FOUND} message="This page could not be found">
       <ButtonLink href="/" className="mx-auto w-fit">
         Back to Home
       </ButtonLink>

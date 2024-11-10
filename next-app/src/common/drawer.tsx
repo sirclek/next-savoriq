@@ -43,11 +43,7 @@ export function DrawerHeader({ children }: DrawerHeaderProps) {
           {children}
         </RadixDialog.Title>
         <RadixDialog.Close asChild>
-          <Button
-            variant="transparent"
-            icon={<CloseIcon />}
-            aria-label="Close"
-          />
+          <Button variant="transparent" icon={<CloseIcon />} aria-label="Close" />
         </RadixDialog.Close>
       </div>
     </div>
@@ -61,13 +57,7 @@ type DrawerProps = React.PropsWithChildren<{
   closeOnPathnameChange?: boolean;
 }>;
 
-export function Drawer({
-  from = 'left',
-  trigger,
-  closeOnRouteChange,
-  closeOnPathnameChange,
-  children,
-}: DrawerProps) {
+export function Drawer({ from = 'left', trigger, closeOnRouteChange, closeOnPathnameChange, children }: DrawerProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const isMobile = useIsMobile();
@@ -98,10 +88,7 @@ export function Drawer({
             forceMount
           >
             <RadixDialog.Overlay asChild>
-              <motion.div
-                {...fadeIn}
-                className="fixed inset-0 z-10 bg-overlay/20 backdrop-blur-md"
-              />
+              <motion.div {...fadeIn} className="fixed inset-0 z-10 bg-overlay/20 backdrop-blur-md" />
             </RadixDialog.Overlay>
             <RadixDialog.Content asChild>
               <motion.div
@@ -110,9 +97,7 @@ export function Drawer({
                   'max-h-[80%] rounded-t-2xl md:top-0 md:max-h-none md:max-w-xs md:rounded-none md:rounded-l-2xl',
                   'after:absolute after:inset-x-0 after:top-full after:h-screen after:bg-background md:after:hidden',
                   '[--x-from:0] [--x-to:0] [--y-from:100%] [--y-to:0%] md:[--x-to:0%] md:[--y-from:0] md:[--y-to:0]',
-                  from === 'left'
-                    ? 'md:left-0 md:[--x-from:-100%]'
-                    : 'md:right-0 md:[--x-from:100%]',
+                  from === 'left' ? 'md:left-0 md:[--x-from:-100%]' : 'md:right-0 md:[--x-from:100%]',
                 )}
                 // Normally we can use `framer-motion` in a responsive way,
                 // by using CSS variables.

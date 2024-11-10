@@ -28,9 +28,7 @@ export const getRelatedWhiskeysFlavour = cache(async (whiskeyId: number) => {
     specialNotes: [whiskey.specialNote],
   });
 
-  const relatedWhiskeys = whiskeys.filter(
-    (relatedWhiskey) => relatedWhiskey.id !== whiskey.id,
-  );
+  const relatedWhiskeys = whiskeys.filter((relatedWhiskey) => relatedWhiskey.id !== whiskey.id);
 
   return relatedWhiskeys;
 });
@@ -50,9 +48,7 @@ export const getRelatedWhiskeysChemicals = cache(async (whiskeyId: number) => {
     specialNotes: [whiskey.specialNote],
   });
 
-  const relatedWhiskeys = whiskeys.filter(
-    (relatedWhiskey) => relatedWhiskey.id !== whiskey.id,
-  );
+  const relatedWhiskeys = whiskeys.filter((relatedWhiskey) => relatedWhiskey.id !== whiskey.id);
 
   return relatedWhiskeys;
 });

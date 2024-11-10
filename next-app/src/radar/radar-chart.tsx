@@ -3,13 +3,7 @@
 
 import { dataTypes } from '@/db/db-utils';
 import p5 from 'p5';
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Whiskey } from '../common/object-types';
 import { getGraphData } from './radar-data';
 
@@ -28,9 +22,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLDivElement | null>(null);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
-  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>(
-    'chemicals',
-  );
+  const [dataType, setDataType] = useState<'chemicals' | 'flavours'>('chemicals');
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
   const [customizeMode, setCustomizeMode] = useState<boolean>(false);
@@ -69,10 +61,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     };
   }, []);
 
-  const data = useMemo(
-    () => (dataType === 'chemicals' ? chemicals : flavours),
-    [dataType, chemicals, flavours],
-  );
+  const data = useMemo(() => (dataType === 'chemicals' ? chemicals : flavours), [dataType, chemicals, flavours]);
 
   useEffect(() => {
     if (customizeMode) {
@@ -100,11 +89,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         p.fill(0);
         p.textAlign(p.CENTER, p.CENTER);
         p.textSize(14);
-        p.text(
-          `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
-          centerX,
-          30,
-        );
+        p.text(`Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`, centerX, 30);
 
         const drawChart = (chartData: ChartData[], alpha: number) => {
           p.stroke(0, 0, 0, 0);
@@ -112,10 +97,8 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           p.beginShape();
           for (let i = 0; i < numPoints; i++) {
             const angle = (p.TWO_PI / numPoints) * i;
-            const x =
-              centerX + p.cos(angle) * (chartData[i].value / maxValue) * radius;
-            const y =
-              centerY + p.sin(angle) * (chartData[i].value / maxValue) * radius;
+            const x = centerX + p.cos(angle) * (chartData[i].value / maxValue) * radius;
+            const y = centerY + p.sin(angle) * (chartData[i].value / maxValue) * radius;
             p.vertex(x, y);
           }
           p.endShape(p.CLOSE);
@@ -136,33 +119,17 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           p.stroke(128);
           p.line(centerX, centerY, x, y);
           p.textAlign(
-            Math.abs(x - centerX) / radius < 0.03
-              ? p.CENTER
-              : x < centerX
-                ? p.RIGHT
-                : p.LEFT,
-            Math.abs(y - centerY) / radius < 0.03
-              ? p.CENTER
-              : y < centerY
-                ? p.BOTTOM
-                : p.TOP,
+            Math.abs(x - centerX) / radius < 0.03 ? p.CENTER : x < centerX ? p.RIGHT : p.LEFT,
+            Math.abs(y - centerY) / radius < 0.03 ? p.CENTER : y < centerY ? p.BOTTOM : p.TOP,
           );
 
           p.textFont('inter');
           p.textSize(16);
-          p.text(
-            data[i].name,
-            x + (x == centerX ? 0 : x > centerX ? 5 : -5),
-            y + (y == centerY ? 0 : y > centerY ? 5 : -5),
-          );
+          p.text(data[i].name, x + (x == centerX ? 0 : x > centerX ? 5 : -5), y + (y == centerY ? 0 : y > centerY ? 5 : -5));
           p.textAlign(p.CENTER, p.CENTER);
 
           if (i % (numPoints / 4) === 0) {
-            for (
-              let j = 0;
-              j <= maxValue;
-              dataType === 'chemicals' ? (j += 10) : j++
-            ) {
+            for (let j = 0; j <= maxValue; dataType === 'chemicals' ? (j += 10) : j++) {
               const scaleX = centerX + p.cos(angle) * (radius / maxValue) * j;
               const scaleY = centerY + p.sin(angle) * (radius / maxValue) * j;
               p.textSize(12);
@@ -186,12 +153,8 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
 
           for (let i = 0; i < numPoints; i++) {
             const angle = (p.TWO_PI / numPoints) * i;
-            const x =
-              centerX +
-              p.cos(angle) * (customData[i].value / maxValue) * radius;
-            const y =
-              centerY +
-              p.sin(angle) * (customData[i].value / maxValue) * radius;
+            const x = centerX + p.cos(angle) * (customData[i].value / maxValue) * radius;
+            const y = centerY + p.sin(angle) * (customData[i].value / maxValue) * radius;
 
             if (p.dist(p.mouseX, p.mouseY, x, y) < 10) {
               setDraggedPoint(i);
@@ -212,10 +175,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           const dx = p.mouseX - centerX;
           const dy = p.mouseY - centerY;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          const newValue = Math.min(
-            maxValue,
-            Math.max(0, (distance / radius) * maxValue),
-          );
+          const newValue = Math.min(maxValue, Math.max(0, (distance / radius) * maxValue));
 
           const updatedData = [...customData];
           updatedData[draggedPoint].value = newValue;

@@ -1,29 +1,19 @@
-import type { Id } from '@/common/common-types';
+import { matchWhiskeys, WhiskeyMatching } from '@/search/search-sorting';
 import type { Whiskey } from '../common/object-types';
-import {
-  getRelatedWhiskeysChemicals,
-  getRelatedWhiskeysFlavour,
-} from './whiskey-fetcher';
 import { WhiskeyGrid } from './whiskey-grid';
 
 type RelatedProductsProps = {
-  whiskeyId: Id;
+  whiskey: Whiskey;
+  type: WhiskeyMatching;
 };
-export enum RelatedProductType {
-  FLAVOUR = 'FLAVOUR',
-  CHEMICAL = 'CHEMICAL',
-}
 
-export async function RelatedProducts({
-  whiskeyId,
-  type,
-}: RelatedProductsProps & { type: RelatedProductType }) {
+export async function RelatedProducts({ whiskey, type }: RelatedProductsProps) {
   let relatedProducts: Whiskey[] = [];
-  if (type === RelatedProductType.FLAVOUR) {
-    relatedProducts = await getRelatedWhiskeysFlavour(whiskeyId);
+  if (type === WhiskeyMatching.FLAVOUR) {
+    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.FLAVOUR, 6);
   }
-  if (type === RelatedProductType.CHEMICAL) {
-    relatedProducts = await getRelatedWhiskeysChemicals(whiskeyId);
+  if (type === WhiskeyMatching.CHEMICAL) {
+    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.CHEMICAL, 6);
   }
 
   return <WhiskeyGrid whiskeys={relatedProducts} />;

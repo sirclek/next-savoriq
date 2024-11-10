@@ -12,23 +12,13 @@ type RadioGroupProps = React.PropsWithChildren<{
 
 export function RadioGroup({ value, children, onChange }: RadioGroupProps) {
   return (
-    <RadixRadioGroup.Root
-      className="flex flex-col gap-1"
-      value={value ?? ''}
-      onValueChange={onChange}
-    >
+    <RadixRadioGroup.Root className="flex flex-col gap-1" value={value ?? ''} onValueChange={onChange}>
       {children}
     </RadixRadioGroup.Root>
   );
 }
 
-const {
-  rootClassName,
-  itemClassName,
-  indicatorClassName,
-  icon,
-  labelClassName,
-} = getSelectableItemProps();
+const { rootClassName, itemClassName, indicatorClassName, icon, labelClassName } = getSelectableItemProps();
 
 type RadioGroupItemProps = React.PropsWithChildren<{
   value: string;
@@ -39,14 +29,8 @@ export function RadioGroupItem({ value, children }: RadioGroupItemProps) {
 
   return (
     <div className={rootClassName}>
-      <RadixRadioGroup.Item
-        className={twMerge(itemClassName, 'rounded-full')}
-        id={id}
-        value={value}
-      >
-        <RadixRadioGroup.Indicator className={indicatorClassName}>
-          {icon}
-        </RadixRadioGroup.Indicator>
+      <RadixRadioGroup.Item className={twMerge(itemClassName, 'rounded-full')} id={id} value={value}>
+        <RadixRadioGroup.Indicator className={indicatorClassName}>{icon}</RadixRadioGroup.Indicator>
       </RadixRadioGroup.Item>
       <Label htmlFor={id} className={labelClassName}>
         {children}

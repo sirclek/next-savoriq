@@ -22,14 +22,8 @@ module.exports = {
         'deprecation/deprecation': 'warn',
         '@typescript-eslint/prefer-destructuring': 'warn',
         '@typescript-eslint/consistent-type-imports': 'warn',
-        '@typescript-eslint/no-misused-promises': [
-          'warn',
-          { checksVoidReturn: false },
-        ],
-        '@typescript-eslint/restrict-template-expressions': [
-          'warn',
-          { allowNumber: true },
-        ],
+        '@typescript-eslint/no-misused-promises': ['warn', { checksVoidReturn: false }],
+        '@typescript-eslint/restrict-template-expressions': ['warn', { allowNumber: true }],
       },
     },
   ],

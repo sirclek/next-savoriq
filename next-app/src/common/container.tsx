@@ -14,15 +14,5 @@ export function Container({ maxWidth, className, children }: ContainerProps) {
     '2xl': 'max-w-screen-2xl',
   };
 
-  return (
-    <div
-      className={twMerge(
-        classNamesByMaxWidth[maxWidth],
-        'mx-auto w-full',
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
+  return <div className={twMerge(classNamesByMaxWidth[maxWidth], 'mx-auto w-full', className)}>{children}</div>;
 }
