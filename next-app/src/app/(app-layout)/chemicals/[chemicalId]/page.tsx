@@ -1,6 +1,7 @@
 import type { Chemical, Id } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
-import { Section } from '@/common/section';
+import { PageTitle } from '@/common/page-title';
+import { Section, SectionTitle } from '@/common/section';
 import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
@@ -31,9 +32,16 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
       <Section>
         <Paper>
           <div className="flex flex-col gap-4">
+          <PageTitle title={chemical.name} />
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
-                <Image className="rounded bg-white object-contain" src={`/images/chemicals/${chemical.id}.png`} alt={chemical.name} priority fill />
+                <Image
+                  className="rounded bg-white object-contain"
+                  src={`/images/chemicals/${chemical.id}.png`}
+                  alt={chemical.name}
+                  priority
+                  fill
+                />
               </div>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
@@ -48,8 +56,18 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
           </div>
         </Paper>
       </Section>
-
-      <Section></Section>
+      <Section as="aside">
+        <SectionTitle as="h2">Related by Flavour</SectionTitle>
+       <Paper>
+        <p>Related by 2</p>
+        </Paper>
+      </Section>
+      <Section as="aside">
+        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
+       <Paper>
+        <p>Related by 3</p>
+        </Paper>
+      </Section>
     </>
   );
 }
