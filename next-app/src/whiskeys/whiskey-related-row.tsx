@@ -6,15 +6,16 @@ import { WhiskeyGrid } from './whiskey-grid';
 type RelatedProductsProps = {
   whiskey: Whiskey;
   type: WhiskeyMatching;
+  count?: number;
 };
 
-export async function RelatedWhiskeyRow({ whiskey, type }: RelatedProductsProps) {
+export async function RelatedWhiskeyRow({ whiskey, type, count = 6 }: RelatedProductsProps) {
   let relatedProducts: Whiskey[] = [];
   if (type === WhiskeyMatching.FLAVOUR) {
-    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.FLAVOUR, 6);
+    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.FLAVOUR, count);
   }
   if (type === WhiskeyMatching.CHEMICAL) {
-    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.CHEMICAL, 6);
+    relatedProducts = await matchWhiskeys(whiskey, WhiskeyMatching.CHEMICAL, count);
   }
 
   return <WhiskeyGrid whiskeys={relatedProducts} />;

@@ -36,7 +36,7 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
-export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMatching, returnMaxCount: number) {
+export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
   let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
 
   switch (matchType) {
@@ -44,7 +44,7 @@ export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMa
       whiskeyData = whiskeyData
         .map((whiskey) => ({
           ...whiskey,
-          similarity: cosineSimilarity(masterWhiskey.flavours, whiskey.flavours),
+          similarity: cosineSimilarity(masterWhiskey.flavours ?? [], whiskey.flavours ?? []),
         }))
         .sort((a, b) => b.similarity - a.similarity);
       break;
@@ -53,7 +53,7 @@ export async function matchWhiskeys(masterWhiskey: Whiskey, matchType: WhiskeyMa
       whiskeyData = whiskeyData
         .map((whiskey) => ({
           ...whiskey,
-          similarity: cosineSimilarity(masterWhiskey.chemicals, whiskey.chemicals),
+          similarity: cosineSimilarity(masterWhiskey.chemicals ?? [], whiskey.chemicals ?? []),
         }))
         .sort((a, b) => b.similarity - a.similarity);
       break;

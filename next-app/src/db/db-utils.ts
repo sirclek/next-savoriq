@@ -72,7 +72,7 @@ export async function fetchData<T>(type: dataTypes): Promise<T[]> {
 
 export async function getObjectById<T extends { id: Id }>(Id: Id, type: dataTypes): Promise<T> {
   const data = await fetchData<T>(type);
-  const foundObject = data.find((item) => item.id === Id);
+  const foundObject = data.find((item) => item.id === Number(Id));
 
   if (foundObject) {
     return foundObject;

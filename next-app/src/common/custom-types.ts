@@ -1,5 +1,3 @@
-import { Key } from 'react';
-
 export type Flavour = {
   id: number;
   subType: string;
@@ -105,3 +103,12 @@ export enum WhiskeyMatching {
   FLAVOUR = 'flavour',
   CHEMICAL = 'chemical',
 }
+
+export type MatchType = WhiskeyMatching.FLAVOUR | WhiskeyMatching.CHEMICAL;
+
+export type ChartData = {
+  id: number;
+  name: string;
+  type: MatchType;
+  value: number;
+};

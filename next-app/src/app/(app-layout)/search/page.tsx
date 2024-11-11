@@ -2,7 +2,7 @@ import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
-import { WhiskeyFilter } from '@/search/whiskey-filter';
+import { WhiskeyFilter } from '@/whiskeys/whiskey-filter';
 import { getMetadata } from '@/seo/seo-utils';
 
 export const metadata = getMetadata({
