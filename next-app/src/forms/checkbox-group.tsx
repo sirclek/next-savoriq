@@ -1,3 +1,4 @@
+import type { FilterDataType } from '@/common/custom-types';
 import { createSafeContext } from '@/common/safe-context';
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { useId } from 'react';
@@ -5,22 +6,17 @@ import { Label } from './label';
 import { getSelectableItemProps } from './selectable-item-utils';
 
 type CheckboxGroupContextValue = {
-  value: string[];
-  onChange: (value: string[]) => void;
+  value: FilterDataType[];
+  onChange: (value: FilterDataType[]) => void;
 };
 
-const [CheckboxGroupContext, useCheckboxGroupContext] =
-  createSafeContext<CheckboxGroupContextValue>({
-    displayName: 'CheckboxGroupContext',
-  });
+const [CheckboxGroupContext, useCheckboxGroupContext] = createSafeContext<CheckboxGroupContextValue>({
+  displayName: 'CheckboxGroupContext',
+});
 
 type CheckboxGroupProps = CheckboxGroupContextValue & React.PropsWithChildren;
 
-export function CheckboxGroup({
-  children,
-  value,
-  onChange,
-}: CheckboxGroupProps) {
+export function CheckboxGroup({ children, value, onChange }: CheckboxGroupProps) {
   return (
     <CheckboxGroupContext.Provider value={{ value, onChange }}>
       <div role="group">
@@ -33,16 +29,10 @@ export function CheckboxGroup({
 
 const allSymbol = Symbol('all');
 
-const {
-  rootClassName,
-  itemClassName,
-  indicatorClassName,
-  icon,
-  labelClassName,
-} = getSelectableItemProps();
+const { rootClassName, itemClassName, indicatorClassName, icon, labelClassName } = getSelectableItemProps();
 
 type CheckboxProps = React.PropsWithChildren<{
-  value: string | typeof allSymbol;
+  value: FilterDataType | typeof allSymbol;
 }>;
 
 export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {
@@ -55,11 +45,7 @@ export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {
       <RadixCheckbox.Root
         className={itemClassName}
         id={id}
-        checked={
-          isAllOption
-            ? !value.length
-            : value.some((val) => val === checkboxValue)
-        }
+        checked={isAllOption ? !value.length : value.some((val) => val === checkboxValue)}
         onCheckedChange={() => {
           if (isAllOption) {
             onChange([]);
@@ -70,9 +56,7 @@ export function Checkbox({ value: checkboxValue, children }: CheckboxProps) {
           }
         }}
       >
-        <RadixCheckbox.Indicator className={indicatorClassName}>
-          {icon}
-        </RadixCheckbox.Indicator>
+        <RadixCheckbox.Indicator className={indicatorClassName}>{icon}</RadixCheckbox.Indicator>
       </RadixCheckbox.Root>
       <Label htmlFor={id} className={labelClassName}>
         {children}

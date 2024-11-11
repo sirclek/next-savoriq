@@ -1,31 +1,16 @@
-import type { Chemical, Flavour, Whiskey } from '../common/object-types';
+import { type ChartData, type Chemical, type Flavour, type Whiskey, type MatchType, WhiskeyMatching } from '../common/custom-types';
 import { dataTypes, fetchData } from '../db/db-utils';
 
-type ChartData = {
-  id: number;
-  name: string;
-  subType: string;
-  value: number;
-};
-
-export async function getGraphData(
-  whiskey: Whiskey,
-  dataType: dataTypes,
-): Promise<ChartData[]> {
-  const allData =
-    dataType === dataTypes.CHEMICALS
-      ? await fetchData<Chemical>(dataType)
-      : await fetchData<Flavour>(dataType);
+export async function getGraphData(whiskey: Whiskey, dataType: dataTypes): Promise<ChartData[]> {
+  const allData = dataType === dataTypes.CHEMICALS ? await fetchData<Chemical>(dataType) : await fetchData<Flavour>(dataType);
 
   return dataType === dataTypes.CHEMICALS
     ? whiskey.chemicals.map((value: number, i: number) => {
-        const chemical = allData.find(
-          (chemical) => chemical.id === i,
-        ) as Chemical;
+        const chemical = allData.find((chemical) => chemical.id === i) as Chemical;
         return {
           id: chemical.id,
           name: chemical.name,
-          subType: 'Chemical',
+          type: WhiskeyMatching.CHEMICAL,
           value: value + 5,
         };
       })
@@ -34,7 +19,7 @@ export async function getGraphData(
         return {
           id: flavour.id,
           name: flavour.name,
-          subType: flavour.subType,
+          type: WhiskeyMatching.FLAVOUR,
           value,
         };
       });

@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import type { Maybe } from './common-types';
+import type { Maybe } from './custom-types';
 
 type PriceProps = {
   className?: string;
@@ -12,9 +12,5 @@ const priceFormatter = new Intl.NumberFormat('en', {
 });
 
 export function Price({ className, value }: PriceProps) {
-  return (
-    <span className={twMerge('font-bold', className)}>
-      {priceFormatter.format(value ?? 0)}
-    </span>
-  );
+  return <span className={twMerge('font-bold', className)}>{priceFormatter.format(value ?? 0)}</span>;
 }

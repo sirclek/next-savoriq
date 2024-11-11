@@ -21,30 +21,22 @@ export function getButtonBaseProps({
   iconAlignment = 'left',
   children,
 }: GetButtonBasePropsArgs) {
-  const classNameArgs: string[] = [
-    'select-none font-semibold inline-grid place-items-center',
-  ];
+  const classNameArgs: string[] = ['select-none font-semibold inline-grid place-items-center'];
 
   if (isDisabled || isLoading) {
     classNameArgs.push('bg-muted text-muted-foreground cursor-not-allowed');
   } else {
     switch (variant) {
       case 'default': {
-        classNameArgs.push(
-          'border-2 hover:bg-accent-hover active:bg-accent-active border',
-        );
+        classNameArgs.push('border-2 hover:bg-accent-hover active:bg-accent-active border');
         break;
       }
       case 'primary': {
-        classNameArgs.push(
-          'bg-primary hover:bg-primary-hover active:bg-primary-active text-primary-foreground',
-        );
+        classNameArgs.push('bg-primary hover:bg-primary-hover active:bg-primary-active text-primary-foreground');
         break;
       }
       default: {
-        classNameArgs.push(
-          'hover:bg-accent-hover active:bg-accent-active text-accent-foreground',
-        );
+        classNameArgs.push('hover:bg-accent-hover active:bg-accent-active text-accent-foreground');
       }
     }
   }
@@ -64,12 +56,7 @@ export function getButtonBaseProps({
   }
 
   const content = (
-    <span
-      className={twMerge(
-        'flex items-center gap-2',
-        iconAlignment === 'top' && 'flex-col gap-0.5',
-      )}
-    >
+    <span className={twMerge('flex items-center gap-2', iconAlignment === 'top' && 'flex-col gap-0.5')}>
       {['left', 'top'].includes(iconAlignment) && buttonIcon}
       <span className="empty:hidden">{children}</span>
       {iconAlignment === 'right' && buttonIcon}

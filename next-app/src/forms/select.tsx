@@ -4,15 +4,9 @@ import React, { forwardRef } from 'react';
 import { twJoin } from 'tailwind-merge';
 import { useFormItemContext } from './form-item';
 
-type SelectItemProps = Pick<
-  RadixSelect.SelectItemProps,
-  'value' | 'disabled' | 'children'
->;
+type SelectItemProps = Pick<RadixSelect.SelectItemProps, 'value' | 'disabled' | 'children'>;
 
-export const SelectItem = forwardRef<
-  React.ElementRef<typeof RadixSelect.Item>,
-  SelectItemProps
->(function SelectItem({ children, ...rest }, ref) {
+export const SelectItem = forwardRef<React.ElementRef<typeof RadixSelect.Item>, SelectItemProps>(function SelectItem({ children, ...rest }, ref) {
   return (
     <RadixSelect.Item
       {...rest}
@@ -31,18 +25,11 @@ export const SelectItem = forwardRef<
   );
 });
 
-type SelectProps = Pick<
-  RadixSelect.SelectProps,
-  'children' | 'value' | 'onValueChange' | 'defaultValue' | 'disabled' | 'name'
-> &
+type SelectProps = Pick<RadixSelect.SelectProps, 'children' | 'value' | 'onValueChange' | 'defaultValue' | 'disabled' | 'name'> &
   Pick<RadixSelect.SelectValueProps, 'placeholder'>;
 
-export const Select = forwardRef<
-  React.ElementRef<typeof RadixSelect.Trigger>,
-  SelectProps
->(function Select({ placeholder, children, ...rest }, ref) {
-  const { inputId, isRequired, isInvalid, errorMessageId } =
-    useFormItemContext();
+export const Select = forwardRef<React.ElementRef<typeof RadixSelect.Trigger>, SelectProps>(function Select({ placeholder, children, ...rest }, ref) {
+  const { inputId, isRequired, isInvalid, errorMessageId } = useFormItemContext();
 
   return (
     <RadixSelect.Root {...rest} required={isRequired}>
@@ -66,9 +53,7 @@ export const Select = forwardRef<
           <RadixSelect.ScrollUpButton className="flex cursor-default items-center justify-center">
             <ChevronUpIcon />
           </RadixSelect.ScrollUpButton>
-          <RadixSelect.Viewport className="p-2">
-            {children}
-          </RadixSelect.Viewport>
+          <RadixSelect.Viewport className="p-2">{children}</RadixSelect.Viewport>
           <RadixSelect.ScrollDownButton className="flex cursor-default items-center justify-center">
             <ChevronDownIcon />
           </RadixSelect.ScrollDownButton>

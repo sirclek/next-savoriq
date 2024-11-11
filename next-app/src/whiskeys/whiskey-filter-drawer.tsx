@@ -1,10 +1,5 @@
 import { Button } from '@/common/button';
-import {
-  Drawer,
-  DrawerBody,
-  DrawerHeader,
-  DrawerTrigger,
-} from '@/common/drawer';
+import { Drawer, DrawerBody, DrawerHeader, DrawerTrigger } from '@/common/drawer';
 import { FilterIcon } from '@/common/icons';
 import { MobilePadding } from '@/common/mobile-padding';
 

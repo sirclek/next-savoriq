@@ -1,4 +1,4 @@
-import type { Maybe, Omit } from '@/common/common-types';
+import type { Maybe, Omit } from '@/common/custom-types';
 import { createSafeContext } from '@/common/safe-context';
 import { useId } from 'react';
 import { Label } from './label';
@@ -11,22 +11,15 @@ type FormItemContextValue = {
   errorMessageId: string | undefined;
 };
 
-const [FormItemContext, useFormItemContext] =
-  createSafeContext<FormItemContextValue>({
-    displayName: 'FormItemContext',
-  });
+const [FormItemContext, useFormItemContext] = createSafeContext<FormItemContextValue>({
+  displayName: 'FormItemContext',
+});
 
 export { useFormItemContext };
 
-type FormItemProps = React.PropsWithChildren<
-  Pick<FormItemContextValue, 'isRequired' | 'errorMessages'>
->;
+type FormItemProps = React.PropsWithChildren<Pick<FormItemContextValue, 'isRequired' | 'errorMessages'>>;
 
-export function FormItem({
-  isRequired,
-  errorMessages,
-  children,
-}: FormItemProps) {
+export function FormItem({ isRequired, errorMessages, children }: FormItemProps) {
   const inputId = useId();
   const errorMessageId = useId();
   const isInvalid = errorMessages?.length ? true : undefined;
@@ -46,20 +39,13 @@ export function FormItem({
   );
 }
 
-type FormItemLabelProps = Omit<
-  React.ComponentPropsWithoutRef<typeof Label>,
-  'htmlFor'
->;
+type FormItemLabelProps = Omit<React.ComponentPropsWithoutRef<typeof Label>, 'htmlFor'>;
 
 export function FormItemLabel({ children, ...rest }: FormItemLabelProps) {
   const { inputId, isRequired } = useFormItemContext();
 
   return (
-    <Label
-      {...rest}
-      className="block text-sm font-semibold text-muted-foreground"
-      htmlFor={inputId}
-    >
+    <Label {...rest} className="block text-sm font-semibold text-muted-foreground" htmlFor={inputId}>
       {children}
       {isRequired && '*'}
     </Label>

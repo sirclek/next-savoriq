@@ -13,10 +13,7 @@ type RootErrorPageProps = {
 
 export default function RootErrorPage({ error, reset }: RootErrorPageProps) {
   return (
-    <ErrorPage
-      statusCode={StatusCodes.INTERNAL_SERVER_ERROR}
-      message={error.message}
-    >
+    <ErrorPage statusCode={StatusCodes.INTERNAL_SERVER_ERROR} message={error.message}>
       <Button
         className="mx-auto w-fit"
         onClick={() => {

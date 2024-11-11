@@ -1,21 +1,19 @@
-import type { Id } from '@/common/common-types';
+import type { Id, Whiskey } from '@/common/custom-types';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import VisualizePage from '@/radar/radar-visual';
-import { getOneWhiskeyById } from '@/whiskeys/whiskey-fetcher';
 import { notFound } from 'next/navigation';
 
-export type ChemicalVisualizeWrapperProps = {
+export type VisualiseWrapperProps = {
   params: {
     whiskeyId: Id;
   };
 };
 
-export default async function ChemicalVisualizeWrapper({
-  params,
-}: ChemicalVisualizeWrapperProps) {
-  const whiskeyId = Number(params.whiskeyId);
-  const whiskey = await getOneWhiskeyById(whiskeyId);
+export default async function VisualiseWrapper({ params }: VisualiseWrapperProps) {
 
-  if (!whiskey) notFound();
+  const whiskey = await getObjectById<Whiskey>(params.whiskeyId, dataTypes.WHISKEYS);
+
+  if (whiskey.id == -1) notFound();
 
   return (
     <div className="flex min-h-screen flex-col">

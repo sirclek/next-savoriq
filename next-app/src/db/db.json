@@ -309,7 +309,7 @@
       "id": 1,
       "name": "Maker's Mark (15 Years)",
       "brand": "Maker's Mark",
-      "age": "15 years",
+      "age": 15,
       "region": "Canada",
       "type": "Rye",
       "abv": 45,
@@ -344,15 +344,13 @@
       "caskType": "Sherry Oak",
       "specialNote": "Popular Release",
       "flavours": [1, 5, 9, 10, 3, 3, 1, 2, 6, 4, 1, 5],
-      "chemicals": [
-        54, 87, 0, 6, 0, 0, 0, 0, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 99, 0
-      ]
+      "chemicals": [54, 87, 0, 6, 0, 0, 0, 0, 0, 0, 0, 52, 0, 0, 0, 0, 0, 0, 99, 0]
     },
     {
       "id": 2,
       "name": "Macallan (NAS)",
       "brand": "Macallan",
-      "age": "NAS",
+      "age": 0,
       "region": "USA",
       "type": "Rye",
       "abv": 43,
@@ -387,15 +385,13 @@
       "caskType": "French Oak",
       "specialNote": "Award-winning",
       "flavours": [2, 5, 10, 10, 4, 7, 6, 1, 4, 3, 5, 8],
-      "chemicals": [
-        0, 96, 0, 0, 0, 0, 0, 28, 77, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 72
-      ]
+      "chemicals": [0, 96, 0, 0, 0, 0, 0, 28, 77, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 72]
     },
     {
       "id": 3,
       "name": "Talisker (NAS)",
       "brand": "Talisker",
-      "age": "NAS",
+      "age": 0,
       "region": "Japan",
       "type": "Single Malt",
       "abv": 55,
@@ -430,15 +426,13 @@
       "caskType": "Ex-Sherry",
       "specialNote": "Small Batch",
       "flavours": [8, 8, 3, 4, 1, 7, 1, 5, 10, 8, 8, 10],
-      "chemicals": [
-        0, 19, 0, 11, 73, 46, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 19, 0, 11, 73, 46, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 4,
       "name": "Glenfiddich (12 Years)",
       "brand": "Glenfiddich",
-      "age": "12 years",
+      "age": 12,
       "region": "Ireland",
       "type": "Blended",
       "abv": 55,
@@ -473,15 +467,13 @@
       "caskType": "American Oak",
       "specialNote": "Cask Strength",
       "flavours": [7, 7, 1, 1, 2, 3, 9, 7, 7, 6, 4, 10],
-      "chemicals": [
-        0, 0, 70, 94, 0, 0, 66, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 0, 70, 94, 0, 0, 66, 0, 0, 27, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 5,
       "name": "Ardbeg (15 Years)",
       "brand": "Ardbeg",
-      "age": "15 years",
+      "age": 15,
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
@@ -516,15 +508,13 @@
       "caskType": "American Oak",
       "specialNote": "Award-winning",
       "flavours": [2, 2, 1, 2, 8, 9, 9, 7, 3, 4, 7, 10],
-      "chemicals": [
-        42, 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 88, 0, 0, 0, 0, 90
-      ]
+      "chemicals": [42, 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 88, 0, 0, 0, 0, 90]
     },
     {
       "id": 6,
       "name": "Glenfiddich (15 Years)",
       "brand": "Glenfiddich",
-      "age": "15 years",
+      "age": 15,
       "region": "Scotland",
       "type": "Bourbon",
       "abv": 40,
@@ -559,15 +549,13 @@
       "caskType": "Ex-Bourbon",
       "specialNote": "Small Batch",
       "flavours": [5, 1, 3, 6, 9, 2, 4, 5, 10, 7, 2, 2],
-      "chemicals": [
-        46, 0, 0, 0, 0, 37, 0, 0, 0, 0, 43, 0, 0, 0, 0, 62, 17, 0, 0, 0
-      ]
+      "chemicals": [46, 0, 0, 0, 0, 37, 0, 0, 0, 0, 43, 0, 0, 0, 0, 62, 17, 0, 0, 0]
     },
     {
       "id": 7,
       "name": "Glenfiddich (8 Years)",
       "brand": "Glenfiddich",
-      "age": "8 years",
+      "age": 8,
       "region": "USA",
       "type": "Blended",
       "abv": 45,
@@ -602,15 +590,13 @@
       "caskType": "American Oak",
       "specialNote": "Limited Edition",
       "flavours": [2, 2, 9, 6, 5, 6, 5, 10, 1, 7, 4, 7],
-      "chemicals": [
-        50, 64, 0, 26, 0, 0, 0, 0, 19, 0, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [50, 64, 0, 26, 0, 0, 0, 0, 19, 0, 0, 34, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 8,
       "name": "Highland Park (18 Years)",
       "brand": "Highland Park",
-      "age": "18 years",
+      "age": 18,
       "region": "Japan",
       "type": "Scotch",
       "abv": 55,
@@ -645,15 +631,13 @@
       "caskType": "American Oak",
       "specialNote": "Popular Release",
       "flavours": [5, 5, 6, 10, 10, 4, 5, 8, 4, 9, 5, 3],
-      "chemicals": [
-        49, 0, 0, 0, 96, 0, 0, 0, 90, 0, 0, 92, 0, 0, 0, 0, 0, 0, 73, 0
-      ]
+      "chemicals": [49, 0, 0, 0, 96, 0, 0, 0, 90, 0, 0, 92, 0, 0, 0, 0, 0, 0, 73, 0]
     },
     {
       "id": 9,
       "name": "Maker's Mark (18 Years)",
       "brand": "Maker's Mark",
-      "age": "18 years",
+      "age": 18,
       "region": "Scotland",
       "type": "Scotch",
       "abv": 40,
@@ -688,15 +672,13 @@
       "caskType": "Sherry Oak",
       "specialNote": "Cask Strength",
       "flavours": [10, 5, 4, 1, 9, 10, 3, 9, 7, 6, 6, 2],
-      "chemicals": [
-        0, 0, 0, 0, 79, 27, 0, 0, 0, 0, 0, 29, 76, 0, 83, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 0, 0, 0, 79, 27, 0, 0, 0, 0, 0, 29, 76, 0, 83, 0, 0, 0, 0, 0]
     },
     {
       "id": 10,
       "name": "Ardbeg (NAS) ",
       "brand": "Ardbeg",
-      "age": "NAS",
+      "age": 0,
       "region": "Japan",
       "type": "Bourbon",
       "abv": 50,
@@ -731,15 +713,13 @@
       "caskType": "Ex-Bourbon",
       "specialNote": "Popular Release",
       "flavours": [3, 7, 8, 5, 2, 7, 9, 6, 2, 4, 4, 1],
-      "chemicals": [
-        49, 0, 0, 0, 0, 0, 62, 9, 0, 0, 0, 0, 0, 0, 31, 0, 0, 72, 0, 0
-      ]
+      "chemicals": [49, 0, 0, 0, 0, 0, 62, 9, 0, 0, 0, 0, 0, 0, 31, 0, 0, 72, 0, 0]
     },
     {
       "id": 11,
       "name": "Laphroaig (8 Years) ",
       "brand": "Laphroaig",
-      "age": "8 years",
+      "age": 8,
       "region": "Ireland",
       "type": "Single Malt",
       "abv": 40,
@@ -774,15 +754,13 @@
       "caskType": "Ex-Bourbon",
       "specialNote": "Award-winning",
       "flavours": [4, 8, 3, 6, 7, 10, 4, 7, 9, 7, 2, 4],
-      "chemicals": [
-        0, 33, 0, 31, 0, 0, 26, 19, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 33, 0, 31, 0, 0, 26, 19, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0]
     },
     {
       "id": 12,
       "name": "Macallan (12 Years) ",
       "brand": "Macallan",
-      "age": "12 years",
+      "age": 12,
       "region": "USA",
       "type": "Rye",
       "abv": 45,
@@ -817,15 +795,13 @@
       "caskType": "American Oak",
       "specialNote": "Cask Strength",
       "flavours": [7, 1, 10, 1, 4, 9, 8, 8, 9, 7, 5, 8],
-      "chemicals": [
-        77, 0, 0, 27, 47, 0, 0, 0, 0, 0, 62, 0, 0, 0, 0, 0, 0, 31, 0, 0
-      ]
+      "chemicals": [77, 0, 0, 27, 47, 0, 0, 0, 0, 0, 62, 0, 0, 0, 0, 0, 0, 31, 0, 0]
     },
     {
       "id": 13,
       "name": "Laphroaig (NAS) ",
       "brand": "Laphroaig",
-      "age": "NAS",
+      "age": 0,
       "region": "Ireland",
       "type": "Rye",
       "abv": 50,
@@ -860,15 +836,13 @@
       "caskType": "French Oak",
       "specialNote": "Award-winning",
       "flavours": [8, 6, 3, 7, 7, 1, 5, 4, 4, 6, 2, 9],
-      "chemicals": [
-        10, 92, 32, 0, 0, 95, 0, 0, 98, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [10, 92, 32, 0, 0, 95, 0, 0, 98, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 14,
       "name": " Lagavulin (12 Years) ",
       "brand": "Lagavulin",
-      "age": "12 years",
+      "age": 12,
       "region": "Ireland",
       "type": "Bourbon",
       "abv": 55,
@@ -903,15 +877,13 @@
       "caskType": "Sherry Oak",
       "specialNote": "Award-winning",
       "flavours": [4, 4, 2, 4, 5, 6, 1, 5, 5, 6, 10, 4],
-      "chemicals": [
-        0, 0, 0, 0, 73, 0, 0, 0, 36, 0, 0, 0, 17, 90, 0, 0, 16, 0, 0, 0
-      ]
+      "chemicals": [0, 0, 0, 0, 73, 0, 0, 0, 36, 0, 0, 0, 17, 90, 0, 0, 16, 0, 0, 0]
     },
     {
       "id": 15,
       "name": "Maker's Mark (15 Years) ",
       "brand": "Maker's Mark",
-      "age": "15 years",
+      "age": 15,
       "region": "Ireland",
       "type": "Scotch",
       "abv": 50,
@@ -946,15 +918,13 @@
       "caskType": "French Oak",
       "specialNote": "Small Batch",
       "flavours": [1, 3, 3, 5, 5, 5, 5, 9, 5, 5, 1, 5],
-      "chemicals": [
-        0, 25, 0, 0, 0, 0, 89, 47, 0, 54, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0
-      ]
+      "chemicals": [0, 25, 0, 0, 0, 0, 89, 47, 0, 54, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0]
     },
     {
       "id": 16,
       "name": "Laphroaig (10 Years) ",
       "brand": "Laphroaig",
-      "age": "10 years",
+      "age": 10,
       "region": "Canada",
       "type": "Bourbon",
       "abv": 43,
@@ -989,15 +959,13 @@
       "caskType": "American Oak",
       "specialNote": "Award-winning",
       "flavours": [3, 6, 8, 2, 9, 9, 3, 5, 2, 6, 1, 5],
-      "chemicals": [
-        0, 0, 91, 0, 0, 0, 0, 70, 0, 55, 0, 0, 0, 0, 0, 0, 0, 33, 0, 70
-      ]
+      "chemicals": [0, 0, 91, 0, 0, 0, 0, 70, 0, 55, 0, 0, 0, 0, 0, 0, 0, 33, 0, 70]
     },
     {
       "id": 17,
       "name": "Macallan (15 Years) ",
       "brand": "Macallan",
-      "age": "15 years",
+      "age": 15,
       "region": "Scotland",
       "type": "Single Malt",
       "abv": 43,
@@ -1032,15 +1000,13 @@
       "caskType": "American Oak",
       "specialNote": "Small Batch",
       "flavours": [8, 4, 6, 7, 6, 7, 6, 4, 5, 2, 7, 9],
-      "chemicals": [
-        0, 88, 94, 0, 76, 40, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 88, 94, 0, 76, 40, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 18,
       "name": "Macallan (15 Years) ",
       "brand": "Macallan",
-      "age": "15 years",
+      "age": 15,
       "region": "Japan",
       "type": "Blended",
       "abv": 40,
@@ -1075,15 +1041,13 @@
       "caskType": "French Oak",
       "specialNote": "Small Batch",
       "flavours": [1, 7, 9, 8, 6, 6, 2, 5, 1, 9, 9, 4],
-      "chemicals": [
-        0, 7, 0, 32, 66, 0, 0, 91, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 7, 0, 32, 66, 0, 0, 91, 0, 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 19,
       "name": "Talisker (15 Years) ",
       "brand": "Talisker",
-      "age": "15 years",
+      "age": 15,
       "region": "Scotland",
       "type": "Rye",
       "abv": 50,
@@ -1118,15 +1082,13 @@
       "caskType": "Ex-Bourbon",
       "specialNote": "Popular Release",
       "flavours": [5, 1, 9, 4, 5, 1, 10, 5, 9, 7, 10, 6],
-      "chemicals": [
-        7, 0, 81, 0, 0, 99, 0, 0, 55, 0, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      ]
+      "chemicals": [7, 0, 81, 0, 0, 99, 0, 0, 55, 0, 87, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
     {
       "id": 20,
       "name": "Ardbeg (18 Years)",
       "brand": "Ardbeg",
-      "age": "18 years",
+      "age": 18,
       "region": "USA",
       "type": "Rye",
       "abv": 45,
@@ -1161,9 +1123,7 @@
       "caskType": "Sherry Oak",
       "specialNote": "Limited Edition",
       "flavours": [6, 3, 4, 1, 9, 3, 10, 10, 7, 6, 1, 1],
-      "chemicals": [
-        0, 0, 96, 69, 22, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 82, 0, 0, 0, 0
-      ]
+      "chemicals": [0, 0, 96, 69, 22, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 82, 0, 0, 0, 0]
     }
   ],
   "sortings": [
@@ -1173,19 +1133,27 @@
     },
     {
       "title": "Alcohol Percentage Low to High",
-      "value": "price-asc"
+      "value": "alc-asc"
     },
     {
       "title": "Alcohol Percentage High to Low",
+      "value": "alc-desc"
+    },
+    {
+      "title": "Price Low to High",
       "value": "price-asc"
+    },
+    {
+      "title": "Price High to Low",
+      "value": "price-desc"
     },
     {
       "title": "Age Low to High",
-      "value": "price-asc"
+      "value": "age-asc"
     },
     {
       "title": "Age High to Low",
-      "value": "price-desc"
+      "value": "age-desc"
     }
   ],
   "brands": [
@@ -1217,23 +1185,23 @@
   "ages": [
     {
       "title": "15 years",
-      "value": "15 years"
+      "value": 15
     },
     {
-      "title": "NAS",
-      "value": "NAS"
+      "title": "No Age",
+      "value": 0
     },
     {
       "title": "12 years",
-      "value": "12 years"
+      "value": 12
     },
     {
       "title": "8 years",
-      "value": "8 years"
+      "value": 8
     },
     {
       "title": "18 years",
-      "value": "18 years"
+      "value": 18
     }
   ],
   "regions": [
@@ -1283,23 +1251,23 @@
   "abvs": [
     {
       "title": "45%",
-      "value": "45%"
+      "value": 45
     },
     {
       "title": "43%",
-      "value": "43%"
+      "value": 43
     },
     {
       "title": "55%",
-      "value": "55%"
+      "value": 55
     },
     {
       "title": "50%",
-      "value": "50%"
+      "value": 50
     },
     {
       "title": "40%",
-      "value": "40%"
+      "value": 40
     }
   ],
   "caskTypes": [

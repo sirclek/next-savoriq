@@ -12,12 +12,7 @@ type AlertModalProps = React.PropsWithChildren<{
   onIsOpenChange: (isOpen: boolean) => void;
 }>;
 
-export function AlertModal({
-  isOpen,
-  trigger,
-  children,
-  onIsOpenChange,
-}: AlertModalProps) {
+export function AlertModal({ isOpen, trigger, children, onIsOpenChange }: AlertModalProps) {
   useOnRouteChange(() => {
     onIsOpenChange(false);
   });
@@ -32,10 +27,7 @@ export function AlertModal({
             forceMount
           >
             <RadixAlertDialog.Overlay asChild>
-              <motion.div
-                {...fadeIn}
-                className="fixed inset-0 z-20 bg-overlay/20 backdrop-blur-md"
-              />
+              <motion.div {...fadeIn} className="fixed inset-0 z-20 bg-overlay/20 backdrop-blur-md" />
             </RadixAlertDialog.Overlay>
             <RadixAlertDialog.Content asChild>
               <motion.div
@@ -54,9 +46,7 @@ export function AlertModal({
                 animate={{ y: 'var(--y-to)', scale: 1, opacity: 1 }}
                 exit={{ y: 'var(--y-from)', scale: 0.8, opacity: 0 }}
               >
-                <div className="rounded-md bg-background p-6 shadow-md">
-                  {children}
-                </div>
+                <div className="rounded-md bg-background p-6 shadow-md">{children}</div>
               </motion.div>
             </RadixAlertDialog.Content>
           </RadixAlertDialog.Portal>
@@ -69,21 +59,13 @@ export function AlertModal({
 type AlertModalTitleProps = React.PropsWithChildren;
 
 export function AlertModalTitle({ children }: AlertModalTitleProps) {
-  return (
-    <RadixAlertDialog.Title className="text-lg font-semibold">
-      {children}
-    </RadixAlertDialog.Title>
-  );
+  return <RadixAlertDialog.Title className="text-lg font-semibold">{children}</RadixAlertDialog.Title>;
 }
 
 type AlertModalBodyProps = React.PropsWithChildren;
 
 export function AlertModalBody({ children }: AlertModalBodyProps) {
-  return (
-    <RadixAlertDialog.Description className="text-md mb-5 mt-4">
-      {children}
-    </RadixAlertDialog.Description>
-  );
+  return <RadixAlertDialog.Description className="text-md mb-5 mt-4">{children}</RadixAlertDialog.Description>;
 }
 
 type AlertModalFooterProps = React.PropsWithChildren;

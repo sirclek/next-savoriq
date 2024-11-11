@@ -5,7 +5,5 @@ type SkeletonProps = {
 };
 
 export function Skeleton({ className }: SkeletonProps) {
-  return (
-    <div className={twMerge('animate-pulse rounded-md bg-muted', className)} />
-  );
+  return <div className={twMerge('animate-pulse rounded-md bg-muted', className)} />;
 }

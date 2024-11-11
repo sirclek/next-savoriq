@@ -1,10 +1,7 @@
-import type { Id, Id2, Maybe } from '@/common/common-types';
 import { isNil } from '@/common/common-utils';
-import type { WhiskeyFilterArgs } from '@/search/search-types';
+import type { Id, MatchType, Maybe, WhiskeyFilterArgs } from '@/common/custom-types';
 
-function parseToSearchParams(
-  params: Maybe<Record<string, Maybe<string | string[]>>>,
-) {
+function parseToSearchParams(params: Maybe<Record<string, Maybe<string | string[]>>>) {
   const searchParams = new URLSearchParams();
 
   function appendParam(key: string, value: Maybe<string>) {
@@ -43,9 +40,7 @@ type CreateRouteResult<RouteArgs extends CreateRouteArgs> = (
   ...args: HasRequiredField<RouteArgs> extends true ? [RouteArgs] : [RouteArgs?]
 ) => string;
 
-function createRoute<RouteArgs extends CreateRouteArgs>(
-  getPathname: (pathParams: RouteArgs['params']) => string,
-): CreateRouteResult<RouteArgs> {
+function createRoute<RouteArgs extends CreateRouteArgs>(getPathname: (pathParams: RouteArgs['params']) => string): CreateRouteResult<RouteArgs> {
   return (...args) => {
     const [routeArgs] = args;
     const pathname = getPathname(routeArgs?.params);
@@ -62,25 +57,16 @@ function createRoute<RouteArgs extends CreateRouteArgs>(
 export const routes = {
   home: createRoute(() => '/'),
   search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
-  whiskey: createRoute<{ params: { whiskeyId: Id } }>(
-    (params) => `/whiskeys/${params.whiskeyId}`,
-  ),
+  whiskey: createRoute<{ params: { whiskeyId: Id } }>((params) => `/whiskeys/${params.whiskeyId}`),
 
-  chemical: createRoute<{ params: { chemicalId: Id2 } }>(
-    (params) => `/chemicals/${params.chemicalId}`,
-  ),
+  chemical: createRoute<{ params: { chemicalId: Id } }>((params) => `/chemicals/${params.chemicalId}`),
 
   // routing-utils.ts
   explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
   flavour: createRoute(() => '/flavour'),
+  similar: createRoute<{ params: { type: MatchType, values: string | Id} }>((params) => `/similar/${params.type}/${params.values}`),
   visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`,
   customise: (whiskeyId: number) => `/customise/${whiskeyId}`,
 };
 
-// TODO: Will check the use cases for this.
-// export function createUrl(pathname: string, searchParams?: URLSearchParams) {
-//   const paramsString = searchParams?.toString();
-//   const queryString = paramsString ? `?${paramsString}` : '';
-//   return `${pathname}${queryString}`;
-// }

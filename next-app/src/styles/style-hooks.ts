@@ -27,11 +27,7 @@ const createMediaQueryStore = (query: string) => {
 function useMediaQuery(query: string) {
   const mediaQueryStore = useMemo(() => createMediaQueryStore(query), [query]);
 
-  const matches = useSyncExternalStore(
-    mediaQueryStore.subscribe,
-    mediaQueryStore.getSnapshot,
-    mediaQueryStore.getServerSnapshot,
-  );
+  const matches = useSyncExternalStore(mediaQueryStore.subscribe, mediaQueryStore.getSnapshot, mediaQueryStore.getServerSnapshot);
 
   return matches;
 }

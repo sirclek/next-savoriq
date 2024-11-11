@@ -1,5 +1,4 @@
-import type { Id } from '@/common/common-types';
-import type { Flavour } from '@/common/object-types';
+import type { Flavour, Id } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
 import { Section } from '@/common/section';
 import { dataTypes, getObjectById } from '@/db/db-utils';
@@ -14,13 +13,8 @@ type FlavourPageProps = {
   };
 };
 
-export async function generateMetadata({
-  params,
-}: FlavourPageProps): Promise<Metadata> {
-  const flavour = await getObjectById<Flavour>(
-    Number(params.flavourId),
-    dataTypes.FLAVOURS,
-  );
+export async function generateMetadata({ params }: FlavourPageProps): Promise<Metadata> {
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
   return getMetadata({
     title: flavour.name,
     pathname: `/flavours/${params.flavourId}`,
@@ -28,10 +22,7 @@ export async function generateMetadata({
 }
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
-  const flavour = await getObjectById<Flavour>(
-    Number(params.flavourId),
-    dataTypes.FLAVOURS,
-  );
+  const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
 
   if (flavour.id === -1) notFound();
 
@@ -42,13 +33,7 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
           <div className="flex flex-col gap-4">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
-                <Image
-                  className="rounded bg-white object-contain"
-                  src={`/images/flavours/${flavour.id}.png`}
-                  alt={flavour.name}
-                  priority
-                  fill
-                />
+                <Image className="rounded bg-white object-contain" src={`/images/flavours/${flavour.id}.png`} alt={flavour.name} priority fill />
               </div>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
