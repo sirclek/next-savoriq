@@ -5,6 +5,7 @@ export type Flavour = {
   description: string;
   title: string;
   chemicals: {
+    id: number;
     name: string;
     value: string;
   }[];
@@ -15,6 +16,11 @@ export type Chemical = {
   name: string;
   description: string;
   title: string;
+  flavours: {
+    id: number;
+    name: string;
+    value: string;
+  }[];
 };
 
 export type Whiskey = {
