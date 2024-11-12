@@ -1,7 +1,7 @@
 import { getMetadata } from '@/seo/seo-utils';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '/public/images/categories/logo.png';
+import logo from '/src/app/logo.png';
 import bottleTop from '/public/images/categories/oracle-bottle-top.png';
 import bottle from '/public/images/categories/oracle-bottle.png';
 

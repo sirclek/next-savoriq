@@ -1,6 +1,7 @@
 import { WhiskeyMatching, WhiskeySorting, type Whiskey } from '@/common/custom-types';
 
 import { dataTypes, fetchData } from '@/db/db-utils';
+import { match } from 'assert';
 
 export function sortWhiskeys(whiskeys: Whiskey[], sorting: WhiskeySorting) {
   switch (sorting) {
@@ -36,7 +37,16 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
-export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
+export async function matchWhiskeysDropFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
+  return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, false);
+}
+
+export async function matchWhiskeysKeepFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
+  return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, true);
+}
+
+
+async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number, keepFirst: boolean) {
   let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
 
   switch (matchType) {
@@ -62,8 +72,5 @@ export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: 
       [];
     }
   }
-  // whiskeyData.forEach(whiskey => {
-  //   console.log(matchType, { id: whiskey.id, name: whiskey.name, similarity: whiskey.similarity });
-  // });
-  return whiskeyData.slice(1, Math.min(returnMaxCount + 1, whiskeyData.length));
+  return whiskeyData.slice(keepFirst ? 0:1, Math.min(returnMaxCount + (keepFirst ? 0:1), whiskeyData.length));
 }
