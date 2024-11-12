@@ -34,8 +34,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           {flavours.slice(0, 12).map((flavour, i) => (
             <p key={i} className="text-sm">
               <a href={`/flavours/${flavour.id}`} className="text-blue-500 hover:underline">
-          {flavour.name}
-              </a> - Intensity: {whiskey.flavours[i]}
+          {flavour.name}</a> - Intensity: {whiskey.flavours[i]}
             </p>
           ))}
         </div>
