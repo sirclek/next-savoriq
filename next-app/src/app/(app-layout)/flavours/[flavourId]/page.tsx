@@ -1,9 +1,9 @@
 import type { Flavour, Id  } from '@/common/custom-types';
-import { Whiskey, WhiskeyMatching, Chemical} from '@/common/custom-types';
+import { Whiskey, WhiskeyMatching } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
 import { PageTitle } from '@/common/page-title';
 import { Section, SectionTitle } from '@/common/section';
-import { dataTypes, getObjectById, fetchData } from '@/db/db-utils';
+import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -24,7 +24,6 @@ type FlavourPageProps = {
 
 export async function generateMetadata({ params }: FlavourPageProps): Promise<Metadata> {
   const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
-  const Chemicals = await fetchData<Chemical>(dataTypes.CHEMICALS);
   return getMetadata({
     title: flavour.name,
     pathname: `/flavours/${params.flavourId}`,
@@ -56,11 +55,9 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                   <p>{flavour.description}</p>
                 </div>
                 <div className="text-sm">
-                  {flavour.chemicals.map((Chemicals, i) => (
-                    <p key={i} className="text-sm">
-                      <a href={`/chemicals/${Chemicals.id}`} className="text-blue-500 hover:underline">
-                        {Chemicals.name}
-                      </a>: {Chemicals.value}
+                  {flavour.chemicals.map((chemical, index) => (
+                    <p key={index}>
+                      {chemical.name}: {chemical.value}
                     </p>
                   ))}
                 </div>
