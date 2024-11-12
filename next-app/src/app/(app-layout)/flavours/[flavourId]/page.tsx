@@ -76,14 +76,6 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
         </Paper>
       </Section>
 
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Chemicals</SectionTitle>
-       <Paper>
-       <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedWhiskeyRow whiskey={whiskey} type={WhiskeyMatching.CHEMICAL} />
-          </Suspense>
-        </Paper>
-      </Section>
     </>
   );
 }

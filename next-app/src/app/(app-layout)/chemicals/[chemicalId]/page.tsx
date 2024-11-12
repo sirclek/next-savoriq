@@ -56,12 +56,7 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
           </div>
         </Paper>
       </Section>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Flavour</SectionTitle>
-       <Paper>
-        <p>Related by 2</p>
-        </Paper>
-      </Section>
+      
       <Section as="aside">
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
        <Paper>
