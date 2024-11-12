@@ -115,11 +115,10 @@ function mapFlavourData(flavour: any): Flavour {
     name: flavour.name as string,
     description: flavour.description as string,
     title: flavour.title as string,
-    chemicals: Object.keys(flavour.chemical).map((chem, index) => ({
-      id: index,
+    chemicals: Object.keys(flavour.chemical).map((chem) => ({
       name: chem,
       value: flavour.chemical[chem as keyof typeof flavour.chemical] ?? 0,
-    })) as { id: number; name: string; value: string }[],
+    })) as { name: string; value: string }[],
   };
 }
 
@@ -130,10 +129,5 @@ function mapChemicalData(chemical: any): Chemical {
     name: chemical.name as string,
     description: chemical.description as string,
     title: chemical.title as string,
-    flavours: Object.keys(chemical.flavours).map((flav, index) => ({
-      id: index,
-      name: flav,
-      value: chemical.flavours[flav as keyof typeof chemical.flavours] ?? 0,
-    })) as { id: number; name: string; value: string }[],
   };
 }
