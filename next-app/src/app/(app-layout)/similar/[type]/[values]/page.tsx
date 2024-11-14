@@ -33,7 +33,7 @@ export default async function SimilarWrapper({ params }: SimilarWrapperProps) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-1000 flex-col">
       <SimilarPage compWhiskey={compWhiskey} type={params.type} keepfirst={!searchExistingWhiskey} />
     </div>
   );

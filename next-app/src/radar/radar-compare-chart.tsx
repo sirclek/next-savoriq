@@ -6,7 +6,7 @@ import 'chartjs-plugin-dragdata';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Whiskey } from '../common/custom-types';
 import { getGraphData } from './radar-data';
-import { M_PLUS_1 } from 'next/font/google';
+import { useHover } from '@/similar/similar-context'; // Import the context
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -19,17 +19,16 @@ const CHEMICALMAX = 150;
 
 const CUSTOMDATANAME = 'Customised Data';
 
-const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
+const RadarCompareChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
+  const { hoveredWhiskeyId } = useHover(); // Use the context
   const [dataType, setDataType] = useState<MatchType>(WhiskeyMatching.CHEMICAL);
   const [flavours, setFlavours] = useState<ChartData[]>([]);
   const [chemicals, setChemicals] = useState<ChartData[]>([]);
   const [customizeMode, setCustomizeMode] = useState<boolean>(false);
   const [customData, setCustomData] = useState<ChartData[]>([]);
-
-
-  
+  const [hoveredWhiskeyData, setHoveredWhiskeyData] = useState<ChartData[]>([]); // State for hovered whiskey data
 
   const fetchFlavours = useCallback(async () => {
     setFlavours(await getGraphData(whiskey, dataTypes.FLAVOURS));
@@ -39,13 +38,23 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
     setChemicals(await getGraphData(whiskey, dataTypes.CHEMICALS));
   }, [whiskey]);
 
-  useEffect(() => {
-    void fetchFlavours();
-  }, [fetchFlavours]);
+  const fetchHoveredWhiskeyData = useCallback(async () => {
+    if (hoveredWhiskeyId) {
+      const data = await getGraphData({ id: hoveredWhiskeyId }, dataType);
+      setHoveredWhiskeyData(data);
+    } else {
+      setHoveredWhiskeyData([]);
+    }
+  }, [hoveredWhiskeyId, dataType]);
 
   useEffect(() => {
+    void fetchFlavours();
     void fetchChemicals();
-  }, [fetchChemicals]);
+  }, [fetchFlavours, fetchChemicals]);
+
+  useEffect(() => {
+    void fetchHoveredWhiskeyData();
+  }, [fetchHoveredWhiskeyData]);
 
   const data = useMemo(() => (dataType === WhiskeyMatching.CHEMICAL ? chemicals : flavours), [dataType, chemicals, flavours]);
 
@@ -72,6 +81,18 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                 order: 1,
                 pointRadius: customizeMode ? 0 : 3, // Remove dot bubbles in customize mode
               },
+              ...(hoveredWhiskeyData.length > 0
+                ? [
+                    {
+                      label: 'Hovered Whiskey',
+                      data: hoveredWhiskeyData.map((d) => d.value),
+                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1,
+                      pointRadius: 3,
+                    },
+                  ]
+                : []),
               ...(customizeMode
                 ? [
                     {
@@ -129,27 +150,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             },
           },
         });
-
-        // Handle label click events
-        // divRef.current.addEventListener('click', (event) => {
-        //   const chartArea = chartRef.current!.chartArea;
-        //   const centerX = (chartArea.left + chartArea.right) / 2;
-        //   const centerY = (chartArea.top + chartArea.bottom) / 2;
-        //   const angleStep = (2 * Math.PI) / chartRef.current!.data.labels!.length;
-
-        //   chartRef.current!.data.labels!.forEach((label, i) => {
-        //     const angle = angleStep * i - Math.PI / 2;
-        //     const labelX = centerX + (centerX - 10) * Math.cos(angle);
-        //     const labelY = centerY + (centerY - 10) * Math.sin(angle);
-
-        //     if (Math.abs(event.offsetX - labelX) < 10 && Math.abs(event.offsetY - labelY) < 10) {
-        //       window.location.href = `/item/${label}`;
-        //     }
-        //   });
-        // });
       }
     }
-  }, [customizeMode, data, dataType]);
+  }, [customizeMode, data, dataType, hoveredWhiskeyData]);
 
   const buttonStyle = {
     width: '100%',
@@ -160,87 +163,12 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
 
   return (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <div className="button-container">
-        <div
-          style={{
-            height: '8%',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '5%',
-          }}
-        >
-          {!customizeMode ? (
-            <>
-              <button
-                onClick={() => {
-                  setCustomizeMode(false);
-                  setCustomData(chemicals);
-                  setDataType(WhiskeyMatching.CHEMICAL);
-                }}
-                className={`text-xl ${dataType === WhiskeyMatching.CHEMICAL ? 'bg-primary' : 'bg-primary-light'} ${dataType === WhiskeyMatching.CHEMICAL ? 'text-white' : 'text-gray-700'}`}
-                style={buttonStyle}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-              >
-                Chemicals
-              </button>
-              <button
-                onClick={() => {
-                  setCustomizeMode(false);
-                  setCustomData(flavours);
-                  setDataType(WhiskeyMatching.FLAVOUR);
-                }}
-                className={`text-xl ${dataType === WhiskeyMatching.FLAVOUR ? 'bg-primary' : 'bg-primary-light'} ${dataType === WhiskeyMatching.FLAVOUR ? 'text-white' : 'text-gray-700'}`}
-                style={buttonStyle}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-              >
-                Flavours
-              </button>
-            </>
-          ) : (
-            <button
-              onClick={() => {
-                const simplifiedData = {type: dataType, compId: -1, values: customData.map((d) => d.value)};
-                const base64Numbers = Buffer.from(JSON.stringify(simplifiedData)).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-                console.log(simplifiedData);
-                window.location.href = `/similar/${dataType === WhiskeyMatching.CHEMICAL ? WhiskeyMatching.CHEMICAL : WhiskeyMatching.FLAVOUR}/${base64Numbers}`;
-              }}
-              className={'bg-primary text-xl text-white'}
-              style={{
-                width: '255%',
-                padding: '0.5% 5%',
-                borderRadius: '10px',
-                transition: 'transform 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-            >
-              Search Whiskeys With This Profile
-            </button>
-          )}
-          <button
-            onClick={() => {
-              setCustomData(data);
-              setCustomizeMode(!customizeMode);
-            }}
-            className="bg-primary-hover text-xl text-white"
-            style={buttonStyle}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          >
-            {customizeMode ? 'Cancel' : 'Customise'}
-          </button>
-        </div>
-      </div>
       <div
         style={{
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          height: '92%',
+          height: '100%',
         }}
       >
         <canvas ref={divRef} style={{ flex: 1 }}></canvas>
@@ -249,4 +177,4 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
   );
 };
 
-export default RadarChart;
+export default RadarCompareChart;

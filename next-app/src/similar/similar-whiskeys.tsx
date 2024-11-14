@@ -1,8 +1,11 @@
+'use client';
+
 import type { MatchType, Whiskey } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
-import { RelatedWhiskeyRow } from '@/whiskeys/whiskey-related-row';
-
+import { RelatedWhiskeyRow } from '@/whiskeys/whiskey-related-row-fetcher';
+import { SimilarHoverProvider } from './similar-context';
+import RadarCompareChart from '@/radar/radar-compare-chart';
 
 export type SimilarPageProps = {
   compWhiskey: Whiskey;
@@ -10,19 +13,20 @@ export type SimilarPageProps = {
   keepfirst: boolean;
 };
 
-export default function SimilarPage({compWhiskey, type, keepfirst }: SimilarPageProps) {
-
+export default function SimilarPage({ compWhiskey, type, keepfirst }: SimilarPageProps) {
   return (
-    <div className="flex min-h-screen flex-col gap-0">
-      <main className="min-h-full flex-1">
+    <SimilarHoverProvider>
+      <main className="flex flex-col" style={{ height: '90vh' }}>
         <PageTitle title={`Most Similar Whiskeys - by ${type.charAt(0).toUpperCase() + type.slice(1)}`} />
-
-        <Paper className="h-full">
-          <div className="items-center justify-center">
-            <RelatedWhiskeyRow whiskey={compWhiskey} type={type} count={5} keepfirst={keepfirst} />
+        <Paper className="flex-1 flex flex-col justify-center">
+          <div className="flex items-center justify-center">
+            <RelatedWhiskeyRow whiskey={compWhiskey} type={type} count={5} keepfirst={keepfirst} showSimilarity={true} />
+          </div>
+          <div className="flex justify-center mt-4">
+        <RadarCompareChart whiskey={compWhiskey} />
           </div>
         </Paper>
       </main>
-    </div>
+    </SimilarHoverProvider>
   );
 }

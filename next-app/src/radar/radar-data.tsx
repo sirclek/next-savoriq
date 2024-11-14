@@ -11,7 +11,7 @@ export async function getGraphData(whiskey: Whiskey, dataType: dataTypes): Promi
           id: chemical.id,
           name: chemical.name,
           type: WhiskeyMatching.CHEMICAL,
-          value: value + 5,
+          value: value ,
         };
       })
     : whiskey.flavours.map((value: number, i: number) => {

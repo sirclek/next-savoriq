@@ -34,6 +34,12 @@ export type Whiskey = {
   chemicals: number[];
 };
 
+export type SimilarityExtension = {
+  similarity: number;
+};
+
+export type WhiskeyWithSimilarity = Whiskey & SimilarityExtension;
+
 export type WhiskeyFilterArgs = {
   sortings?: string;
   brands?: string[];

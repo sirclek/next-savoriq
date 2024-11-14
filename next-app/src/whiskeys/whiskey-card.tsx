@@ -6,16 +6,27 @@ import { Tooltip } from '@/common/tooltip';
 import { NextLink } from '@/routing/next-link';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import { useState } from 'react';
-import type { Whiskey } from '../common/custom-types';
+import { useState, useContext } from 'react';
+import type { Whiskey, WhiskeyWithSimilarity } from '../common/custom-types';
+import { Similarity } from '@/common/similarity';
+import { useHover } from '@/similar/similar-context';
 
 type WhiskeyCardProps = {
-  whiskey: Whiskey;
+  whiskey: Whiskey | WhiskeyWithSimilarity;
   onLoad?: () => void;
+  showSimilarity?: boolean;
 };
 
-export function WhiskeyCard({ whiskey, onLoad }: WhiskeyCardProps) {
+export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false }: WhiskeyCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  let setHoveredWhiskeyId;
+
+  try {
+    const hoverContext = useHover();
+    setHoveredWhiskeyId = hoverContext.setHoveredWhiskeyId;
+  } catch (error) {
+    setHoveredWhiskeyId = () => {};
+  }
 
   const handleImageLoad = () => {
     setIsLoaded(true);
@@ -24,22 +35,24 @@ export function WhiskeyCard({ whiskey, onLoad }: WhiskeyCardProps) {
     }
   };
 
+  const handleMouseEnter = () => {
+    setHoveredWhiskeyId(whiskey.id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredWhiskeyId(null);
+  };
+
   return (
     <NextLink href={routes.whiskey({ params: { whiskeyId: whiskey.id } })} className="block">
       <article
-        className={`group flex flex-col gap-2 rounded-md border-2 p-2 md:p-4 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        } transition-opacity duration-500`}
+        className={`group flex flex-col gap-2 rounded-md border-2 p-2 md:p-4 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="p-2">
           <div className="relative aspect-[12/10] bg-transparent transition duration-500 ease-out group-hover:scale-110">
-            <Image
-              className="rounded bg-white object-contain"
-              src={`/images/whiskeys/${whiskey.id}.png`}
-              alt={whiskey.name}
-              fill
-              onLoad={handleImageLoad}
-            />
+            <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} fill onLoad={handleImageLoad} />
           </div>
         </div>
         <div className="flex flex-col gap-2 text-center">
@@ -49,6 +62,11 @@ export function WhiskeyCard({ whiskey, onLoad }: WhiskeyCardProps) {
           <div>
             <Price className="text-primary" value={whiskey.price} />
           </div>
+          {'similarity' in whiskey && showSimilarity && (
+            <div>
+              <Similarity value={whiskey.similarity} />
+            </div>
+          )}
         </div>
       </article>
     </NextLink>
