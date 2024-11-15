@@ -82,6 +82,8 @@ export type FilterDataType = string | number | String | Number;
 
 export type Id = number;
 
+export type name = string;
+
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 export enum WhiskeyFilterKey {
@@ -102,6 +104,8 @@ export enum WhiskeySorting {
 export enum WhiskeyMatching {
   FLAVOUR = 'flavour',
   CHEMICAL = 'chemical',
+  FLAVOURVALUE = 'flavourValue',
+  CHEMICALVALUE = 'chemicalValue',
 }
 
 export type MatchType = WhiskeyMatching.FLAVOUR | WhiskeyMatching.CHEMICAL;

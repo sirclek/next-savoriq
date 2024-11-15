@@ -1,11 +1,14 @@
-import type { Flavour, Id } from '@/common/custom-types';
+import type { Flavour, Id  } from '@/common/custom-types';
+import { Whiskey, WhiskeyMatching } from '@/common/custom-types';
 import { Paper } from '@/common/paper';
-import { Section } from '@/common/section';
+import { PageTitle } from '@/common/page-title';
+import { Section, SectionTitle } from '@/common/section';
 import { dataTypes, getObjectById } from '@/db/db-utils';
 import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import { RelatedValueRow } from '@/whiskeys/whiskey-related-row';
 
 type FlavourPageProps = {
   params: {
@@ -19,6 +22,7 @@ export async function generateMetadata({ params }: FlavourPageProps): Promise<Me
     title: flavour.name,
     pathname: `/flavours/${params.flavourId}`,
   });
+  
 }
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
@@ -30,7 +34,8 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
     <>
       <Section>
         <Paper>
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
+        <PageTitle title={flavour.name} />
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
                 <Image className="rounded bg-white object-contain" src={`/images/flavours/${flavour.id}.png`} alt={flavour.name} priority fill />
@@ -46,7 +51,9 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
                     <p key={index}>
-                      {chemical.name}: {chemical.value}
+                      <a href={`/chemicalSearch/${chemical.name}`} className="text-blue-500 hover:underline">
+                        {chemical.name}</a>: {chemical.value}
+                      
                     </p>
                   ))}
                 </div>
@@ -54,9 +61,15 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
             </div>
           </div>
         </Paper>
+        
+      </Section>
+      <Section as="aside">
+        <SectionTitle as="h2">Related by Flavour</SectionTitle>
+     <Paper>
+          <RelatedValueRow id={params.flavourId} type={WhiskeyMatching.FLAVOUR} />
+      </Paper>
       </Section>
 
-      <Section></Section>
     </>
   );
 }
