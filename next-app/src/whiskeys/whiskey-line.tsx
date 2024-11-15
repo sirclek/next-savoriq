@@ -16,7 +16,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
 
   const scroll = (direction: 'left' | 'right') => {
     if (rowRef.current) {
-      const scrollAmount = 700;
+      const scrollAmount = 600;
       rowRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -49,10 +49,10 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
   }, [orientation]);
 
   return (
-    <div>
+    <div className="relative">
       {!isAtStart && orientation === 'row' && (
         <button className="scroll-button left-0" onClick={() => scroll('left')}>
-          &#8250;
+          &#8249;
         </button>
       )}
       <ul

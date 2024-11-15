@@ -84,6 +84,20 @@ export async function getObjectById<T extends { id: Id }>(Id: Id, type: dataType
   } as T;
 }
 
+export async function getObjectByName<T extends { name: string }>(name: string, type: dataTypes): Promise<T> {
+  const data = await fetchData<T>(type);
+  const foundObject = data.find((item) => item.name === name);
+
+  if (foundObject) {
+    return foundObject;
+  }
+
+  return {
+    name: '',
+    ...Object.fromEntries(Object.keys(data[0]).map((key) => [key as keyof T, null])),
+  } as T;
+}
+
 /* eslint-disable unicorn/no-abusive-eslint-disable */
 /* eslint-disable */
 

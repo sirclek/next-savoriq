@@ -30,11 +30,16 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
         </div>
         <div className="text-sm">{whiskey.description}</div>
 
-        {flavours.slice(0, 4).map((flavour, i) => (
-          <p key={i} className="text-sm">
-            {flavour.name} - Intensity: {whiskey.flavours[i]}
-          </p>
-        ))}
+        <div className="grid grid-cols-2 gap-3">
+          {flavours.slice(0, 12).map((flavour, i) => (
+            <p key={i} className="text-sm">
+              <a href={`/flavours/${flavour.name}`} className="text-blue-500 hover:underline">
+                {flavour.name}
+              </a>{' '}
+              - Intensity: {whiskey.flavours[i]}
+            </p>
+          ))}
+        </div>
 
         <div className="flex justify-center gap-4">
           <ButtonLink

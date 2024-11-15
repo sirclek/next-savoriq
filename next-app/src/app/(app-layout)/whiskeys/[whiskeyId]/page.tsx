@@ -35,7 +35,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
           <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedWhiskeyLine whiskey={whiskey} type={WhiskeyMatching.FLAVOUR} keepfirst={false} />
+            <RelatedWhiskeyLine whiskey={whiskey} type={WhiskeyMatching.FLAVOUR} count={12}/>
           </Suspense>
         </Paper>
       </Section>
@@ -43,7 +43,7 @@ export default async function WhiskeyPage({ params }: WhiskeyPageProps) {
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
           <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedWhiskeyLine whiskey={whiskey} type={WhiskeyMatching.CHEMICAL} keepfirst={false} />
+            <RelatedWhiskeyLine whiskey={whiskey} type={WhiskeyMatching.CHEMICAL} count={12} />
           </Suspense>
         </Paper>
       </Section>

@@ -119,6 +119,108 @@
       "name": "Limonene",
       "description": "A cyclic monoterpene with formula C10H16. Colorless liquid with strong citrus odor.",
       "title": "Limonene"
+    },
+    {
+      "id": 20,
+      "name": "Maltol",
+      "description": "Maltol is a naturally occurring organic compound that is used primarily as a flavor enhancer. It is found in nature in the bark of larch trees and in the needles of pine trees, and is produced during the roasting of malt (from which it gets its name) and in the baking of bread. It has the odor of caramel and is used to impart a pleasant aroma to foods and fragrances.",
+      "title": "Maltol"
+    },
+    {
+      "id": 21,
+      "name": "Cresols",
+      "description": "Cresol red can be used in many common molecular biology reactions in place of other loading dyes. Cresol Red does not inhibit Taq polymerase to the same degree as other common loading dyes.",
+      "title": "Cresols"
+    },
+    {
+      "id": 22,
+      "name": "Hydroxymethylfurfural",
+      "description": "Hydroxymethylfurfural (HMF), also known as 5-(hydroxymethyl)furfural, is an organic compound formed by the dehydration of reducing sugars.[4][5] It is a white low-melting solid (although commercial samples are often yellow) which is highly soluble in both water and organic solvents. The molecule consists of a furan ring, containing both aldehyde and alcohol functional groups.",
+      "title": "Hydroxymethylfurfural"
+    },
+    {
+      "id": 23,
+      "name": "Lignin",
+      "description": "Lignin is a class of complex organic polymers that form key structural materials in the support tissues of most plants.Lignins are particularly important in the formation of cell walls, especially in wood and bark, because they lend rigidity and do not rot easily. Chemically, lignins are polymers made by cross-linking phenolic precursors.",
+      "title": "Lignin"
+    },
+    {
+      "id": 24,
+      "name": "Tannins",
+      "description": "Tannins (or tannoids) are a class of astringent, polyphenolic biomolecules that bind to and precipitate proteins and various other organic compounds including amino acids and alkaloids.",
+      "title": "Tannins"
+    },
+    {
+      "id": 25,
+      "name": "Glucose",
+      "description": "Glucose is a sugar with the molecular formula C6H12O6. Glucose is overall the most abundant monosaccharide,[4] a subcategory of carbohydrates. Glucose is mainly made by plants and most algae during photosynthesis from water and carbon dioxide, using energy from sunlight. Glucose is used by plants to make cellulose—the most abundant carbohydrate in the world—for use in cell walls, and by all living organisms to make adenosine triphosphate (ATP), which is used by the cell as energy.",
+      "title": "Glucose"
+    },
+    {
+      "id": 26,
+      "name": "Fructose",
+      "description": "Fructose (/ˈfrʌktoʊs, -oʊz/), or fruit sugar, is a ketonic simple sugar found in many plants, where it is often bonded to glucose to form the disaccharide sucrose. It is one of the three dietary monosaccharides, along with glucose and galactose, that are absorbed by the gut directly into the blood of the portal vein during digestion. The liver then converts most fructose and galactose into glucose for distribution in the bloodstream or deposition into glycogen.",
+      "title": "Fructose"
+    },
+    {
+      "id": 27,
+      "name": "Sucrose",
+      "description": "Sucrose, a disaccharide, is a sugar composed of glucose and fructose subunits. It is produced naturally in plants and is the main constituent of white sugar. It has the molecular formula C12H22O11.",
+      "title": "Sucrose"
+    },
+    {
+      "id": 28,
+      "name": "Maltose",
+      "description": "Maltose (/ˈmɔːltoʊs/[2] or /ˈmɔːltoʊz/[3]), also known as maltobiose or malt sugar, is a disaccharide formed from two units of glucose joined with an α(1→4) bond. In the isomer isomaltose, the two glucose molecules are joined with an α(1→6) bond. Maltose is the two-unit member of the amylose homologous series, the key structural motif of starch. When beta-amylase breaks down starch, it removes two glucose units at a time, producing maltose. An example of this reaction is found in germinating seeds, which is why it was named after malt.[4] Unlike sucrose, it is a reducing sugar.[5]",
+      "title": "Maltose"
+    },
+    {
+      "id": 29,
+      "name": "Aspartame",
+      "description": "Aspartame is an artificial non-saccharide sweetener 200 times sweeter than sucrose and is commonly used as a sugar substitute in foods and beverages.[4] It is a methyl ester of the aspartic acid/phenylalanine dipeptide with brand names NutraSweet, Equal, and Canderel.[4] Aspartame was approved by the US Food and Drug Administration (FDA) in 1974, and then again in 1981, after approval was revoked in 1980.",
+      "title": "Aspartame"
+    },
+    {
+      "id": 30,
+      "name": "Hexyl Acetate",
+      "description": "Hexyl acetate is an ester with the molecular formula C8H16O2. It is mainly used as a solvent for resins, polymers, fats and oils. It is also used as a paint additive to improve its dispersion on a surface.",
+      "title": "Hexyl Acetate"
+    },
+    {
+      "id": 31,
+      "name": "Fatty Acids",
+      "description": "In chemistry, particularly in biochemistry, a fatty acid is a carboxylic acid with an aliphatic chain, which is either saturated or unsaturated. Most naturally occurring fatty acids have an unbranched chain of an even number of carbon atoms, from 4 to 28.[1] Fatty acids are a major component of the lipids (up to 70% by weight) in some species such as microalgae[2] but in some other organisms are not found in their standalone form, but instead exist as three main classes of esters: triglycerides, phospholipids, and cholesteryl esters. In any of these forms, fatty acids are both important dietary sources of fuel for animals and important structural components for cells.",
+      "title": "Fatty Acids"
+    },
+    {
+      "id": 32,
+      "name": "Cinnamaldehyde",
+      "description": "Cinnamaldehyde is an organic compound with the formula C9H8Odisplaystyle {ce {C9H8O}}} or C₆H₅CH=CHCHO. Occurring naturally as predominantly the trans (E) isomer, it gives cinnamon its flavor and odor.[1] It is a phenylpropanoid that is naturally synthesized by the shikimate pathway.[2] This pale yellow, viscous liquid occurs in the bark of cinnamon trees and other species of the genus Cinnamomum. It is an essential oil. The bark of cinnamon tree contains high concentrations of cinnamaldehyde.",
+      "title": "Cinnamaldehyde"
+    },
+    {
+      "id": 33,
+      "name": "Capsaicin",
+      "description": "Capsaicin (8-methyl-N-vanillyl-6-nonenamide) (/kæpˈseɪsɪn/ or /kæpˈseɪəsɪn/) is an active component of chili peppers, which are plants belonging to the genus Capsicum. It is a potent irritant for mammals, including humans, and produces a sensation of burning in any tissue with which it comes into contact. Capsaicin and several related amides (capsaicinoids) are produced as secondary metabolites by chili peppers, likely as deterrents against certain mammals and fungi.[6] Pure capsaicin is a hydrophobic, colorless, highly pungent (i.e., spicy) crystalline solid.",
+      "title": "Capsaicin"
+    },
+    {
+      "id": 34,
+      "name": "Piperine",
+      "description": "Piperine is an alkaloid found in the seeds of the black pepper plant (Piper nigrum) and is structurally related to capsaicin, the active compound in chili peppers. It is a natural bioenhancer, which means it increases the absorption of other compounds. Piperine is also responsible for the pungency of black pepper and long pepper.",
+      "title": "Piperine"
+    },
+    {
+      "id": 35,
+      "name": "Phenols",
+      "description": "In organic chemistry, phenols, sometimes called phenolics, are a class of chemical compounds consisting of one or more hydroxyl groups (O H) bonded directly to an aromatic hydrocarbon group.[1] The simplest is phenol, C6H5OH. Phenolic compounds are classified as simple phenols or polyphenols based on the number of phenol units in the molecule.",
+      "title": "Phenols"
+    },
+    {
+      "id": 36,
+      "name": "Acetic Acid",
+      "description": "Acetic acid /əˈsiːtɪk/, systematically named ethanoic acid /ˌɛθəˈnoʊɪk/, is an acidic, colourless liquid and organic compound with the chemical formula CH3COOH (also written as CH3CO2H, C2H4O2, or HC2H3O2). Vinegar is at least 4% acetic acid by volume, making acetic acid the main component of vinegar apart from water. It has been used, as a component of vinegar, throughout history from at least the third century BC.",
+      "title": "Acetic Acid"
     }
   ],
   "flavours": [
