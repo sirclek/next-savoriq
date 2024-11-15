@@ -48,7 +48,6 @@ export async function matchWhiskeysKeepFirst(masterWhiskey: Partial<Whiskey>, ma
 
 async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number, keepFirst: boolean): Promise<WhiskeyWithSimilarity[]> {
   let whiskeyData = await fetchData<WhiskeyWithSimilarity>(dataTypes.WHISKEYS);
-  console.log(whiskeyData);
   switch (matchType) {
     case WhiskeyMatching.FLAVOUR: {
       whiskeyData = whiskeyData

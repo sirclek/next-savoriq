@@ -205,7 +205,6 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
               onClick={() => {
                 const simplifiedData = {type: dataType, compId: -1, values: customData.map((d) => d.value)};
                 const base64Numbers = Buffer.from(JSON.stringify(simplifiedData)).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-                console.log(simplifiedData);
                 window.location.href = `/similar/${dataType === WhiskeyMatching.CHEMICAL ? WhiskeyMatching.CHEMICAL : WhiskeyMatching.FLAVOUR}/${base64Numbers}`;
               }}
               className={'bg-primary text-xl text-white'}

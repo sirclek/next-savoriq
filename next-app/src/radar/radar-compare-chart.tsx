@@ -1,17 +1,18 @@
-import { WhiskeyMatching, type ChartData, type MatchType } from '@/common/custom-types';
+import { WhiskeyMatching, type ChartData } from '@/common/custom-types';
 import { dataTypes } from '@/db/db-utils';
+import { useHover } from '@/similar/similar-context';
 import type { ChartType } from 'chart.js';
 import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { Whiskey } from '../common/custom-types';
-import { getGraphData } from './radar-data';
-import { useHover } from '@/similar/similar-context'; // Import the context
+import React, { useEffect, useRef } from 'react';
+import type { Whiskey, WhiskeyWithSimilarity } from '../common/custom-types';
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 type RadarChartProps = {
-  whiskey: Whiskey;
+  masterWhiskey: Whiskey | WhiskeyWithSimilarity;
+  compWhiskey: WhiskeyWithSimilarity[];
+  graphLabels: ChartData[];
 };
 
 const FLAVOURMAX = 10;
@@ -19,44 +20,29 @@ const CHEMICALMAX = 150;
 
 const CUSTOMDATANAME = 'Customised Data';
 
-const RadarCompareChart: React.FC<RadarChartProps> = ({ whiskey }) => {
+const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhiskey, graphLabels }: RadarChartProps) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
   const chartRef = useRef<Chart | null>(null);
-  const { hoveredWhiskeyId } = useHover(); // Use the context
-  const [dataType, setDataType] = useState<MatchType>(WhiskeyMatching.CHEMICAL);
-  const [flavours, setFlavours] = useState<ChartData[]>([]);
-  const [chemicals, setChemicals] = useState<ChartData[]>([]);
-  const [customizeMode, setCustomizeMode] = useState<boolean>(false);
-  const [customData, setCustomData] = useState<ChartData[]>([]);
-  const [hoveredWhiskeyData, setHoveredWhiskeyData] = useState<ChartData[]>([]); // State for hovered whiskey data
+  const hoverContext = useHover(); // Use the context
+  const dataType = graphLabels[0].type;
 
-  const fetchFlavours = useCallback(async () => {
-    setFlavours(await getGraphData(whiskey, dataTypes.FLAVOURS));
-  }, [whiskey]);
+  const mainWhiskeyData: ChartData[] = graphLabels.map((label) => ({
+    ...label,
+    value: dataType === WhiskeyMatching.CHEMICAL ? masterWhiskey.chemicals[label.id] : masterWhiskey.flavours[label.id],
+  }));
 
-  const fetchChemicals = useCallback(async () => {
-    setChemicals(await getGraphData(whiskey, dataTypes.CHEMICALS));
-  }, [whiskey]);
+  const comparisonWhiskeyData: ChartData[][] = compWhiskey.map((whiskey) =>
+    graphLabels.map((label) => ({
+      ...label,
+      value: dataType === WhiskeyMatching.CHEMICAL ? whiskey.chemicals[label.id] : whiskey.flavours[label.id],
+    })),
+  );
 
-  const fetchHoveredWhiskeyData = useCallback(async () => {
-    if (hoveredWhiskeyId) {
-      const data = await getGraphData({ id: hoveredWhiskeyId }, dataType);
-      setHoveredWhiskeyData(data);
-    } else {
-      setHoveredWhiskeyData([]);
-    }
-  }, [hoveredWhiskeyId, dataType]);
+  const comparisonWhiskeyPosition: number[] = compWhiskey.map((whiskey) => whiskey.id);
 
-  useEffect(() => {
-    void fetchFlavours();
-    void fetchChemicals();
-  }, [fetchFlavours, fetchChemicals]);
+  let lastHoveredWhiskeyId = hoverContext.lastHoveredWhiskeyId || compWhiskey[0].id;
 
-  useEffect(() => {
-    void fetchHoveredWhiskeyData();
-  }, [fetchHoveredWhiskeyData]);
-
-  const data = useMemo(() => (dataType === WhiskeyMatching.CHEMICAL ? chemicals : flavours), [dataType, chemicals, flavours]);
+  const hoveredWhiskeyData = comparisonWhiskeyData[comparisonWhiskeyPosition.indexOf(lastHoveredWhiskeyId)];
 
   useEffect(() => {
     if (divRef.current) {
@@ -69,47 +55,31 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         chartRef.current = new Chart(ctx, {
           type: 'radar' as ChartType,
           data: {
-            labels: data.map((d) => d.name),
+            labels: graphLabels.map((d) => d.name),
             datasets: [
               {
-                label: `Radar Diagram - Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)}`,
-                data: data.map((d) => d.value),
-                backgroundColor: customizeMode ? 'rgba(128, 128, 128, 0.5)' : 'rgba(180, 120, 60, 0.5)',
-                borderColor: customizeMode ? 'rgba(128, 128, 128, 1)' : 'rgba(180, 120, 60, 1)',
+                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} | Your Custom Whiskey`,
+                data: mainWhiskeyData.map((d) => d.value),
+                backgroundColor: 'rgba(120, 80, 40, 0.5)',
+                borderColor: 'rgba(120, 80, 40, 1)',
                 borderWidth: 1,
-                dragData: false,
                 order: 1,
-                pointRadius: customizeMode ? 0 : 3, // Remove dot bubbles in customize mode
+                pointRadius: 0,
+                animation: false, // Disable animation for the main whiskey
               },
-              ...(hoveredWhiskeyData.length > 0
-                ? [
-                    {
-                      label: 'Hovered Whiskey',
-                      data: hoveredWhiskeyData.map((d) => d.value),
-                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                      borderColor: 'rgba(255, 99, 132, 1)',
-                      borderWidth: 1,
-                      pointRadius: 3,
-                    },
-                  ]
-                : []),
-              ...(customizeMode
-                ? [
-                    {
-                      label: CUSTOMDATANAME,
-                      data: customData.map((d) => d.value),
-                      backgroundColor: 'rgba(180, 120, 60, 0.5)',
-                      borderColor: 'rgba(180, 120, 60, 0.5)',
-                      borderWidth: 1,
-                      dragData: customizeMode,
-                      pointRadius: 3,
-                    },
-                  ]
-                : []),
+              {
+                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} ${compWhiskey.find((whiskey) => whiskey.id === lastHoveredWhiskeyId)?.name}`,
+                data: hoveredWhiskeyData.map((d) => d.value),
+                backgroundColor: 'rgba(180, 120, 40, 0.5)',
+                borderColor: 'rgba(120, 80, 40, 1)',
+                borderWidth: 1,
+                order: 1,
+                pointRadius: 5,
+              },
             ],
           },
           options: {
-            animation: { duration: 500, easing: 'easeInOutQuint' },
+            animation: { duration: 200, easing: 'easeInOutQuint' },
             scales: {
               r: {
                 beginAtZero: true,
@@ -118,33 +88,37 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                   callback: function (value) {
                     return typeof value === 'number' && value < 0 ? null : value;
                   },
+                  font: {
+                    size: 14, // Increase the font size for ticks
+                  },
                 },
                 max: dataType === WhiskeyMatching.CHEMICAL ? CHEMICALMAX : FLAVOURMAX,
                 min: dataType === WhiskeyMatching.CHEMICAL ? -10 : 0,
                 grid: { lineWidth: 2 },
                 angleLines: { lineWidth: 2 },
-              },
-            },
-            plugins: {
-              tooltip: {
-                callbacks: {
-                  label(context) {
-                    const value = context.dataset.data[context.dataIndex];
-                    const roundValue = typeof value === 'number' ? Math.round(value) : 0;
-                    const label = context.dataset.label + ': ' + roundValue;
-                    const customDataPoint = data[context.dataIndex].value;
-                    return label + ' ' + (context.dataset.label === CUSTOMDATANAME ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})` : '');
+                pointLabels: {
+                  font: {
+                    size: 14, // Increase the font size for labels
                   },
                 },
               },
-              dragData: {
-                onDragEnd: (e, datasetIndex, index, value) => {
-                  if (customizeMode && chartRef.current) {
-                    const roundedValue = Math.round(value as number);
-                    setCustomData((prevData) => prevData.map((d, i) => (i === index ? { ...d, value: roundedValue } : d)));
-                    chartRef.current.data.datasets[datasetIndex].data[index] = roundedValue;
-                    chartRef.current.update();
-                  }
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  font: {
+                    size: 12, // Increase the font size
+                  },
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    const label = context.dataset.label || '';
+                    const value = context.raw;
+                    const sign = (value as number) - mainWhiskeyData[context.dataIndex].value > 0 ? '+' : '';
+                    return `${label}: ${value} (${sign}${(value as number)-mainWhiskeyData[context.dataIndex].value})`;
+                  },
                 },
               },
             },
@@ -152,26 +126,18 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ whiskey }) => {
         });
       }
     }
-  }, [customizeMode, data, dataType, hoveredWhiskeyData]);
-
-  const buttonStyle = {
-    width: '100%',
-    padding: '0.5% 5%',
-    borderRadius: '10px',
-    transition: 'transform 0.2s',
-  };
+  }, [lastHoveredWhiskeyId]);
 
   return (
-    <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ height: '95%', width: '95%', display: 'flex', flexDirection: 'column' }}>
       <div
         style={{
           alignItems: 'center',
           display: 'flex',
           flexDirection: 'column',
-          height: '100%',
         }}
       >
-        <canvas ref={divRef} style={{ flex: 1 }}></canvas>
+        <canvas ref={divRef} style={{ flex: 1}}></canvas>
       </div>
     </div>
   );

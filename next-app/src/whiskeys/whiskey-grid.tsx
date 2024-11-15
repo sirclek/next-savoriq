@@ -31,7 +31,7 @@ export function WhiskeyGrid({ whiskeys }: WhiskeyGridProps) {
       {whiskeys.map((whiskey) => {
         return (
           <li key={whiskey.id}>
-            <WhiskeyCard whiskey={whiskey} />
+            <WhiskeyCard whiskey={whiskey}/>
           </li>
         );
       })}

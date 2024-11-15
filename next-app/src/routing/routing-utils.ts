@@ -49,11 +49,6 @@ function createRoute<RouteArgs extends CreateRouteArgs>(getPathname: (pathParams
   };
 }
 
-// TODO: Will check the use cases for these.
-// type RouteArgs<T extends AnyFunction> = NonNullable<Parameters<T>[0]>;
-// type PathParams<T extends AnyFunction> = RouteArgs<T>['params'];
-// type QueryParams<T extends AnyFunction> = RouteArgs<T>['query'];
-
 export const routes = {
   home: createRoute(() => '/'),
   search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
