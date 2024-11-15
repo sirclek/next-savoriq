@@ -1,4 +1,4 @@
-import { WhiskeyMatching, WhiskeySorting, type Whiskey, type WhiskeyWithSimilarity } from '@/common/custom-types';
+import { WhiskeyMatching, WhiskeySorting, type Whiskey, type WhiskeyWithSimilarity, type Id } from '@/common/custom-types';
 
 import { dataTypes, fetchData } from '@/db/db-utils';
 import { match } from 'assert';
@@ -73,4 +73,23 @@ async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: Whiskey
   }
 
   return whiskeyData.slice(keepFirst ? 0 : 1, Math.min(returnMaxCount + (keepFirst ? 0 : 1), whiskeyData.length));
+}
+
+export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number) {
+  let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
+
+  switch (matchType) {
+    case WhiskeyMatching.FLAVOUR: {
+      whiskeyData = whiskeyData.sort((a, b) => b.flavours[Id] - a.flavours[Id]);
+      break;
+    }
+    case WhiskeyMatching.CHEMICAL: {
+      whiskeyData = whiskeyData.sort((a, b) => b.chemicals[Id] - a.chemicals[Id]);
+      break;
+    }
+    default: {
+      [];
+    }
+  }
+  return whiskeyData.slice(0, Math.min(returnMaxCount, whiskeyData.length));
 }
