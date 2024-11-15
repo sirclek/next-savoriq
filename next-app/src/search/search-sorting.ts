@@ -1,4 +1,4 @@
-import { WhiskeyMatching, WhiskeySorting, type Whiskey } from '@/common/custom-types';
+import { Id, WhiskeyMatching, WhiskeySorting, type Whiskey } from '@/common/custom-types';
 
 import { dataTypes, fetchData } from '@/db/db-utils';
 
@@ -36,6 +36,7 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
+
 export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
   let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
 
@@ -64,6 +65,29 @@ export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: 
   }
   // whiskeyData.forEach(whiskey => {
   //   console.log(matchType, { id: whiskey.id, name: whiskey.name, similarity: whiskey.similarity });
+  // });
+  return whiskeyData.slice(1, Math.min(returnMaxCount + 1, whiskeyData.length));
+}
+
+
+export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number) {
+  let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
+
+  switch (matchType) {
+    case WhiskeyMatching.FLAVOUR: {
+      whiskeyData = whiskeyData.sort((a, b) => b.flavours[Id] - a.flavours[Id]); 
+      break;
+    }
+    case WhiskeyMatching.CHEMICAL: {
+      whiskeyData = whiskeyData.sort((a, b) => b.chemicals[Id] - a.chemicals[Id]); 
+      break;
+    }
+    default: {
+      [];
+    }
+  }
+  // whiskeyData.forEach(whiskey => {
+  //   console.log(whiskey.name, whiskey.flavours[Id], whiskey.chemicals[Id]);
   // });
   return whiskeyData.slice(1, Math.min(returnMaxCount + 1, whiskeyData.length));
 }

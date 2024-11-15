@@ -8,17 +8,11 @@ import { getMetadata } from '@/seo/seo-utils';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-
-import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
-import { RelatedWhiskeyRow } from '@/whiskeys/whiskey-related-row';
-import { Suspense } from 'react';
-
+import { RelatedValueRow } from '@/whiskeys/whiskey-related-row';
 
 type FlavourPageProps = {
   params: {
     flavourId: Id;
-    whiskeyId: Id;
-    
   };
 };
 
@@ -33,7 +27,7 @@ export async function generateMetadata({ params }: FlavourPageProps): Promise<Me
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
   const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
-  const whiskey = await getObjectById<Whiskey>(Number(params.whiskeyId), dataTypes.WHISKEYS);
+
   if (flavour.id === -1) notFound();
 
   return (
@@ -57,7 +51,9 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
                     <p key={index}>
-                      {chemical.name}: {chemical.value}
+                      <a href={`/chemicalSearch/${chemical.name}`} className="text-blue-500 hover:underline">
+                        {chemical.name}</a>: {chemical.value}
+                      
                     </p>
                   ))}
                 </div>
@@ -69,11 +65,9 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
       </Section>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
-       <Paper>
-       <Suspense fallback={<WhiskeyGridSkeleton itemCount={6} />}>
-            <RelatedWhiskeyRow whiskey={whiskey} type={WhiskeyMatching.FLAVOUR} />
-          </Suspense>
-        </Paper>
+     <Paper>
+          <RelatedValueRow id={params.flavourId} type={WhiskeyMatching.FLAVOUR} />
+      </Paper>
       </Section>
 
     </>

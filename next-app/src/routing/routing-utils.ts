@@ -1,5 +1,5 @@
 import { isNil } from '@/common/common-utils';
-import type { Id, MatchType, Maybe, WhiskeyFilterArgs } from '@/common/custom-types';
+import type { Id, MatchType, Maybe, name, WhiskeyFilterArgs } from '@/common/custom-types';
 
 function parseToSearchParams(params: Maybe<Record<string, Maybe<string | string[]>>>) {
   const searchParams = new URLSearchParams();
@@ -60,6 +60,7 @@ export const routes = {
   whiskey: createRoute<{ params: { whiskeyId: Id } }>((params) => `/whiskeys/${params.whiskeyId}`),
 
   chemical: createRoute<{ params: { chemicalId: Id } }>((params) => `/chemicals/${params.chemicalId}`),
+  chemicalSearch: createRoute<{ params: { chemicalName: name } }>((params) => '/chemicals/${params.chemicalName}'),
 
   // routing-utils.ts
   explore: createRoute(() => '/explore'),
