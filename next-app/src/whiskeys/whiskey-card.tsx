@@ -64,7 +64,7 @@ return (
               <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} fill onLoad={handleImageLoad} />
             </div>
           </div>
-          <div className="flex flex-col gap-0 text-center">
+          <div className="flex flex-col gap-0 text-center w-full">
             <Tooltip content={whiskey.name}>
               <h3 className="text-sm font-bold fixed-leading-5 fixed-line-clamp-3">{whiskey.name}</h3>
             </Tooltip>

@@ -59,7 +59,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
         ref={rowRef}
         className={
           orientation === 'row'
-            ? 'scrollbar-hide grid auto-cols-[minmax(180px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4'
+            ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4'
             : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
         }
         style={{ maxHeight: '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}

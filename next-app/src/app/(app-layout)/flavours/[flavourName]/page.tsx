@@ -4,9 +4,7 @@ import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { dataTypes, getObjectById, getObjectByName } from '@/db/db-utils';
-import { getMetadata } from '@/seo/seo-utils';
 import { RelatedValueLine } from '@/whiskeys/whiskey-related-line-fetcher';
-import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 

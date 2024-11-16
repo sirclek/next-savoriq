@@ -3,12 +3,6 @@ import { Section, SectionTitle } from '@/common/section';
 import { filterProducts } from '@/search/search-fetchers';
 import { SearchResults } from '@/search/search-results';
 import { WhiskeyFilter } from '@/whiskeys/whiskey-filter';
-import { getMetadata } from '@/seo/seo-utils';
-
-export const metadata = getMetadata({
-  title: 'Search Whiskeys',
-  pathname: '/search',
-});
 
 type SearchPageProps = {
   searchParams: Record<string, string | string[]>;

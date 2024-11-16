@@ -1,14 +1,8 @@
 import { ButtonLink } from '@/common/button-link';
 import { ErrorPage } from '@/error-handling/error-page';
-import { getMetadata } from '@/seo/seo-utils';
 import { StatusCodes } from 'http-status-codes';
 import Image from 'next/image';
 import logo from '@/app/logo.png';
-
-export const metadata = getMetadata({
-  title: 'Not Found',
-  description: 'The resource you are looking for is not found.',
-});
 
 export default function NotFoundPage() {
   return (

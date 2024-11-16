@@ -4,11 +4,9 @@ import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
 import { dataTypes, getObjectById } from '@/db/db-utils';
-import { getMetadata } from '@/seo/seo-utils';
 import { WhiskeyDetails } from '@/whiskeys/whiskey-details';
 import { WhiskeyGridSkeleton } from '@/whiskeys/whiskey-grid';
 import { RelatedWhiskeyLine } from '@/whiskeys/whiskey-related-line-fetcher';
-import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 

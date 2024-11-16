@@ -6,11 +6,9 @@ import { APP_DESCRIPTION, APP_TITLE } from '@/common/common-utils';
 import { Container } from '@/common/container';
 import { Divider } from '@/common/divider';
 import { routes } from '@/routing/routing-utils';
-import { getMetadata } from '@/seo/seo-utils';
 import Image from 'next/image';
 import React from 'react';
 
-export const metadata = getMetadata({ title: 'Home', pathname: '/' });
 
 export default function LandingPage() {
   return (
