@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import SimilarWrapperServer, { SimilarWrapperProps } from '@/similar/similar-wrapper';
+import SimilarWrapperServer, {type SimilarWrapperProps } from '@/similar/similar-wrapper';
 
 export default function SimilarWrapper({ params }: SimilarWrapperProps) {
   useEffect(() => {

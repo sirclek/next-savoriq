@@ -39,7 +39,6 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
   useEffect(() => {
     if (rowRef.current) {
       rowRef.current.addEventListener('scroll', checkScrollPosition);
-      checkScrollPosition(); // Initial check
     }
     return () => {
       if (rowRef.current) {
@@ -51,7 +50,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
   return (
     <div className="relative">
       {!isAtStart && orientation === 'row' && (
-        <button className="scroll-button left-0" onClick={() => scroll('left')}>
+        <button className="scroll-button left-0" onClick={() => {scroll('left')}}>
           &#8249;
         </button>
       )}
@@ -67,7 +66,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
         {children}
       </ul>
       {!isAtEnd && orientation === 'row' && (
-        <button className="scroll-button right-0" onClick={() => scroll('right')}>
+        <button className="scroll-button right-0" onClick={() => {scroll('right')}}>
           &#8250;
         </button>
       )}

@@ -17,7 +17,7 @@ type FlavourPageProps = {
 export default async function FlavourPage({ params }: FlavourPageProps) {
   const flavour = await getObjectByName<Flavour>(params.flavourName.replace('%20', ' '), dataTypes.FLAVOURS);
 
-  if (!flavour || flavour.id === -1) notFound();
+  if (flavour.id === -1 || flavour.id === null) notFound();
 
   return (
     <>
@@ -55,7 +55,7 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
         <Paper>
-          <RelatedValueLine id={flavour.id} type={WhiskeyMatching.FLAVOUR} count={12} />
+          <RelatedValueLine id={flavour.id} type={WhiskeyMatching.FLAVOUR} count={12} showCustom={true} />
         </Paper>
       </Section>
     </>

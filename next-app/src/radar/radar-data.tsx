@@ -1,4 +1,4 @@
-import { type ChartData, type Chemical, type Flavour, type Whiskey, type MatchType, WhiskeyMatching } from '../common/custom-types';
+import { type ChartData, type Chemical, type Flavour, type Whiskey, WhiskeyMatching } from '../common/custom-types';
 import { dataTypes, fetchData } from '../db/db-utils';
 
 export async function getGraphData(whiskey: Whiskey, dataType: dataTypes): Promise<ChartData[]> {

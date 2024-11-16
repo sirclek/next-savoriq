@@ -23,7 +23,6 @@ function parseToSearchParams(params: Maybe<Record<string, Maybe<string | string[
   return searchParams;
 }
 
-// https://stackoverflow.com/a/55247867/10876256
 type RequiredKeys<T> = {
   [K in keyof T]-?: object extends { [P in K]: T[K] } ? never : K;
 }[keyof T];
@@ -36,7 +35,6 @@ type CreateRouteArgs = {
 };
 
 type CreateRouteResult<RouteArgs extends CreateRouteArgs> = (
-  // args parameter is optional when both of params and query fields are optional
   ...args: HasRequiredField<RouteArgs> extends true ? [RouteArgs] : [RouteArgs?]
 ) => string;
 
@@ -54,15 +52,11 @@ export const routes = {
   search: createRoute<{ query?: WhiskeyFilterArgs }>(() => '/search'),
   whiskey: createRoute<{ params: { whiskeyId: Id } }>((params) => `/whiskeys/${params.whiskeyId}`),
 
-  chemical: createRoute<{ params: { chemicalId: Id } }>((params) => `/chemicals/${params.chemicalId}`),
-  chemicalSearch: createRoute<{ params: { chemicalName: name } }>((params) => '/chemicals/${params.chemicalName}'),
+  chemicals: createRoute<{ params: { chemicalName: string } }>((params) => `/chemicals/${params.chemicalName}`),
+  flavours: createRoute<{ params: { flavourName: string } }>((params) => `/flavours/${params.flavourName}`),
 
-  // routing-utils.ts
-  explore: createRoute(() => '/explore'),
   learnmore: createRoute(() => '/learnmore'),
-  flavour: createRoute(() => '/flavour'),
-  similar: createRoute<{ params: { type: MatchType, values: string | Id} }>((params) => `/similar/${params.type}/${params.values}`),
+  similar: createRoute<{ params: { type: MatchType; values: string | Id } }>((params) => `/similar/${params.type}/${params.values}`),
   visulise: (whiskeyId: number) => `/visulise/${whiskeyId}`,
-  customise: (whiskeyId: number) => `/customise/${whiskeyId}`,
 };
 

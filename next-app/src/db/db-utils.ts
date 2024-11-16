@@ -93,9 +93,9 @@ export async function getObjectByName<T extends { name: string }>(name: string, 
   }
 
   return {
-    name: '',
+    name: null,
     ...Object.fromEntries(Object.keys(data[0]).map((key) => [key as keyof T, null])),
-  } as T;
+  } as unknown as T;
 }
 
 /* eslint-disable unicorn/no-abusive-eslint-disable */

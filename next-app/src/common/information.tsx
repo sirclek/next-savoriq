@@ -1,4 +1,3 @@
-import { twMerge } from 'tailwind-merge';
 import type { Maybe } from './custom-types';
 
 type PriceProps = {

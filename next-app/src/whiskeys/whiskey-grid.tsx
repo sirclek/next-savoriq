@@ -6,13 +6,6 @@ import { WhiskeyCard, WhiskeyCardSkeleton } from './whiskey-card';
 type ProductGridShellProps = React.PropsWithChildren;
 
 function WhiskeyGridShell({ children }: ProductGridShellProps) {
-  // let childCount = React.Children.count(children);
-  // if (childCount >6) {
-  //   childCount =4;
-  // } else {
-  //   childCount = Math.max(4, childCount);
-  // }
-  // const gridTemplateColumns = `repeat(${childCount}, minmax(0, 1fr))`;
   const gridTemplateColumns = `repeat(4, minmax(0, 1fr))`;
   return (
     <ul className="grid gap-2 md:gap-4" style={{ gridTemplateColumns }}>

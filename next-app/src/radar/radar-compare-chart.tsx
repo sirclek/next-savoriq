@@ -1,10 +1,10 @@
-import { WhiskeyMatching, type ChartData } from '@/common/custom-types';
+import { WhiskeyMatching, type ChartData, type Whiskey, type WhiskeyWithCustom} from '@/common/custom-types';
 import { useHover } from '@/similar/similar-context';
 import type { ChartType } from 'chart.js';
 import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
 import React, { useEffect, useRef } from 'react';
-import type { Whiskey, WhiskeyWithCustom } from '../common/custom-types';
+
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -16,8 +16,6 @@ type RadarChartProps = {
 
 const FLAVOURMAX = 10;
 const CHEMICALMAX = 150;
-
-const CUSTOMDATANAME = 'Customised Data';
 
 const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhiskey, graphLabels }: RadarChartProps) => {
   const divRef = useRef<HTMLCanvasElement | null>(null);
@@ -39,7 +37,7 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
 
   const comparisonWhiskeyPosition: number[] = compWhiskey.map((whiskey) => whiskey.id);
 
-  let lastHoveredWhiskeyId = hoverContext.lastHoveredWhiskeyId || compWhiskey[0].id;
+  const lastHoveredWhiskeyId = hoverContext.lastHoveredWhiskeyId || compWhiskey[0].id;
 
   const hoveredWhiskeyData = comparisonWhiskeyData[comparisonWhiskeyPosition.indexOf(lastHoveredWhiskeyId)];
 
@@ -57,14 +55,15 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
             labels: graphLabels.map((d) => d.name),
             datasets: [
               {
-                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} | Your Custom Whiskey`,
+                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} | ${masterWhiskey.id === -1 ? 'Your Custom Whiskey' : masterWhiskey.name}`,
                 data: mainWhiskeyData.map((d) => d.value),
                 backgroundColor: 'rgba(120, 80, 40, 0.5)',
                 borderColor: 'rgba(120, 80, 40, 1)',
                 borderWidth: 1,
                 order: 1,
                 pointRadius: 0,
-                animation: false, // Disable animation for the main whiskey
+                animation: false,
+                dragData: false,
               },
               {
                 label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} ${compWhiskey.find((whiskey) => whiskey.id === lastHoveredWhiskeyId)?.name}`,
@@ -74,6 +73,7 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
                 borderWidth: 1,
                 order: 1,
                 pointRadius: 5,
+                dragData: false,
               },
             ],
           },

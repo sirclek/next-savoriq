@@ -1,18 +1,13 @@
-// import { Chip, ChipContent } from '@/common/chip';
 import { Price } from '@/common/price';
-// import { NextLink } from '@/routing/next-link';
-// import { routes } from '@/routing/routing-utils';
 import { ButtonLink } from '@/common/button-link';
 import { dataTypes, fetchData } from '@/db/db-utils';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import { type Flavour, type Whiskey, type MatchType, WhiskeyMatching } from '../common/custom-types';
+import { type Flavour, type Whiskey, WhiskeyMatching } from '../common/custom-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
 };
-
-// handles the display of a product's details, including its image, title, price, description, and category. Activated when a user clicks on a product card.
 
 export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
   const flavours = await fetchData<Flavour>(dataTypes.FLAVOURS);

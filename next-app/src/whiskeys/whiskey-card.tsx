@@ -76,7 +76,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
                 <Price className="text-primary" value={whiskey.price} />
                 <Information className="text-primary" value={` | ${whiskey.abv}% ABV`} />
               </div>
-              <div>{`${whiskey.age == 0 ? 'No Age' : whiskey.age + ' Years Old'}`}</div>
+              {`${whiskey.age === 0 ? 'No Age' : `${whiskey.age} Years Old`}`}
               <div>
                 <strong>{whiskey.caskType}</strong>
               </div>
@@ -92,11 +92,11 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
               )}
             </div>
           </>
-        ) : orientation === 'column' ? (
+        ) : (
           <>
             <div className="max-h-[100px] flex-shrink-0 p-2">
               <div className="relative h-24 w-24 bg-transparent transition duration-500 ease-out group-hover:scale-110">
-                <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} layout="fill" onLoad={handleImageLoad} />
+                <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} fill onLoad={handleImageLoad} />
               </div>
             </div>
             <div className="flex flex-col justify-center gap-2 text-left">
@@ -104,7 +104,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
                 <h3 className="overflow-hidden whitespace-nowrap text-lg font-bold leading-tight group-hover:overflow-auto">{whiskey.name}</h3>
               </Tooltip>
               <div>
-                <Information className="text-primary" value={`${whiskey.abv}% ABV | ${whiskey.age == 0 ? 'No Age' : whiskey.age + ' Years Old'}`} />
+                <Information className="text-primary" value={`${whiskey.abv}% ABV | ${whiskey.age === 0 ? 'No Age' : `${whiskey.age} Years Old`}`} />
               </div>
               {'similarity' in whiskey && showSimilarity && (
                 <div>
@@ -113,7 +113,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
               )}
             </div>
           </>
-        ) : null}
+        )}
       </article>
     </NextLink>
   );

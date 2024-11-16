@@ -1,5 +1,5 @@
 import type { Id } from '@/common/custom-types';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, type ReactNode, useContext, useState } from 'react';
 
 type SimilarHoverContextType = {
   hoveredWhiskeyId:  Id | null;

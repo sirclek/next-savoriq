@@ -3,7 +3,7 @@ import { WhiskeyMatching } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { dataTypes, fetchData, getObjectByName } from '@/db/db-utils';
+import { dataTypes, getObjectByName } from '@/db/db-utils';
 import { RelatedValueLine } from '@/whiskeys/whiskey-related-line-fetcher';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -17,7 +17,7 @@ type ChemicalPageProps = {
 export default async function ChemicalPage({ params }: ChemicalPageProps) {
   const chemical = await getObjectByName<Chemical>(params.chemicalName.replace("%20"," "), dataTypes.CHEMICALS);
 
-  if (!chemical || chemical.name === null) notFound();
+  if (chemical.name === null) notFound();
 
   return (
     <>
@@ -46,7 +46,7 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
       <Section as="aside">
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
-          <RelatedValueLine id={chemical.id} type={WhiskeyMatching.CHEMICAL} showCustom={true}/>
+          <RelatedValueLine id={chemical.id} type={WhiskeyMatching.CHEMICAL} count={12} showCustom={true}/>
         </Paper>
       </Section>
     </>
