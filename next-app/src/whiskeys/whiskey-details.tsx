@@ -6,7 +6,7 @@ import { ButtonLink } from '@/common/button-link';
 import { dataTypes, fetchData } from '@/db/db-utils';
 import { routes } from '@/routing/routing-utils';
 import Image from 'next/image';
-import type { Flavour, Whiskey } from '../common/custom-types';
+import { type Flavour, type Whiskey, type MatchType, WhiskeyMatching } from '../common/custom-types';
 
 type WhiskeyDetailsProps = {
   whiskey: Whiskey;
@@ -33,8 +33,10 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
         <div className="grid grid-cols-2 gap-3">
           {flavours.slice(0, 12).map((flavour, i) => (
             <p key={i} className="text-sm">
-              <a href={`/flavours/${flavour.id}`} className="text-blue-500 hover:underline">
-          {flavour.name}</a> - Intensity: {whiskey.flavours[i]}
+              <a href={`/flavours/${flavour.name}`} className="text-blue-500 hover:underline">
+                {flavour.name}
+              </a>{' '}
+              - Intensity: {whiskey.flavours[i]}
             </p>
           ))}
         </div>
@@ -47,7 +49,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
             style={{
               justifyContent: 'center',
               width: '100%',
-              padding: '1% 40%',
+              padding: '1% 5%',
               borderRadius: '10px',
               transition: 'transform 0.2s',
               whiteSpace: 'nowrap',
@@ -58,17 +60,32 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           <ButtonLink
             variant="primary"
             prefetch={true}
-            href={routes.flavour()}
+            href={routes.similar({ params: { type: WhiskeyMatching.FLAVOUR, values: whiskey.id } })}
             style={{
               justifyContent: 'center',
               width: '100%',
-              padding: '1% 40%',
+              padding: '1% 5%',
               borderRadius: '10px',
               transition: 'transform 0.2s',
               whiteSpace: 'nowrap',
             }}
           >
-            See Similar
+            Similar by Flavours
+          </ButtonLink>
+          <ButtonLink
+            variant="primary"
+            prefetch={true}
+            href={routes.similar({ params: { type: WhiskeyMatching.CHEMICAL, values: whiskey.id } })}
+            style={{
+              justifyContent: 'center',
+              width: '100%',
+              padding: '1% 5%',
+              borderRadius: '10px',
+              transition: 'transform 0.2s',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Similar by Chemicals
           </ButtonLink>
         </div>
       </div>

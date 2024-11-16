@@ -51,4 +51,41 @@
   button {
     @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring;
   }
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    background-color: #E3C7A0; /* bg-gray-800 */
+    width: 2.5rem; /* Set explicit width */
+    height: 2.5rem; /* Set explicit height */
+    color: white;
+    border-radius: 50%; /* Make the button circular */
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    opacity: 0.6; /* Initial opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Increase font size for the arrow */
+  }
+
+  .scroll-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 0.9;
+    background-color: #84270B;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .no-scroll {
+  overflow: hidden;
+}
+
 }

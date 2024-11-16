@@ -137,7 +137,6 @@
       "name": "Hydroxymethylfurfural",
       "description": "Hydroxymethylfurfural (HMF), also known as 5-(hydroxymethyl)furfural, is an organic compound formed by the dehydration of reducing sugars.[4][5] It is a white low-melting solid (although commercial samples are often yellow) which is highly soluble in both water and organic solvents. The molecule consists of a furan ring, containing both aldehyde and alcohol functional groups.",
       "title": "Hydroxymethylfurfural"
-
     },
     {
       "id": 23,
@@ -183,14 +182,14 @@
     },
     {
       "id": 30,
-      "name": "Hexyl%20Acetate",
+      "name": "Hexyl Acetate",
       "description": "Hexyl acetate is an ester with the molecular formula C8H16O2. It is mainly used as a solvent for resins, polymers, fats and oils. It is also used as a paint additive to improve its dispersion on a surface.",
       "title": "Hexyl Acetate"
     },
     {
       "id": 31,
-      "name": "Fatty%20Acids",
-      "description" : "In chemistry, particularly in biochemistry, a fatty acid is a carboxylic acid with an aliphatic chain, which is either saturated or unsaturated. Most naturally occurring fatty acids have an unbranched chain of an even number of carbon atoms, from 4 to 28.[1] Fatty acids are a major component of the lipids (up to 70% by weight) in some species such as microalgae[2] but in some other organisms are not found in their standalone form, but instead exist as three main classes of esters: triglycerides, phospholipids, and cholesteryl esters. In any of these forms, fatty acids are both important dietary sources of fuel for animals and important structural components for cells.",
+      "name": "Fatty Acids",
+      "description": "In chemistry, particularly in biochemistry, a fatty acid is a carboxylic acid with an aliphatic chain, which is either saturated or unsaturated. Most naturally occurring fatty acids have an unbranched chain of an even number of carbon atoms, from 4 to 28.[1] Fatty acids are a major component of the lipids (up to 70% by weight) in some species such as microalgae[2] but in some other organisms are not found in their standalone form, but instead exist as three main classes of esters: triglycerides, phospholipids, and cholesteryl esters. In any of these forms, fatty acids are both important dietary sources of fuel for animals and important structural components for cells.",
       "title": "Fatty Acids"
     },
     {
@@ -219,15 +218,9 @@
     },
     {
       "id": 36,
-      "name": "Acetic%20Acid",
+      "name": "Acetic Acid",
       "description": "Acetic acid /əˈsiːtɪk/, systematically named ethanoic acid /ˌɛθəˈnoʊɪk/, is an acidic, colourless liquid and organic compound with the chemical formula CH3COOH (also written as CH3CO2H, C2H4O2, or HC2H3O2). Vinegar is at least 4% acetic acid by volume, making acetic acid the main component of vinegar apart from water. It has been used, as a component of vinegar, throughout history from at least the third century BC.",
       "title": "Acetic Acid"
-    },
-    {
-      "id": 37,
-      "name": "Ethyl%20Acetate",
-      "description": "Ethyl acetate (systematically ethyl ethanoate, commonly abbreviated EtOAc, ETAC or EA) is the organic compound with the formula CH3CO2CH2CH3, simplified to C4H8O2. This flammable, colorless liquid has a characteristic sweet smell (similar to pear drops) and is used in glues, nail polish removers, and the decaffeination process of tea and coffee. Ethyl acetate is the ester of ethanol and acetic acid; it is manufactured on a large scale for use as a solvent.",
-      "title": "Ethyl Acetate"
     }
 
     
