@@ -1,17 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { APP_LOGO_PATH } from '@/common/common-utils';
 import bottleTop from '/public/images/image_assets/oracle-bottle-top.png';
 import bottle from '/public/images/image_assets/oracle-bottle.png';
 
 const LearnMore = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-8 bg-background text-center">
-      {/* Logo */}
-      <div className="absolute right-4 top-16">
-        <Image src={APP_LOGO_PATH} alt="Savoriq Logo" className="mb-4" width={190} height={50} />
-      </div>
-
+    <div className="flex min-h-screen flex-col items-center justify-top gap-8 bg-background text-center">
       {/* Main content section */}
       <div className="mx-auto max-w-2xl text-foreground">
         <h1 className="mb-4 text-4xl font-bold text-primary">Learn More</h1>
