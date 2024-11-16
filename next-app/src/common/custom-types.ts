@@ -14,7 +14,6 @@ export type Chemical = {
   id: number;
   name: string;
   description: string;
-  title: string;
 };
 
 export type Whiskey = {

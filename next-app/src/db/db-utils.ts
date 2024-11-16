@@ -142,6 +142,5 @@ function mapChemicalData(chemical: any): Chemical {
     id: chemical.id as Id,
     name: chemical.name as string,
     description: chemical.description as string,
-    title: chemical.title as string,
   };
 }

@@ -3,224 +3,187 @@
     {
       "id": 0,
       "name": "Isoamyl Acetate",
-      "description": "An ester compound with chemical formula CH3COO(CH2)2CH(CH3)2. Colorless transparent liquid at room temperature with a characteristic banana-like odor.",
-      "title": "Isoamyl Acetate"
+      "description": "An ester compound with chemical formula CH3COO(CH2)2CH(CH3)2. Colorless transparent liquid at room temperature with a characteristic banana-like odor."
     },
     {
       "id": 1,
       "name": "2-Phenylethanol",
-      "description": "An aromatic alcohol compound with chemical formula C6H5CH2CH2OH. Colorless oily liquid with a rose-like aroma.",
-      "title": "2-Phenylethanol"
+      "description": "An aromatic alcohol compound with chemical formula C6H5CH2CH2OH. Colorless oily liquid with a rose-like aroma."
     },
     {
       "id": 2,
       "name": "Methoxyphenols",
-      "description": "A class of aromatic compounds containing methoxy (-OCH3) and hydroxyl (-OH) groups, derived from lignin degradation.",
-      "title": "Methoxyphenols"
+      "description": "A class of aromatic compounds containing methoxy (-OCH3) and hydroxyl (-OH) groups, derived from lignin degradation."
     },
     {
       "id": 3,
       "name": "Hexanoic Acid",
-      "description": "A straight-chain saturated fatty acid with chemical formula CH3(CH2)4COOH. Oily liquid with a distinctive pungent odor.",
-      "title": "Hexanoic Acid"
+      "description": "A straight-chain saturated fatty acid with chemical formula CH3(CH2)4COOH. Oily liquid with a distinctive pungent odor."
     },
     {
       "id": 4,
       "name": "Linalool",
-      "description": "A naturally occurring terpene alcohol with chemical formula C10H18O. Colorless liquid with a floral scent.",
-      "title": "Linalool"
+      "description": "A naturally occurring terpene alcohol with chemical formula C10H18O. Colorless liquid with a floral scent."
     },
     {
       "id": 5,
       "name": "Phenol",
-      "description": "An aromatic organic compound with formula C6H5OH. White crystalline solid at room temperature with characteristic medicinal odor.",
-      "title": "Phenol"
+      "description": "An aromatic organic compound with formula C6H5OH. White crystalline solid at room temperature with characteristic medicinal odor."
     },
     {
       "id": 6,
       "name": "Syringol",
-      "description": "A dimethoxyphenol with chemical formula C8H10O3. White crystalline solid derived from wood smoke and lignin pyrolysis.",
-      "title": "Syringol"
+      "description": "A dimethoxyphenol with chemical formula C8H10O3. White crystalline solid derived from wood smoke and lignin pyrolysis."
     },
     {
       "id": 7,
       "name": "Ethyl Acetate",
-      "description": "An organic compound with chemical formula CH3COOC2H5. Colorless liquid with characteristic sweet smell.",
-      "title": "Ethyl Acetate"
+      "description": "An organic compound with chemical formula CH3COOC2H5. Colorless liquid with characteristic sweet smell."
     },
     {
       "id": 8,
       "name": "Acetaldehyde",
-      "description": "An organic chemical compound with formula CH3CHO. Colorless, flammable liquid at room temperature with pungent odor.",
-      "title": "Acetaldehyde"
+      "description": "An organic chemical compound with formula CH3CHO. Colorless, flammable liquid at room temperature with pungent odor."
     },
     {
       "id": 9,
       "name": "Benzaldehyde",
-      "description": "An organic compound with formula C6H5CHO. Colorless liquid with characteristic almond-like odor.",
-      "title": "Benzaldehyde"
+      "description": "An organic compound with formula C6H5CHO. Colorless liquid with characteristic almond-like odor."
     },
     {
       "id": 10,
       "name": "Vanillin",
-      "description": "An organic compound with formula C8H8O3. White crystalline powder, primary component of vanilla bean extract.",
-      "title": "Vanillin"
+      "description": "An organic compound with formula C8H8O3. White crystalline powder, primary component of vanilla bean extract."
     },
     {
       "id": 11,
       "name": "Furfural",
-      "description": "An organic compound with formula C5H4O2. Colorless oily liquid that turns yellow-brown on exposure to air.",
-      "title": "Furfural"
+      "description": "An organic compound with formula C5H4O2. Colorless oily liquid that turns yellow-brown on exposure to air."
     },
     {
       "id": 12,
       "name": "Octanoic Acid",
-      "description": "A saturated fatty acid with chemical formula CH3(CH2)6COOH. Oily liquid with unpleasant rancid-like odor.",
-      "title": "Octanoic Acid"
+      "description": "A saturated fatty acid with chemical formula CH3(CH2)6COOH. Oily liquid with unpleasant rancid-like odor."
     },
     {
       "id": 13,
       "name": "Diacetyl",
-      "description": "An organic compound with formula (CH3CO)2. Yellow-green liquid with strong butter-like aroma.",
-      "title": "Diacetyl"
+      "description": "An organic compound with formula (CH3CO)2. Yellow-green liquid with strong butter-like aroma."
     },
     {
       "id": 14,
       "name": "Lactones",
-      "description": "Cyclic esters formed by internal esterification of hydroxycarboxylic acids. Various ring sizes possible.",
-      "title": "Lactones"
+      "description": "Cyclic esters formed by internal esterification of hydroxycarboxylic acids. Various ring sizes possible."
     },
     {
       "id": 15,
       "name": "Methional",
-      "description": "An organic sulfur compound with formula C4H8OS. Colorless liquid with characteristic cooked potato odor.",
-      "title": "Methional"
+      "description": "An organic sulfur compound with formula C4H8OS. Colorless liquid with characteristic cooked potato odor."
     },
     {
       "id": 16,
       "name": "4-Methylguaiacol",
-      "description": "A methoxyphenol compound with formula C8H10O2. Colorless to pale yellow liquid derived from wood smoke.",
-      "title": "4-Methylguaiacol"
+      "description": "A methoxyphenol compound with formula C8H10O2. Colorless to pale yellow liquid derived from wood smoke."
     },
     {
       "id": 17,
       "name": "Guaiacol",
-      "description": "An organic compound with formula C7H8O2. Yellowish aromatic oil derived from wood creosote and smoke.",
-      "title": "Guaiacol"
+      "description": "An organic compound with formula C7H8O2. Yellowish aromatic oil derived from wood creosote and smoke."
     },
     {
       "id": 18,
       "name": "Eugenol",
-      "description": "An allyl chain-substituted guaiacol with formula C10H12O2. Colorless to pale yellow oily liquid.",
-      "title": "Eugenol"
+      "description": "An allyl chain-substituted guaiacol with formula C10H12O2. Colorless to pale yellow oily liquid."
     },
     {
       "id": 19,
       "name": "Limonene",
-      "description": "A cyclic monoterpene with formula C10H16. Colorless liquid with strong citrus odor.",
-      "title": "Limonene"
+      "description": "A cyclic monoterpene with formula C10H16. Colorless liquid with strong citrus odor."
     },
     {
       "id": 20,
       "name": "Maltol",
-      "description": "Maltol is a naturally occurring organic compound that is used primarily as a flavor enhancer. It is found in nature in the bark of larch trees and in the needles of pine trees, and is produced during the roasting of malt (from which it gets its name) and in the baking of bread. It has the odor of caramel and is used to impart a pleasant aroma to foods and fragrances.",
-      "title": "Maltol"
+      "description": "Maltol is a naturally occurring organic compound that is used primarily as a flavor enhancer. It is found in nature in the bark of larch trees and in the needles of pine trees, and is produced during the roasting of malt (from which it gets its name) and in the baking of bread. It has the odor of caramel and is used to impart a pleasant aroma to foods and fragrances."
     },
     {
       "id": 21,
       "name": "Cresols",
-      "description": "Cresol red can be used in many common molecular biology reactions in place of other loading dyes. Cresol Red does not inhibit Taq polymerase to the same degree as other common loading dyes.",
-      "title": "Cresols"
+      "description": "Cresol red can be used in many common molecular biology reactions in place of other loading dyes. Cresol Red does not inhibit Taq polymerase to the same degree as other common loading dyes."
     },
     {
       "id": 22,
       "name": "Hydroxymethylfurfural",
-      "description": "Hydroxymethylfurfural (HMF), also known as 5-(hydroxymethyl)furfural, is an organic compound formed by the dehydration of reducing sugars.[4][5] It is a white low-melting solid (although commercial samples are often yellow) which is highly soluble in both water and organic solvents. The molecule consists of a furan ring, containing both aldehyde and alcohol functional groups.",
-      "title": "Hydroxymethylfurfural"
+      "description": "Hydroxymethylfurfural (HMF), also known as 5-(hydroxymethyl)furfural, is an organic compound formed by the dehydration of reducing sugars.[4][5] It is a white low-melting solid (although commercial samples are often yellow) which is highly soluble in both water and organic solvents. The molecule consists of a furan ring, containing both aldehyde and alcohol functional groups."
     },
     {
       "id": 23,
       "name": "Lignin",
-      "description": "Lignin is a class of complex organic polymers that form key structural materials in the support tissues of most plants.Lignins are particularly important in the formation of cell walls, especially in wood and bark, because they lend rigidity and do not rot easily. Chemically, lignins are polymers made by cross-linking phenolic precursors.",
-      "title": "Lignin"
+      "description": "Lignin is a class of complex organic polymers that form key structural materials in the support tissues of most plants.Lignins are particularly important in the formation of cell walls, especially in wood and bark, because they lend rigidity and do not rot easily. Chemically, lignins are polymers made by cross-linking phenolic precursors."
     },
     {
       "id": 24,
       "name": "Tannins",
-      "description": "Tannins (or tannoids) are a class of astringent, polyphenolic biomolecules that bind to and precipitate proteins and various other organic compounds including amino acids and alkaloids.",
-      "title": "Tannins"
+      "description": "Tannins (or tannoids) are a class of astringent, polyphenolic biomolecules that bind to and precipitate proteins and various other organic compounds including amino acids and alkaloids."
     },
     {
       "id": 25,
       "name": "Glucose",
-      "description": "Glucose is a sugar with the molecular formula C6H12O6. Glucose is overall the most abundant monosaccharide,[4] a subcategory of carbohydrates. Glucose is mainly made by plants and most algae during photosynthesis from water and carbon dioxide, using energy from sunlight. Glucose is used by plants to make cellulose—the most abundant carbohydrate in the world—for use in cell walls, and by all living organisms to make adenosine triphosphate (ATP), which is used by the cell as energy.",
-      "title": "Glucose"
+      "description": "Glucose is a sugar with the molecular formula C6H12O6. Glucose is overall the most abundant monosaccharide,[4] a subcategory of carbohydrates. Glucose is mainly made by plants and most algae during photosynthesis from water and carbon dioxide, using energy from sunlight. Glucose is used by plants to make cellulose—the most abundant carbohydrate in the world—for use in cell walls, and by all living organisms to make adenosine triphosphate (ATP), which is used by the cell as energy."
     },
     {
       "id": 26,
       "name": "Fructose",
-      "description": "Fructose (/ˈfrʌktoʊs, -oʊz/), or fruit sugar, is a ketonic simple sugar found in many plants, where it is often bonded to glucose to form the disaccharide sucrose. It is one of the three dietary monosaccharides, along with glucose and galactose, that are absorbed by the gut directly into the blood of the portal vein during digestion. The liver then converts most fructose and galactose into glucose for distribution in the bloodstream or deposition into glycogen.",
-      "title": "Fructose"
+      "description": "Fructose (/ˈfrʌktoʊs, -oʊz/), or fruit sugar, is a ketonic simple sugar found in many plants, where it is often bonded to glucose to form the disaccharide sucrose. It is one of the three dietary monosaccharides, along with glucose and galactose, that are absorbed by the gut directly into the blood of the portal vein during digestion. The liver then converts most fructose and galactose into glucose for distribution in the bloodstream or deposition into glycogen."
     },
     {
       "id": 27,
       "name": "Sucrose",
-      "description": "Sucrose, a disaccharide, is a sugar composed of glucose and fructose subunits. It is produced naturally in plants and is the main constituent of white sugar. It has the molecular formula C12H22O11.",
-      "title": "Sucrose"
+      "description": "Sucrose, a disaccharide, is a sugar composed of glucose and fructose subunits. It is produced naturally in plants and is the main constituent of white sugar. It has the molecular formula C12H22O11."
     },
     {
       "id": 28,
       "name": "Maltose",
-      "description": "Maltose (/ˈmɔːltoʊs/[2] or /ˈmɔːltoʊz/[3]), also known as maltobiose or malt sugar, is a disaccharide formed from two units of glucose joined with an α(1→4) bond. In the isomer isomaltose, the two glucose molecules are joined with an α(1→6) bond. Maltose is the two-unit member of the amylose homologous series, the key structural motif of starch. When beta-amylase breaks down starch, it removes two glucose units at a time, producing maltose. An example of this reaction is found in germinating seeds, which is why it was named after malt.[4] Unlike sucrose, it is a reducing sugar.[5]",
-      "title": "Maltose"
+      "description": "Maltose (/ˈmɔːltoʊs/[2] or /ˈmɔːltoʊz/[3]), also known as maltobiose or malt sugar, is a disaccharide formed from two units of glucose joined with an α(1→4) bond. In the isomer isomaltose, the two glucose molecules are joined with an α(1→6) bond. Maltose is the two-unit member of the amylose homologous series, the key structural motif of starch. When beta-amylase breaks down starch, it removes two glucose units at a time, producing maltose. An example of this reaction is found in germinating seeds, which is why it was named after malt.[4] Unlike sucrose, it is a reducing sugar.[5]"
     },
     {
       "id": 29,
       "name": "Aspartame",
-      "description": "Aspartame is an artificial non-saccharide sweetener 200 times sweeter than sucrose and is commonly used as a sugar substitute in foods and beverages.[4] It is a methyl ester of the aspartic acid/phenylalanine dipeptide with brand names NutraSweet, Equal, and Canderel.[4] Aspartame was approved by the US Food and Drug Administration (FDA) in 1974, and then again in 1981, after approval was revoked in 1980.",
-      "title": "Aspartame"
+      "description": "Aspartame is an artificial non-saccharide sweetener 200 times sweeter than sucrose and is commonly used as a sugar substitute in foods and beverages.[4] It is a methyl ester of the aspartic acid/phenylalanine dipeptide with brand names NutraSweet, Equal, and Canderel.[4] Aspartame was approved by the US Food and Drug Administration (FDA) in 1974, and then again in 1981, after approval was revoked in 1980."
     },
     {
       "id": 30,
       "name": "Hexyl Acetate",
-      "description": "Hexyl acetate is an ester with the molecular formula C8H16O2. It is mainly used as a solvent for resins, polymers, fats and oils. It is also used as a paint additive to improve its dispersion on a surface.",
-      "title": "Hexyl Acetate"
+      "description": "Hexyl acetate is an ester with the molecular formula C8H16O2. It is mainly used as a solvent for resins, polymers, fats and oils. It is also used as a paint additive to improve its dispersion on a surface."
     },
     {
       "id": 31,
       "name": "Fatty Acids",
-      "description": "In chemistry, particularly in biochemistry, a fatty acid is a carboxylic acid with an aliphatic chain, which is either saturated or unsaturated. Most naturally occurring fatty acids have an unbranched chain of an even number of carbon atoms, from 4 to 28.[1] Fatty acids are a major component of the lipids (up to 70% by weight) in some species such as microalgae[2] but in some other organisms are not found in their standalone form, but instead exist as three main classes of esters: triglycerides, phospholipids, and cholesteryl esters. In any of these forms, fatty acids are both important dietary sources of fuel for animals and important structural components for cells.",
-      "title": "Fatty Acids"
+      "description": "In chemistry, particularly in biochemistry, a fatty acid is a carboxylic acid with an aliphatic chain, which is either saturated or unsaturated. Most naturally occurring fatty acids have an unbranched chain of an even number of carbon atoms, from 4 to 28.[1] Fatty acids are a major component of the lipids (up to 70% by weight) in some species such as microalgae[2] but in some other organisms are not found in their standalone form, but instead exist as three main classes of esters: triglycerides, phospholipids, and cholesteryl esters. In any of these forms, fatty acids are both important dietary sources of fuel for animals and important structural components for cells."
     },
     {
       "id": 32,
       "name": "Cinnamaldehyde",
-      "description": "Cinnamaldehyde is an organic compound with the formula C9H8Odisplaystyle {ce {C9H8O}}} or C₆H₅CH=CHCHO. Occurring naturally as predominantly the trans (E) isomer, it gives cinnamon its flavor and odor.[1] It is a phenylpropanoid that is naturally synthesized by the shikimate pathway.[2] This pale yellow, viscous liquid occurs in the bark of cinnamon trees and other species of the genus Cinnamomum. It is an essential oil. The bark of cinnamon tree contains high concentrations of cinnamaldehyde.",
-      "title": "Cinnamaldehyde"
+      "description": "Cinnamaldehyde is an organic compound with the formula C9H8Odisplaystyle {ce {C9H8O}}} or C₆H₅CH=CHCHO. Occurring naturally as predominantly the trans (E) isomer, it gives cinnamon its flavor and odor.[1] It is a phenylpropanoid that is naturally synthesized by the shikimate pathway.[2] This pale yellow, viscous liquid occurs in the bark of cinnamon trees and other species of the genus Cinnamomum. It is an essential oil. The bark of cinnamon tree contains high concentrations of cinnamaldehyde."
     },
     {
       "id": 33,
       "name": "Capsaicin",
-      "description": "Capsaicin (8-methyl-N-vanillyl-6-nonenamide) (/kæpˈseɪsɪn/ or /kæpˈseɪəsɪn/) is an active component of chili peppers, which are plants belonging to the genus Capsicum. It is a potent irritant for mammals, including humans, and produces a sensation of burning in any tissue with which it comes into contact. Capsaicin and several related amides (capsaicinoids) are produced as secondary metabolites by chili peppers, likely as deterrents against certain mammals and fungi.[6] Pure capsaicin is a hydrophobic, colorless, highly pungent (i.e., spicy) crystalline solid.",
-      "title": "Capsaicin"
+      "description": "Capsaicin (8-methyl-N-vanillyl-6-nonenamide) (/kæpˈseɪsɪn/ or /kæpˈseɪəsɪn/) is an active component of chili peppers, which are plants belonging to the genus Capsicum. It is a potent irritant for mammals, including humans, and produces a sensation of burning in any tissue with which it comes into contact. Capsaicin and several related amides (capsaicinoids) are produced as secondary metabolites by chili peppers, likely as deterrents against certain mammals and fungi.[6] Pure capsaicin is a hydrophobic, colorless, highly pungent (i.e., spicy) crystalline solid."
     },
     {
       "id": 34,
       "name": "Piperine",
-      "description": "Piperine is an alkaloid found in the seeds of the black pepper plant (Piper nigrum) and is structurally related to capsaicin, the active compound in chili peppers. It is a natural bioenhancer, which means it increases the absorption of other compounds. Piperine is also responsible for the pungency of black pepper and long pepper.",
-      "title": "Piperine"
+      "description": "Piperine is an alkaloid found in the seeds of the black pepper plant (Piper nigrum) and is structurally related to capsaicin, the active compound in chili peppers. It is a natural bioenhancer, which means it increases the absorption of other compounds. Piperine is also responsible for the pungency of black pepper and long pepper."
     },
     {
       "id": 35,
       "name": "Phenols",
-      "description": "In organic chemistry, phenols, sometimes called phenolics, are a class of chemical compounds consisting of one or more hydroxyl groups (O H) bonded directly to an aromatic hydrocarbon group.[1] The simplest is phenol, C6H5OH. Phenolic compounds are classified as simple phenols or polyphenols based on the number of phenol units in the molecule.",
-      "title": "Phenols"
+      "description": "In organic chemistry, phenols, sometimes called phenolics, are a class of chemical compounds consisting of one or more hydroxyl groups (O H) bonded directly to an aromatic hydrocarbon group.[1] The simplest is phenol, C6H5OH. Phenolic compounds are classified as simple phenols or polyphenols based on the number of phenol units in the molecule."
     },
     {
       "id": 36,
       "name": "Acetic Acid",
-      "description": "Acetic acid /əˈsiːtɪk/, systematically named ethanoic acid /ˌɛθəˈnoʊɪk/, is an acidic, colourless liquid and organic compound with the chemical formula CH3COOH (also written as CH3CO2H, C2H4O2, or HC2H3O2). Vinegar is at least 4% acetic acid by volume, making acetic acid the main component of vinegar apart from water. It has been used, as a component of vinegar, throughout history from at least the third century BC.",
-      "title": "Acetic Acid"
+      "description": "Acetic acid /əˈsiːtɪk/, systematically named ethanoic acid /ˌɛθəˈnoʊɪk/, is an acidic, colourless liquid and organic compound with the chemical formula CH3COOH (also written as CH3CO2H, C2H4O2, or HC2H3O2). Vinegar is at least 4% acetic acid by volume, making acetic acid the main component of vinegar apart from water. It has been used, as a component of vinegar, throughout history from at least the third century BC."
     }
   ],
   "flavours": [
@@ -416,31 +379,6 @@
       "type": "Rye",
       "abv": 45,
       "description": "A rich, rye-based whisky from Canada with a 45% ABV, offering a sweet aroma of vanilla, caramel, and oak. On the palate, it delivers a smoky, spicy, and fruity taste with a long, warming finish. Chemical components include isoamyl acetate and hexanoic acid, contributing to its complex profile.",
-      "aroma": {
-        "vanilla": 1,
-        "peat": 5,
-        "caramel": 9,
-        "oak": 10
-      },
-      "taste": {
-        "sweet": 3,
-        "smoky": 3,
-        "spicy": 1,
-        "fruity": 2
-      },
-      "finish": {
-        "length": 6,
-        "warming": 4,
-        "dry": 1,
-        "peaty": 5
-      },
-      "compounds": {
-        "Isoamyl Acetate": 54,
-        "Hexanoic Acid": 6,
-        "2-Phenylethanol": 87,
-        "Furfural": 52,
-        "Eugenol": 99
-      },
       "price": 108,
       "bottlingDate": "2018-04-18",
       "caskType": "Sherry Oak",
@@ -457,31 +395,6 @@
       "type": "Rye",
       "abv": 43,
       "description": "A USA-based rye whisky with 43% ABV, featuring vanilla and caramel on the nose, paired with smoky and fruity flavors. The finish is warm and dry, with notable compounds such as vanillin and 2-phenylethanol, adding depth to the overall experience.",
-      "aroma": {
-        "vanilla": 2,
-        "peat": 5,
-        "caramel": 10,
-        "oak": 10
-      },
-      "taste": {
-        "sweet": 4,
-        "smoky": 7,
-        "spicy": 6,
-        "fruity": 1
-      },
-      "finish": {
-        "length": 4,
-        "warming": 3,
-        "dry": 5,
-        "peaty": 8
-      },
-      "compounds": {
-        "Vanillin": 42,
-        "Limonene": 72,
-        "2-Phenylethanol": 96,
-        "Ethyl Acetate": 28,
-        "Acetaldehyde": 77
-      },
       "price": 44,
       "bottlingDate": "2021-08-06",
       "caskType": "French Oak",
@@ -498,31 +411,6 @@
       "type": "Single Malt",
       "abv": 55,
       "description": "A bold single malt from Japan with 55% ABV, showcasing strong notes of peat and oak. The taste is a complex mix of smoky, spicy, and fruity elements, with a long, peaty finish. Chemical compounds like hexanoic acid and phenol contribute to its robust profile.",
-      "aroma": {
-        "vanilla": 8,
-        "peat": 8,
-        "caramel": 3,
-        "oak": 4
-      },
-      "taste": {
-        "sweet": 1,
-        "smoky": 7,
-        "spicy": 1,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 10,
-        "warming": 8,
-        "dry": 8,
-        "peaty": 10
-      },
-      "compounds": {
-        "Hexanoic Acid": 11,
-        "Benzaldehyde": 9,
-        "Linalool": 73,
-        "2-Phenylethanol": 19,
-        "Phenol": 46
-      },
       "price": 46,
       "bottlingDate": "2019-06-27",
       "caskType": "Ex-Sherry",
@@ -539,31 +427,6 @@
       "type": "Blended",
       "abv": 55,
       "description": "An Irish blended whisky with 55% ABV, offering a fruity, sweet aroma of vanilla and peat. On the palate, it brings a blend of sweet and spicy notes with a dry, peaty finish, highlighted by hexanoic acid and methoxyphenols.",
-      "aroma": {
-        "vanilla": 7,
-        "peat": 7,
-        "caramel": 1,
-        "oak": 1
-      },
-      "taste": {
-        "sweet": 2,
-        "smoky": 3,
-        "spicy": 9,
-        "fruity": 7
-      },
-      "finish": {
-        "length": 7,
-        "warming": 6,
-        "dry": 4,
-        "peaty": 10
-      },
-      "compounds": {
-        "Hexanoic Acid": 94,
-        "Methoxyphenols": 70,
-        "Syringol": 66,
-        "Octanoic Acid": 27,
-        "Benzaldehyde": 27
-      },
       "price": 72,
       "bottlingDate": "2022-03-09",
       "caskType": "American Oak",
@@ -580,31 +443,6 @@
       "type": "Scotch",
       "abv": 50,
       "description": "A 50% ABV Scotch from Ireland, known for its smoky and fruity aromas of vanilla and oak. The taste is smoky and spicy, with a long, warming finish. Its rich profile is supported by diacetyl and 2-phenylethanol.",
-      "aroma": {
-        "vanilla": 2,
-        "peat": 2,
-        "caramel": 1,
-        "oak": 2
-      },
-      "taste": {
-        "sweet": 8,
-        "smoky": 9,
-        "spicy": 9,
-        "fruity": 7
-      },
-      "finish": {
-        "length": 3,
-        "warming": 4,
-        "dry": 7,
-        "peaty": 10
-      },
-      "compounds": {
-        "Diacetyl": 27,
-        "2-Phenylethanol": 72,
-        "Limonene": 90,
-        "Isoamyl Acetate": 42,
-        "Lactones": 88
-      },
       "price": 143,
       "bottlingDate": "2019-10-13",
       "caskType": "American Oak",
@@ -621,31 +459,6 @@
       "type": "Bourbon",
       "abv": 40,
       "description": "A smooth Scotch from Scotland with 40% ABV, featuring a sweet, fruity aroma of caramel and oak. It delivers a well-balanced sweet, smoky, and spicy palate with a long, warm, peaty finish. Phenol and vanillin add complexity.",
-      "aroma": {
-        "vanilla": 5,
-        "peat": 1,
-        "caramel": 3,
-        "oak": 6
-      },
-      "taste": {
-        "sweet": 9,
-        "smoky": 2,
-        "spicy": 4,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 10,
-        "warming": 7,
-        "dry": 2,
-        "peaty": 2
-      },
-      "compounds": {
-        "Phenol": 37,
-        "Isoamyl Acetate": 46,
-        "Vanillin": 43,
-        "Methional": 62,
-        "4-Methylguaiacol": 17
-      },
       "price": 35,
       "bottlingDate": "2021-08-14",
       "caskType": "Ex-Bourbon",
@@ -662,31 +475,6 @@
       "type": "Blended",
       "abv": 45,
       "description": "A USA-based blended whisky with 45% ABV, featuring vanilla and caramel aromas, paired with a sweet, fruity taste. Its long, smoky finish is enhanced by acetaldehyde and isoamyl acetate.",
-      "aroma": {
-        "vanilla": 2,
-        "peat": 2,
-        "caramel": 9,
-        "oak": 6
-      },
-      "taste": {
-        "sweet": 5,
-        "smoky": 6,
-        "spicy": 5,
-        "fruity": 10
-      },
-      "finish": {
-        "length": 1,
-        "warming": 7,
-        "dry": 4,
-        "peaty": 7
-      },
-      "compounds": {
-        "Acetaldehyde": 19,
-        "Furfural": 34,
-        "2-Phenylethanol": 64,
-        "Hexanoic Acid": 26,
-        "Isoamyl Acetate": 50
-      },
       "price": 58,
       "bottlingDate": "2022-11-27",
       "caskType": "American Oak",
@@ -703,31 +491,6 @@
       "type": "Scotch",
       "abv": 55,
       "description": "A 55% ABV Scotch from Japan, with a rich vanilla and oak aroma. The taste is sweet, smoky, and fruity, leading to a long, warming finish with notable eugenol and linalool compounds, adding depth. ",
-      "aroma": {
-        "vanilla": 5,
-        "peat": 5,
-        "caramel": 6,
-        "oak": 10
-      },
-      "taste": {
-        "sweet": 10,
-        "smoky": 4,
-        "spicy": 5,
-        "fruity": 8
-      },
-      "finish": {
-        "length": 4,
-        "warming": 9,
-        "dry": 5,
-        "peaty": 3
-      },
-      "compounds": {
-        "Eugenol": 73,
-        "Linalool": 96,
-        "Furfural": 92,
-        "Isoamyl Acetate": 49,
-        "Acetaldehyde": 90
-      },
       "price": 141,
       "bottlingDate": "2023-12-07",
       "caskType": "American Oak",
@@ -744,31 +507,6 @@
       "type": "Scotch",
       "abv": 40,
       "description": "A Scotch whisky from Scotland, with 40% ABV, presenting strong vanilla and caramel aromas. It offers a sweet, smoky palate with a long, dry finish, supported by furfural and phenol.",
-      "aroma": {
-        "vanilla": 10,
-        "peat": 5,
-        "caramel": 4,
-        "oak": 1
-      },
-      "taste": {
-        "sweet": 9,
-        "smoky": 10,
-        "spicy": 3,
-        "fruity": 9
-      },
-      "finish": {
-        "length": 7,
-        "warming": 6,
-        "dry": 6,
-        "peaty": 2
-      },
-      "compounds": {
-        "Furfural": 29,
-        "Phenol": 27,
-        "Linalool": 79,
-        "Octanoic Acid": 76,
-        "Lactones": 83
-      },
       "price": 78,
       "bottlingDate": "2021-06-10",
       "caskType": "Sherry Oak",
@@ -785,31 +523,6 @@
       "type": "Bourbon",
       "abv": 50,
       "description": "A 50% ABV bourbon from Japan, showcasing a smoky, fruity aroma of vanilla and oak. The taste is sweet and spicy, with a dry, peaty finish, enriched by guaiacol and syringol. ",
-      "aroma": {
-        "vanilla": 3,
-        "peat": 7,
-        "caramel": 8,
-        "oak": 5
-      },
-      "taste": {
-        "sweet": 2,
-        "smoky": 7,
-        "spicy": 9,
-        "fruity": 6
-      },
-      "finish": {
-        "length": 2,
-        "warming": 4,
-        "dry": 4,
-        "peaty": 1
-      },
-      "compounds": {
-        "Guaiacol": 72,
-        "Syringol": 62,
-        "Lactones": 31,
-        "Isoamyl Acetate": 49,
-        "Ethyl Acetate": 9
-      },
       "price": 49,
       "bottlingDate": "2021-04-15",
       "caskType": "Ex-Bourbon",
@@ -826,31 +539,6 @@
       "type": "Single Malt",
       "abv": 40,
       "description": "A single malt from Ireland with 40% ABV, offering a sweet, smoky aroma of vanilla and caramel. The palate is smoky and fruity, with a long, warming finish, driven by phenol and hexanoic acid.",
-      "aroma": {
-        "vanilla": 4,
-        "peat": 8,
-        "caramel": 3,
-        "oak": 6
-      },
-      "taste": {
-        "sweet": 7,
-        "smoky": 10,
-        "spicy": 4,
-        "fruity": 7
-      },
-      "finish": {
-        "length": 9,
-        "warming": 7,
-        "dry": 2,
-        "peaty": 4
-      },
-      "compounds": {
-        "2-Phenylethanol": 33,
-        "Hexanoic Acid": 31,
-        "Syringol": 26,
-        "Ethyl Acetate": 19,
-        "Lactones": 32
-      },
       "price": 85,
       "bottlingDate": "2019-06-13",
       "caskType": "Ex-Bourbon",
@@ -867,31 +555,6 @@
       "type": "Rye",
       "abv": 45,
       "description": "A rye whisky from the USA with 45% ABV, featuring a rich vanilla and oak aroma. It delivers a sweet, smoky palate with a long, peaty finish, supported by vanillin and isoamyl acetate. ",
-      "aroma": {
-        "vanilla": 7,
-        "peat": 1,
-        "caramel": 10,
-        "oak": 1
-      },
-      "taste": {
-        "sweet": 4,
-        "smoky": 9,
-        "spicy": 8,
-        "fruity": 8
-      },
-      "finish": {
-        "length": 9,
-        "warming": 7,
-        "dry": 5,
-        "peaty": 8
-      },
-      "compounds": {
-        "Vanillin": 62,
-        "Guaiacol": 31,
-        "Isoamyl Acetate": 77,
-        "Linalool": 47,
-        "Hexanoic Acid": 27
-      },
       "price": 106,
       "bottlingDate": "2020-05-25",
       "caskType": "American Oak",
@@ -908,31 +571,6 @@
       "type": "Rye",
       "abv": 50,
       "description": "A 50% ABV rye whisky from Ireland, offering intense smoky aromas of peat and oak. The taste is sweet and spicy, with a dry, warming finish enhanced by methoxyphenols and acetaldehyde. ",
-      "aroma": {
-        "vanilla": 8,
-        "peat": 6,
-        "caramel": 3,
-        "oak": 7
-      },
-      "taste": {
-        "sweet": 7,
-        "smoky": 1,
-        "spicy": 5,
-        "fruity": 4
-      },
-      "finish": {
-        "length": 4,
-        "warming": 6,
-        "dry": 2,
-        "peaty": 9
-      },
-      "compounds": {
-        "Methoxyphenols": 32,
-        "Acetaldehyde": 98,
-        "2-Phenylethanol": 92,
-        "Isoamyl Acetate": 10,
-        "Phenol": 95
-      },
       "price": 117,
       "bottlingDate": "2020-04-18",
       "caskType": "French Oak",
@@ -949,31 +587,6 @@
       "type": "Bourbon",
       "abv": 55,
       "description": "A 55% ABV bourbon from Ireland, showcasing rich caramel and oak aromas. The palate is sweet and smoky, with a long, peaty finish, highlighted by octanoic acid and diacetyl.",
-      "aroma": {
-        "vanilla": 4,
-        "peat": 4,
-        "caramel": 2,
-        "oak": 4
-      },
-      "taste": {
-        "sweet": 5,
-        "smoky": 6,
-        "spicy": 1,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 5,
-        "warming": 6,
-        "dry": 10,
-        "peaty": 4
-      },
-      "compounds": {
-        "Octanoic Acid": 17,
-        "Acetaldehyde": 36,
-        "Linalool": 73,
-        "Diacetyl": 90,
-        "4-Methylguaiacol": 16
-      },
       "price": 50,
       "bottlingDate": "2020-02-01",
       "caskType": "Sherry Oak",
@@ -990,31 +603,6 @@
       "type": "Scotch",
       "abv": 50,
       "description": "A Scotch from Ireland with 50% ABV, offering a sweet, smoky aroma of vanilla and peat. The taste is fruity and spicy, with a long, warming finish, supported by syringol and benzaldehyde. ",
-      "aroma": {
-        "vanilla": 1,
-        "peat": 3,
-        "caramel": 3,
-        "oak": 5
-      },
-      "taste": {
-        "sweet": 5,
-        "smoky": 5,
-        "spicy": 5,
-        "fruity": 9
-      },
-      "finish": {
-        "length": 5,
-        "warming": 5,
-        "dry": 1,
-        "peaty": 5
-      },
-      "compounds": {
-        "Syringol": 89,
-        "Benzaldehyde": 54,
-        "2-Phenylethanol": 25,
-        "Ethyl Acetate": 47,
-        "4-Methylguaiacol": 28
-      },
       "price": 133,
       "bottlingDate": "2020-04-20",
       "caskType": "French Oak",
@@ -1031,31 +619,6 @@
       "type": "Bourbon",
       "abv": 43,
       "description": "A 43% ABV bourbon from Canada, featuring rich vanilla and caramel aromas. On the palate, it delivers a sweet and smoky flavor, with a dry, peaty finish enriched by limonene and guaiacol. ",
-      "aroma": {
-        "vanilla": 3,
-        "peat": 6,
-        "caramel": 8,
-        "oak": 2
-      },
-      "taste": {
-        "sweet": 9,
-        "smoky": 9,
-        "spicy": 3,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 2,
-        "warming": 6,
-        "dry": 1,
-        "peaty": 5
-      },
-      "compounds": {
-        "Limonene": 70,
-        "Methoxyphenols": 91,
-        "Guaiacol": 33,
-        "Benzaldehyde": 55,
-        "Ethyl Acetate": 70
-      },
       "price": 133,
       "bottlingDate": "2020-08-09",
       "caskType": "American Oak",
@@ -1072,31 +635,6 @@
       "type": "Single Malt",
       "abv": 43,
       "description": "A 43% ABV single malt from Scotland, offering vanilla and oak aromas. The taste is smoky and fruity, with a long, peaty finish, supported by phenol and linalool. ",
-      "aroma": {
-        "vanilla": 8,
-        "peat": 4,
-        "caramel": 6,
-        "oak": 7
-      },
-      "taste": {
-        "sweet": 6,
-        "smoky": 7,
-        "spicy": 6,
-        "fruity": 4
-      },
-      "finish": {
-        "length": 5,
-        "warming": 2,
-        "dry": 7,
-        "peaty": 9
-      },
-      "compounds": {
-        "Phenol": 40,
-        "Syringol": 97,
-        "Methoxyphenols": 94,
-        "Linalool": 76,
-        "2-Phenylethanol": 88
-      },
       "price": 110,
       "bottlingDate": "2020-07-23",
       "caskType": "American Oak",
@@ -1113,31 +651,6 @@
       "type": "Blended",
       "abv": 40,
       "description": "A blended whisky from Japan with 40% ABV, featuring a sweet vanilla and caramel aroma. It offers a sweet, smoky palate with a long, warming finish, driven by isoamyl acetate and 2-phenylethanol. ",
-      "aroma": {
-        "vanilla": 1,
-        "peat": 7,
-        "caramel": 9,
-        "oak": 8
-      },
-      "taste": {
-        "sweet": 6,
-        "smoky": 6,
-        "spicy": 2,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 1,
-        "warming": 9,
-        "dry": 9,
-        "peaty": 4
-      },
-      "compounds": {
-        "Ethyl Acetate": 91,
-        "Linalool": 66,
-        "2-Phenylethanol": 7,
-        "Hexanoic Acid": 32,
-        "Vanillin": 21
-      },
       "price": 69,
       "bottlingDate": "2018-02-08",
       "caskType": "French Oak",
@@ -1154,31 +667,6 @@
       "type": "Rye",
       "abv": 50,
       "description": "A 50% ABV rye whisky from Scotland, known for its smoky, fruity aromas of vanilla and oak. The taste is spicy and fruity, with a long, dry finish supported by acetaldehyde and phenol. ",
-      "aroma": {
-        "vanilla": 5,
-        "peat": 1,
-        "caramel": 9,
-        "oak": 4
-      },
-      "taste": {
-        "sweet": 5,
-        "smoky": 1,
-        "spicy": 10,
-        "fruity": 5
-      },
-      "finish": {
-        "length": 9,
-        "warming": 7,
-        "dry": 10,
-        "peaty": 6
-      },
-      "compounds": {
-        "Isoamyl Acetate": 7,
-        "Phenol": 99,
-        "Methoxyphenols": 81,
-        "Acetaldehyde": 55,
-        "Vanillin": 87
-      },
       "price": 143,
       "bottlingDate": "2021-08-11",
       "caskType": "Ex-Bourbon",
@@ -1195,31 +683,6 @@
       "type": "Rye",
       "abv": 45,
       "description": "A USA-based rye whisky with 45% ABV, featuring a rich aroma of vanilla and oak. The palate is sweet and spicy, with a long, smoky finish enriched by diacetyl and methional. ",
-      "aroma": {
-        "vanilla": 6,
-        "peat": 3,
-        "caramel": 4,
-        "oak": 1
-      },
-      "taste": {
-        "sweet": 9,
-        "smoky": 3,
-        "spicy": 10,
-        "fruity": 10
-      },
-      "finish": {
-        "length": 7,
-        "warming": 6,
-        "dry": 1,
-        "peaty": 1
-      },
-      "compounds": {
-        "Diacetyl": 60,
-        "Methional": 82,
-        "Methoxyphenols": 96,
-        "Hexanoic Acid": 69,
-        "Linalool": 22
-      },
       "price": 36,
       "bottlingDate": "2018-07-26",
       "caskType": "Sherry Oak",

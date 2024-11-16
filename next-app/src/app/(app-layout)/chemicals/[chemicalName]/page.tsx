@@ -24,14 +24,14 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
       <Section>
         <Paper>
           <div className="flex flex-col gap-4">
-            <PageTitle title={chemical.title} />
+            <PageTitle title={chemical.name} />
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
                 <Image className="rounded bg-white object-contain" src={`/images/chemicals/${chemical.id}.png`} alt={chemical.name} priority fill />
               </div>
               <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-2 text-center">
-                  <div className="text-3xl font-bold">{chemical.title}</div>
+                  <div className="text-3xl font-bold">{chemical.name}</div>
                   <div className="text-2xl">{/* for text*/}</div>
                 </div>
                 <div className="text-sm">

@@ -30,17 +30,6 @@
     --ring: 192 84% 40%;
   }
 
-  [data-theme='dark'] {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-
-    --primary: 14 85% 52%;
-    --primary-light: 35 55% 76%;
-    --primary-hover: 1 85% 46%;
-    --primary-active: 1 85% 42%;
-    --primary-foreground: 0 0% 10%;
-  }
-
   * {
     @apply border-border;
   }
