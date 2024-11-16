@@ -1,17 +1,16 @@
 import { WhiskeyMatching, type ChartData } from '@/common/custom-types';
-import { dataTypes } from '@/db/db-utils';
 import { useHover } from '@/similar/similar-context';
 import type { ChartType } from 'chart.js';
 import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
 import React, { useEffect, useRef } from 'react';
-import type { Whiskey, WhiskeyWithSimilarity } from '../common/custom-types';
+import type { Whiskey, WhiskeyWithCustom } from '../common/custom-types';
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 type RadarChartProps = {
-  masterWhiskey: Whiskey | WhiskeyWithSimilarity;
-  compWhiskey: WhiskeyWithSimilarity[];
+  masterWhiskey: Whiskey | WhiskeyWithCustom;
+  compWhiskey: WhiskeyWithCustom[];
   graphLabels: ChartData[];
 };
 
@@ -113,11 +112,11 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
               },
               tooltip: {
                 callbacks: {
-                  label: function(context) {
+                  label: function (context) {
                     const label = context.dataset.label || '';
                     const value = context.raw;
                     const sign = (value as number) - mainWhiskeyData[context.dataIndex].value > 0 ? '+' : '';
-                    return `${label}: ${value} (${sign}${(value as number)-mainWhiskeyData[context.dataIndex].value})`;
+                    return `${label}: ${value} (${sign}${(value as number) - mainWhiskeyData[context.dataIndex].value})`;
                   },
                 },
               },
@@ -137,7 +136,7 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
           flexDirection: 'column',
         }}
       >
-        <canvas ref={divRef} style={{ flex: 1}}></canvas>
+        <canvas ref={divRef} style={{ flex: 1 }}></canvas>
       </div>
     </div>
   );

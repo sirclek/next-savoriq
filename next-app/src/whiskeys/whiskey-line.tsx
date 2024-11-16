@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
 import { createMockArray } from '@/common/common-utils';
-import React, { useRef, useState, useEffect } from 'react';
-import type { Whiskey, WhiskeyWithSimilarity } from '../common/custom-types';
+import React, { useEffect, useRef, useState } from 'react';
+import type { Whiskey, WhiskeyWithCustom } from '../common/custom-types';
 import { WhiskeyCard, WhiskeyCardSkeleton } from './whiskey-card';
 
 type WhiskeyLineShellProps = React.PropsWithChildren & {
@@ -59,10 +59,10 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
         ref={rowRef}
         className={
           orientation === 'row'
-            ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4'
-            : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
+        ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4'
+        : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
         }
-        style={{ maxHeight: '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ maxHeight: orientation === 'row' ? '35vh' : '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {children}
       </ul>
@@ -78,18 +78,19 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
 export default WhiskeyLineShell;
 
 type WhiskeyLineProps = {
-  whiskeys: Whiskey[] | WhiskeyWithSimilarity[];
+  whiskeys: Whiskey[] | WhiskeyWithCustom[];
   showSimilarity?: boolean;
+  showCustom?: boolean;
   orientation: 'row' | 'column';
 };
 
-export function WhiskeyRow({ whiskeys, showSimilarity = false, orientation }: WhiskeyLineProps) {
+export function WhiskeyRow({ whiskeys, showSimilarity = false, showCustom = false, orientation }: WhiskeyLineProps) {
   return (
     <WhiskeyLineShell orientation={orientation}>
       {whiskeys.map((whiskey) => {
         return (
           <li key={whiskey.id} className="inline-block">
-            <WhiskeyCard whiskey={whiskey} showSimilarity={showSimilarity} orientation={orientation}/>
+            <WhiskeyCard whiskey={whiskey} showSimilarity={showSimilarity} showCustom={showCustom} orientation={orientation} />
           </li>
         );
       })}

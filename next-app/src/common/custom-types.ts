@@ -34,11 +34,12 @@ export type Whiskey = {
   chemicals: number[];
 };
 
-export type SimilarityExtension = {
+export type CustomExtension = {
   similarity: number;
+  custom: string;
 };
 
-export type WhiskeyWithSimilarity = Whiskey & SimilarityExtension;
+export type WhiskeyWithCustom = Whiskey & CustomExtension;
 
 export type WhiskeyFilterArgs = {
   sortings?: string;
@@ -63,10 +64,7 @@ export type WhiskeyFilterData = {
   dbKey: string;
 };
 
-export type WhiskeyFilterOptions = Record<
-  'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'caskTypes' | 'specialNotes',
-  WhiskeyFilterData
->;
+export type WhiskeyFilterOptions = Record<'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'caskTypes' | 'specialNotes', WhiskeyFilterData>;
 
 export type WhiskeyFilterSelectedOption = {
   value: FilterDataType;

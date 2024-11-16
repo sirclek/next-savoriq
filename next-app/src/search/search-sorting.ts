@@ -1,6 +1,5 @@
-import { WhiskeyMatching, WhiskeySorting, type Whiskey, type WhiskeyWithSimilarity, type Id } from '@/common/custom-types';
-import { dataTypes, fetchData } from '@/db/db-utils';
-
+import { WhiskeyMatching, WhiskeySorting, type Flavour, type Chemical, type Id, type Whiskey, type WhiskeyWithCustom } from '@/common/custom-types';
+import { dataTypes, fetchData, getObjectById } from '@/db/db-utils';
 
 export function sortWhiskeys(whiskeys: Whiskey[], sorting: WhiskeySorting) {
   switch (sorting) {
@@ -36,17 +35,16 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
-export async function matchWhiskeysDropFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) : Promise<WhiskeyWithSimilarity[]> {
+export async function matchWhiskeysDropFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
   return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, false);
 }
 
-export async function matchWhiskeysKeepFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) : Promise<WhiskeyWithSimilarity[]> {
+export async function matchWhiskeysKeepFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
   return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, true);
 }
 
-
-async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number, keepFirst: boolean): Promise<WhiskeyWithSimilarity[]> {
-  let whiskeyData = await fetchData<WhiskeyWithSimilarity>(dataTypes.WHISKEYS);
+async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number, keepFirst: boolean): Promise<WhiskeyWithCustom[]> {
+  let whiskeyData = await fetchData<WhiskeyWithCustom>(dataTypes.WHISKEYS);
   switch (matchType) {
     case WhiskeyMatching.FLAVOUR: {
       whiskeyData = whiskeyData
@@ -74,16 +72,22 @@ async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: Whiskey
   return whiskeyData.slice(keepFirst ? 0 : 1, Math.min(returnMaxCount + (keepFirst ? 0 : 1), whiskeyData.length));
 }
 
-export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number) {
-  let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
+export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
+  let whiskeyData = await fetchData<WhiskeyWithCustom>(dataTypes.WHISKEYS);
 
   switch (matchType) {
     case WhiskeyMatching.FLAVOUR: {
+      whiskeyData = whiskeyData.filter((whiskey) => whiskey.flavours[Id] > 0);
       whiskeyData = whiskeyData.sort((a, b) => b.flavours[Id] - a.flavours[Id]);
+      const flavour = await getObjectById<Flavour>(Id, dataTypes.FLAVOURS);
+      whiskeyData.forEach((whiskey) => {whiskey.custom = `${flavour.name} Level: ${whiskey.flavours[Id]}`});
       break;
     }
     case WhiskeyMatching.CHEMICAL: {
+      whiskeyData = whiskeyData.filter((whiskey) => whiskey.chemicals[Id] > 0);
       whiskeyData = whiskeyData.sort((a, b) => b.chemicals[Id] - a.chemicals[Id]);
+      const chemical = await getObjectById<Chemical>(Id, dataTypes.CHEMICALS);
+      whiskeyData.forEach((whiskey) => {whiskey.custom = `${chemical.name} Level: ${whiskey.chemicals[Id]}`});
       break;
     }
     default: {

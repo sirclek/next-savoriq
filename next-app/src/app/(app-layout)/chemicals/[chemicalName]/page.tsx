@@ -46,7 +46,7 @@ export default async function ChemicalPage({ params }: ChemicalPageProps) {
       <Section as="aside">
         <SectionTitle as="h2">Related by Chemicals</SectionTitle>
         <Paper>
-          <RelatedValueLine id={chemical.id} type={WhiskeyMatching.CHEMICAL} />
+          <RelatedValueLine id={chemical.id} type={WhiskeyMatching.CHEMICAL} showCustom={true}/>
         </Paper>
       </Section>
     </>

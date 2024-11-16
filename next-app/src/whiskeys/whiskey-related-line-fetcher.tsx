@@ -17,6 +17,7 @@ type RelatedValuesProps = {
   type: WhiskeyMatching;
   count?: number;
   showSimilarity?: boolean;
+  showCustom?: boolean;
   orientation?: 'row' | 'column';
 };
 
@@ -30,7 +31,7 @@ export async function RelatedWhiskeyLine({ whiskey, type, keepfirst = false, cou
   }
   return <WhiskeyRow whiskeys={relatedProducts} showSimilarity={showSimilarity} orientation={orientation} />;
 }
-export async function RelatedValueLine({ id, type, count = 6, showSimilarity = false, orientation = 'row' }: RelatedValuesProps) {
+export async function RelatedValueLine({ id, type, count = 6, showSimilarity = false, showCustom = false, orientation = 'row' }: RelatedValuesProps) {
   let relatedProducts: Whiskey[] = [];
 
   if (type === WhiskeyMatching.FLAVOUR) {
@@ -40,5 +41,5 @@ export async function RelatedValueLine({ id, type, count = 6, showSimilarity = f
   if (type === WhiskeyMatching.CHEMICAL) {
     relatedProducts = await matchValues(id, WhiskeyMatching.CHEMICAL, count);
   }
-  return <WhiskeyRow whiskeys={relatedProducts} showSimilarity={showSimilarity} orientation={orientation} />;
+  return <WhiskeyRow whiskeys={relatedProducts} showSimilarity={showSimilarity} showCustom={showCustom} orientation={orientation} />;
 }

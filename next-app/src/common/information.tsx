@@ -7,5 +7,5 @@ type PriceProps = {
 };
 
 export function Information({ className, value }: PriceProps) {
-  return <span className={twMerge('font-bold', className)}>{value}</span>;
+  return <span className={className}>{value}</span>;
 }

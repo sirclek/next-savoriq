@@ -1,20 +1,18 @@
-import type { MatchType, Whiskey, WhiskeyWithSimilarity, ChartData } from '@/common/custom-types';
+import type { ChartData, MatchType, Whiskey, WhiskeyWithCustom } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import RadarCompareChart from '@/radar/radar-compare-chart';
-import { RelatedWhiskeyLine } from '@/whiskeys/whiskey-related-line-fetcher';
-import { SimilarHoverProvider, useHover } from './similar-context';
 import { WhiskeyRow } from '@/whiskeys/whiskey-line';
+import { SimilarHoverProvider } from './similar-context';
 
 export type SimilarPageProps = {
   masterWhiskey: Whiskey;
-  compWhiskey: WhiskeyWithSimilarity[];
+  compWhiskey: WhiskeyWithCustom[];
   type: MatchType;
   graphLabels: ChartData[];
 };
 
 function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
-
   return (
     <main className="flex flex-col" style={{ height: '90vh' }}>
       <PageTitle title={`Most Similar Whiskeys - by ${type.charAt(0).toUpperCase() + type.slice(1)}`} />
@@ -30,10 +28,10 @@ function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: S
   );
 }
 
-export default function SimilarPage({ masterWhiskey, compWhiskey, type, graphLabels}: SimilarPageProps) {
+export default function SimilarPage({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
   return (
     <SimilarHoverProvider>
-      <SimilarPageContent masterWhiskey={masterWhiskey} compWhiskey={compWhiskey} type={type} graphLabels={graphLabels}/>
+      <SimilarPageContent masterWhiskey={masterWhiskey} compWhiskey={compWhiskey} type={type} graphLabels={graphLabels} />
     </SimilarHoverProvider>
   );
 }
