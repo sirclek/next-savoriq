@@ -2,13 +2,13 @@ import { twMerge } from 'tailwind-merge';
 import { Loading } from './loading';
 
 export type GetButtonBasePropsArgs = React.PropsWithChildren<{
-  className?: string;
-  isDisabled?: boolean;
-  isLoading?: boolean;
-  variant?: 'default' | 'primary' | 'transparent';
-  circle?: boolean;
-  icon?: React.ReactNode;
-  iconAlignment?: 'left' | 'right' | 'top';
+  className?: string | undefined;
+  isDisabled?: boolean | undefined;
+  isLoading?: boolean | undefined;
+  variant?: 'default' | 'primary' | 'transparent' | undefined;
+  circle?: boolean | undefined;
+  icon?: React.ReactNode | undefined;
+  iconAlignment?: 'left' | 'right' | 'top' | undefined;
 }>;
 
 export function getButtonBaseProps({

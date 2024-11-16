@@ -1,12 +1,9 @@
-import { WhiskeyMatching, type ChartData, type MatchType } from '@/common/custom-types';
+import { WhiskeyMatching, type ChartData, type MatchType, type Whiskey } from '@/common/custom-types';
 import { dataTypes } from '@/db/db-utils';
-import type { ChartType } from 'chart.js';
-import { Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
+import { type ChartType, Chart, Filler, Legend, LineElement, PointElement, RadarController, RadialLinearScale, Tooltip } from 'chart.js';
 import 'chartjs-plugin-dragdata';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { Whiskey } from '../common/custom-types';
 import { getGraphData } from './radar-data';
-import { M_PLUS_1 } from 'next/font/google';
 
 Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -94,9 +91,12 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                 beginAtZero: true,
                 ticks: {
                   stepSize: dataType === WhiskeyMatching.CHEMICAL ? 10 : 1,
+                  callback: function (value) {
+                    return typeof value === 'number' && value < 0 ? null : value;
+                  },
                 },
                 max: dataType === WhiskeyMatching.CHEMICAL ? CHEMICALMAX : FLAVOURMAX,
-                min: 0,
+                min: dataType === WhiskeyMatching.CHEMICAL ? -10 : 0,
                 grid: { lineWidth: 2 },
                 angleLines: { lineWidth: 2 },
               },
@@ -107,9 +107,9 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                   label(context) {
                     const value = context.dataset.data[context.dataIndex];
                     const roundValue = typeof value === 'number' ? Math.round(value) : 0;
-                    const label = context.dataset.label + ': ' + roundValue;
+                    const label = `${context.dataset.label} : ${roundValue}`;
                     const customDataPoint = data[context.dataIndex].value;
-                    return label + ' ' + (context.dataset.label === CUSTOMDATANAME ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})` : '');
+                    return `${label} ${(context.dataset.label === CUSTOMDATANAME ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})` : '')}`;
                   },
                 },
               },
@@ -126,24 +126,6 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             },
           },
         });
-
-        // Handle label click events
-        // divRef.current.addEventListener('click', (event) => {
-        //   const chartArea = chartRef.current!.chartArea;
-        //   const centerX = (chartArea.left + chartArea.right) / 2;
-        //   const centerY = (chartArea.top + chartArea.bottom) / 2;
-        //   const angleStep = (2 * Math.PI) / chartRef.current!.data.labels!.length;
-
-        //   chartRef.current!.data.labels!.forEach((label, i) => {
-        //     const angle = angleStep * i - Math.PI / 2;
-        //     const labelX = centerX + (centerX - 10) * Math.cos(angle);
-        //     const labelY = centerY + (centerY - 10) * Math.sin(angle);
-
-        //     if (Math.abs(event.offsetX - labelX) < 10 && Math.abs(event.offsetY - labelY) < 10) {
-        //       window.location.href = `/item/${label}`;
-        //     }
-        //   });
-        // });
       }
     }
   }, [customizeMode, data, dataType]);
@@ -176,7 +158,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                   setCustomData(chemicals);
                   setDataType(WhiskeyMatching.CHEMICAL);
                 }}
-                className={`text-xl ${dataType === WhiskeyMatching.CHEMICAL ? 'bg-primary' : 'bg-primary-light'} ${dataType === WhiskeyMatching.CHEMICAL ? 'text-white' : 'text-gray-700'}`}
+                className={`text-xl ${dataType === WhiskeyMatching.CHEMICAL ? 'bg-primary text-white' : 'bg-primary-light text-gray-700'}`}
                 style={buttonStyle}
                 onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -189,7 +171,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                   setCustomData(flavours);
                   setDataType(WhiskeyMatching.FLAVOUR);
                 }}
-                className={`text-xl ${dataType === WhiskeyMatching.FLAVOUR ? 'bg-primary' : 'bg-primary-light'} ${dataType === WhiskeyMatching.FLAVOUR ? 'text-white' : 'text-gray-700'}`}
+                className={`text-xl ${dataType === WhiskeyMatching.FLAVOUR ? 'bg-primary text-white' : 'bg-primary-light text-gray-700'}`}
                 style={buttonStyle}
                 onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
                 onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
@@ -200,9 +182,8 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
           ) : (
             <button
               onClick={() => {
-                const simplifiedData = {type: dataType, compId: -1, values: customData.map((d) => d.value)};
+                const simplifiedData = { type: dataType, compId: -1, values: customData.map((d) => d.value) };
                 const base64Numbers = Buffer.from(JSON.stringify(simplifiedData)).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-                console.log(simplifiedData);
                 window.location.href = `/similar/${dataType === WhiskeyMatching.CHEMICAL ? WhiskeyMatching.CHEMICAL : WhiskeyMatching.FLAVOUR}/${base64Numbers}`;
               }}
               className={'bg-primary text-xl text-white'}

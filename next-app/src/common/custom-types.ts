@@ -14,7 +14,6 @@ export type Chemical = {
   id: number;
   name: string;
   description: string;
-  title: string;
 };
 
 export type Whiskey = {
@@ -33,6 +32,13 @@ export type Whiskey = {
   flavours: number[];
   chemicals: number[];
 };
+
+export type CustomExtension = {
+  similarity: number;
+  custom: string;
+};
+
+export type WhiskeyWithCustom = Whiskey & CustomExtension;
 
 export type WhiskeyFilterArgs = {
   sortings?: string;
@@ -57,10 +63,7 @@ export type WhiskeyFilterData = {
   dbKey: string;
 };
 
-export type WhiskeyFilterOptions = Record<
-  'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'caskTypes' | 'specialNotes',
-  WhiskeyFilterData
->;
+export type WhiskeyFilterOptions = Record<'sortings' | 'brands' | 'ages' | 'regions' | 'types' | 'abvs' | 'caskTypes' | 'specialNotes', WhiskeyFilterData>;
 
 export type WhiskeyFilterSelectedOption = {
   value: FilterDataType;

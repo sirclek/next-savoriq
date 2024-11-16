@@ -4,7 +4,6 @@ import { APP_REPOSITORY_URL, APP_TITLE } from '@/common/common-utils';
 import { Container } from '@/common/container';
 import { GithubIcon, HomeIcon, SearchIcon } from '@/common/icons';
 import { NextLink } from '@/routing/next-link';
-import { ThemeToggle } from '@/styles/theme-toggle';
 import type { LucideIcon } from 'lucide-react';
 import { twMerge } from 'tailwind-merge';
 
@@ -24,7 +23,6 @@ export function LayoutHeader({ children }: LayoutHeaderProps) {
           {APP_TITLE}
         </NextLink>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           {children}
         </div>
       </Container>

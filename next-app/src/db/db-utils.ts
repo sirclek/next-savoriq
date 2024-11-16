@@ -93,9 +93,9 @@ export async function getObjectByName<T extends { name: string }>(name: string, 
   }
 
   return {
-    name: '',
+    name: null,
     ...Object.fromEntries(Object.keys(data[0]).map((key) => [key as keyof T, null])),
-  } as T;
+  } as unknown as T;
 }
 
 /* eslint-disable unicorn/no-abusive-eslint-disable */
@@ -142,6 +142,5 @@ function mapChemicalData(chemical: any): Chemical {
     id: chemical.id as Id,
     name: chemical.name as string,
     description: chemical.description as string,
-    title: chemical.title as string,
   };
 }

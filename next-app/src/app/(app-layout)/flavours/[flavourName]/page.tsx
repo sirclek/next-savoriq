@@ -1,41 +1,30 @@
-import type { Flavour, Id  } from '@/common/custom-types';
-import { Whiskey, WhiskeyMatching } from '@/common/custom-types';
-import { Paper } from '@/common/paper';
+import type { Flavour } from '@/common/custom-types';
+import { WhiskeyMatching } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
+import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { dataTypes, getObjectById } from '@/db/db-utils';
-import { getMetadata } from '@/seo/seo-utils';
-import type { Metadata } from 'next';
+import { dataTypes, getObjectByName } from '@/db/db-utils';
+import { RelatedValueLine } from '@/whiskeys/whiskey-related-line-fetcher';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { RelatedValueRow } from '@/whiskeys/whiskey-related-row';
 
 type FlavourPageProps = {
   params: {
-    flavourId: Id;
+    flavourName: string;
   };
 };
 
-export async function generateMetadata({ params }: FlavourPageProps): Promise<Metadata> {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
-  return getMetadata({
-    title: flavour.name,
-    pathname: `/flavours/${params.flavourId}`,
-  });
-  
-}
-
 export default async function FlavourPage({ params }: FlavourPageProps) {
-  const flavour = await getObjectById<Flavour>(Number(params.flavourId), dataTypes.FLAVOURS);
+  const flavour = await getObjectByName<Flavour>(params.flavourName.replace('%20', ' '), dataTypes.FLAVOURS);
 
-  if (flavour.id === -1) notFound();
+  if (flavour.id === -1 || flavour.id === null) notFound();
 
   return (
     <>
       <Section>
         <Paper>
-        <div className="flex flex-col gap-4">
-        <PageTitle title={flavour.name} />
+          <div className="flex flex-col gap-4">
+            <PageTitle title={flavour.name} />
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative mx-auto aspect-square w-full max-w-sm md:max-w-lg">
                 <Image className="rounded bg-white object-contain" src={`/images/flavours/${flavour.id}.png`} alt={flavour.name} priority fill />
@@ -51,9 +40,10 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
                 <div className="text-sm">
                   {flavour.chemicals.map((chemical, index) => (
                     <p key={index}>
-                      <a href={`/chemicalSearch/${chemical.name}`} className="text-blue-500 hover:underline">
-                        {chemical.name}</a>: {chemical.value}
-                      
+                      <a href={`/chemicals/${chemical.name}`} className="text-blue-500 hover:underline">
+                        {chemical.name}
+                      </a>
+                      : {chemical.value}
                     </p>
                   ))}
                 </div>
@@ -61,15 +51,13 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
             </div>
           </div>
         </Paper>
-        
       </Section>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
-     <Paper>
-          <RelatedValueRow id={params.flavourId} type={WhiskeyMatching.FLAVOUR} />
-      </Paper>
+        <Paper>
+          <RelatedValueLine id={flavour.id} type={WhiskeyMatching.FLAVOUR} count={12} showCustom={true} />
+        </Paper>
       </Section>
-
     </>
   );
 }

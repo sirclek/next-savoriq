@@ -1,6 +1,5 @@
-import { Id, WhiskeyMatching, WhiskeySorting, type Whiskey } from '@/common/custom-types';
-
-import { dataTypes, fetchData } from '@/db/db-utils';
+import { WhiskeyMatching, WhiskeySorting, type Flavour, type Chemical, type Id, type Whiskey, type WhiskeyWithCustom } from '@/common/custom-types';
+import { dataTypes, fetchData, getObjectById } from '@/db/db-utils';
 
 export function sortWhiskeys(whiskeys: Whiskey[], sorting: WhiskeySorting) {
   switch (sorting) {
@@ -36,58 +35,64 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
-
-export async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number) {
-  let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
-
-  switch (matchType) {
-    case WhiskeyMatching.FLAVOUR: {
-      whiskeyData = whiskeyData
-        .map((whiskey) => ({
-          ...whiskey,
-          similarity: cosineSimilarity(masterWhiskey.flavours ?? [], whiskey.flavours ?? []),
-        }))
-        .sort((a, b) => b.similarity - a.similarity);
-      break;
-    }
-    case WhiskeyMatching.CHEMICAL: {
-      whiskeyData = whiskeyData
-        .map((whiskey) => ({
-          ...whiskey,
-          similarity: cosineSimilarity(masterWhiskey.chemicals ?? [], whiskey.chemicals ?? []),
-        }))
-        .sort((a, b) => b.similarity - a.similarity);
-      break;
-    }
-    default: {
-      [];
-    }
-  }
-  // whiskeyData.forEach(whiskey => {
-  //   console.log(matchType, { id: whiskey.id, name: whiskey.name, similarity: whiskey.similarity });
-  // });
-  return whiskeyData.slice(1, Math.min(returnMaxCount + 1, whiskeyData.length));
+export async function matchWhiskeysDropFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
+  return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, false);
 }
 
+export async function matchWhiskeysKeepFirst(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
+  return matchWhiskeys(masterWhiskey, matchType, returnMaxCount, true);
+}
 
-export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number) {
-  let whiskeyData = await fetchData<Whiskey>(dataTypes.WHISKEYS);
-
+async function matchWhiskeys(masterWhiskey: Partial<Whiskey>, matchType: WhiskeyMatching, returnMaxCount: number, keepFirst: boolean): Promise<WhiskeyWithCustom[]> {
+  let whiskeyData = await fetchData<WhiskeyWithCustom>(dataTypes.WHISKEYS);
   switch (matchType) {
     case WhiskeyMatching.FLAVOUR: {
-      whiskeyData = whiskeyData.sort((a, b) => b.flavours[Id] - a.flavours[Id]); 
+      whiskeyData = whiskeyData
+        .map((whiskey) => ({
+          ...whiskey,
+          similarity: Math.max(0, Math.min(1, Number(cosineSimilarity(masterWhiskey.flavours ?? [], whiskey.flavours ?? []).toFixed(5)))),
+        }))
+        .sort((a, b) => b.similarity - a.similarity);
       break;
     }
     case WhiskeyMatching.CHEMICAL: {
-      whiskeyData = whiskeyData.sort((a, b) => b.chemicals[Id] - a.chemicals[Id]); 
+      whiskeyData = whiskeyData
+        .map((whiskey) => ({
+          ...whiskey,
+          similarity: Math.max(0, Math.min(1, Number(cosineSimilarity(masterWhiskey.chemicals ?? [], whiskey.chemicals ?? []).toFixed(5)))),
+        }))
+        .sort((a, b) => b.similarity - a.similarity);
       break;
     }
     default: {
       [];
     }
   }
-  // whiskeyData.forEach(whiskey => {
-  //   console.log(whiskey.name, whiskey.flavours[Id], whiskey.chemicals[Id]);
-  // });
-  return whiskeyData.slice(1, Math.min(returnMaxCount + 1, whiskeyData.length));
+
+  return whiskeyData.slice(keepFirst ? 0 : 1, Math.min(returnMaxCount + (keepFirst ? 0 : 1), whiskeyData.length));
+}
+
+export async function matchValues(Id: Id, matchType: WhiskeyMatching, returnMaxCount: number): Promise<WhiskeyWithCustom[]> {
+  let whiskeyData = await fetchData<WhiskeyWithCustom>(dataTypes.WHISKEYS);
+
+  switch (matchType) {
+    case WhiskeyMatching.FLAVOUR: {
+      whiskeyData = whiskeyData.filter((whiskey) => whiskey.flavours[Id] > 0);
+      whiskeyData = whiskeyData.sort((a, b) => b.flavours[Id] - a.flavours[Id]);
+      const flavour = await getObjectById<Flavour>(Id, dataTypes.FLAVOURS);
+      whiskeyData.forEach((whiskey) => {whiskey.custom = `${flavour.name} Level: ${whiskey.flavours[Id]}`});
+      break;
+    }
+    case WhiskeyMatching.CHEMICAL: {
+      whiskeyData = whiskeyData.filter((whiskey) => whiskey.chemicals[Id] > 0);
+      whiskeyData = whiskeyData.sort((a, b) => b.chemicals[Id] - a.chemicals[Id]);
+      const chemical = await getObjectById<Chemical>(Id, dataTypes.CHEMICALS);
+      whiskeyData.forEach((whiskey) => {whiskey.custom = `${chemical.name} Level: ${whiskey.chemicals[Id]}`});
+      break;
+    }
+    default: {
+      [];
+    }
+  }
+  return whiskeyData.slice(0, Math.min(returnMaxCount, whiskeyData.length));
 }
