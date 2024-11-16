@@ -34,7 +34,7 @@ export default async function SimilarWrapperServer({ params }: SimilarWrapperPro
   }
   const compWhiskey = searchExistingWhiskey ? await matchWhiskeysDropFirst(masterWhiskey, params.type, 10) : await matchWhiskeysKeepFirst(masterWhiskey, params.type, 10);
 
-  const graphLabels: ChartData[] = (params.type === WhiskeyMatching.CHEMICAL ? await fetchData<Chemical>(dataTypes.CHEMICALS) : await fetchData<Flavour>(dataTypes.FLAVOURS)).map((data) => ({id: data.id, name: data.name, type: params.type, value: 0}));
+  const graphLabels: ChartData[] = (params.type === WhiskeyMatching.CHEMICAL ? (await fetchData<Chemical>(dataTypes.CHEMICALS)).slice(0,masterWhiskey.chemicals.length) : (await fetchData<Flavour>(dataTypes.FLAVOURS)).slice(0,masterWhiskey.flavours.length)).map((data) => ({id: data.id, name: data.name, type: params.type, value: 0}));
 
   return <SimilarPage masterWhiskey={masterWhiskey} compWhiskey={compWhiskey} type={params.type} graphLabels={graphLabels}/>;
 }

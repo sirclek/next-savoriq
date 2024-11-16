@@ -14,9 +14,6 @@ export type SimilarPageProps = {
 };
 
 function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
-  const hoverContext = useHover();
-  let hoveredWhiskeyId = hoverContext.hoveredWhiskeyId;
-  let lastHoveredWhiskeyId = hoverContext.lastHoveredWhiskeyId;
 
   return (
     <main className="flex flex-col" style={{ height: '90vh' }}>

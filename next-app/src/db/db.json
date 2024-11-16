@@ -2,7 +2,7 @@
   "chemicals": [
     {
       "id": 0,
-      "name": "Isoamyl%20Acetate",
+      "name": "Isoamyl Acetate",
       "description": "An ester compound with chemical formula CH3COO(CH2)2CH(CH3)2. Colorless transparent liquid at room temperature with a characteristic banana-like odor.",
       "title": "Isoamyl Acetate"
     },
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "name": "Hexanoic%20Acid",
+      "name": "Hexanoic Acid",
       "description": "A straight-chain saturated fatty acid with chemical formula CH3(CH2)4COOH. Oily liquid with a distinctive pungent odor.",
       "title": "Hexanoic Acid"
     },
@@ -74,7 +74,7 @@
     },
     {
       "id": 12,
-      "name": "Octanoic%20Acid",
+      "name": "Octanoic Acid",
       "description": "A saturated fatty acid with chemical formula CH3(CH2)6COOH. Oily liquid with unpleasant rancid-like odor.",
       "title": "Octanoic Acid"
     },
@@ -222,8 +222,6 @@
       "description": "Acetic acid /əˈsiːtɪk/, systematically named ethanoic acid /ˌɛθəˈnoʊɪk/, is an acidic, colourless liquid and organic compound with the chemical formula CH3COOH (also written as CH3CO2H, C2H4O2, or HC2H3O2). Vinegar is at least 4% acetic acid by volume, making acetic acid the main component of vinegar apart from water. It has been used, as a component of vinegar, throughout history from at least the third century BC.",
       "title": "Acetic Acid"
     }
-
-    
   ],
   "flavours": [
     {

@@ -1,20 +1,18 @@
-import type { Flavour, Id } from '@/common/custom-types';
+import type { Flavour } from '@/common/custom-types';
 import { WhiskeyMatching } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import { Section, SectionTitle } from '@/common/section';
-import { dataTypes, getObjectById, getObjectByName } from '@/db/db-utils';
+import { dataTypes, getObjectByName } from '@/db/db-utils';
 import { RelatedValueLine } from '@/whiskeys/whiskey-related-line-fetcher';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { RelatedValueRow } from '@/whiskeys/whiskey-related-row';
 
 type FlavourPageProps = {
   params: {
     flavourName: string;
   };
 };
-
 
 export default async function FlavourPage({ params }: FlavourPageProps) {
   const flavour = await getObjectByName<Flavour>(params.flavourName.replace('%20', ' '), dataTypes.FLAVOURS);
@@ -53,13 +51,6 @@ export default async function FlavourPage({ params }: FlavourPageProps) {
             </div>
           </div>
         </Paper>
-        
-      </Section>
-      <Section as="aside">
-        <SectionTitle as="h2">Related by Flavour</SectionTitle>
-     <Paper>
-          <RelatedValueRow id={params.flavourId} type={WhiskeyMatching.FLAVOUR} />
-      </Paper>
       </Section>
       <Section as="aside">
         <SectionTitle as="h2">Related by Flavour</SectionTitle>
