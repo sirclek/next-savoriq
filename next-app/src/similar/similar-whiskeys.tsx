@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect } from 'react';
 import type { ChartData, MatchType, Whiskey, WhiskeyWithCustom } from '@/common/custom-types';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
@@ -29,6 +32,16 @@ function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: S
 }
 
 export default function SimilarPage({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
+    useEffect(() => {
+    // Disable scrolling
+    document.body.classList.add('no-scroll');
+    
+    // Re-enable scrolling when the component is unmounted
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
+  
   return (
     <SimilarHoverProvider>
       <SimilarPageContent masterWhiskey={masterWhiskey} compWhiskey={compWhiskey} type={type} graphLabels={graphLabels} />
