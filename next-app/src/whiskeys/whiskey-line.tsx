@@ -61,7 +61,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
             ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4 overflow-y-hidden'
             : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
         }
-        style={{ maxHeight: orientation === 'row' ? '37vh' : '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ maxHeight: orientation === 'row' ? '45vh' : '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {children}
       </ul>
