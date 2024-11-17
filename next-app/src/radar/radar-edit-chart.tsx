@@ -12,7 +12,7 @@ type RadarChartProps = {
 };
 
 const FLAVOURMAX = 10;
-const CHEMICALMAX = 150;
+const CHEMICALMAX = 130;
 
 const CUSTOMDATANAME = 'Customised Data';
 
@@ -85,12 +85,13 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
             ],
           },
           options: {
-            animation: { duration: 500, easing: 'easeInOutQuint' },
+            animation: { duration: 200, easing: 'easeInOutQuint' },
             scales: {
               r: {
                 beginAtZero: true,
                 ticks: {
                   stepSize: dataType === WhiskeyMatching.CHEMICAL ? 10 : 1,
+                  font: {size: 14},
                   callback: function (value) {
                     return typeof value === 'number' && value < 0 ? null : value;
                   },
@@ -99,6 +100,11 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                 min: dataType === WhiskeyMatching.CHEMICAL ? -10 : 0,
                 grid: { lineWidth: 2 },
                 angleLines: { lineWidth: 2 },
+                pointLabels: {
+                  font: {
+                    size: 14, // Increase the font size for labels
+                  },
+                },
               },
             },
             plugins: {
@@ -109,7 +115,7 @@ const RadarChart: React.FC<RadarChartProps> = ({ whiskey }) => {
                     const roundValue = typeof value === 'number' ? Math.round(value) : 0;
                     const label = `${context.dataset.label} : ${roundValue}`;
                     const customDataPoint = data[context.dataIndex].value;
-                    return `${label} ${(context.dataset.label === CUSTOMDATANAME ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})` : '')}`;
+                    return `${label} ${context.dataset.label === CUSTOMDATANAME ? `(${roundValue - customDataPoint > 0 ? '+' : ''}${roundValue - customDataPoint})` : ''}`;
                   },
                 },
               },

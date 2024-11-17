@@ -33,14 +33,17 @@ function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: S
 
 export default function SimilarPage({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
     useEffect(() => {
-    // Disable scrolling
-    document.body.classList.add('no-scroll');
-    
-    // Re-enable scrolling when the component is unmounted
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, []);
+      // Scroll to top
+      window.scrollTo(0, 0);
+      
+      // Disable scrolling
+      document.body.classList.add('no-scroll');
+      
+      // Re-enable scrolling when the component is unmounted
+      return () => {
+        document.body.classList.remove('no-scroll');
+      };
+    }, []);
   
   return (
     <SimilarHoverProvider>

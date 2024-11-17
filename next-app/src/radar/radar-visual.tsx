@@ -1,6 +1,7 @@
 'use client';
 
 import type { Whiskey } from '@/common/custom-types';
+import { Information } from '@/common/information';
 import { PageTitle } from '@/common/page-title';
 import { Paper } from '@/common/paper';
 import dynamic from 'next/dynamic';
