@@ -66,7 +66,7 @@ const RadarCompareChart: React.FC<RadarChartProps> = ({ masterWhiskey, compWhisk
                 dragData: false,
               },
               {
-                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} ${compWhiskey.find((whiskey) => whiskey.id === lastHoveredWhiskeyId)?.name}`,
+                label: `Whisky ${dataType.charAt(0).toUpperCase() + dataType.slice(1)} | ${compWhiskey.find((whiskey) => whiskey.id === lastHoveredWhiskeyId)?.name}`,
                 data: hoveredWhiskeyData.map((d) => d.value),
                 backgroundColor: 'rgba(180, 120, 40, 0.5)',
                 borderColor: 'rgba(120, 80, 40, 1)',
