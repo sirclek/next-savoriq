@@ -50,7 +50,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
               whiteSpace: 'nowrap',
             }}
           >
-            Visulise
+            Visualise
           </ButtonLink>
           <ButtonLink
             variant="primary"
