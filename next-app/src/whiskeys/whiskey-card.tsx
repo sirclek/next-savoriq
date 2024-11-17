@@ -31,8 +31,8 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
     setHoveredWhiskeyId = hoverContext.setHoveredWhiskeyId;
     setLastHoveredWhiskeyId = hoverContext.setLastHoveredWhiskeyId;
   } catch (error) {
-    setHoveredWhiskeyId = () => {};
-    setLastHoveredWhiskeyId = () => {};
+    setHoveredWhiskeyId = () => { };
+    setLastHoveredWhiskeyId = () => { };
   }
 
   const handleImageLoad = () => {
@@ -54,7 +54,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
   return (
     <NextLink href={routes.whiskey({ params: { whiskeyId: whiskey.id } })} className="block">
       <article
-        className={`group flex ${orientation === 'column' ? 'flex-row' : 'flex-col'} max-h-[400px] gap-2 rounded-md border-2 p-2 md:p-4 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+        className={`group flex ${orientation === 'column' ? 'flex-row' : 'flex-col'} max-h-[400px] gap-2 rounded-md border-2 p-[0.9rem] md:p-4 ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{ height: orientation === 'row' ? '100%' : 'auto' }}
@@ -62,11 +62,11 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
         {orientation === 'row' ? (
           <>
             <div className="p-2">
-                    <div className="flex justify-center">
-                    <div className="relative h-28 w-28 bg-transparent transition duration-500 ease-out group-hover:scale-110">
-                      <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} layout="fill" onLoad={handleImageLoad} />
-                    </div>
-                    </div>
+              <div className="flex justify-center">
+                <div className="relative h-28 w-28 bg-transparent transition duration-500 ease-out group-hover:scale-110">
+                  <Image className="rounded bg-white object-contain" src={`/images/whiskeys/${whiskey.id}.png`} alt={whiskey.name} layout="fill" onLoad={handleImageLoad} />
+                </div>
+              </div>
             </div>
             <div className="flex w-full flex-col gap-0 text-center">
               <Tooltip content={whiskey.name}>
@@ -76,7 +76,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
                 <Price className="text-primary" value={whiskey.price} />
                 <Information className="text-primary" value={` | ${whiskey.abv}% ABV`} />
               </div>
-              {`${whiskey.age === 0 ? 'No Age' : `${whiskey.age} Years Old`}`}
+              {`${whiskey.age === 0 ? 'N/A' : `${whiskey.age} Years Old`}`}
               <div>
                 <strong>{whiskey.caskType}</strong>
               </div>
@@ -104,7 +104,7 @@ export function WhiskeyCard({ whiskey, onLoad, showSimilarity = false, showCusto
                 <h3 className="overflow-hidden whitespace-nowrap text-lg font-bold leading-tight group-hover:overflow-auto">{whiskey.name}</h3>
               </Tooltip>
               <div>
-                <Information className="text-primary" value={`${whiskey.abv}% ABV | ${whiskey.age === 0 ? 'No Age' : `${whiskey.age} Years Old`}`} />
+                <Information className="text-primary" value={`${whiskey.abv}% ABV | ${whiskey.age === 0 ? 'N/A' : `${whiskey.age} Years Old`}`} />
               </div>
               {'similarity' in whiskey && showSimilarity && (
                 <div>

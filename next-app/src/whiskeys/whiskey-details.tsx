@@ -1,4 +1,5 @@
 import { Price } from '@/common/price';
+import { Information } from '@/common/information';
 import { ButtonLink } from '@/common/button-link';
 import { dataTypes, fetchData } from '@/db/db-utils';
 import { routes } from '@/routing/routing-utils';
@@ -21,6 +22,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
           <div className="text-3xl font-bold">{whiskey.name}</div>
           <div className="text-2xl">
             <Price className="text-primary" value={whiskey.price} />
+            <Information className="text-primary" value={` | ${whiskey.abv}% ABV`} />
           </div>
         </div>
         <div className="text-sm">{whiskey.description}</div>
@@ -50,7 +52,7 @@ export async function WhiskeyDetails({ whiskey }: WhiskeyDetailsProps) {
               whiteSpace: 'nowrap',
             }}
           >
-            Visulise
+            Visualise
           </ButtonLink>
           <ButtonLink
             variant="primary"

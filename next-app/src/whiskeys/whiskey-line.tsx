@@ -50,7 +50,7 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
   return (
     <div className="relative">
       {!isAtStart && orientation === 'row' && (
-        <button className="scroll-button left-0" onClick={() => {scroll('left')}}>
+        <button className="scroll-button left-0" onClick={() => { scroll('left') }}>
           &#8249;
         </button>
       )}
@@ -58,15 +58,15 @@ function WhiskeyLineShell({ children, orientation }: WhiskeyLineShellProps) {
         ref={rowRef}
         className={
           orientation === 'row'
-        ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4'
-        : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
+            ? 'scrollbar-hide grid auto-cols-[minmax(220px,_1fr)] grid-flow-col gap-2 overflow-x-auto md:gap-4 overflow-y-hidden'
+            : 'scrollbar-hide grid min-w-[100px] grid-flow-row gap-2 overflow-y-auto md:gap-4'
         }
-        style={{ maxHeight: orientation === 'row' ? '35vh' : '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        style={{ maxHeight: orientation === 'row' ? '45vh' : '80vh', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {children}
       </ul>
       {!isAtEnd && orientation === 'row' && (
-        <button className="scroll-button right-0" onClick={() => {scroll('right')}}>
+        <button className="scroll-button right-0" onClick={() => { scroll('right') }}>
           &#8250;
         </button>
       )}
