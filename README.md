@@ -12,7 +12,6 @@ This is a simple whiskey browsing and comparison site built with [Next.js](https
 - Icons: [Lucide React](https://lucide.dev/guide/packages/lucide-react)
 - Linting: [ESLint](https://eslint.org/)
 - Code Formatting: [Prettier](https://prettier.io/)
-- Deployment: [Vercel](https://vercel.com/)
 
 ## 👥 The Contributors
 
