@@ -1,4 +1,4 @@
-# savorIQ
+# SavorIQ
 
 This is a simple whiskey browsing and comparison site built with [Next.js](https://nextjs.org/), using React Server Components and Server Actions. The data is sourced as a proof of concept. It allows users to browse, compare, and learn about different types of whiskey.
 
