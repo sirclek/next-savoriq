@@ -19,7 +19,7 @@ function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: S
   return (
     <main className="flex flex-col" style={{ height: '90vh' }}>
       <PageTitle title={`Most Similar Whiskeys - by ${type.charAt(0).toUpperCase() + type.slice(1)}`} />
-      <Paper className="max-v-height 100px flex flex-1 flex-row justify-center">
+      <Paper className="max-v-height 100px flex flex-1 flex-row justify-center overflow-y-auto">
         <div className="flex items-center justify-center md:col-span-1">
           <WhiskeyRow whiskeys={compWhiskey} showSimilarity={true} orientation={'column'} />
         </div>
@@ -32,19 +32,19 @@ function SimilarPageContent({ masterWhiskey, compWhiskey, type, graphLabels }: S
 }
 
 export default function SimilarPage({ masterWhiskey, compWhiskey, type, graphLabels }: SimilarPageProps) {
-    useEffect(() => {
-      // Scroll to top
-      window.scrollTo(0, 0);
-      
-      // Disable scrolling
-      document.body.classList.add('no-scroll');
-      
-      // Re-enable scrolling when the component is unmounted
-      return () => {
-        document.body.classList.remove('no-scroll');
-      };
-    }, []);
-  
+  useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Disable scrolling
+    document.body.classList.add('no-scroll');
+
+    // Re-enable scrolling when the component is unmounted
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
+
   return (
     <SimilarHoverProvider>
       <SimilarPageContent masterWhiskey={masterWhiskey} compWhiskey={compWhiskey} type={type} graphLabels={graphLabels} />
